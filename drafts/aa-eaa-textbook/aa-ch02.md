@@ -1,6 +1,10 @@
-# 第 2 章　判定の独立性
+# 第 2 章　レビューは、書いた AI から切り離す
+
+群: レビューと承認の置き場所
 
 > 人の代わりに AI がレビュー：作成者の文脈を持たない・作成者以外が merge・受け入れ条件
+
+<!-- 2026-11-07（@ope-ultp1635 msg 3b98618b）: 章の題を話題の名前から主張の 1 文にし、群の行を足した。リードは題と同じ事を言うものを外し、題に無い事を足すものだけ残した。題と群の案: agent-hub-roles-kaz/writer-ja/drafts/aa-toc-retitle/aa-toc-groups.md（ae4b5b1c） -->
 
 <!-- 扉の絵（@ope-ultp1635 msg f0419ae4）: 章全体の主張 1 つ。本文の絵の使い回しはしない -->
 ```svg
@@ -247,7 +251,7 @@ merge する AI に聞かれ、書いた AI は「文章は良い」の意味で
 <svg viewBox="0 0 880 380" width="880" height="380">
   <g class="ts" text-anchor="end"><text x="300" y="104">作成者の文脈を持たない</text><text x="300" y="164">merge は作成者以外</text><text x="300" y="224">受け入れ条件がある</text></g>
   <g class="tx" text-anchor="end"><text x="300" y="122">p.27</text><text x="300" y="182">p.28</text><text x="300" y="242">p.32</text></g>
-  <g class="ts" text-anchor="middle"><text x="390" y="56">全部ある</text><text x="510" y="56">1 つめが無い</text><text x="630" y="56">2 つめが無い</text><text x="750" y="56">3 つめが無い</text></g>
+  <g class="ts" text-anchor="middle"><text x="390" y="56">全部ある</text><text x="510" y="56">文脈が残る</text><text x="630" y="56">作成者が merge</text><text x="750" y="56">条件が無い</text></g>
   <use href="#i-ok" x="376" y="84" width="28" height="28"/><use href="#i-ok" x="376" y="144" width="28" height="28"/><use href="#i-ok" x="376" y="204" width="28" height="28"/>
   <rect x="496" y="84" width="28" height="28" rx="4" class="w"/><use href="#i-ok" x="496" y="144" width="28" height="28"/><use href="#i-ok" x="496" y="204" width="28" height="28"/>
   <use href="#i-ok" x="616" y="84" width="28" height="28"/><rect x="616" y="144" width="28" height="28" rx="4" class="w"/><use href="#i-ok" x="616" y="204" width="28" height="28"/>
@@ -259,7 +263,7 @@ merge する AI に聞かれ、書いた AI は「文章は良い」の意味で
 </svg>
 ```
 
-どれか 1 つ欠けると、残りの 2 つがそろっていても、分けた意味が崩れます。
+どれかが欠けると、残りがそろっていても、分けた意味が崩れます。
 
 ## 人のレビュー 60 分が AI の 5 分に
 
@@ -322,9 +326,9 @@ merge する AI に聞かれ、書いた AI は「文章は良い」の意味で
 </svg>
 ```
 
-この輪は、この章の 3 点のうち、どれに引っかかるでしょう。直すには、何を替えればよいでしょう。
+この輪は、この章の、文脈・merge・受け入れ条件のうち、どれに引っかかるでしょう。直すには、何を替えればよいでしょう。
 
-※ 答え：3 点全部。書いた会話のままレビューし、作成者が次へ進め、受け入れ条件が書かれていない。
+※ 答え：全部。書いた会話のままレビューし、作成者が次へ進め、受け入れ条件が書かれていない。
 
 ## まとめ：作った AI は、自分で承認しない
 
@@ -421,7 +425,7 @@ merge する AI に聞かれ、書いた AI は「文章は良い」の意味で
   <text x="230" y="186" class="tl xc" text-anchor="middle">=</text>
   <text x="230" y="222" class="ts xc" text-anchor="middle">別の役だったかは、仕組みでは保証されない</text>
   <rect x="470" y="40" width="370" height="200" rx="10" class="soft"/>
-  <text x="490" y="72" class="ts" font-weight="700">守っているのは 2 つだけ</text>
+  <text x="490" y="72" class="ts" font-weight="700">守っているのは決まりと記録だけ</text>
   <g class="ts"><text x="490" y="110">決まり：書いた役は merge しない</text><text x="490" y="146">記録：PR に残る LGTM コメント</text></g>
   <rect x="40" y="270" width="800" height="70" rx="10" fill="#fdf2e6"/>
   <text x="60" y="300" class="ts hc" font-weight="700">だから、決まりファイルを変える PR だけは人が merge する</text>

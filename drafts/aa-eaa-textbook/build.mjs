@@ -1,20 +1,26 @@
 // AA・EAA 教科書の build: 章の md → 1 ファイルの HTML（1 ページ = 絵 1 枚 + 短い文）
-// 使い方: ./build.sh            … aa-ch*.md を番号順にまとめて build/aa.html
+// 使い方: ./build.sh            … AA の本。aa-ch*.md を番号順にまとめて build/aa.html
+//         ./build.sh eaa        … EAA の本。eaa-ch*.md を番号順にまとめて build/eaa.html
 //         ./build.sh <x.md> …    … 指定した md だけを build/<最初の md の名前>.html
+//         ./build.sh --check    … 公開の漏れ止めだけを走らせる
+// 本は 1 つの build で組む。本ごとに変わるのはファイル名の頭（aa- / eaa-）だけで、検査・上限・組み方は同じ。
+// 本の名前を足すときは BOOKS に足す。以下「<本>」は aa か eaa
 // 作りは、別の資料の build の「md の ```dot を build 時に SVG にする」を借りた。コードは新しく書いた。
 //
 // md の書き方
-//   # 章の題          … 扉のページ。題の下に「> リード」1 行と、章の主張を描いた絵ちょうど 1 枚（無い・2 枚以上は build が止まる）
+//   # 第 N 章　章の題 … 章の概要のページ。章の題は章の主張を 1 文で言い切る。題の下に「群: 群の名前」1 行（必須）、
+//                       「> リード」1 行（任意。題に無い事を足すときだけ）、章の主張を描いた絵ちょうど 1 枚（無い・2 枚以上は build が止まる）
+//                       同じ群の章は続けて並べる（飛び飛びなら build が止まる）。目次は群 → 章 → ページの順に出す
 //   ## ページの見出し  … ここから次の ## までが 1 ページ
 //   ```svg / ```dot   … 絵。1 ページにちょうど 1 枚（無い・2 枚以上は build が止まる）
 //   ふつうの段落       … 文。1 ページ BODY_MAX 字まで（超えたら build が止まる）
 //   「出典:」「※」で始まる段落 … 注。小さく出す。NOTE_MAX 字まで
 //   <!-- … -->        … 書き手のメモ。HTML には出さない
-// 読み方（aa-yomikata.md）… 本の頭の 1 枚。ページ番号を持たない（本文の p.N をずらさない）。
-//   ## 題、「| 第 N 章 | 読み終えると、できること | 執筆者のおすすめ |」の表、文、注。表の絵は build が組む（章名は扉へのリンク）
+// 読み方（<本>-yomikata.md）… 本の頭の 1 枚。ページ番号を持たない（本文の p.N をずらさない）。
+//   ## 題、「| 第 N 章 | 読み終えると、できること |」の表、文、注。表の絵は build が組む（章名は章の概要へのリンク。群の名前の行も build が挟む）
 //   「読み方は」で始まる段落 … 読み方のコース。文と同じ大きさで出すが、文の BODY_MAX には数えず COURSE_MAX 字まで（前提の段落が上限ちょうどのため）
-//   3 列目は空でよい。到達点（事実）と出どころが違う列なので、灰色の字で組み、見出しに「執筆者の意見」と出す
-// 巻末（aa-kanmatsu.md）… 章の後ろに置く。題は「# 巻末　…」。扉とリードは持たず、## のページだけ。ページ番号は章から続ける。読み方の表には出さない
+//   3 列目（執筆者のおすすめ ★）は 2026-11-07 に外した。目次は話の順 1 本にし、効き目は「読み方は」の段落の「急ぐなら」で言う
+// 巻末（<本>-kanmatsu.md）… 章の後ろに置く。題は「# 巻末　…」。章の概要・群・リードは持たず、## のページだけ。ページ番号は章から続ける。読み方の表には出さない
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -65,11 +71,13 @@ export function readChapter(file) {
   const h1 = md.match(/^# (.+)$/m) || fail(`${name}: 章の題（# …）が無い`);
   const parts = md.split(/^## /m);
   const appendix = /^巻末/.test(h1[1].trim());
-  // 章題は短い名前、その下の「> 」1 行がリード（章が何を言うかの 1 文）。目次と扉に両方出す。全章で必須
+  // 章題が章の主張を言い切る。「群:」1 行で群に入れる（巻末以外は必須）。「> 」1 行のリードは任意で、題に無い事を足すときだけ書く
   let cover = parts.shift().replace(/^# .+$/m, '');
-  const lead = appendix ? '' : (cover.match(/^> (.+)$/m) || fail(`${name}: 章題の下にリード（> …）が無い`))[1].trim();
+  const group = appendix ? '' : (cover.match(/^群[:：]\s*(.+)$/m) || fail(`${name}: 章題の下に「群: …」が無い`))[1].trim();
+  cover = cover.replace(/^群[:：].*$/m, '');
+  const lead = appendix ? '' : ((cover.match(/^> (.+)$/m) || [])[1] || '').trim();
   cover = cover.replace(/^> .+$/m, '');
-  const pages = appendix ? [] : [{ cover: true, title: h1[1].trim(), lead, ...body(cover, `${name} の扉`, true, skeleton) }];
+  const pages = appendix ? [] : [{ cover: true, title: h1[1].trim(), lead, ...body(cover, `${name} の章の概要`, true, skeleton) }];
   parts.forEach((p, i) => {
     const nl = p.indexOf('\n');
     const title = (nl < 0 ? p : p.slice(0, nl)).trim();
@@ -77,14 +85,14 @@ export function readChapter(file) {
     if (countChars(title) > HEAD_MAX) fail(`${where}: 見出しが ${countChars(title)} 字（上限 ${HEAD_MAX}）`);
     pages.push({ title, skeleton, ...body(nl < 0 ? '' : p.slice(nl + 1), where, false, skeleton) });
   });
-  return { name, title: h1[1].trim(), lead, skeleton, appendix, pages };
+  return { name, title: h1[1].trim(), group, lead, skeleton, appendix, pages };
 }
 function body(text, where, cover, skeleton = false) {
   const figs = [];
   text = text.replace(/^```(svg|dot)[^\n]*\n([\s\S]*?)^```[ \t]*$/gm, (_, k, src) => { figs.push(figure(k, src, where)); return ''; });
   if (figs.length > 1) fail(`${where}: 絵が ${figs.length} 枚（1 ページにちょうど 1 枚）`);
-  // 扉の絵は骨格の章でも省けない（10 章で揃うのを build で守る。リードと同じ考え方）
-  if (cover && !figs.length) fail(`${where}: 扉に絵が無い（章の主張を描いた絵をちょうど 1 枚）`);
+  // 章の概要の絵は骨格の章でも省けない（10 章で揃うのを build で守る）
+  if (cover && !figs.length) fail(`${where}: 章の概要に絵が無い（章の主張を描いた絵をちょうど 1 枚）`);
   const paras = text.split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
   const notes = paras.filter(s => /^(出典[:：]|※)/.test(s));
   const plan = paras.filter(s => /^絵[:：]/.test(s));
@@ -132,7 +140,7 @@ section.page figure svg { max-width: 100%; max-height: 100%; height: auto; }
 .note p { margin: 0; }
 section.cover { padding: 46px 80px 30px; }
 section.cover .run { position: absolute; top: 18px; left: 40px; right: 40px; }
-section.cover h1 { font-size: 44px; margin: 0 0 6px; }
+section.cover h1 { font-size: 36px; margin: 0 0 6px; line-height: 1.35; }   /* 章の題が主張の 1 文になり長いので 44 → 36px */
 section.cover .lead { font-size: 24px; font-weight: 700; color: var(--ink); margin: 0 0 6px; line-height: 1.45; }
 section.cover figure { margin: 6px 0 10px; }
 section.cover .txt { font-size: 19px; color: #444; line-height: 1.55; }
@@ -171,7 +179,9 @@ body.toc-closed #toc-btn { left: 14px; }
 #toc { position: fixed; top: 0; left: 0; bottom: 0; width: 332px; z-index: 21; background: #fff; border-right: 1px solid #ddd; overflow-y: auto; padding: 14px 0 28px; transition: transform .16s ease-out; }
 body.toc-closed #toc { transform: translateX(-100%); }
 #toc h2 { font-size: 13px; color: var(--sub); font-weight: 400; margin: 0; padding: 4px 18px 10px; letter-spacing: .08em; }
+#toc .grp { font-size: 13px; font-weight: 700; color: #555; letter-spacing: .04em; margin: 24px 0 0; padding: 10px 18px 0; border-top: 2px solid #ccc; }
 #toc .ch { font-size: 16px; font-weight: 700; margin: 14px 0 4px; padding: 6px 18px; background: #f4f4f2; }
+#toc .ch { line-height: 1.45; }
 #toc .ch .lead { display: block; font-size: 13px; font-weight: 400; color: #444; line-height: 1.45; margin-top: 3px; }
 #toc a { display: flex; gap: 9px; text-decoration: none; color: var(--ink); font-size: 14px; line-height: 1.45; padding: 4px 18px 4px 24px; }
 #toc a:hover { background: #f7f7f5; }
@@ -211,7 +221,7 @@ const NAV = `<script>
 // 条文の番号（P1〜P3・D1〜D8）が出てくるページには、柱に条文の一覧へ戻るリンクを出す
 const ARTICLE_RE = /(?<![A-Za-z0-9])(?:P[1-3]|D[1-8])(?![0-9])/;
 const plain = s => s.replace(/<[^>]+>/g, ' ');
-// 絵の中のリンク: href="#chN" は第 N 章の扉、href="#pN" はそのページ。字は残し、リンクを被せるだけ。
+// 絵の中のリンク: href="#chN" は第 N 章の概要、href="#pN" はそのページ。字は残し、リンクを被せるだけ。
 // 字とリンクがずれないように、リンクの字の「第 N 章」「p.N」が飛び先と合わなければ build を止める
 function linkFigure(fig, where, covers, total, full) {
   return fig.replace(/<a href="#(ch(\d+)|p(\d+))">([\s\S]*?)<\/a>/g, (all, ref, ch, pg, inner) => {
@@ -231,9 +241,9 @@ function linkFigure(fig, where, covers, total, full) {
 }
 
 // ---------- 読み方 ----------
-const FRONT = path.join(ROOT, 'aa-yomikata.md');
+const frontFile = book => path.join(ROOT, `${book}-yomikata.md`);
 const chNo = ch => Number((ch.title.match(/^第 (\d+) 章/) || fail(`${ch.name}: 章題が「第 N 章」で始まらない`))[1]);
-function readFront(chs) {
+function readFront(chs, FRONT) {
   chs = chs.filter(ch => !ch.appendix);
   const md = fs.readFileSync(FRONT, 'utf8').replace(/<!--[\s\S]*?-->/g, '');
   const where = path.basename(FRONT);
@@ -252,25 +262,33 @@ function readFront(chs) {
   if (nCourse > COURSE_MAX) fail(`${where}: コースが ${nCourse} 字（上限 ${COURSE_MAX}）`);
   if (nBody > BODY_MAX) fail(`${where}: 文が ${nBody} 字（上限 ${BODY_MAX}）`);
   if (nNote > NOTE_MAX) fail(`${where}: 注が ${nNote} 字（上限 ${NOTE_MAX}）`);
-  const Y0 = 34, H = 35, W = 880;
-  const col = { ch: 8, can: 236, pick: 640 };
-  const head = `<g class="tx"><text x="${col.ch}" y="20">章（押すと扉へ）</text><text x="${col.can}" y="20">読み終えると、できること</text><text x="${col.pick}" y="20">執筆者のおすすめ</text></g><path d="M0,${Y0 - 6} H${W}" class="lt"/>`;
-  const body = chs.map((ch, i) => {
-    const n = chNo(ch), r = rows.get(n), y = Y0 + i * H, ty = y + 23;
-    const name = ch.title.replace(/^第 \d+ 章\s*/, '').replace(/（[^）]*）/g, ' ').replace(/\s+/g, ' ').trim();   // 表に入る長さにする（「AA（Agentic Agile）とは」→「AA とは」）
-    return (i % 2 ? '' : `<rect x="0" y="${y}" width="${W}" height="${H}" class="soft"/>`)
+  // 群の名前の行を、群の頭の章の前に挟む。章名は章の主張の 1 文なので幅を広く取る（3 列目の「執筆者のおすすめ」は 2026-11-07 に外し、効き目は文の「急ぐなら」の 1 行へ）
+  const Y0 = 34, H = 31, G = 27, W = 880;
+  const col = { ch: 8, can: 528 };
+  const head = `<g class="tx"><text x="${col.ch}" y="20">章（押すと章の概要へ）</text><text x="${col.can}" y="20">読み終えると、できること</text></g><path d="M0,${Y0 - 6} H${W}" class="lt"/>`;
+  let y = Y0, prev = null, odd = 0;
+  const body = chs.map(ch => {
+    const n = chNo(ch), r = rows.get(n);
+    let g = '';
+    if (ch.group !== prev) { prev = ch.group; g = `<text x="${col.ch}" y="${y + 19}" class="ts sub" font-weight="700">${esc(ch.group)}</text>`; y += G; odd = 0; }
+    const ty = y + 21;
+    const name = ch.title.replace(/^第 \d+ 章\s*/, '');
+    const row = (odd++ % 2 ? '' : `<rect x="0" y="${y}" width="${W}" height="${H}" class="soft"/>`)
       + `<a href="#ch${n}"><text x="${col.ch}" y="${ty}" class="yk">第 ${n} 章　${esc(name)}</text></a>`
       + `<text x="${col.can}" y="${ty}" class="yk">${esc(r.can)}</text>`
-      + (r.pick ? `<text x="${col.pick}" y="${ty}" class="yk sub">${esc(r.pick)}</text>` : '');
+      + (r.pick ? fail(`${where}: 第 ${n} 章の 3 列目は使わない（効き目は文の「急ぐなら」の 1 行に書く）`) : '');
+    y += H;
+    return g + row;
   }).join('');
-  const h = Y0 + chs.length * H + 4;
+  const h = y + 4;
   const fig = `<figure><svg viewBox="0 0 ${W} ${h}" width="${W}" height="${h}">${head}${body}</svg></figure>`;
   return { title, fig, text: pandoc(main.join('\n\n')), note: pandoc(notes.join('\n\n')), nBody, nNote, nCourse };
 }
 
-export function render(files, extraHead = '', full = false) {
+export function render(files, extraHead = '', full = false, book = 'aa') {
+  const FRONT = frontFile(book);
   const chs = files.map(readChapter);
-  // 章番号 → 扉のページ id、条文の一覧のページ id を先に数える
+  // 章番号 → 章の概要のページ id、条文の一覧のページ id を先に数える
   const covers = new Map();
   let listId = null, k = 0;
   for (const ch of chs) for (const p of ch.pages) {
@@ -281,7 +299,7 @@ export function render(files, extraHead = '', full = false) {
   }
   const listNo = listId && listId.slice(1);
   // 読み方は本の全章を組むときだけ出す（一部の章だけでは頁数も引用も数えられない）
-  const front = fs.existsSync(FRONT) && files.length === sources([]).length ? readFront(chs) : null;
+  const front = fs.existsSync(FRONT) && files.length === sources([], book).length ? readFront(chs, FRONT) : null;
   let n = 0;
   const toc = [];
   const frontSec = [];
@@ -290,19 +308,25 @@ export function render(files, extraHead = '', full = false) {
     toc.push(`<a href="#yomikata"><span class="n"></span><span>${esc(front.title)}</span></a>`);
     frontSec.push(`<section class="page front" id="yomikata"><div class="run"><span>${esc(front.title)}</span><span></span></div><h2>${esc(front.title)}</h2>${front.fig}<div class="txt">${front.text}</div><div class="note">${front.note}</div></section>`);
   }
+  // 同じ群の章は続けて並べる（目次で群を 1 回だけ出すため）。巻末は群を持たない
+  const seen = new Set();
+  const grouped = chs.filter(ch => !ch.appendix);
+  grouped.forEach((ch, i) => { if (i && grouped[i - 1].group !== ch.group) { if (seen.has(ch.group)) fail(`${ch.name}: 群「${ch.group}」の章が続いていない`); } seen.add(ch.group); });
+  let prevGroup = null;
   const secs = chs.flatMap(ch => ch.pages.map((p, i) => {
     n++;
     if (ch.appendix && i === 0) toc.push(`<div class="ch">${esc(ch.title)}</div>`);
     const id = `p${n}`;
     p.fig = linkFigure(p.fig, `${ch.name} ${id}`, covers, k, full);
     const sk = p.skeleton ? ' sk' : '';
+    if (p.cover && ch.group !== prevGroup) { prevGroup = ch.group; toc.push(`<div class="grp">${esc(ch.group)}</div>`); }
     toc.push(p.cover
-      ? `<div class="ch">${esc(p.title)}${ch.skeleton ? ' <span style="font-weight:400;font-size:12px;color:#8a8a82">骨格</span>' : ''}<span class="lead">${esc(p.lead)}</span></div><a href="#${id}" class="${sk.trim()}"><span class="n">${n}</span><span>扉</span></a>`
+      ? `<div class="ch">${esc(p.title)}${ch.skeleton ? ' <span style="font-weight:400;font-size:12px;color:#8a8a82">骨格</span>' : ''}${p.lead ? `<span class="lead">${esc(p.lead)}</span>` : ''}</div><a href="#${id}" class="${sk.trim()}"><span class="n">${n}</span><span>この章の概要</span></a>`
       : `<a href="#${id}" class="${sk.trim()}"><span class="n">${n}</span><span>${esc(p.title)}</span></a>`);
     const back = listId && id !== listId && ARTICLE_RE.test(plain(p.fig + p.text + p.note))
       ? `<a href="#${listId}" class="xref back">条文の一覧 p.${listNo} へ戻る</a>` : '';
-    const run = `<div class="run"><span>${esc(ch.title)}</span>${back}<span>${n}</span></div>`;
-    if (p.cover) return `<section class="page cover" id="${id}">${run}<h1>${esc(p.title)}</h1><p class="lead">${esc(p.lead)}</p>${p.fig}<div class="txt">${p.text}</div></section>`;
+    const run = `<div class="run"><span>${esc(p.cover ? ch.group : ch.title)}</span>${back}<span>${n}</span></div>`;
+    if (p.cover) return `<section class="page cover" id="${id}">${run}<h1>${esc(p.title)}</h1>${p.lead ? `<p class="lead">${esc(p.lead)}</p>` : ''}${p.fig}<div class="txt">${p.text}</div></section>`;
     return `<section class="page${p.skeleton ? ' skeleton' : ''}" id="${id}">${run}<h2>${esc(p.title)}</h2>${p.fig}<div class="txt">${p.text}</div><div class="note">${p.note}</div></section>`;
   }));
   const title = chs.map(c => c.title).join(' / ');
@@ -337,11 +361,19 @@ export function checkPrivate() {
   }
 }
 
-export function sources(args) {
+// 本の名前。引数の 1 つめが本の名前ならそれを使い、無ければ aa
+export const BOOKS = ['aa', 'eaa'];
+export function parseArgs(args) {
+  return BOOKS.includes(args[0]) ? { book: args[0], rest: args.slice(1) } : { book: 'aa', rest: args };
+}
+
+export function sources(args, book = 'aa') {
+  if (!BOOKS.includes(book)) fail(`本の名前が ${book}（${BOOKS.join(' / ')} のどれか）`);
   if (args.length) return args.map(a => path.resolve(a));
-  const fs_ = fs.readdirSync(ROOT).filter(f => /^aa-ch\d+\.md$/.test(f)).sort();
-  if (!fs_.length) fail('aa-ch*.md が 1 本も無い');
-  if (fs.existsSync(path.join(ROOT, 'aa-kanmatsu.md'))) fs_.push('aa-kanmatsu.md');
+  const re = new RegExp(`^${book}-ch\\d+\\.md$`);
+  const fs_ = fs.readdirSync(ROOT).filter(f => re.test(f)).sort();
+  if (!fs_.length) fail(`${book}-ch*.md が 1 本も無い`);
+  if (fs.existsSync(path.join(ROOT, `${book}-kanmatsu.md`))) fs_.push(`${book}-kanmatsu.md`);
   return fs_.map(f => path.join(ROOT, f));
 }
 
@@ -349,7 +381,7 @@ export function report(chs) {
   for (const ch of chs) {
     const ps = ch.pages.filter(p => !p.cover);
     const sum = ps.reduce((a, p) => a + p.nBody, 0);
-    console.log(`  ${ch.name}: ${ps.length} ページ${ch.appendix ? "" : " + 扉"} / 文 ${sum} 字（1 ページ平均 ${Math.round(sum / (ps.length || 1))} 字・最大 ${Math.max(0, ...ps.map(p => p.nBody))} 字）`);
+    console.log(`  ${ch.name}: ${ps.length} ページ${ch.appendix ? "" : " + 章の概要"} / 文 ${sum} 字（1 ページ平均 ${Math.round(sum / (ps.length || 1))} 字・最大 ${Math.max(0, ...ps.map(p => p.nBody))} 字）`);
     ps.forEach((p, i) => console.log(`    p.${String(i + 1).padStart(2)} ${String(p.nBody).padStart(3)} 字${p.nNote ? ` + 注 ${p.nNote}` : ''}  ${p.title}`));
   }
 }
@@ -359,10 +391,11 @@ async function main() {
     checkPrivate();
     if (process.argv[2] === '--check') { console.log('  出さない語: なし'); return; }
     await loadGraphviz();
-    const files = sources(process.argv.slice(2));
-    const { html, chs, front } = render(files, '', !process.argv.slice(2).length);
+    const { book, rest } = parseArgs(process.argv.slice(2));
+    const files = sources(rest, book);
+    const { html, chs, front } = render(files, '', !rest.length, book);
     fs.mkdirSync(OUT, { recursive: true });
-    const out = path.join(OUT, process.argv.length > 2 ? path.basename(files[0], '.md') + '.html' : 'aa.html');
+    const out = path.join(OUT, rest.length ? path.basename(files[0], '.md') + '.html' : `${book}.html`);
     fs.writeFileSync(out, html);
     if (front) console.log(`  読み方: 文 ${front.nBody} 字 + コース ${front.nCourse} + 注 ${front.nNote}`);
     report(chs);

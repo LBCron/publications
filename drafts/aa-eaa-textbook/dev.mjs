@@ -35,7 +35,8 @@ http.createServer(async (req, res) => {
   if (req.url === '/stamp') { res.end(stamp()); return; }
   try {
     const b = await build();
-    const { html, chs } = b.render(b.sources(args), RELOAD);
+    const { book, rest } = b.parseArgs(args);
+    const { html, chs } = b.render(b.sources(rest, book), RELOAD, false, book);
     b.report(chs);
     res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }).end(html);
   } catch (e) {

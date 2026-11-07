@@ -1,6 +1,8 @@
-# 第 1 章　問題の発見
+# 第 1 章　人がレビューすれば遅く、外せば誤りが積み上がる
 
-> 人がレビューすると遅く、外すと間違いが増える
+群: AA とレビューの板挟み
+
+<!-- 2026-11-07（@ope-ultp1635 msg 3b98618b）: 章の題を話題の名前から主張の 1 文にし、群の行を足した。リードは題と同じ事を言うものを外し、題に無い事を足すものだけ残した。題と群の案: agent-hub-roles-kaz/writer-ja/drafts/aa-toc-retitle/aa-toc-groups.md（ae4b5b1c） -->
 
 <!-- 扉の絵（@ope-ultp1635 msg f0419ae4）: 章全体の主張 1 つ。本文の絵の使い回しはしない -->
 ```svg
@@ -55,7 +57,7 @@ build: ./build.sh → build/aa.html。1 ページ = ## 1 つ。絵はちょう�
   <g class="h"><rect x="760" y="64" width="96" height="34" rx="5"/><rect x="760" y="124" width="96" height="34" rx="5"/><rect x="760" y="184" width="96" height="34" rx="5"/><rect x="760" y="244" width="96" height="34" rx="5"/></g>
   <g class="ts on" text-anchor="middle"><text x="700" y="87">AI が書く</text><text x="700" y="147">AI が書く</text><text x="700" y="207">AI が書く</text><text x="700" y="267">AI が書く</text><text x="808" y="87">人が確認</text><text x="808" y="147">人が確認</text><text x="808" y="207">人が確認</text><text x="808" y="267">人が確認</text></g>
   <path d="M808,98 L708,120" class="ln" marker-end="url(#arr)"/><path d="M808,158 L708,180" class="ln" marker-end="url(#arr)"/><path d="M808,218 L708,240" class="ln" marker-end="url(#arr)"/>
-  <g class="t" text-anchor="middle"><text x="150" y="352">1 周：数行</text><text x="440" y="352">1 周：PR 1 本</text><text x="730" y="352">1 周：工程 1 つ</text></g>
+  <g class="t" text-anchor="middle"><text x="150" y="352">1 周：数行</text><text x="440" y="352">1 周：PR 1 本</text><text x="730" y="352">1 周：1 工程</text></g>
 </svg>
 ```
 
@@ -63,7 +65,7 @@ build: ./build.sh → build/aa.html。1 ページ = ## 1 つ。絵はちょう�
 
 出典: 1 は DORA 2025 報告（AI 利用 90%）、2 は GitHub Docs（Copilot の PR）、3 は WEEL「AI駆動開発（AIDD）の定義とは？」（2026-08-24）。
 
-## 3 つとも同じ輪：最後は人が approve
+## どの形も同じ輪：最後は人が approve
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -86,7 +88,7 @@ build: ./build.sh → build/aa.html。1 ページ = ## 1 つ。絵はちょう�
 </svg>
 ```
 
-3 つとも、1 周の大きさが違うだけの同じ輪です。テストも AI レビューも先に回し、approve は別の人。この本はこの輪を最後まで使います。
+どの形も、1 周の大きさが違うだけの同じ輪です。テストも AI レビューも先に回し、approve は別の人。この本はこの輪を最後まで使います。
 
 ## 10 周回しても、人が見る所は同じ
 
@@ -218,7 +220,7 @@ PR は 10 分で来て、レビューと直しの往復に 60 分。AI が 10 �
   <rect x="632" y="148" width="86" height="180" rx="8" class="xl dash"/>
   <use href="#i-ok" x="740" y="225" width="24" height="24"/><text x="772" y="243" class="ts okc">全部通る</text>
   <use href="#i-ok" x="740" y="285" width="24" height="24"/><text x="772" y="303" class="ts okc">問題なし</text>
-  <text x="675" y="356" class="ts xc" text-anchor="middle">3 つとも、ここが抜けている</text>
+  <text x="675" y="356" class="ts xc" text-anchor="middle">AI の行は、どれもここが抜けている</text>
 </svg>
 ```
 
@@ -252,7 +254,7 @@ PR は 10 分で来て、レビューと直しの往復に 60 分。AI が 10 �
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <text x="50" y="50" class="t">1 つの報告の書き直し　55 回</text>
+  <text x="50" y="50" class="t">報告 1 本の書き直し　55 回</text>
   <text x="50" y="78" class="ts sub">調査担当のエージェントが書いた報告</text>
   <g class="a">
     <rect x="50" y="120" width="11" height="140"/><rect x="64" y="120" width="11" height="140"/><rect x="78" y="120" width="11" height="140"/><rect x="92" y="120" width="11" height="140"/><rect x="106" y="120" width="11" height="140"/><rect x="120" y="120" width="11" height="140"/><rect x="134" y="120" width="11" height="140"/><rect x="148" y="120" width="11" height="140"/><rect x="162" y="120" width="11" height="140"/><rect x="176" y="120" width="11" height="140"/>
@@ -278,7 +280,7 @@ PR は 10 分で来て、レビューと直しの往復に 60 分。AI が 10 �
 
 出典: 著者が AI を働かせている場の共通の決まりに、この件を受けて足された理由書き（agent-hub-roles CLAUDE.md、2026-09-21）。
 
-## 人が見れば遅く、外せば間違いが増える
+## レビューすれば遅く、外せば間違いが増える
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -351,7 +353,7 @@ PR は 10 分で来て、レビューと直しの往復に 60 分。AI が 10 �
 
 AI が賢く速くなるのを待っても、この板挟みは消えません。
 
-※ 左は p.8 の数字（AI 11 分・人 60 分）から出した。60 ÷ 71 で 85%。p.9 の 85%（調査の数字）とは別の数字で、たまたま同じ値。右は、間違える割合が変わらないとした場合。
+※ 左は p.8 の数字（AI 11 分・人 60 分）から出した。60 ÷ 71 で 85%。p.9 の 85%（調査の数字）とは別の数字で、たまたま同じ値。右は、誤る割合が変わらないとした場合。
 
 ## 原因 1：試行が多すぎて人が全部見られない
 
@@ -380,7 +382,7 @@ AI が賢く速くなるのを待っても、この板挟みは消えません�
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="345" y="10" width="250" height="36" rx="6" class="a"/>
-  <text x="470" y="34" class="ts on" text-anchor="middle">同じ文脈の AI から出た 3 つ</text>
+  <text x="470" y="34" class="ts on" text-anchor="middle">同じ文脈の AI の出力</text>
   <path d="M400,46 L330,70 M470,46 V70 M540,46 L610,70" class="lt"/>
   <g fill="#dbe7f5" stroke="#2f6fb3" stroke-width="2">
     <rect x="300" y="70" width="60" height="240" rx="8"/><rect x="440" y="70" width="60" height="240" rx="8"/><rect x="580" y="70" width="60" height="240" rx="8"/>
@@ -408,10 +410,10 @@ AI が賢く速くなるのを待っても、この板挟みは消えません�
   <rect x="60" y="100" width="760" height="60" class="box"/>
   <rect x="61" y="101" width="300" height="58" class="a"/><text x="211" y="137" class="ts on" text-anchor="middle">進んだぶん</text>
   <text x="590" y="137" class="ts sub" text-anchor="middle">残り</text>
-  <text x="60" y="218" class="ts">間違った方向に流したら</text>
+  <text x="60" y="218" class="ts">誤った方向に流したら</text>
   <rect x="60" y="230" width="760" height="60" class="box"/>
   <rect x="61" y="231" width="300" height="58" class="a"/><text x="211" y="267" class="ts on" text-anchor="middle">進んだぶん</text>
-  <rect x="361" y="231" width="170" height="58" class="x"/><text x="446" y="267" class="ts on" text-anchor="middle">間違った方向</text>
+  <rect x="361" y="231" width="170" height="58" class="x"/><text x="446" y="267" class="ts on" text-anchor="middle">誤った方向</text>
   <rect x="531" y="231" width="170" height="58" class="xw"/><text x="616" y="267" class="ts xc" text-anchor="middle">直すのに使う</text>
   <text x="760" y="267" class="ts sub" text-anchor="middle">残り</text>
   <path d="M361,300 V310 H701 V300" class="xl"/>

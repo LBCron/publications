@@ -1,6 +1,8 @@
-# 第 6 章　権限の範囲
+# 第 6 章　AI が読める・送れる範囲は、役ごとに絞る
 
-> AI に見せる・送らせる範囲を、役ごとに絞る
+群: 頼み方・判定・権限・刻み
+
+<!-- 2026-11-07（@ope-ultp1635 msg 3b98618b）: 章の題を話題の名前から主張の 1 文にし、群の行を足した。リードは題と同じ事を言うものを外し、題に無い事を足すものだけ残した。題と群の案: agent-hub-roles-kaz/writer-ja/drafts/aa-toc-retitle/aa-toc-groups.md（ae4b5b1c） -->
 
 <!-- 扉の絵（@ope-ultp1635 msg f0419ae4）: 章全体の主張 1 つ。本文の絵の使い回しはしない -->
 ```svg
@@ -27,7 +29,7 @@
 例は第 4 章の 4 枚（決済の再試行）を引き継いだ。作り物。
 -->
 
-第 5 章で、判定は毎回になりました。3 つのうち 2 つめは権限です。判定が見ない所で、AI が何を読み、どこへ送れるかを見ます。
+第 5 章で、判定は毎回になりました。壊れる所の、次は権限です。判定が見ない所で、AI が何を読み、どこへ送れるかを見ます。
 
 ## 書いた権限より、届く範囲が広い
 
@@ -41,18 +43,18 @@
   <text x="46" y="150" class="ts">テスト環境まで</text><text x="46" y="176" class="ts">本番の決済は呼ばない</text>
   <text x="145" y="250" class="tx" text-anchor="middle">札に書いた範囲（第 4 章 p.71）</text>
   <rect x="300" y="56" width="560" height="300" rx="12" fill="#f4f4f2"/>
-  <text x="316" y="80" class="tx">AI の手が届く範囲</text>
+  <text x="316" y="80" class="tx">AI が読める・送れる範囲</text>
   <rect x="440" y="180" width="130" height="56" rx="6" class="a"/><text x="505" y="214" class="ts on" text-anchor="middle">実装役の AI</text>
   <rect x="320" y="96" width="140" height="48" rx="6" class="box"/><text x="390" y="126" class="ts" text-anchor="middle">テスト環境</text>
   <rect x="312" y="88" width="156" height="64" rx="8" fill="none" class="hl dash"/>
   <g fill="#fff" stroke="#c62828" stroke-width="2"><rect x="660" y="96" width="180" height="48" rx="6"/><rect x="660" y="184" width="180" height="48" rx="6"/><rect x="660" y="272" width="180" height="48" rx="6"/></g>
   <g class="ts" text-anchor="middle"><text x="750" y="126">本番の決済の鍵</text><text x="750" y="214">顧客一覧</text><text x="750" y="302">社外へのメール</text></g>
   <g class="ln"><path d="M470,178 L430,150" marker-end="url(#arr)"/><path d="M572,196 L656,128" marker-end="url(#arr)"/><path d="M572,208 H656" marker-end="url(#arr)"/><path d="M572,222 L656,288" marker-end="url(#arr)"/></g>
-  <text x="440" y="300" class="ts xc" text-anchor="middle">札の外にも手が届く</text>
+  <text x="440" y="300" class="ts xc" text-anchor="middle">札の外も読める・送れる</text>
 </svg>
 ```
 
-3 枚目に「本番の決済は呼ばない」と書いても、本番の鍵に手が届くなら、守っているのは AI の読み方だけです。
+3 枚目に「本番の決済は呼ばない」と書いても、本番の鍵を読めるなら、守っているのは AI の読み方だけです。
 
 ※ AI は書かれていない所を、もっともらしく埋める（第 4 章 p.68）。図は説明のための作り物。
 
@@ -209,11 +211,11 @@ AI が読めて送れる範囲を、役に要るぶんだけにします。届�
   <text x="70" y="254" class="ts">目的は渡す</text><text x="70" y="296" class="tx">p.104 絞るのは参照と送信</text>
   <text x="345" y="254" class="ts">読める ≠ 従う</text><text x="345" y="296" class="tx">p.105 メモから権限は出ない</text>
   <text x="620" y="254" class="ts">広げるのは床の上</text><text x="620" y="296" class="tx">p.106 通すのは人</text>
-  <text x="440" y="360" class="ts sub" text-anchor="middle">壊れる所 3 つのうち、2 つめ：権限</text>
+  <text x="440" y="360" class="ts sub" text-anchor="middle">壊れる所（判定・権限・大きさ）のうち：権限</text>
 </svg>
 ```
 
-この章を条文で書くと、D6 の 1 行です。人が毎回は見ない代わりに、AI の手が届く範囲を、役ごとに先に決めておきます。
+この章を条文で書くと、D6 の 1 行です。人が毎回は見ない代わりに、AI が読める・送れる範囲を、役ごとに先に決めておきます。
 
 ※ 条文の一覧は p.3。
 

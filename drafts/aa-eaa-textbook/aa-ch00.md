@@ -1,6 +1,8 @@
-# 第 0 章　AA（Agentic Agile）とは
+# 第 0 章　人の判断は、置き場所を選んで書いて渡す
 
-> 人の判断の置き場所を選び、書いて渡す
+群: AA とレビューの板挟み
+
+<!-- 2026-11-07（@ope-ultp1635 msg 3b98618b）: 章の題を話題の名前から主張の 1 文にし、群の行を足した。リードは題と同じ事を言うものを外し、題に無い事を足すものだけ残した。題と群の案: agent-hub-roles-kaz/writer-ja/drafts/aa-toc-retitle/aa-toc-groups.md（ae4b5b1c） -->
 
 <!-- 扉の絵（@ope-ultp1635 msg f0419ae4）: 章全体の主張 1 つ。本文の絵の使い回しはしない -->
 ```svg
@@ -83,7 +85,7 @@ AA（Agentic Agile）は、AI エージェントが作る開発で、人の判�
   <rect x="40" y="14" width="800" height="40" rx="6" class="soft"/>
   <text x="60" y="40" class="ts" font-weight="700">前提</text><text x="112" y="40" class="ts">3 文</text><a href="#p21"><text x="820" y="40" class="tx" text-anchor="end">第 1 章 p.21</text></a>
   <path d="M440,54 V74" class="ln" marker-end="url(#arr)"/>
-  <text x="40" y="96" class="ts" font-weight="700">原則 P1〜P3　条文の土台</text>
+  <text x="40" y="96" class="ts" font-weight="700">原則 P1〜P3　指針はここから導く</text>
   <g class="box"><rect x="40" y="106" width="260" height="50" rx="6"/><rect x="310" y="106" width="260" height="50" rx="6"/><rect x="580" y="106" width="260" height="50" rx="6"/></g>
   <g class="ts"><text x="52" y="126">P1 書かれていないものは、</text><text x="322" y="126">P2 どの層も、決まりに従って</text><text x="592" y="126">P3 決まりは、</text></g>
   <g class="ts"><text x="74" y="147">無いものとして扱う</text><text x="344" y="147">働き、下の決まりを書く</text><text x="614" y="147">記録を見て直す</text></g>
@@ -94,7 +96,7 @@ AA（Agentic Agile）は、AI エージェントが作る開発で、人の判�
   <g class="al"><rect x="40" y="208" width="195" height="50" rx="6"/><rect x="444" y="208" width="195" height="50" rx="6"/><rect x="646" y="208" width="195" height="50" rx="6"/><rect x="646" y="266" width="195" height="50" rx="6"/></g>
   <g class="ts"><text x="50" y="230">D1 判断の配分</text><text x="252" y="230">D2 意味の一意性</text><text x="454" y="230">D3 生成と判定の分離</text><text x="656" y="230">D4 委任の尺度</text><text x="50" y="288">D5 確率的品質</text><text x="252" y="288">D6 境界</text><text x="454" y="288">D7 可逆性は設計で買える</text><text x="656" y="288">D8 自己権限の固定</text></g>
   <g class="tx"><a href="#ch3"><text x="50" y="250">第 3 章</text></a><a href="#ch4"><text x="252" y="250">第 4 章</text></a><a href="#ch2"><text x="454" y="250">第 2 章</text></a><a href="#ch3"><text x="656" y="250">第 3 章</text></a><a href="#ch5"><text x="50" y="308">第 5 章</text></a><a href="#ch6"><text x="252" y="308">第 6 章</text></a><a href="#ch7"><text x="454" y="308">第 7 章</text></a><text x="656" y="308"><a href="#ch3"><tspan>第 3 章</tspan></a><tspan>・</tspan><a href="#ch9"><tspan>第 9 章</tspan></a></text></g>
-  <rect x="40" y="336" width="18" height="18" rx="3" class="al"/><text x="66" y="351" class="ts">第 2・3 章で扱う 4 つ</text>
+  <rect x="40" y="336" width="18" height="18" rx="3" class="al"/><text x="66" y="351" class="ts">第 2・3 章で扱う D1・D3・D4・D8</text>
   <text x="840" y="351" class="tx" text-anchor="end">名前は条文のまま。中身は各章で</text>
 </svg>
 ```
