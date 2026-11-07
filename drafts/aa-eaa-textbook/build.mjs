@@ -9,7 +9,8 @@
 //
 // md の書き方
 //   # 第 N 章　章の題 … 章の概要のページ。章の題は章の主張を 1 文で言い切る。題の下に「群: 群の名前」1 行（必須）、
-//                       「> リード」1 行（任意。題に無い事を足すときだけ）、章の主張を描いた絵ちょうど 1 枚（無い・2 枚以上は build が止まる）
+//                       「> リード」1 行（任意。題に無い事を足すときだけ）、章の主張を描いた絵ちょうど 1 枚（無い・2 枚以上は build が止まる。
+//                       骨格の章だけは、無ければ build がモックの枠を出す。「絵: …」の行があれば枠に予定として出す）
 //                       同じ群の章は続けて並べる（飛び飛びなら build が止まる）。目次は群 → 章 → ページの順に出す
 //   ## ページの見出し  … ここから次の ## までが 1 ページ
 //   ```svg / ```dot   … 絵。1 ページにちょうど 1 枚（無い・2 枚以上は build が止まる）
@@ -91,14 +92,19 @@ function body(text, where, cover, skeleton = false) {
   const figs = [];
   text = text.replace(/^```(svg|dot)[^\n]*\n([\s\S]*?)^```[ \t]*$/gm, (_, k, src) => { figs.push(figure(k, src, where)); return ''; });
   if (figs.length > 1) fail(`${where}: 絵が ${figs.length} 枚（1 ページにちょうど 1 枚）`);
-  // 章の概要の絵は骨格の章でも省けない（10 章で揃うのを build で守る）
-  if (cover && !figs.length) fail(`${where}: 章の概要に絵が無い（章の主張を描いた絵をちょうど 1 枚）`);
+  // 章の概要の絵は省けない。骨格の章に限り、まだ描いていなければ build がモックの絵を出す（2026-11-07 kishibashi3「モック絵でも入れとけば」）。
+  // モックは書き手が描かない。build が組む枠だけにして、本物の絵と取り違えられないようにする（手で描いた仮の絵は本物と見分けが付かない）
+  if (cover && !figs.length && !skeleton) fail(`${where}: 章の概要に絵が無い（章の主張を描いた絵をちょうど 1 枚。まだなら書き手のメモに build: skeleton）`);
   const paras = text.split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
   const notes = paras.filter(s => /^(出典[:：]|※)/.test(s));
   const plan = paras.filter(s => /^絵[:：]/.test(s));
   const main = paras.filter(s => !notes.includes(s) && !plan.includes(s));
-  // 骨格の章で絵がまだ無いページは、枠と「絵: …」の予定を出す
-  if (!cover && skeleton && figs.length === 0) {
+  let mock = false;
+  if (cover && skeleton && figs.length === 0) {
+    const t = esc(plan.map(s => s.replace(/^絵[:：]\s*/, '')).join(' / ') || '章の主張の絵は未定');
+    figs.push(`<figure class="todo mock"><div class="todo-box"><span class="todo-tag">モック — 章の主張の絵はまだ描いていない</span><p>${t}</p></div></figure>`);
+    mock = true;
+  } else if (!cover && skeleton && figs.length === 0) {
     const t = esc(plan.map(s => s.replace(/^絵[:：]\s*/, '')).join(' / ') || '絵は未定');
     figs.push(`<figure class="todo"><div class="todo-box"><span class="todo-tag">絵</span><p>${t}</p></div></figure>`);
   } else if (plan.length) {
@@ -108,7 +114,7 @@ function body(text, where, cover, skeleton = false) {
   if (!cover && nBody > BODY_MAX) fail(`${where}: 文が ${nBody} 字（上限 ${BODY_MAX}）。絵に持たせるか、ページを分ける`);
   if (nNote > NOTE_MAX) fail(`${where}: 注が ${nNote} 字（上限 ${NOTE_MAX}）`);
   if (!cover && !figs.length) fail(`${where}: 絵が 0 枚（1 ページにちょうど 1 枚。骨格なら書き手のメモに build: skeleton）`);
-  return { fig: figs[0] || '', text: pandoc(main.join('\n\n')), note: pandoc(notes.join('\n\n')), nBody, nNote };
+  return { fig: figs[0] || '', mock, text: pandoc(main.join('\n\n')), note: pandoc(notes.join('\n\n')), nBody, nNote };
 }
 
 // ---------- HTML ----------
@@ -167,6 +173,10 @@ figure.todo { width: 100%; }
 .todo-box p { margin: 0; font-size: 17px; color: #6f6f68; text-align: center; line-height: 1.6; }
 section.page.skeleton h2 { color: #55554f; }
 section.page.skeleton::after { content: "骨格"; position: absolute; top: 14px; right: 40px; font-size: 11px; letter-spacing: .1em; color: #fff; background: #c3c3bb; padding: 2px 8px; border-radius: 3px; }
+/* モックの絵（骨格の章の概要で、章の主張の絵がまだ無い）。本物と取り違えないよう、枠も札も赤系にして「モック」と書く */
+figure.mock .todo-box { min-height: 260px; border-color: #e0a3a3; background: repeating-linear-gradient(45deg, #fdf6f6, #fdf6f6 10px, #f8eaea 10px, #f8eaea 20px); }
+figure.mock .todo-tag { background: #c62828; font-size: 14px; }
+#toc a.mock span:last-child::after { content: "（モック）"; color: #c62828; font-size: 11px; margin-left: 4px; }
 #toc a.sk span:last-child { color: #8a8a82; }
 #toc a.sk .n::after { content: "·"; margin-left: 3px; color: #c3c3bb; }
 
@@ -321,7 +331,7 @@ export function render(files, extraHead = '', full = false, book = 'aa') {
     const sk = p.skeleton ? ' sk' : '';
     if (p.cover && ch.group !== prevGroup) { prevGroup = ch.group; toc.push(`<div class="grp">${esc(ch.group)}</div>`); }
     toc.push(p.cover
-      ? `<div class="ch">${esc(p.title)}${ch.skeleton ? ' <span style="font-weight:400;font-size:12px;color:#8a8a82">骨格</span>' : ''}${p.lead ? `<span class="lead">${esc(p.lead)}</span>` : ''}</div><a href="#${id}" class="${sk.trim()}"><span class="n">${n}</span><span>この章の概要</span></a>`
+      ? `<div class="ch">${esc(p.title)}${ch.skeleton ? ' <span style="font-weight:400;font-size:12px;color:#8a8a82">骨格</span>' : ''}${p.lead ? `<span class="lead">${esc(p.lead)}</span>` : ''}</div><a href="#${id}" class="${(sk + (p.mock ? ' mock' : '')).trim()}"><span class="n">${n}</span><span>この章の概要</span></a>`
       : `<a href="#${id}" class="${sk.trim()}"><span class="n">${n}</span><span>${esc(p.title)}</span></a>`);
     const back = listId && id !== listId && ARTICLE_RE.test(plain(p.fig + p.text + p.note))
       ? `<a href="#${listId}" class="xref back">条文の一覧 p.${listNo} へ戻る</a>` : '';
@@ -342,12 +352,24 @@ export function render(files, extraHead = '', full = false, book = 'aa') {
 // build のたびに、このディレクトリの全ファイル（node_modules・build・package-lock.json・ドットで始まる .md を除く）を引き、当たれば止まる。
 // 飛ばすのは .gitignore で外れる .*.md だけ。.env.note のようなドットで始まる .md 以外のファイルは git に載りうるので引く。
 // 読み手に出さない作業用の文書（計画・控え・試作など）は名前をドットで始める（.plan.md など）。.gitignore の .*.md で git に載らない。
-// ドット無しの plan.md が在れば止まる。ドットで始まる文書が git から外れていなければ止まる。
+// ドットで始まらない名前は、本文と build の道具として決まった名前（PUBLIC_NAMES）だけを置ける。それ以外が 1 つでもあれば止まる。
+// 2026-11-07 に plan.md ちょうどだけを止める形から改めた。eaa-plan.md・memo.md・ch01-old.md・notes.txt のような名前は語を並べても漏れるので、
+// 止める名前を並べるのではなく、置いてよい名前を並べる（迷ったら止まる側）。本文のファイルを足すときは、名前をこの形に合わせる
+// ドットで始まる名前が git から外れていなければ止まる（.md 以外も）。
+const PUBLIC_NAMES = [
+  /^[a-z]+-ch\d+\.md$/, /^[a-z]+-(yomikata|kanmatsu)\.md$/,
+  /^(build|dev)\.(mjs|sh)$/, /^package(-lock)?\.json$/, /^(node_modules|build)$/,
+];
 export function checkPrivate() {
-  if (fs.existsSync(path.join(ROOT, 'plan.md'))) fail('plan.md がある（.plan.md にする）');
-  for (const n of fs.readdirSync(ROOT).filter(n => n.startsWith('.') && n.endsWith('.md'))) {
+  for (const n of fs.readdirSync(ROOT).filter(n => !n.startsWith('.'))) {
+    if (!PUBLIC_NAMES.some(re => re.test(n))) fail(`本文でも build の道具でもない名前がある: ${n}（作業用なら、ドットで始まる .md にする。例 .${n.replace(/\.[^.]*$/, '')}.md）`);
+    const book = n.match(/^([a-z]+)-(ch\d+|yomikata|kanmatsu)\.md$/);
+    if (book && !BOOKS.includes(book[1])) fail(`本の名前が ${book[1]}: ${n}（${BOOKS.join(' / ')} のどれか）`);
+  }
+  // ドットで始まる名前は .md に限らず全部、git から外れていることを確かめる（.notes.txt は .*.md に当たらず git に載る）
+  for (const n of fs.readdirSync(ROOT).filter(n => n.startsWith('.'))) {
     try { execFileSync('git', ['check-ignore', '-q', n], { cwd: ROOT }); }
-    catch { fail(`${n} が git から外れていない（.gitignore の .*.md を確かめる）`); }
+    catch { fail(`${n} が git から外れていない（作業用の文書はドットで始まる .md にする。.gitignore の .*.md で外れる）`); }
   }
   const list = process.env.AA_PRIVATE_WORDS || path.join(os.homedir(), 'app', 'aa-eaa-textbook', 'private-words.txt');
   if (!fs.existsSync(list)) fail(`出さない語の一覧が無い: ${path.basename(list)}（AA_PRIVATE_WORDS で場所を指定）`);
@@ -378,6 +400,9 @@ export function sources(args, book = 'aa') {
 }
 
 export function report(chs) {
+  // モックの絵のままの章は毎回名前を出す（描いたつもりで描いていない章を残さない）
+  const mocks = chs.filter(ch => ch.pages.some(p => p.cover && p.mock)).map(ch => ch.name);
+  if (mocks.length) console.log(`  モックの絵（章の主張の絵がまだ無い）: ${mocks.length} 章 — ${mocks.join(' ')}`);
   for (const ch of chs) {
     const ps = ch.pages.filter(p => !p.cover);
     const sum = ps.reduce((a, p) => a + p.nBody, 0);
