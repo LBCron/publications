@@ -1,11 +1,11 @@
-# 第 4 章　分割で引き渡した判断権限は受け取った Cell のものになり、親 Cell もその判断を上書きしない
+# 第 4 章　分割で渡した判断権限は、親 Cell も上書きしない
 
 群: Cell の分割と自治
 
 <!--
 build: skeleton
 骨格（章題・群・リード・絵はモック）。依頼元 @ope-ultp1635 msg a4149b96。
-構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群はそこから逐語。構造は変えない。
+構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
 出どころ（構造の表のまま）: core.md:43・52-53・62-63・70。Core は publications origin/main 0d07f75 の core.md 版 6。
 -->
 
