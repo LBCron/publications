@@ -194,7 +194,7 @@ Cell を分ける・まとめる・責務を外すときは、権限から、ま
 
 ※ 確かめる項目を挙げたもので、この例で効果が出たという実測ではありません。出典: EAA 考え方と開発の姿「5.」。
 
-## 引き継ぎの細かい手順は、まだ無い
+## Core はここまでしか決めていない
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -205,7 +205,7 @@ Cell を分ける・まとめる・責務を外すときは、権限から、ま
   <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">まだ果たしていない保証を消さない</text>
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">保証を変えるなら合意し直す</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
-  <text x="480" y="64" class="t" font-weight="700">まだ決まっていないこと</text>
+  <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
   <g class="ts"><text x="480" y="105">引き継ぎの細かい手順</text><text x="480" y="145">移している間の責任</text><text x="480" y="185">分離・再統合の移行の手順</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">決まっていない所を、ほかの Cell からの一方的な強制で埋めない</text>
 </svg>

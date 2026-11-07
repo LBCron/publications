@@ -253,10 +253,10 @@ Contract の所有者は、Contract を結ぶ Cell に属する人間 1 人で�
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">所有者がいない間の扱い</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="105">商取引上の契約書との関係</text><text x="480" y="145">後任の合意が成り立たないとき</text><text x="480" y="185">所有者本人が出した改訂の承認者</text></g>
+  <g class="ts"><text x="480" y="105">商取引上の契約書との関係</text><text x="480" y="145">後任の合意が成り立たないとき</text><text x="480" y="185">所有者本人が提起した改訂の承認者</text></g>
 </svg>
 ```
 
-Contract と商取引上の契約書の関係を、Core は定めていません。後任の合意が成り立たないときと、所有者本人が出した改訂の承認者も、まだ書いていません。
+Contract と商取引上の契約書の関係を、Core は定めていません。後任の合意が成り立たないときと、所有者本人が提起した改訂の承認者も、まだ書いていません。
 
-出典: EAA Core 版 6 冒頭の観測欄（合意不成立）と「4.」。契約主体をまたぐ責任と受入は、EAA Profiles「6.」の Supplier の責務。
+出典: EAA Core 版 6 冒頭の観測欄（合意不成立）と「4.」。契約主体をまたぐ責任と受入は EAA Profiles「6.」の Supplier の責務。所有者本人の改訂は第 10 章。
