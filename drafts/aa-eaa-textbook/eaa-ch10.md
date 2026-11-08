@@ -1,4 +1,4 @@
-# 第 10 章　共有文書の所有者は人間で、改訂は提起した者以外が承認する
+# 第 10 章　共有文書の改訂は人間の所有者が承認し、提起した者は承認しない
 
 群: 規範の承認・採用と導入
 
@@ -14,6 +14,7 @@ publications の #135・#136・#137 と APPROVALS 行 12〜15 を実例として
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。人は橙の四角、Agent は青の丸い札（第 0・2 章と同じ）。
 新しく引く外部の文献は無い。
 準拠先（③、@ope-ultp1635 msg 6ec153b2）: 例の 3 項目は在庫と物流の Contract の欄で、Cell 間で共有する文書の準拠先は core.md:94 で自己改訂規範アーキテクチャ v1・最小構成と決まっている（core.md:12 の Core 自身の準拠先も同じ）。前の版は「EAA Core 版 6」と書いており誤りだったので、第 8 章の例に揃えた。各 Cell の中の規範が Core に準拠する話はこの章では書いていない。
+⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 章題「改訂は提起した者以外が承認する」と最後のページから「所有者が承認する」（core.md:90）が落ちていた。「以外」だと所有者でない人でも承認できると読める。章題を「改訂は人間の所有者が承認し、提起した者は承認しない」にし（titles.md に記録）、最後のページの左と文に足した。p.「中の改訂の手続き」は、絵の結び・文が「Core の条件は中の規範に及ばない」、注が「緩めない行は中にも及ぶ」で逆だった。core.md:94-95 で中に及ばないのは「所有者・観測・準拠先を持つ」（同アーキテクチャへの準拠）の要求で、core.md:96 は文書を限っていない。絵の結び・文の主語をその要求に絞り、注が指す行を前の 2 ページと書いた。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページで、所有者本人の改訂の承認者を「決めていないこと」から外し、core.md:90・94・98 からの帰結として左に書いた。例のページの文に core.md:90（改訂を判断するのは所有者）を足した。残りの 2 項目は core.md:11 に無いので「Core に書かれていない」。権限が足りないときの戻し先を core.md:70 の字「正当な判断主体」に揃えた（第 2・4 章と同じ）。
 -->
 
@@ -188,15 +189,15 @@ Profile の正本を編集できる権限だけでは、合意した義務を消
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="50" width="260" height="200" rx="10" class="box"/><text x="170" y="86" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text><text x="170" y="150" class="ts" text-anchor="middle">中の規範の改訂は</text><text x="170" y="176" class="ts" text-anchor="middle">在庫が決めた手続き</text>
   <rect x="580" y="50" width="260" height="200" rx="10" class="box"/><text x="710" y="86" class="t" text-anchor="middle" font-weight="700">物流の Cell</text><text x="710" y="150" class="ts" text-anchor="middle">中の規範の改訂は</text><text x="710" y="176" class="ts" text-anchor="middle">物流が決めた手続き</text>
-  <rect x="330" y="110" width="220" height="80" rx="3" class="hl" style="fill:#fff"/><text x="440" y="144" class="ts hc" text-anchor="middle" font-weight="700">Contract</text><text x="440" y="170" class="tx" text-anchor="middle">Core の条件を当てる</text>
+  <rect x="330" y="110" width="220" height="80" rx="3" class="hl" style="fill:#fff"/><text x="440" y="144" class="ts hc" text-anchor="middle" font-weight="700">Contract</text><text x="440" y="170" class="tx" text-anchor="middle">所有者・観測・準拠先を持つ</text>
   <path d="M300,150 H326 M554,150 H576" class="ln"/>
-  <text x="440" y="310" class="t" text-anchor="middle" font-weight="700">Core の条件が及ぶのは、あいだの合意の変更と採用</text>
+  <text x="440" y="310" class="t" text-anchor="middle" font-weight="700">所有者・観測・準拠先の要求が及ぶのは、共有する文書</text>
 </svg>
 ```
 
-この条件は、Cell の中の規範には及びません。中の改訂の手続きは各 Cell が決め、Core の条件はあいだの合意の変更と採用に当てます。
+所有者・観測・準拠先を持つという要求は、Cell の中の規範には及びません。中の改訂の手続きは各 Cell が決めます。
 
-出典: EAA Core 版 6「4. 提案と変更」。※ 自分を縛る規範を緩めない行は共有する文書に限っていないので、中の規範にも当たる、と読みました。
+出典: EAA Core 版 6「4. 提案と変更」。※ 前の 2 ページ（自分を縛る規範を緩めない・自分で権限を広げない）の行は共有する文書に限っていないので、中の規範にも当たる、と読みました。
 
 ## 例：所有者本人が提起したら
 
@@ -222,7 +223,7 @@ Profile の正本を編集できる権限だけでは、合意した義務を消
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="30" width="380" height="290" rx="10" class="soft"/>
   <text x="60" y="64" class="t" font-weight="700">Core が決めていること</text>
-  <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">共有する文書の所有者は人間</text>
+  <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">改訂は人間の所有者が承認する</text>
   <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">提起した者は承認しない</text>
   <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">自分を縛る規範を緩めない</text>
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">自分の権限を広げない</text>
@@ -235,6 +236,6 @@ Profile の正本を編集できる権限だけでは、合意した義務を消
 </svg>
 ```
 
-所有者本人の改訂は、未決ではなく、Core の字の範囲では承認できる者がいません。提起者と承認者が別だと記録でどう示すかは、Core に書かれていません。
+改訂は人間の所有者が承認し、提起した者は承認しないので、所有者本人の改訂は承認できる者がいません。二者が別だと記録でどう示すかは、Core に書かれていません。
 
 出典: EAA Core 版 6「4. 提案と変更」「5. 成果と記録」。Core は職務分離を保つことと、改訂を後から追える記録に残すことだけを求めています。

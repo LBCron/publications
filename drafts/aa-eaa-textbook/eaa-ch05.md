@@ -11,6 +11,7 @@
 Platform の分離は development-model.md:55「構成例であり、効果の実証ではない」。例のページの注と、効果のページの注に書いた。
 development-model.md:58 にある比喩の語は本文に持ち込まない（root CLAUDE.md「成果物の文章の作法」の語の表）。
 新しく引く外部の文献は無い。
+⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目、項 15）: core.md の「移行」は版の移行（core.md:79・80）の語で、分割の引継ぎ（core.md:57）には「移行」の字が無い。core.md:11 の「移行中の責任」が分割の引継ぎに当たるかは Core の字では決まらないので、最後のページの注にそう書いた。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの「決めていないこと」を、Core の既知の不足（core.md:11 の移行中の責任）と、Profiles が未決・未確定とした引継ぎ・移行の手順（profiles.md:83・135）に分けた。
 -->
 
@@ -207,11 +208,11 @@ Cell を分ける・まとめる・責務を外すときは、権限から、ま
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">保証を変えるなら合意し直す</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="132" class="ts">移している間の責任</text><text x="480" y="182" class="ts" font-weight="700">Profiles が未決・未確定とした</text><text x="480" y="212" class="ts">引き継ぎの細かい手順</text><text x="480" y="242" class="ts">分離・再統合の移行の手順</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="132" class="ts">移行中の責任（分割に当たるかは未定）</text><text x="480" y="182" class="ts" font-weight="700">Profiles が未決・未確定とした</text><text x="480" y="212" class="ts">引き継ぎの細かい手順</text><text x="480" y="242" class="ts">分離・再統合の移行の手順</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">手順が未定の調整を、ほかの Cell からの一方的な強制で埋めない</text>
 </svg>
 ```
 
-何を移し、何を残してはいけないかは Core が決めています。移している間の責任は Core の既知の不足、引き継ぎと移行の手順は Profiles が未確定としています。
+何を移し、何を残してはいけないかは Core が決めています。引き継ぎと移行の手順は Profiles が未確定としています。
 
-出典: EAA Core 版 6 の冒頭の観測欄（既知の不足）と「2. 自治と権限」、EAA Profiles「5.」「10. 今後定める仕様」。
+出典: EAA Core 版 6 冒頭の観測欄・「2.」、EAA Profiles「5.」「10.」。※ Core の「移行」は版の移行（「3.」）の語で、分割の引き継ぎに当たるかは決まらない。

@@ -1,4 +1,4 @@
-# 第 3 章　責務を先に Profile に書き、Cell は判断を別の責任者に渡すときだけ分ける
+# 第 3 章　責務を先に Profile に書き、Cell は判断の権限を別の責任主体に渡して分ける
 
 群: Cell の分割と自治
 
@@ -9,13 +9,14 @@ core.md は 49 行に続く 50 行（一つの Cell が複数 Profile を担っ�
 本文: @ope-ultp1635 msg 18751c19（群二）。
 絵: Cell はどれも枠の外に対等に並べ、どの Cell もほかの Cell の枠の中に描かない（同 msg。core.md:43）。
 development-model.md:18-27 のうち 24・25 行（Enterprise／Domain は全体と部分という位置の呼び名、同じ Cell が全体として子 Cell を持つ）は包含の字なので使っていない（25 行は同 msg で名指し、24 行は同じ字の組なので合わせて外した）。
-リードの「サービスの数から Cell の数を決めず」は working-notes.md:19 による（同ファイルの 13 行ではない）。p.「Profile やサービスの数で決めない」の注に書いた。
+「サービスの数から Cell の数を決めず」は working-notes.md:19 による（同ファイルの 13 行ではない）。p.「Profile やサービスの数で決めない」の注に書いた。⑥ でリードからは外した。
 判断の責任者を Role Model は Operator（Ope）と呼ぶ。Role Model は適用例で規範ではない。p.「分けるのは、判断を渡すとき」の注に書いた。
 新しく引く外部の文献は無い。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: p.「Profile は責務の版付きの仕様」の出典欄の「まだ決まっていない」を、未確定としているのは Profiles（profiles.md:5・135）だと書き直した。
+⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 章題・章の概要の絵の「判断を渡すときだけ分ける」の「だけ」は Core に無く、出どころは Delivery Guide・Role Model（適用例）で、第 0 章の「Core に無い決まりを足さない」とぶつかっていた。章題は core.md:52 の定義（分割は責務と判断権限を別の責任主体へ渡すこと）の字にし、「だけ」を落とした（titles.md に記録）。リードの「Profile やサービスの数から決めず、負荷が増えて渡すときに分ける」は適用例だと書いた。p.「Profile やサービスの数で決めない」の出典に（適用例）を足し、Core が決めている範囲（core.md:50）を書いた。
 -->
 
-> Profile は組織図より先に書く。一つの Cell が複数の Profile を担ってよい。Profile の数やサービスの数から Cell の数を決めず、判断の負荷が増えて別の Operator に渡すときに分ける。
+> Profile は組織図より先に書く。一つの Cell が複数の Profile を担ってよい。いつ分けるかは、適用例が、判断の負荷が続けて増えて別の Operator に渡すときとしている。
 
 ```svg
 <svg viewBox="0 0 880 300" width="880" height="300">
@@ -32,7 +33,7 @@ development-model.md:18-27 のうち 24・25 行（Enterprise／Domain は全体
   <path d="M140,70 V116" class="ln" marker-end="url(#arr)"/><path d="M340,70 V116" class="ln" marker-end="url(#arr)"/><path d="M540,70 V116" class="ln" marker-end="url(#arr)"/><path d="M740,70 V116" class="ln" marker-end="url(#arr)"/>
   <text x="340" y="206" class="tx" text-anchor="middle">一つの Cell が Platform・契約・受注を担う</text>
   <text x="750" y="206" class="tx" text-anchor="middle">判断を渡した所だけ分かれた</text>
-  <text x="440" y="274" class="t" text-anchor="middle" font-weight="700">責務を先に書き、Cell は判断を渡す所でだけ分ける</text>
+  <text x="440" y="274" class="t" text-anchor="middle" font-weight="700">責務を先に書き、判断の権限を渡した所で Cell が分かれる</text>
 </svg>
 ```
 
@@ -170,7 +171,7 @@ Profile に権限を書いただけでは、その権限は生まれません。
 
 Profile の数からも、既存のサービスの数からも、Cell の数は決めません。決めるのは、独立した判断の責任をいくつに分けるかです。
 
-出典: EAA Role Model「4. Profile と配置」、EAA Profiles「5.」。サービスの数は EAA Working Notes の冒頭の整理による。
+出典: EAA Role Model「4.」（適用例）、EAA Profiles「5.」、EAA Working Notes 冒頭。Core が決めるのは一つの Cell が複数を担ってよいことまで。
 
 ## 分けるのは、判断を渡すとき
 
@@ -192,7 +193,7 @@ Profile の数からも、既存のサービスの数からも、Cell の数は�
 
 初めから全部の Profile を専用の Cell にはしません。判断の負荷が続けて増えたら、責務を別の責任者に渡し、その人が判断します。そこで Cell が分かれます。
 
-出典: EAA Delivery Guide「4.」、EAA Role Model「4.」（どちらも適用例）。Role Model は判断の責任者を Operator と呼ぶ。
+出典: EAA Delivery Guide「4.」、EAA Role Model「4.」（適用例。責任者を Operator と呼ぶ）。分割が判断の権限を渡すことなのは Core「1.」の定義。
 
 ## 最初の Mission に要る範囲から書く
 

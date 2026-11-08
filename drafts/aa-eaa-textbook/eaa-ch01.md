@@ -10,6 +10,7 @@
 「出口」「崩れ方」は比喩なので使わない（titles.md の判断と同じ）。「集める」「任せる」と、失敗の中身（判断待ちが伸びる・承認なしに書き換わる）で書く。
 「一人の PO が持てるチームの数が減る」「列が早く伸びる」は推論で実測ではない（素材 0 の付記）。p.9 の注に書いた。
 「実行が安くなった」は確定した事実として扱わない（素材 0 の付記）。p.8 の注に書いた。
+⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: p.「書いても、片側で書き換わる」の注は、以前「所有者は人間・提起者は承認しない」で防ぐと書き、第 10 章を指していた。core.md:98 で Contract の所有者は結ぶ Cell のどれか一つに属する人なので、A 側の人が提起して A 側の所有者が承認すれば、その二つを満たしたまま片側で改訂を承認できる。防ぐのは core.md:79（自動追随しない）・80（全 Cell が同じ版を採用して成立）・91（採用は採用側の所有者が判断）なので、その字にし、参照先を版の採用の第 9 章にした。LeSS の 2 件に URL と参照日を足した（注の上限に収まらないので、Kniberg・Lee と同じく絵の中に書いた。参照日は EAA 紹介 0 の調査で取得した日）。URL と参照日は deep-research/research-archive/2026-09-28-eaa-intro-zero-two-lineages.md（調査日 2026-09-28、§検索クエリ列の curl 先）による。この本では当たり直していない（上の行と同じ）。
 -->
 
 > 実行の費用が下がるほど、集める側では判断待ちの列が伸び、任せる側では Contract を自分の側だけで改訂できてしまう。どちらのやり方も成り立つ範囲が狭くなる。
@@ -102,7 +103,7 @@
   <use href="#i-pile" x="716" y="96" width="40" height="40"/>
   <text x="740" y="176" class="ts xc" text-anchor="middle">一人には多すぎる</text>
   <rect x="40" y="236" width="800" height="110" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="270" class="ts sub">LeSS の記述（訳）</text>
+  <text x="60" y="270" class="ts sub">LeSS の記述（訳）　less.works/less/less-huge/area-product-owner（2026-09-28 参照）</text>
   <text x="60" y="302" class="t">50 チームなら、1 iteration だけで PBI は 200 件になる。</text>
   <text x="60" y="332" class="t">200 件の優先順位を付けるのは、一人の PO には多すぎる。</text>
 </svg>
@@ -110,7 +111,7 @@
 
 LeSS は、優先順位の最終決定を一人の Product Owner（PO）に置き、その上限を数で書いています。PO を補う役を置く主な理由も、過負荷を防ぐためです。
 
-出典: LeSS「Area Product Owner」（英文。訳は EAA 紹介 0 による）。PBI は Product Backlog の項目、iteration は開発の 1 周期。
+出典: LeSS「Area Product Owner」（英文。URL・参照日は絵の中。訳は EAA 紹介 0）。PBI は Product Backlog の項目、iteration は開発の 1 周期。
 
 ## 集める：SAFe は範囲を限る
 
@@ -145,14 +146,14 @@ SAFe は、複数チームの計画を周期ごとの PI Planning でまとめ�
   <rect x="360" y="216" width="160" height="50" rx="6" fill="#b5b5b5" opacity=".7"/><text x="440" y="247" class="ts on" text-anchor="middle">正式な調整の場</text>
   <use href="#i-no" x="510" y="206" width="24" height="24"/><text x="546" y="247" class="tx">要らない</text>
   <rect x="40" y="290" width="800" height="72" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="314" class="ts sub">LeSS の記述（訳）</text>
+  <text x="60" y="314" class="ts sub">LeSS の記述（訳）　less.works/less/framework/coordination-and-integration（2026-09-28 参照）</text>
   <text x="60" y="344" class="ts">調整のために、正式で、たいてい遅い仕組みは要らない。</text>
 </svg>
 ```
 
 LeSS は、優先順位は一人の PO に集めつつ、チーム間の調整は任せる側に寄せています。調整が要るなら、相手のチームと直接話して合わせます。
 
-出典: LeSS「Coordination and Integration」（英文。訳は EAA 紹介 0 による）。
+出典: LeSS「Coordination and Integration」（英文。URL・参照日は絵の中。訳は EAA 紹介 0）。
 
 ## 任せる：Spotify と大きな案件
 
@@ -188,7 +189,7 @@ Spotify は、任せる側に大きく寄りました。目指したのは、疎
   <g class="box"><rect x="60" y="200" width="100" height="50" rx="6"/><rect x="280" y="200" width="100" height="50" rx="6"/></g>
   <g class="ts" text-anchor="middle"><text x="110" y="231">ベンダー</text><text x="330" y="231">ベンダー</text></g>
   <path d="M110,198 L190,130 M330,198 L250,130" class="ln" marker-end="url(#arr)"/>
-  <rect x="170" y="150" width="100" height="40" rx="3" class="lt" style="fill:#fff"/><text x="220" y="175" class="tx" text-anchor="middle">契約・検収の条件</text>
+  <rect x="155" y="150" width="130" height="40" rx="3" class="lt" style="fill:#fff"/><text x="220" y="175" class="tx" text-anchor="middle">契約・検収の条件</text>
   <g class="box"><rect x="500" y="130" width="100" height="50" rx="6"/><rect x="720" y="130" width="100" height="50" rx="6"/></g>
   <g class="ts" text-anchor="middle"><text x="550" y="161">ベンダー</text><text x="770" y="161">ベンダー</text></g>
   <path d="M600,146 H714" class="hl" marker-end="url(#arr)"/><path d="M720,166 H606" class="hl" marker-end="url(#arr)"/>
@@ -263,7 +264,7 @@ Agent が実装を担えるようになり、実行が安くなりました。�
   <rect x="500" y="60" width="70" height="48" rx="6" class="h"/><text x="535" y="90" class="ts on" text-anchor="middle">人</text>
   <rect x="740" y="60" width="70" height="48" rx="6" class="h"/><text x="775" y="90" class="ts on" text-anchor="middle">人</text>
   <path d="M570,84 H734" class="hl"/><text x="655" y="76" class="tx hc" text-anchor="middle">話して合わせる</text>
-  <path d="M775,110 V150" class="lt dash" marker-end="url(#arr)"/><text x="790" y="136" class="tx xc">書かれていない</text>
+  <path d="M775,110 V150" class="lt dash" marker-end="url(#arr)"/><text x="765" y="136" class="tx xc" text-anchor="end">書かれていない</text>
   <rect x="720" y="156" width="110" height="40" rx="4" class="a"/><text x="775" y="182" class="ts on" text-anchor="middle">Agent が作る</text>
   <g class="ts xc" text-anchor="middle"><text x="660" y="236">欠けた所を、毎回違う形で埋める</text></g>
   <text x="440" y="300" class="t" text-anchor="middle" font-weight="700">合わせた人と、実行する者が分かれた</text>
@@ -311,7 +312,7 @@ Agent が実装を担えるようになり、実行が安くなりました。�
 
 書いても、その取り決めを自分の側だけで改訂できれば、相手の承認なしに書き換わります。インターフェースも受入の条件も、いつでも変わりうるものになります。
 
-※ EAA は、共有する文書の所有者を人間とし、改訂を提起した者がその改訂を承認しないと決めて防ぎます（第 10 章）。出典: EAA Core 版 6「4. 提案と変更」。
+※ EAA は、採用は各 Cell の所有者が決め、Contract は結ぶ Cell の全部が同じ版を採用して成り立つ、として防ぎます（第 8・9 章）。出典: EAA Core 版 6「3.」「4.」。
 
 ## 相手の中は、こちらから選べない
 

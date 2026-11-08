@@ -8,6 +8,7 @@
 本文: @ope-ultp1635 msg a8d86548（群ごとに 4 回。群一から）。骨格の章の概要の後ろに本文のページを足した。
 絵: Cell は枠の外に対等に並べ、どの Cell もほかの Cell の枠の中に描かない（同 msg。core.md:43「分割の後の両者の関係は、ほかの Cell どうしと同じ Cell の間の関係である」）。
 包含の字のある development-model.md:25・33、working-notes.md:13 は出どころに使っていない（同 msg）。
+⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: Evidence の定義に core.md:39 の「判断」を戻した。「どの版に従うかは各 Cell が決める」は、Contract がどの版で成り立つかまで各 Cell が決めると読めるので、各 Cell が決めるのは採用（core.md:79・91）、成り立つのは全 Cell が同じ版を採用したとき（core.md:80）と分けた。見出し「判断の責任者ごとの単位」は第 2 章の題と同じ理由で「判断の責任と権限の単位」にした（core.md:28。core.md:42 で一つの Cell に責任を共有する人は複数いてよい）。絵の「責任者」は、その Cell の判断の責任を負う人を一つの四角で描いたもの。
 -->
 
 > この本では、自律して開発する主体を Cell と呼ぶ。Cell を分けて広げる目的は、互いの成果を受け取り、その上に次の成果を積めるようにすることで、そのために境界を越えて流れるのは Evidence である。
@@ -56,7 +57,7 @@
 
 ※ 複数社で組むなら、これは契約・検収・責任分界の問いでもあります。
 
-## Cell：判断の責任者ごとの単位
+## Cell：判断の責任と権限の単位
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -122,14 +123,14 @@ Cell を分けて広げる目的は、Cell どうしが互いの成果を受け�
   <rect x="100" y="140" width="120" height="44" rx="4" class="a"/><text x="160" y="168" class="ts on" text-anchor="middle">成果</text>
   <path d="M220,162 H594" class="ln" marker-end="url(#arr)"/>
   <use href="#i-pr" x="350" y="122" width="30" height="38"/><text x="440" y="150" class="ts" text-anchor="middle" font-weight="700">Evidence</text>
-  <rect x="350" y="182" width="180" height="20" style="fill:#fff"/><text x="440" y="197" class="tx" text-anchor="middle">成り立ったことを確かめる記録</text>
+  <rect x="320" y="182" width="240" height="20" style="fill:#fff"/><text x="440" y="197" class="tx" text-anchor="middle">成果や判断の成立を確かめる記録</text>
   <use href="#i-ok" x="626" y="146" width="30" height="30"/><text x="740" y="168" class="ts okc" text-anchor="middle">自分で確かめる</text>
   <path d="M700,220 C 600,300 300,300 200,226" fill="none" stroke="#c62828" stroke-width="2" class="dash" marker-end="url(#arr-x)"/>
   <use href="#i-no" x="428" y="276" width="24" height="24"/><text x="440" y="324" class="ts xc" text-anchor="middle">作った側に聞かないと確かめられない形にしない</text>
 </svg>
 ```
 
-境界を越えて流れるのは、成果が成り立ったことを確かめる記録、Evidence です。受け取った Cell が、作った Cell を介さずに確かめられる形にします。
+境界を越えて流れるのは、成果や判断が成り立ったことを確かめる記録、Evidence です。受け取った Cell が、作った Cell を介さずに確かめられる形にします。
 
 ※ 確かめるのが受け取った側なのは、どの Cell の判断も、ほかの Cell が一方的に上書きしないから。上書きの決まりは第 4 章、Evidence は第 6 章。
 
@@ -149,13 +150,13 @@ Cell を分けて広げる目的は、Cell どうしが互いの成果を受け�
     <rect x="370" y="300" width="140" height="32" rx="4" class="lt" style="fill:#fff"/><text x="440" y="321">共有する Ontology</text>
     <rect x="540" y="300" width="140" height="32" rx="4" class="lt" style="fill:#fff"/><text x="610" y="321">Evidence の様式</text>
   </g>
-  <text x="440" y="362" class="ts sub" text-anchor="middle">ほかの共有文書にも版が付く。どの版に従うかは各 Cell が決める</text>
+  <text x="440" y="362" class="ts sub" text-anchor="middle">ほかの共有文書にも版が付く。採用する版は各 Cell が決める</text>
 </svg>
 ```
 
-どの Evidence を渡すかは、Cell のあいだで共有する文書の Contract に書きます。共有する文書には版が付き、どの版に従うかは各 Cell が決めます。
+どの Evidence を渡すかは、Cell のあいだで共有する文書の Contract に書きます。共有する文書には版が付き、どの版を採用するかは各 Cell が決めます。
 
-※ 共有する文書の所有者は人間で、改訂を提起した者はその改訂を承認しない（第 10 章）。Contract は第 8 章、版の採用は第 9 章。
+※ Contract は、結ぶ Cell の全部が同じ版を採用したときに、その版で成り立つ（第 8・9 章）。共有する文書の改訂は人間の所有者が承認し、提起した者は承認しない（第 10 章）。
 
 ## 一人にも会議にも預けない
 

@@ -1,4 +1,4 @@
-# 第 7 章　仕事は Mission で渡し、完了は Outcome と Acceptance Evidence で決める
+# 第 7 章　仕事は Mission で渡し、作業や受け入れだけでは完了にしない
 
 群: Evidence・Mission・Contract と版
 
@@ -13,6 +13,7 @@ Mission の例の ontology の参照先は、原文では enterprise:// で始�
 完了を誰が判定するかは core.md:106-107 に名指しが無い。最後のページに書いた。
 新しく引く外部の文献は無い。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの項目は core.md:11 の既知の不足に無いので「Core に書かれていない」に置き、「まだ」を落とした。
+⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 章題と章の概要（絵の結び・文）が完了の条件を Outcome と Acceptance Evidence だけにしていた。core.md:106 は Contract 更新・判断記録・権限違反の解消も要る（「完了に要るもの」のページは全部書いていた）。章題は core.md:107 の「作業実施や変更の受入だけでは完了しない」の字にし（titles.md に記録）、概要の文に残りの条件を足した。core.md:107 の「必要な職務分離」の「必要な」を戻した。p.「目的を変えるなら」は core.md:67 の「新Missionまたは改訂として提案する」の「提案する」を落としていたので戻し、見出しも変えた。p.「決めたことは、記録に戻す」の絵の「会話だけに残った決定は正式な決定として扱わない」は delivery-guide.md:127 の字で（そこからも「重要な」が落ちていた）、Core より強い内容なのに最後のページで「Core が決めていること」に入っていた。絵と最後のページを core.md:110 の字にし、Delivery Guide の字は適用例として注に置いた。
 -->
 
 > Mission には Goal・Constraints・Authority・Acceptance Evidence を書く。Task の分け方は受けた Cell が決め、作業したことや受け入れたことだけでは完了にならない。
@@ -25,12 +26,12 @@ Mission の例の ontology の参照先は、原文では enterprise:// で始�
   <path d="M280,130 H316" class="ln" marker-end="url(#arr)"/><path d="M564,130 H596" class="ln" marker-end="url(#arr)"/>
   <rect x="600" y="30" width="250" height="200" rx="10" class="box"/><text x="725" y="66" class="t" text-anchor="middle" font-weight="700">受けた Cell</text>
   <rect x="630" y="90" width="190" height="40" rx="6" class="soft"/><text x="725" y="116" class="ts" text-anchor="middle">Task は自分で分ける</text>
-  <rect x="630" y="150" width="190" height="56" rx="6" class="soft"/><text x="725" y="174" class="ts" text-anchor="middle">Outcome と</text><text x="725" y="196" class="ts" text-anchor="middle">Acceptance Evidence</text>
-  <text x="440" y="274" class="t" text-anchor="middle" font-weight="700">渡すのは条件。完了は、成り立った変化と記録で決める</text>
+  <rect x="630" y="150" width="190" height="56" rx="6" class="soft"/><text x="725" y="174" class="ts" text-anchor="middle">完了に要るものを</text><text x="725" y="196" class="ts" text-anchor="middle">全部揃える</text>
+  <text x="440" y="274" class="t" text-anchor="middle" font-weight="700">渡すのは条件。完了は、作業でなく、要るものが揃ったかで決める</text>
 </svg>
 ```
 
-一回の仕事は、目指す状態と条件を書いた Mission で渡します。作業を終えたことではなく、成り立った変化と、受け入れに使うと決めた Evidence で完了を決めます。
+一回の仕事は、目指す状態と条件を書いた Mission で渡します。完了には、成り立った変化と決めた Evidence に加え、要る記録と権限違反の解消が要ります。
 
 ## Mission は、今回の変化
 
@@ -164,7 +165,7 @@ Mission を受けた Cell は、それを実現するための作業の単位を
 
 出典: EAA Core 版 6「2. 自治と権限」。※ 請求の例は説明のためのものです。
 
-## 目的を変えるなら、新しい Mission に
+## 目的を変えるなら、提案する
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -174,11 +175,11 @@ Mission を受けた Cell は、それを実現するための作業の単位を
   <rect x="40" y="190" width="800" height="150" rx="10" class="soft"/>
   <text x="70" y="226" class="ts" font-weight="700">途中で目的そのものを変えたくなったら</text>
   <use href="#i-no" x="70" y="246" width="22" height="22"/><text x="102" y="263" class="ts">いまの Mission の中で、黙って目的を変える</text>
-  <use href="#i-ok" x="70" y="286" width="22" height="22"/><text x="102" y="303" class="ts">新しい Mission にするか、改訂として提案する</text>
+  <use href="#i-ok" x="70" y="286" width="22" height="22"/><text x="102" y="303" class="ts">新しい Mission として、または改訂として提案する</text>
 </svg>
 ```
 
-分けた先の Mission は、元の Goal にどう寄与するかを説明できるようにします。目的を変えるなら、新しい Mission にするか、改訂として提案します。
+分けた先の Mission は、元の Goal にどう寄与するかを説明できるようにします。目的を変えるなら、新しい Mission として、または改訂として提案します。
 
 出典: EAA Core 版 6「2. 自治と権限」。Core は分けた先を子 Mission、元を親 Goal と呼ぶ。Cell の親子とは別の呼び名。
 
@@ -212,12 +213,12 @@ Mission を受けた Cell は、それを実現するための作業の単位を
   <use href="#i-no" x="146" y="146" width="28" height="28"/><use href="#i-no" x="426" y="146" width="28" height="28"/><use href="#i-no" x="706" y="146" width="28" height="28"/>
   <text x="440" y="214" class="t" text-anchor="middle" font-weight="700">どれも、それだけでは完了ではない</text>
   <rect x="140" y="246" width="600" height="80" rx="10" class="box"/>
-  <text x="440" y="280" class="ts" text-anchor="middle">合意した確かめの条件と、行う者と確かめる者を分けることを</text>
+  <text x="440" y="280" class="ts" text-anchor="middle">合意した確かめの条件と、必要な職務分離（行う者と確かめる者を分ける）を</text>
   <text x="440" y="306" class="ts" text-anchor="middle">完了の判定まで保つ</text>
 </svg>
 ```
 
-作業をやり終えたことや変更を受け入れたことだけでは、完了しません。PR の merge も同じです。合意した確かめの条件と、行う者と確かめる者の分離を保ちます。
+作業をやり終えたことや変更を受け入れたことだけでは、完了しません。PR の merge も同じです。合意した確かめの条件と、必要な職務分離を保ちます。
 
 出典: EAA Core 版 6「5. 成果と記録」、EAA Delivery Guide「8.」（PR merge は Mission の完了と同義ではない）。
 
@@ -235,13 +236,13 @@ Mission を受けた Cell は、それを実現するための作業の単位を
   <text x="60" y="284">Close</text><text x="200" y="284">Evidence による完了の記録</text></g>
   <rect x="500" y="80" width="340" height="80" rx="6" class="box"/><text x="670" y="116" class="ts" text-anchor="middle">チャット・会議</text><text x="670" y="142" class="tx" text-anchor="middle">その場の連絡</text>
   <path d="M670,160 V210 H464" class="ln" marker-end="url(#arr)"/><text x="680" y="196" class="ts" font-weight="700">決まったら戻す</text>
-  <text x="670" y="290" class="ts xc" text-anchor="middle">会話だけに残った決定は、</text><text x="670" y="314" class="ts xc" text-anchor="middle">正式な決定として扱わない</text>
+  <text x="670" y="290" class="ts xc" text-anchor="middle">重要な決定を、</text><text x="670" y="314" class="ts xc" text-anchor="middle">その場の会話だけに残さない</text>
 </svg>
 ```
 
 Mission、実行、Evidence、受け入れ、改訂、引き継ぎを、後から追える形で残します。重要な決定を、その場の会話だけに残しません。
 
-出典: EAA Core 版 6「5. 成果と記録」、EAA Delivery Guide「6. GitHub Mission Ledger Pattern」（適用例。英語の対応は日本語に開いた）。
+出典: EAA Core 版 6「5.」、EAA Delivery Guide「6.」（適用例）。※ 同ガイドは、記録に戻らない重要な決定を正式な決定と扱わない、とまで書く。Core より強い。
 
 ## Core はここまでしか決めていない
 
@@ -252,7 +253,7 @@ Mission、実行、Evidence、受け入れ、改訂、引き継ぎを、後か�
   <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">Mission に書く欄の名前</text>
   <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">Task は受けた Cell が分ける</text>
   <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">完了に要るもの</text>
-  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">決定を記録に残す</text></g>
+  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">重要な決定を会話だけに残さない</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
   <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも、決める予定にも無い</text><text x="480" y="166" class="ts">Mission の書式（項目名・記法）</text><text x="480" y="206" class="ts">欄ごとに何をどこまで書くか</text><text x="480" y="246" class="ts">完了を判定する者の名指し</text></g>
@@ -260,6 +261,6 @@ Mission、実行、Evidence、受け入れ、改訂、引き継ぎを、後か�
 </svg>
 ```
 
-Mission の書式は Core に書かれていません。完了を判定する者も Core は名指しせず、確かめの条件と職務分離を保つことだけを求めています。
+Mission の書式は Core に書かれていません。完了を判定する者も Core は名指しせず、合意した確かめの条件と必要な職務分離を保つことを求めています。
 
 出典: EAA Core 版 6「5. 成果と記録」、EAA Delivery Guide「7.」（説明用の記法で、確定した書式ではない）。

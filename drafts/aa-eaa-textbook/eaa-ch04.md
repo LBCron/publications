@@ -8,7 +8,7 @@
 本文: @ope-ultp1635 msg 18751c19（群二）。
 絵: 親 Cell と子 Cell は横に並べ、子を親の枠の中に描かない。親子の線は、ほかの Cell どうしの線と同じ形にした（core.md:43「分割の後の両者の関係は、ほかのCellどうしと同じCellの間の関係である」）。55 行（子Cell群を持つCell）には合わせていない（同 msg）。骨格にあった「（保留）子 Cell を親 Cell の枠の中に描くか」は、描かないで閉じた。
 「親・子」の字は、分割の由来を言うときだけ使う。分割の後の関係を言う文では「渡した Cell」「受け取った Cell」と書いた。
-最後のページ「上書きを許すと、確かめが効かない」は core.md:22（他 Cell は一方的に上書きしないので、確かめるのは受け取った Cell）による。第 0 章と同じ行。
+最後のページ「上書きしないので、届いた側が確かめる」は core.md:22（他 Cell は一方的に上書きしないので、確かめるのは受け取った Cell）による。第 0 章と同じ行。⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 以前は題を「上書きを許すと、確かめが効かない」とし、「確かめる → だから上書きしない」と core.md:22 と逆の向きで書いていた。しかも core.md:22 の「受け取った Cell」（Evidence の受け手）と、この章の「受け取った Cell」（分割で責務を受け取った子、上の行の取り決め）を混ぜていた。親が子の成果を受け取る場合、その論法は親が上書きしないことを支えない。core.md:22 の向きに戻し、Evidence の受け手を「届いた Cell」と書き分け、親が上書きしない根拠を core.md:63 に置いた。
 新しく引く外部の文献は無い。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 「決める権限のある相手」を core.md:70 の字「正当な判断主体」に直した。自分の Cell 側の主体が抜けないため。第 2・10 章と揃う。
 -->
@@ -133,20 +133,20 @@
 
 出典: EAA Core 版 6「2. 自治と権限」。
 
-## 上書きを許すと、確かめが効かない
+## 上書きしないので、届いた側が確かめる
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="70" width="240" height="200" rx="10" class="box"/><text x="160" y="106" class="t" text-anchor="middle" font-weight="700">作った Cell</text>
-  <rect x="600" y="70" width="240" height="200" rx="10" class="box"/><text x="720" y="106" class="t" text-anchor="middle" font-weight="700">受け取った Cell</text>
+  <rect x="40" y="70" width="240" height="200" rx="10" class="box"/><text x="160" y="106" class="t" text-anchor="middle" font-weight="700">作った Cell</text><text x="160" y="132" class="tx" text-anchor="middle">例：分割で責務を受け取った子</text>
+  <rect x="70" y="200" width="180" height="44" rx="6" class="soft"/><text x="160" y="228" class="ts" text-anchor="middle">判断は作った Cell のもの</text>
+  <rect x="600" y="70" width="240" height="200" rx="10" class="box"/><text x="720" y="106" class="t" text-anchor="middle" font-weight="700">届いた Cell</text><text x="720" y="132" class="tx" text-anchor="middle">例：分割で責務を渡した親</text>
   <path d="M280,160 H596" class="ln" marker-end="url(#arr)"/><use href="#i-pr" x="425" y="124" width="30" height="38"/><text x="440" y="186" class="ts" text-anchor="middle">Evidence</text>
-  <use href="#i-ok" x="636" y="140" width="28" height="28"/><text x="750" y="160" class="ts okc" text-anchor="middle">確かめて受け入れる</text>
-  <rect x="600" y="210" width="240" height="44" rx="6" class="soft"/><text x="720" y="238" class="ts" text-anchor="middle">判断は受け取った Cell のもの</text>
-  <path d="M440,330 C 560,330 680,310 700,262" class="xl dash" marker-end="url(#arr-x)"/><text x="300" y="336" class="ts xc" text-anchor="middle">別の Cell が判断を書き換える</text>
-  <use href="#i-no" x="560" y="306" width="24" height="24"/>
+  <use href="#i-ok" x="636" y="190" width="28" height="28"/><text x="750" y="210" class="ts okc" text-anchor="middle">届いたものを確かめる</text>
+  <path d="M640,250 C 560,320 340,320 250,248" class="xl dash" marker-end="url(#arr-x)"/><text x="440" y="340" class="ts xc" text-anchor="middle">作った側の判断を書き換える</text>
+  <use href="#i-no" x="428" y="290" width="24" height="24"/>
 </svg>
 ```
 
-成果を確かめるのは、受け取った Cell です。その判断をほかの Cell が書き換えられるなら、確かめた意味がなくなります。だから、親であっても上書きしません。
+ほかの Cell の判断は上書きしないので、届いたものは受け取った Cell が確かめます。親が子の成果を受け取るときも、子の判断は書き換えず、確かめます。
 
-出典: EAA Core 版 6「0. 目的と範囲」（第 0 章と同じ行）。※「確かめた意味がなくなる」は、この行からの読みで、Core が書いた理由ではない。
+出典: EAA Core 版 6「0.」（第 0 章と同じ行）・「2.」。※ ここで受け取るのは Evidence で、分割で責務を受け取った側とは限らない。親が上書きしない根拠は「2.」。

@@ -12,6 +12,7 @@
 提起者が承認しないことの理由と、Core の採用の承認は第 10・11 章が言う。この章では手続きの順序の中で一度だけ触れ、先の章を指した。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
+⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: p.「承認して、新しい版を公開する」は、在庫の側が承認しない理由を「提起した者は承認しない」（core.md:94）にしていた。core.md:94 は人の単位の規定で、Cell の単位の分離ではない。在庫の側が承認しないのは、改訂を判断するのが所有者（core.md:90）で、所有者が物流の側にいる（core.md:98・第 8 章の例）から。理由をそちらに替え、core.md:94 は人の単位で満たしていることを注に書いた。第 1 章の「片側で書き換わる」の注と同じ取り違え。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの見出しを「詳しい手順が未定のこと」にし、各項目が core.md:11 の既知の不足であることを書いた。以前は見出しが「決めていないこと」で、扱い全体が未決に読めた（緊急時・合意不成立には core.md:71・101・102 の字がある）。
 -->
 
@@ -114,17 +115,17 @@ Cell のあいだの変更は、提案する側が内容・理由・根拠を示
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="60" width="300" height="200" rx="10" class="box"/><text x="190" y="96" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
   <text x="190" y="150" class="ts" text-anchor="middle">改訂を提起した</text>
-  <use href="#i-no" x="176" y="172" width="28" height="28"/><text x="190" y="226" class="ts xc" text-anchor="middle">自分では承認しない</text>
+  <use href="#i-no" x="176" y="172" width="28" height="28"/><text x="190" y="226" class="ts xc" text-anchor="middle">所有者がいないので承認しない</text>
   <rect x="540" y="60" width="300" height="200" rx="10" class="box"/><text x="690" y="96" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
   <rect x="630" y="116" width="120" height="40" rx="6" class="h"/><text x="690" y="142" class="ts on" text-anchor="middle">所有者</text>
   <use href="#i-ok" x="676" y="172" width="28" height="28"/><text x="690" y="226" class="ts okc" text-anchor="middle">承認して版 2 を公開</text>
-  <text x="440" y="320" class="t" text-anchor="middle" font-weight="700">提起した者と承認する者が、分かれている</text>
+  <text x="440" y="320" class="t" text-anchor="middle" font-weight="700">承認するのは Contract の所有者で、物流の側にいる</text>
 </svg>
 ```
 
-所有者が承認すると、版 2 が公開されます。改訂を提起した者はその改訂を承認しないので、この例では、提起した在庫と承認する物流の所有者が分かれています。
+所有者が承認すると、版 2 が公開されます。承認する所有者は、この例では物流の側にいます。在庫の側が承認しないのは、在庫の側に所有者がいないからです。
 
-出典: EAA Core 版 6「4. 提案と変更」。承認の規定は第 10 章で見ます。
+出典: EAA Core 版 6「4.」、規定は第 10 章。※「提起した者は承認しない」は人の単位の決まりで、Cell の単位ではない。この例では提起した人と所有者が別の人。
 
 ## 採用するかは、各 Cell が決める
 

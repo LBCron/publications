@@ -15,9 +15,10 @@ adoption-guide.md:270-277 の英語の段は日本語に開いた（Recorded Dec
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後の絵の「各 Cell の中の作り方」を「自分の案件で決めること」から外し、Core の側に「各 Cell が決める」（core.md:62）として置いた。第 2・4 章と本文に揃う。
+⑥ の通し見（@ope-ultp1635 msg 6fc17eeb）: リードの「独立した判断が要る所だけ Cell を分ける」は第 3 章で「だけ」を落としたのと同じ字で、規範の形だった。出どころは Adoption Guide「7.」（適用例）なので、リードに適用例の導入だと書いた。本文の「導入の順序」のページは出典欄に適用例とあるので変えていない。
 -->
 
-> 既存の Scrum・SAFe・委託先の工程は残し、Evidence を観測して責務を Profile に書き、独立した判断が要る所だけ Cell を分ける。
+> 適用例の導入は、既存の Scrum・SAFe・委託先の工程を残し、Evidence を観測して責務を Profile に書き、独立した判断が要る所だけ Cell を分ける。
 
 ```svg
 <svg viewBox="0 0 880 300" width="880" height="300">

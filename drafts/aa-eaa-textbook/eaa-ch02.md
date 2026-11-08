@@ -1,4 +1,4 @@
-# 第 2 章　Cell は判断の責任者で数え、作り方では数えない
+# 第 2 章　Cell は判断の責任と権限で数え、作り方では数えない
 
 群: Cell の分割と自治
 
@@ -13,6 +13,7 @@ Local Delivery Model の表は Delivery Guide の「例」で、規範ではな�
 ④（@ope-ultp1635 msg 02ab9595、@reviewer 2026-11-08 ch10-12 1-3）: delivery-guide.md:20「各 Domain は」を「業務ごとに」と書いていたのを「Cell ごとに」に直した。内部方式を決める単位は core.md:62 で Cell、core.md:50 で一つの Cell が複数 Profile を担うので、業務と Cell は 1 対 1 ではない。表の Domain 名は日本語にし、Cell の枠に業務の名前として「Contract」が残らないようにした（「契約」。第 3 章の Domain Profile の例と同じ字）。delivery-guide.md:35 の「Escalation できる」は「上げられる」と書いていたのを、core.md:70 の字（明示し、正当な判断主体との調整へ戻す）に直した。core.md:70 は向きを持たず、core.md:63 は親 Cell も上書きしないとするので、「上げる」は第 4 章と逆の形になる。
 新しく引く外部の文献は無い（Scrum・Kanban・SAFe ART は名前を挙げるだけで、記述を引いていない）。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: p.「揃えるのは外とのつながり方」の出典欄に「（適用例）」を足した。
+⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 「Cell の数は判断の責任者の数」は、読みだと断ったのが「Agent に配っても」の注だけで、章題・章の概要の文・絵の結び・第 0 章の見出しは規範の形だった。しかも中身が Core と閉じていなかった — core.md:42 は一つの Cell に責任を共有する人が複数いることを認め、core.md:52 は渡し先を「責任主体」と書いて人に限らない。数える物を「判断の責任と権限」（core.md:28 の定義の語）にし、増えるのは責務と判断権限を別の責任主体に渡したとき（core.md:52）と書いた。章題も同じ字に変えた（titles.md に記録）。導いたものであることは章の概要のページにも書いた。
 -->
 
 > Federation は Cell の内部方式を指定しない。AA で動く Cell も、Scrum のチームも、委託先の標準工程も同じ形でつながり、全責務を一つの AA が担う構成は Cell が一つの EAA である。
@@ -35,7 +36,9 @@ Local Delivery Model の表は Delivery Guide の「例」で、規範ではな�
 </svg>
 ```
 
-Cell は、判断の責任者ごとに数えます。中が AA でも、人のチームでも、委託先の工程でも、つながり方は変わりません。
+Cell は、判断の責任と権限で数えます。中が AA でも、人のチームでも、委託先の工程でも、つながり方は変わりません。
+
+※ 数え方は、Core の Cell の定義と分割の規定から導いたもので、Core が数え方として書いた行はありません（このページの読みの根拠は「Agent に配っても Cell は増えない」）。
 
 ## Cell は責任・権限・実行能力の単位
 
@@ -159,14 +162,14 @@ EAA が揃えるのは、中の作り方ではなく外とのつながり方で�
   <rect x="715" y="94" width="80" height="40" rx="6" class="h"/><text x="755" y="120" class="ts on" text-anchor="middle">責任者</text>
   <rect x="527" y="180" width="56" height="40" rx="20" class="a"/><rect x="727" y="180" width="56" height="40" rx="20" class="a"/>
   <path d="M640,114 H670" class="hl"/>
-  <text x="655" y="316" class="ts sub" text-anchor="middle">判断を別の責任者に渡した</text>
-  <text x="440" y="356" class="t" text-anchor="middle" font-weight="700">Cell の数は、判断の責任者の数</text>
+  <text x="655" y="316" class="ts sub" text-anchor="middle">責務と判断の権限を別の責任主体に渡した</text>
+  <text x="440" y="356" class="t" text-anchor="middle" font-weight="700">Cell が増えるのは、判断の権限を渡したとき</text>
 </svg>
 ```
 
-一人の責任者が Task を何体の Agent に配っても、Cell は一つのままです。Cell が増えるのは、判断を別の責任者に渡したときです。
+Task を何体の Agent に配っても、Cell は一つのままです。Cell が増えるのは、責務と判断の権限を別の責任主体に渡したときです。
 
-出典: EAA 考え方と開発の姿「3.」。※「Cell の数は判断の責任者の数」は、この行と Core の Cell の定義からの読みで、Core の規定ではない。
+出典: EAA Core 版 6「1.」、EAA 考え方と開発の姿「3.」。※ 渡す先は責任主体で、人に限りません。一つの Cell の責任を、複数の人で負ってもかまいません。
 
 ## つないでも、相手は AA にならない
 
@@ -179,7 +182,7 @@ EAA が揃えるのは、中の作り方ではなく外とのつながり方で�
   <text x="710" y="200" class="ts" text-anchor="middle">既存の人のチーム</text>
   <text x="710" y="226" class="ts sub" text-anchor="middle">Agent を使わない</text>
   <path d="M300,170 H580" class="hl"/><use href="#i-pr" x="428" y="138" width="24" height="30"/><text x="440" y="196" class="ts" text-anchor="middle">Evidence</text>
-  <rect x="330" y="216" width="220" height="44" rx="6" class="soft"/><text x="440" y="244" class="ts" text-anchor="middle">内部方式の異なる Cell の Federation</text>
+  <rect x="302" y="216" width="276" height="44" rx="6" class="soft"/><text x="440" y="244" class="tx" text-anchor="middle">内部方式の異なる Cell の Federation</text>
   <text x="710" y="262" class="tx" text-anchor="middle">つないでも、AA にはならない</text>
   <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">相手が Agent を使うかを、つなぐ条件にしない</text>
 </svg>
