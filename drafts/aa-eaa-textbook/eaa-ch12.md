@@ -1,6 +1,7 @@
-# 第 12 章　導入は、境目を越える行き来を記録で見ることから始める
+# 第 12 章　EAA の導入
 
 群: 切り直しと加わり方
+副題: 導入は、境目を越える行き来を記録で見ることから始める
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（77de7781）の第 12 章。着手: @ope-ultp1635 msg cfe0fe59（群五）。

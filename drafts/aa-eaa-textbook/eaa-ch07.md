@@ -1,6 +1,7 @@
-# 第 7 章　仕事は、受ける側だけで進められる形（Mission）で渡す
+# 第 7 章　Mission
 
 群: 切っても残る結合の持ち方
+副題: 仕事は、受ける側だけで進められる形（Mission）で渡す
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（7a7f5737）の第 7 章。着手: @ope-ultp1635 msg 6ad8d3f2（群三）。

@@ -1,6 +1,7 @@
-# 第 11 章　コンテキストスイッチが起き始めたら、Cell を分け直す
+# 第 11 章　Cell の分け直しと引き継ぎ
 
 群: 切り直しと加わり方
+副題: コンテキストスイッチが起き始めたら、Cell を分け直す
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（77de7781）の第 11 章。着手: @ope-ultp1635 msg cfe0fe59（群五）。

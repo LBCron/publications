@@ -1,6 +1,7 @@
-# 第 1 章　職能は、Agent の仕事を分ける軸にならない
+# 第 1 章　職能による分業
 
 群: 巨大なシステムの分業という問い
+副題: 職能は、Agent の仕事を分ける軸にならない
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（6e3f57bf・dd08b888）の第 1 章。GO: @ope-ultp1635 msg b918626f。

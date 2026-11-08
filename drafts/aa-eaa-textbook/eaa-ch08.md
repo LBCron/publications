@@ -1,6 +1,7 @@
-# 第 8 章　成果は、作った側に聞かずに Evidence で確かめる
+# 第 8 章　Evidence
 
 群: 切っても残る結合の持ち方
+副題: 成果は、作った側に聞かずに Evidence で確かめる
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（7a7f5737）の第 8 章。着手: @ope-ultp1635 msg 6ad8d3f2（群三）。

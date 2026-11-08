@@ -1,6 +1,7 @@
-# 第 5 章　権限で分けると、判断のたびに他へ問い合わせずに済む
+# 第 5 章　権限による分割
 
 群: 文脈が疎結合になる切り方
+副題: 権限で分けると、判断のたびに他へ問い合わせずに済む
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（dd08b888）の第 5 章。着手: @ope-ultp1635 msg 83d1e0ea（群二）。

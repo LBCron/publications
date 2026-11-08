@@ -1,6 +1,7 @@
-# 第 10 章　権限で切った切れ目は、一人の都合では動かない
+# 第 10 章　改訂の承認と権限
 
 群: 分業を続けながら切れ目を保つ
+副題: 権限で切った切れ目は、一人の都合では動かない
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（0f0a562c）の第 10 章。着手: @ope-ultp1635 msg adc84781（群四）。

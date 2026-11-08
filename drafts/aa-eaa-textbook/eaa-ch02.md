@@ -1,6 +1,7 @@
-# 第 2 章　分ける単位は、コンテキストスイッチが起きない範囲にする
+# 第 2 章　Cell の境目
 
 群: 文脈が疎結合になる切り方
+副題: 分ける単位は、コンテキストスイッチが起きない範囲にする
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（dd08b888）の第 2 章。着手: @ope-ultp1635 msg 83d1e0ea（群二）。

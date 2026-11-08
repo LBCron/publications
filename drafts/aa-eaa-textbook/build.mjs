@@ -8,10 +8,12 @@
 // 作りは、別の資料の build の「md の ```dot を build 時に SVG にする」を借りた。コードは新しく書いた。
 //
 // md の書き方
-//   # 第 N 章　章の題 … 章の概要のページ。章の題は章の主張を 1 文で言い切る。題の下に「群: 群の名前」1 行（必須）、
-//                       「> リード」1 行（任意。題に無い事を足すときだけ）、章の主張を描いた絵ちょうど 1 枚（無い・2 枚以上は build が止まる。
+//   # 第 N 章　章の題 … 章の概要のページ。題の下に「群: 群の名前」1 行（必須）、「副題: …」1 行（任意）、
+//                       「> リード」1 行（任意。題と副題に無い事を足すときだけ）、章の主張を描いた絵ちょうど 1 枚（無い・2 枚以上は build が止まる。
 //                       骨格の章だけは、無ければ build がモックの枠を出す。「絵: …」の行があれば枠に予定として出す）
 //                       同じ群の章は続けて並べる（飛び飛びなら build が止まる）。目次は群 → 章 → ページの順に出す
+//                       章題は名詞句、章の主張は副題に 1 文で置く（root CLAUDE.md「成果物の文章の作法」二、2026-11-08）。EAA はこの形。
+//                       AA の章題はまだ主張の 1 文で、副題を持たない。目次の章題の下には副題を出す（副題が無ければリードを出す）
 //   ## ページの見出し  … ここから次の ## までが 1 ページ
 //   ```svg / ```dot   … 絵。1 ページにちょうど 1 枚（無い・2 枚以上は build が止まる）
 //   ふつうの段落       … 文。1 ページ BODY_MAX 字まで（超えたら build が止まる）
@@ -21,7 +23,7 @@
 //   ## 題、「| 第 N 章 | 読み終えると、できること |」の表、文、注。表の絵は build が組む（章名は章の概要へのリンク。群の名前の行も build が挟む）
 //   「読み方は」で始まる段落 … 読み方のコース。文と同じ大きさで出すが、文の BODY_MAX には数えず COURSE_MAX 字まで（前提の段落が上限ちょうどのため）
 //   3 列目（執筆者のおすすめ ★）は 2026-11-07 に外した。目次は話の順 1 本にし、効き目は「読み方は」の段落の「急ぐなら」で言う
-// 付録（<本>-furoku.md）… 章の後ろ・巻末の前に置く。題は「# 付録　…」。組み方は巻末と同じ
+// 付録（<本>-furoku.md）… 章の後ろ・巻末の前に置く。題は「# 付録　…」。組み方は巻末と同じ。「副題: …」1 行だけは持てて、目次に出す
 // 巻末（<本>-kanmatsu.md）… 章の後ろに置く。題は「# 巻末　…」。章の概要・群・リードは持たず、## のページだけ。ページ番号は章から続ける。読み方の表には出さない
 import fs from 'node:fs';
 import path from 'node:path';
@@ -34,7 +36,7 @@ export const BODY_MAX = 80;   // 1 ページの文の上限（字。空白と md
 export const NOTE_MAX = 90;   // 注の上限
 const COURSE_MAX = 40;        // 読み方の 1 枚のコースの上限
 const HEAD_MAX = 20;          // 見出しの上限
-const TITLE_MAX = 30;         // 章題の上限（「第 N 章　」「付録　」を除く）。章題は一つの主張で止め、理由・帰結・限定は章の概要に書く。AA の章題 10 本の最長 29 字に合わせた（2026-11-08、@ope-ultp1635 msg 12bf66b5）
+const TITLE_MAX = 30;         // 章題と副題の上限（章題は「第 N 章　」「付録　」を除く）。副題は一つの主張で止め、理由・帰結・限定は章の概要に書く。AA の章題 10 本の最長 29 字に合わせた（2026-11-08、@ope-ultp1635 msg 12bf66b5。副題に当てたのは msg 23aba03d）
 
 export class BuildError extends Error {}
 const fail = msg => { throw new BuildError(msg); };
@@ -76,13 +78,16 @@ export function readChapter(file) {
   const appendix = /^(巻末|付録)/.test(h1[1].trim());   // 付録（<本>-furoku.md）も巻末と同じ組み方。章の後ろ・巻末の前に置く
   const titleBody = h1[1].trim().replace(/^(第 \d+ 章|付録|巻末)　/, '');
   if (countChars(titleBody) > TITLE_MAX) fail(`${name}: 章題が ${countChars(titleBody)} 字（上限 ${TITLE_MAX}）。理由・帰結・限定は章の概要に移す`);
-  // 章題が章の主張を言い切る。「群:」1 行で群に入れる（巻末以外は必須）。「> 」1 行のリードは任意で、題に無い事を足すときだけ書く
+  // 章題は名詞句、「副題:」1 行が章の主張（任意。付録も持てる）。「群:」1 行で群に入れる（巻末以外は必須）。「> 」1 行のリードは任意で、題と副題に無い事を足すときだけ書く
   let cover = parts.shift().replace(/^# .+$/m, '');
+  const sub = ((cover.match(/^副題[:：]\s*(.+)$/m) || [])[1] || '').trim();
+  cover = cover.replace(/^副題[:：].*$/m, '');
+  if (countChars(sub) > TITLE_MAX) fail(`${name}: 副題が ${countChars(sub)} 字（上限 ${TITLE_MAX}）。理由・帰結・限定は章の概要に移す`);
   const group = appendix ? '' : (cover.match(/^群[:：]\s*(.+)$/m) || fail(`${name}: 章題の下に「群: …」が無い`))[1].trim();
   cover = cover.replace(/^群[:：].*$/m, '');
   const lead = appendix ? '' : ((cover.match(/^> (.+)$/m) || [])[1] || '').trim();
   cover = cover.replace(/^> .+$/m, '');
-  const pages = appendix ? [] : [{ cover: true, title: h1[1].trim(), lead, ...body(cover, `${name} の章の概要`, true, skeleton) }];
+  const pages = appendix ? [] : [{ cover: true, title: h1[1].trim(), sub, lead, ...body(cover, `${name} の章の概要`, true, skeleton) }];
   parts.forEach((p, i) => {
     const nl = p.indexOf('\n');
     const title = (nl < 0 ? p : p.slice(0, nl)).trim();
@@ -90,7 +95,7 @@ export function readChapter(file) {
     if (countChars(title) > HEAD_MAX) fail(`${where}: 見出しが ${countChars(title)} 字（上限 ${HEAD_MAX}）`);
     pages.push({ title, skeleton, ...body(nl < 0 ? '' : p.slice(nl + 1), where, false, skeleton) });
   });
-  return { name, title: h1[1].trim(), group, lead, skeleton, appendix, pages };
+  return { name, title: h1[1].trim(), sub, group, lead, skeleton, appendix, pages };
 }
 function body(text, where, cover, skeleton = false) {
   const figs = [];
@@ -151,6 +156,7 @@ section.page figure svg { max-width: 100%; max-height: 100%; height: auto; }
 section.cover { padding: 46px 80px 30px; }
 section.cover .run { position: absolute; top: 18px; left: 40px; right: 40px; }
 section.cover h1 { font-size: 36px; margin: 0 0 6px; line-height: 1.35; }   /* 章の題が主張の 1 文になり長いので 44 → 36px */
+section.cover .sub { font-size: 26px; font-weight: 700; color: var(--h); margin: 0 0 8px; line-height: 1.4; }
 section.cover .lead { font-size: 24px; font-weight: 700; color: var(--ink); margin: 0 0 6px; line-height: 1.45; }
 section.cover figure { margin: 6px 0 10px; }
 section.cover .txt { font-size: 19px; color: #444; line-height: 1.55; }
@@ -329,18 +335,18 @@ export function render(files, extraHead = '', full = false, book = 'aa') {
   let prevGroup = null;
   const secs = chs.flatMap(ch => ch.pages.map((p, i) => {
     n++;
-    if (ch.appendix && i === 0) toc.push(`<div class="ch">${esc(ch.title)}</div>`);
+    if (ch.appendix && i === 0) toc.push(`<div class="ch">${esc(ch.title)}${ch.sub ? `<span class="lead">${esc(ch.sub)}</span>` : ''}</div>`);
     const id = `p${n}`;
     p.fig = linkFigure(p.fig, `${ch.name} ${id}`, covers, k, full);
     const sk = p.skeleton ? ' sk' : '';
     if (p.cover && ch.group !== prevGroup) { prevGroup = ch.group; toc.push(`<div class="grp">${esc(ch.group)}</div>`); }
     toc.push(p.cover
-      ? `<div class="ch">${esc(p.title)}${ch.skeleton ? ' <span style="font-weight:400;font-size:12px;color:#8a8a82">骨格</span>' : ''}${p.lead ? `<span class="lead">${esc(p.lead)}</span>` : ''}</div><a href="#${id}" class="${(sk + (p.mock ? ' mock' : '')).trim()}"><span class="n">${n}</span><span>この章の概要</span></a>`
+      ? `<div class="ch">${esc(p.title)}${ch.skeleton ? ' <span style="font-weight:400;font-size:12px;color:#8a8a82">骨格</span>' : ''}${(p.sub || p.lead) ? `<span class="lead">${esc(p.sub || p.lead)}</span>` : ''}</div><a href="#${id}" class="${(sk + (p.mock ? ' mock' : '')).trim()}"><span class="n">${n}</span><span>この章の概要</span></a>`
       : `<a href="#${id}" class="${sk.trim()}"><span class="n">${n}</span><span>${esc(p.title)}</span></a>`);
     const back = listId && id !== listId && ARTICLE_RE.test(plain(p.fig + p.text + p.note))
       ? `<a href="#${listId}" class="xref back">条文の一覧 p.${listNo} へ戻る</a>` : '';
     const run = `<div class="run"><span>${esc(p.cover ? ch.group : ch.title)}</span>${back}<span>${n}</span></div>`;
-    if (p.cover) return `<section class="page cover" id="${id}">${run}<h1>${esc(p.title)}</h1>${p.lead ? `<p class="lead">${esc(p.lead)}</p>` : ''}${p.fig}<div class="txt">${p.text}</div></section>`;
+    if (p.cover) return `<section class="page cover" id="${id}">${run}<h1>${esc(p.title)}</h1>${p.sub ? `<p class="sub">${esc(p.sub)}</p>` : ''}${p.lead ? `<p class="lead">${esc(p.lead)}</p>` : ''}${p.fig}<div class="txt">${p.text}</div></section>`;
     return `<section class="page${p.skeleton ? ' skeleton' : ''}" id="${id}">${run}<h2>${esc(p.title)}</h2>${p.fig}<div class="txt">${p.text}</div><div class="note">${p.note}</div></section>`;
   }));
   const title = chs.map(c => c.title).join(' / ');

@@ -1,6 +1,7 @@
-# 第 4 章　ドメインで分けると、読む語と記録が一つの範囲に閉じる
+# 第 4 章　ドメインによる分割
 
 群: 文脈が疎結合になる切り方
+副題: ドメインで分けると、読む語と記録が一つの範囲に閉じる
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（dd08b888）の第 4 章。着手: @ope-ultp1635 msg 83d1e0ea（群二）。

@@ -1,6 +1,7 @@
-# 第 6 章　残る結合は、書いた取り決め（Contract）に集める
+# 第 6 章　Contract
 
 群: 切っても残る結合の持ち方
+副題: 残る結合は、書いた取り決め（Contract）に集める
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（7a7f5737）の第 6 章。着手: @ope-ultp1635 msg 6ad8d3f2（群三）。

@@ -1,6 +1,7 @@
-# 第 3 章　価値で分けると、Cell の優先順位が一つに揃う
+# 第 3 章　価値による分割
 
 群: 文脈が疎結合になる切り方
+副題: 価値で分けると、Cell の優先順位が一つに揃う
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（dd08b888）の第 3 章。着手: @ope-ultp1635 msg 83d1e0ea（群二）。
