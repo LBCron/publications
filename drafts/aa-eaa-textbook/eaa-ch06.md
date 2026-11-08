@@ -1,4 +1,4 @@
-# 第 6 章　境界を越えるのは Evidence で、語の定義は両側がそれぞれ持つ
+# 第 6 章　境界を越えるのは Evidence で、語の定義は両側が共有して持つ
 
 群: Evidence・Mission・Contract と版
 
@@ -9,7 +9,8 @@
 足した出どころ: 群三の通しの例（在庫と物流）は素材 3（drafts/agentic-agile-materials/explanations/eaa/3-hand-over-versions.html）。素材 3 は Core 版 2 を定義元にしているので、取った箇所は版 6 の行に当て直した。Evidence になる記録の例は delivery-guide.md:203-212（Evidence Graph の node 例）。英語の node 名は日本語に開いた（「production trace」→「本番の実行記録」など）。開いたことは注に書いた。
 「出荷日」の意味のずれは、説明のための例で、素材 3 にも Core にも無い。注に書いた。
 共有する Ontology・Evidence の様式の所有者をどう決めるかは、core.md:94 が所有者を持つことを求めるだけで、決め方は Contract（core.md:98-102）にしか書いていない。最後のページに書いた。
-包含と同じ形の字として、profiles.md:107「EnterpriseのOntology」と development-model.md:45「DomainからEnterpriseへのOntology訂正」は使っていない（Ontology を全体の側が一つ持つ形で、core.md:21「境界の両側が保持する」と食い違う。development-model.md:24 の Enterprise／Domain と同じ字の組）。
+包含と同じ形の字として、profiles.md:107「EnterpriseのOntology」と development-model.md:45「DomainからEnterpriseへのOntology訂正」は使っていない。理由は、Ontology を持つ者が全体の側（Enterprise）になり、core.md:21「境界の両側が保持する」と食い違うこと（development-model.md:24 の Enterprise／Domain と同じ字の組）。Ontology が一つであることは理由にしていない — 二つの Cell が共有する一つの Ontology（core.md:94）は全体の側の持ち物ではなく、この本はその形を取る。
+Ontology の形（③、@ope-ultp1635 msg 6ec153b2、@reviewer 2026-11-08 ch06-09 1-1・1-2）: core.md:21「両側が保持する共通語の定義」が、同じ定義を両側が持つ意味か、各側が自分の定義を持つ意味かは、Core の字だけでは決まらない。この本は、core.md:94 が Ontology を Cell 間で共有する文書に数え、core.md:36 が意味の違いと対応を Ontology が保持するとしていることから、二つの Cell のあいだに共有する Ontology が一つあり、両側がそれを持つ、と読む。読みであることは本文の「語の定義は、両側が共有して持つ」のページに断った。絵は Contract・Evidence の様式と同じく、二つの Cell の間に一つ置く（第 0・8 章と同じ形）。各 Cell の中の語の使い方は Core が扱わないので、Ontology とは呼ばずに描く。「出荷日」がまだ共有する Ontology に無いという設定も説明のための仮定で、本文の注に書いた。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
 -->
@@ -20,15 +21,14 @@
 <svg viewBox="0 0 880 300" width="880" height="300">
   <rect x="30" y="30" width="280" height="200" rx="10" class="box"/><text x="170" y="64" class="t" text-anchor="middle" font-weight="700">作った Cell</text>
   <rect x="570" y="30" width="280" height="200" rx="10" class="box"/><text x="710" y="64" class="t" text-anchor="middle" font-weight="700">受け取った Cell</text>
-  <rect x="60" y="150" width="220" height="56" rx="6" class="soft"/><text x="170" y="184" class="ts" text-anchor="middle">この Cell の Ontology</text>
-  <rect x="600" y="150" width="220" height="56" rx="6" class="soft"/><text x="710" y="184" class="ts" text-anchor="middle">この Cell の Ontology</text>
+  <rect x="340" y="150" width="200" height="56" rx="4" class="hl" style="fill:#fff"/><text x="440" y="184" class="ts hc" text-anchor="middle" font-weight="700">共有する Ontology</text>
   <path d="M310,100 H566" class="ln" marker-end="url(#arr)"/><use href="#i-pr" x="425" y="62" width="30" height="38"/><text x="440" y="124" class="ts" text-anchor="middle" font-weight="700">Evidence</text>
-  <path d="M310,178 H566" class="xl dash"/><use href="#i-no" x="428" y="166" width="24" height="24"/><text x="440" y="214" class="tx" text-anchor="middle">語の定義は越えない</text>
-  <text x="440" y="270" class="t" text-anchor="middle" font-weight="700">越えるのは記録。読むための語は、両側がそれぞれ持つ</text>
+  <path d="M310,178 H336 M544,178 H570" class="ln"/><text x="440" y="230" class="tx" text-anchor="middle">両側が持ち、境界を越えて流れない</text>
+  <text x="440" y="270" class="t" text-anchor="middle" font-weight="700">越えるのは記録。読むための語の定義は、両側が共有して持つ</text>
 </svg>
 ```
 
-境界を越えるのは、成果や判断の成立を確かめる記録です。読むための語の定義は、両側の Cell がそれぞれ持ちます。
+境界を越えるのは、成果や判断の成立を確かめる記録です。読むための語の定義は、両側の Cell が同じものを共有して持ち、境界を越えて流れません。
 
 ## 越えるのは、確かめる記録
 
@@ -105,24 +105,50 @@ PR、テスト、CI の実行結果、本番の実行記録、突き合わせや
 
 ※ 在庫・物流の例と Evidence の中身は、EAA 紹介 3 の、説明のための仮定です。第 7〜12 章でも使います。
 
-## 語の定義は、両側がそれぞれ持つ
+## 語の定義は、両側が共有して持つ
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="50" width="300" height="230" rx="10" class="box"/><text x="190" y="86" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
-  <rect x="540" y="50" width="300" height="230" rx="10" class="box"/><text x="690" y="86" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
-  <rect x="70" y="110" width="240" height="140" rx="6" class="soft"/><text x="190" y="140" class="ts" text-anchor="middle" font-weight="700">在庫の Ontology</text>
-  <g class="ts"><text x="90" y="174">品目：</text><text x="90" y="200">数量：</text><text x="90" y="226">出荷日：</text></g>
-  <rect x="570" y="110" width="240" height="140" rx="6" class="soft"/><text x="690" y="140" class="ts" text-anchor="middle" font-weight="700">物流の Ontology</text>
-  <g class="ts"><text x="590" y="174">品目：</text><text x="590" y="200">数量：</text><text x="590" y="226">出荷日：</text></g>
-  <path d="M340,170 H536" class="xl dash"/><use href="#i-no" x="426" y="158" width="28" height="28"/>
+  <rect x="40" y="70" width="220" height="190" rx="10" class="box"/><text x="150" y="170" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <rect x="620" y="70" width="220" height="190" rx="10" class="box"/><text x="730" y="170" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <rect x="310" y="60" width="260" height="210" rx="3" class="hl" style="fill:#fff"/>
+  <text x="440" y="96" class="t hc" text-anchor="middle" font-weight="700">共有する Ontology</text>
+  <g class="ts"><text x="340" y="140">品目：</text><text x="340" y="172">数量：</text></g>
+  <path d="M330,200 H550" class="lt"/>
+  <g class="tx" text-anchor="middle"><text x="440" y="226">在庫と物流の両方が持つ</text><text x="440" y="250">所有者（人間）・観測・準拠先</text></g>
+  <path d="M260,165 H306 M574,165 H616" class="ln"/>
   <text x="440" y="326" class="t" text-anchor="middle" font-weight="700">Ontology は境界を越えて流れない</text>
 </svg>
 ```
 
-語の意味を定めた共通語の定義を Ontology と呼びます。Ontology は境界を越えず、両側の Cell がそれぞれ持ちます。Evidence はそれで読みます。
+語の意味を定めた共通語の定義が Ontology です。在庫と物流は同じ Ontology を持ち、それで Evidence を読みます。Ontology は流れません。
 
-出典: EAA Core 版 6「0. 目的と範囲」と概念表「Ontology」。
+出典: EAA Core 版 6「0. 目的と範囲」と概念表「Ontology」。※「同じ Ontology を持つ」は、Core の字だけでは決まらない、この本の読みです。次のページで見ます。
+
+## 同じ定義を両側が持つ、と読む
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <path d="M440,30 V300" class="lt dash"/>
+  <text x="220" y="50" class="t" text-anchor="middle" font-weight="700">各側が自分の定義を持つ</text>
+  <rect x="30" y="80" width="170" height="150" rx="10" class="box"/><text x="115" y="110" class="ts" text-anchor="middle">Cell</text>
+  <rect x="50" y="160" width="130" height="44" rx="4" class="lt" style="fill:#fff"/><text x="115" y="187" class="tx" text-anchor="middle">自分の定義</text>
+  <rect x="240" y="80" width="170" height="150" rx="10" class="box"/><text x="325" y="110" class="ts" text-anchor="middle">Cell</text>
+  <rect x="260" y="160" width="130" height="44" rx="4" class="lt" style="fill:#fff"/><text x="325" y="187" class="tx" text-anchor="middle">自分の定義</text>
+  <text x="220" y="270" class="tx" text-anchor="middle">字の上ではこうも読める</text>
+  <text x="660" y="50" class="t hc" text-anchor="middle" font-weight="700">同じ定義を両側が持つ</text>
+  <rect x="465" y="80" width="105" height="150" rx="10" class="box"/><text x="517" y="160" class="ts" text-anchor="middle">Cell</text>
+  <rect x="750" y="80" width="105" height="150" rx="10" class="box"/><text x="802" y="160" class="ts" text-anchor="middle">Cell</text>
+  <rect x="585" y="125" width="150" height="60" rx="3" class="hl" style="fill:#fff"/><text x="660" y="160" class="ts hc" text-anchor="middle">共有する Ontology</text>
+  <path d="M570,155 H585 M735,155 H750" class="ln"/>
+  <use href="#i-ok" x="574" y="252" width="22" height="22"/><text x="606" y="270" class="ts okc">この本の読み</text>
+  <text x="440" y="344" class="ts sub" text-anchor="middle">Core が Ontology を、Contract と同じく共有する文書に数えているから</text>
+</svg>
+```
+
+Core の「両側が保持する」は、各側が自分の定義を持つとも読めます。この本は、Ontology が共有する文書に数えられるので、同じ定義を両側が持つと読みます。
+
+出典: EAA Core 版 6「0. 目的と範囲」、概念表「Ontology」、「4. 提案と変更」。※ これは読みで、Core の字が決めたことではありません。
 
 ## ずれは、受け入れなかったときに見える
 
@@ -138,9 +164,9 @@ PR、テスト、CI の実行結果、本番の実行記録、突き合わせや
 </svg>
 ```
 
-同じ語でも、両側の Ontology で意味が違うことがあります。そのずれは、Evidence が受け入れられなかったときに見えるようになります。
+共有する Ontology に無い語は、両側が自分の使い方で読みます。意味が違えば、そのずれは Evidence が受け入れられなかったときに見えるようになります。
 
-※ 「出荷日」のずれは説明のための例で、Core にも EAA 紹介 3 にもありません。出典: EAA Core 版 6「0. 目的と範囲」。
+※ 「出荷日」のずれと、共有する Ontology に無いという設定は、説明のための例で、Core にも EAA 紹介 3 にもありません。出典: EAA Core 版 6「0. 目的と範囲」。
 
 ## 推測で越えず、照会か変更提案で解く
 
@@ -173,15 +199,15 @@ PR、テスト、CI の実行結果、本番の実行記録、突き合わせや
     <rect x="620" y="180" width="180" height="60" rx="3" class="hl" style="fill:#fff"/><text x="710" y="216" class="hc">対応を足す</text>
   </g>
   <path d="M260,210 H346" class="ln" marker-end="url(#arr)"/><path d="M530,210 H616" class="ln" marker-end="url(#arr)"/>
-  <rect x="560" y="60" width="300" height="90" rx="6" class="box"/><text x="710" y="94" class="ts" text-anchor="middle">物流の「出荷日」＝ 配送業者に渡した日</text><text x="710" y="122" class="ts" text-anchor="middle">在庫の「出荷日」＝ 倉庫を出た日</text>
-  <path d="M710,176 V154" class="ln" marker-end="url(#arr)"/>
+  <rect x="540" y="24" width="320" height="130" rx="3" class="hl" style="fill:#fff"/><text x="700" y="54" class="ts hc" text-anchor="middle" font-weight="700">共有する Ontology に足す</text><text x="700" y="94" class="ts" text-anchor="middle">物流の「出荷日」＝ 配送業者に渡した日</text><text x="700" y="122" class="ts" text-anchor="middle">在庫の「出荷日」＝ 倉庫を出た日</text>
+  <path d="M710,176 V158" class="ln" marker-end="url(#arr)"/>
   <text x="250" y="110" class="ts sub" text-anchor="middle">初めから全部の語をそろえない</text>
 </svg>
 ```
 
-Ontology の対応は、ずれが見えたところから足していきます。始める前に、全部の語の意味をそろえておくことは求めていません。
+意味の違いと対応は、ずれが見えたところから、共有する Ontology に足していきます。始める前に、全部の語の意味をそろえておくことは求めていません。
 
-出典: EAA Core 版 6「0. 目的と範囲」。※「始める前にそろえることは求めていない」は、この行からの読みです。
+出典: EAA Core 版 6「0. 目的と範囲」と概念表「Ontology」。※「始める前にそろえることは求めていない」は、この行からの読みです。
 
 ## Evidence の様式も共有する文書
 

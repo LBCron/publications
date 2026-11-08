@@ -8,7 +8,7 @@
 本文: @ope-ultp1635 msg f202fb67（群三）。
 足した出どころ: Mission と Contract の使い分けは素材 3（3-hand-over-versions.html「Contract という語について」）。Mission の例は delivery-guide.md:131-179（Mission Metadata Pattern。説明用の記法で確定スキーマではない、と 178 行）。依存する版は core.md:78。「PR の merge は完了ではない」は delivery-guide.md:214。GitHub での残し方は delivery-guide.md:104-127。
 用語を開いた所: Constraints・Authority は Core の概念表に定義が無い（core.md:65 で欄の名前として出るだけ）。本文では英語の欄名を残し、「守る条件」「任せる権限」の説明を添えた。説明は素材 3 の「守る条件・任せる範囲」による。注に書いた。Mission の例の acceptance の値（contract-change-e2e・rollback-tested）は日本語に開いた。
-Mission の例の ontology の参照先は、原文では enterprise:// で始まる。Ontology を全体の側が一つ持つ形に読め、core.md:21 と食い違うので、参照先の名前は出さず「契約・請求プラン・顧客の Ontology」とだけ書いた。注に書いた。
+Mission の例の ontology の参照先は、原文では enterprise:// で始まる。Ontology を持つ者が全体の側（Enterprise）になる形に読め、core.md:21「境界の両側が保持する」と食い違うので、（Ontology が一つであることは理由にしていない。二つの Cell が共有する一つの Ontology は全体の側の持ち物ではなく、第 6 章はその形を取る）参照先の名前は出さず「契約・請求プラン・顧客の Ontology」とだけ書いた。注に書いた。
 「子Mission」「親Goal」（core.md:67）は Mission の分け方の呼び名で、Cell の親子ではない。絵では Mission を Cell の枠の中に描いていない。
 完了を誰が判定するかは core.md:106-107 に名指しが無い。最後のページに書いた。
 新しく引く外部の文献は無い。

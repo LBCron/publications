@@ -286,7 +286,7 @@ Operator の価値は、判断の件数ではありません。曖昧な所を�
   <rect x="40" y="30" width="380" height="290" rx="10" class="soft"/>
   <text x="60" y="64" class="t" font-weight="700">Core が決めていること</text>
   <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">責務と分割、自治と権限</text>
-  <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">境界に流す Evidence と意味</text>
+  <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">流す Evidence と、流さない Ontology</text>
   <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">版と採用、提案と変更</text>
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">成果と記録、Core の採用</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>

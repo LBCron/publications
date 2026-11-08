@@ -146,7 +146,7 @@ Cell を分けて広げる目的は、Cell どうしが互いの成果を受け�
   <path d="M240,236 H634" class="ln" marker-end="url(#arr)"/><use href="#i-pr" x="425" y="214" width="26" height="34"/><text x="474" y="230" class="ts">Evidence</text>
   <g class="tx" text-anchor="middle">
     <rect x="200" y="300" width="140" height="32" rx="4" class="lt" style="fill:#fff"/><text x="270" y="321">共有する Profile</text>
-    <rect x="370" y="300" width="140" height="32" rx="4" class="lt" style="fill:#fff"/><text x="440" y="321">Ontology</text>
+    <rect x="370" y="300" width="140" height="32" rx="4" class="lt" style="fill:#fff"/><text x="440" y="321">共有する Ontology</text>
     <rect x="540" y="300" width="140" height="32" rx="4" class="lt" style="fill:#fff"/><text x="610" y="321">Evidence の様式</text>
   </g>
   <text x="440" y="362" class="ts sub" text-anchor="middle">ほかの共有文書にも版が付く。どの版に従うかは各 Cell が決める</text>

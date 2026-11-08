@@ -12,6 +12,7 @@ publications の #135・#136・#137 と APPROVALS 行 12〜15 を実例として
 包含と同じ形の字: profiles.md 4 節の 51 行「Enterprise Cellが複数Profileをまとめて引き受けてよい」・62 行「EnterpriseがDomain Profileを提供する場合、Enterpriseが正本を管理する」は使っていない。使ったのは 73 行だけ。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。人は橙の四角、Agent は青の丸い札（第 0・2 章と同じ）。
 新しく引く外部の文献は無い。
+準拠先（③、@ope-ultp1635 msg 6ec153b2）: 例の 3 項目は在庫と物流の Contract の欄で、Cell 間で共有する文書の準拠先は core.md:94 で自己改訂規範アーキテクチャ v1・最小構成と決まっている（core.md:12 の Core 自身の準拠先も同じ）。前の版は「EAA Core 版 6」と書いており誤りだったので、第 8 章の例に揃えた。各 Cell の中の規範が Core に準拠する話はこの章では書いていない。
 -->
 
 > 実行者は、自分を縛る規範を緩める変更も、自分の権限を広げる変更も自己承認できない。行う者と、承認・検証する者を分ける。
@@ -61,15 +62,15 @@ Contract、共有する Profile・Ontology、Evidence の様式と Core は、�
   <g class="ts">
     <text x="60" y="110" font-weight="700">所有者</text><text x="220" y="110">物流の窓口の責任者</text><text x="560" y="110" class="tx">変更を承認する人</text>
     <text x="60" y="180" font-weight="700">観測</text><text x="220" y="180">受け入れられなかった出荷結果と、</text><text x="220" y="204">その理由</text><text x="560" y="180" class="tx">見直しの根拠に残す記録</text>
-    <text x="60" y="274" font-weight="700">準拠先</text><text x="220" y="274">EAA Core 版 6</text><text x="560" y="274" class="tx">従う上位の規範と、その版</text>
+    <text x="60" y="274" font-weight="700">準拠先</text><text x="220" y="262">自己改訂規範アーキテクチャ</text><text x="220" y="286">v1・最小構成</text><text x="560" y="274" class="tx">従う上位の規範と、その版</text>
   </g>
   <path d="M40,70 H840 M40,140 H840 M40,234 H840 M40,304 H840" class="lt"/>
 </svg>
 ```
 
-在庫と物流の Contract なら、所有者は物流の窓口の責任者、観測は受け入れられなかった出荷結果、準拠先は Core の版 6 です。
+在庫と物流の Contract なら、所有者は物流の窓口の責任者、観測は受け入れられなかった出荷結果、準拠先は自己改訂規範アーキテクチャ v1・最小構成です。
 
-※ 観測の中身は説明のための仮定です。3 項目の意味は、Core 版 6 の冒頭にある Core 自身の表から取りました。
+※ 観測の中身は説明のための仮定です。3 項目の意味は Core 版 6 の冒頭にある Core 自身の表から取り、準拠先は Core「4. 提案と変更」の字のとおり（第 8 章と同じ）です。
 
 ## 所有者は人間
 
