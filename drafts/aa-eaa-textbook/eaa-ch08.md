@@ -13,9 +13,10 @@ Core 版 6 は「契約」「検収」の語を使っていない（core.md を 
 core.md:103-104 は空行と「5. 成果と記録」の見出しで、規定の字は無い。
 絵: 在庫と物流の Cell は横に並べ、所有者は物流の Cell の枠の中の人として描く。Contract は二つの Cell のあいだに置き、どちらの枠の中にも入れない。
 新しく引く外部の文献は無い。
+②（@ope-ultp1635 msg 95d31f1b、@reviewer 2026-11-08 ch06-09 三）: 必要な Evidence の問いを core.md:22（受け取った Cell が作った Cell を介さずに確かめられる形）と core.md:39（成果や判断の成立）に合わせて書き直した。問いの他の 3 本は EAA 紹介 3 のまま。core.md:94 の所有者・観測・準拠先を、第 6 章「Evidence の様式も共有する文書」と同じ形のページにして欄のページの次に置き、例の版 1 にも足した。例の所有者・観測は第 10 章の例と同じ値。準拠先は core.md:94 の字（自己改訂規範アーキテクチャ v1・最小構成に準拠する）から取った。観測・準拠先の語の説明は第 10 章と同じく core.md:11-12 の Core 自身の表から取った。
 -->
 
-> Contract には相互の責任・提供条件・入出力・Evidence を書く。所有者は結ぶ Cell に属する人間 1 人をそれらの Cell の合意で決め、所有者が離れたら後任が決まるまで改訂は承認されない。
+> Contract には相互の責任・提供条件・入出力・Evidence を書き、所有者・観測・準拠先を持たせる。所有者は結ぶ Cell に属する人間 1 人をそれらの Cell の合意で決め、所有者が離れたら後任が決まるまで改訂は承認されない。
 
 ```svg
 <svg viewBox="0 0 880 300" width="880" height="300">
@@ -58,7 +59,7 @@ Contract は、相互の責任、提供条件、入出力、必要な Evidence �
     <text x="70" y="64" font-weight="700">相互の責任</text><text x="280" y="64">相手に何を約束し、相手から何を約束してもらうか</text>
     <text x="70" y="134" font-weight="700">提供条件</text><text x="280" y="134">どんな条件の下でなら、その約束を守れるか</text>
     <text x="70" y="204" font-weight="700">入出力</text><text x="280" y="204">何を渡し、何を受け取るか。その形は</text>
-    <text x="70" y="274" font-weight="700">必要な Evidence</text><text x="280" y="274">何が残っていたら、約束が果たされたと言えるか</text>
+    <text x="70" y="264" font-weight="700">必要な Evidence</text><text x="280" y="264">何が残っていたら、成果と判断が成り立ったと、</text><text x="280" y="290" font-weight="700">受け取った側が、作った側を介さずに確かめられるか</text>
   </g>
   <path d="M60,96 H820 M60,166 H820 M60,236 H820" class="lt"/>
   <text x="440" y="356" class="ts sub" text-anchor="middle">左が Core の欄。右は、自分の案件で欄を埋めるときの問い</text>
@@ -67,27 +68,51 @@ Contract は、相互の責任、提供条件、入出力、必要な Evidence �
 
 Contract には、相互の責任、提供条件、入出力、必要な Evidence を書きます。右の問いに、相手の Cell と一緒に答えれば、欄が埋まります。
 
-出典: EAA Core 版 6 の概念表「Contract」。※ 問いは EAA 紹介 3 のもので、Core の字ではありません。
+出典: EAA Core 版 6 の概念表「Contract」「Evidence」と「0.」。※ 問いは EAA 紹介 3 のもの。Evidence の問いだけ、Core の字に合わせて直しました。
+
+## 欄のほかに、所有者・観測・準拠先を持つ
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="70" width="200" height="180" rx="10" class="box"/><text x="140" y="166" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <rect x="640" y="70" width="200" height="180" rx="10" class="box"/><text x="740" y="166" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <rect x="290" y="40" width="300" height="250" rx="3" class="hl" style="fill:#fff"/>
+  <text x="440" y="76" class="t hc" text-anchor="middle" font-weight="700">Contract</text>
+  <g class="ts" text-anchor="middle"><text x="440" y="112">相互の責任・提供条件</text><text x="440" y="138">入出力・必要な Evidence</text></g>
+  <path d="M310,162 H570" class="lt"/>
+  <g class="ts" text-anchor="middle"><text x="440" y="192" font-weight="700">所有者（人間）</text><text x="440" y="220" font-weight="700">観測</text><text x="440" y="248" font-weight="700">準拠先</text></g>
+  <g class="tx" text-anchor="middle"><text x="440" y="274">欄だけでは、Contract は揃わない</text></g>
+  <path d="M240,160 H286 M594,160 H636" class="ln"/>
+  <text x="440" y="330" class="ts sub" text-anchor="middle">Evidence の様式・共有する Profile・共有する Ontology と同じ扱い</text>
+</svg>
+```
+
+Contract は Cell のあいだで共有する文書なので、欄のほかに所有者・観測・準拠先を持ちます。所有者は人間です。第 6 章の Evidence の様式と同じです。
+
+出典: EAA Core 版 6「4. 提案と変更」。観測・準拠先の意味は第 10 章で見ます。
 
 ## 例：在庫と物流の Contract
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="20" width="800" height="320" rx="3" class="hl" style="fill:#fff"/>
-  <text x="60" y="50" class="ts hc" font-weight="700">在庫と物流のあいだの Contract　版 1</text>
+  <rect x="40" y="14" width="800" height="352" rx="3" class="hl" style="fill:#fff"/>
+  <text x="60" y="42" class="ts hc" font-weight="700">在庫と物流のあいだの Contract　版 1</text>
   <g class="ts">
-    <text x="60" y="94" font-weight="700">相互の責任</text><text x="230" y="94">在庫は、引き当て済みの品目だけを指示に載せる</text><text x="230" y="118">物流は、受けた指示を出荷し、結果を返す</text>
-    <text x="60" y="164" font-weight="700">提供条件</text><text x="230" y="164">平日 15 時までに受けた指示は、その日のうちに出荷する</text>
-    <text x="60" y="210" font-weight="700">入出力</text><text x="230" y="210">渡す：出荷指示（品目・数量・届け先）</text><text x="230" y="234">受け取る：出荷結果（出荷番号・出荷日時・欠品の有無と理由）</text>
-    <text x="60" y="280" font-weight="700">必要な Evidence</text><text x="230" y="280">指示と結果を 1 件ずつ突き合わせた記録</text><text x="230" y="304">欠品は理由とともに残す</text>
+    <text x="60" y="76" font-weight="700">相互の責任</text><text x="230" y="76">在庫は、引き当て済みの品目だけを指示に載せる</text><text x="230" y="98">物流は、受けた指示を出荷し、結果を返す</text>
+    <text x="60" y="134" font-weight="700">提供条件</text><text x="230" y="134">平日 15 時までに受けた指示は、その日のうちに出荷する</text>
+    <text x="60" y="170" font-weight="700">入出力</text><text x="230" y="170">渡す：出荷指示（品目・数量・届け先）</text><text x="230" y="192">受け取る：出荷結果（出荷番号・出荷日時・欠品の有無と理由）</text>
+    <text x="60" y="228" font-weight="700">必要な Evidence</text><text x="230" y="228">指示と結果を 1 件ずつ突き合わせた記録</text><text x="230" y="250">欠品は理由とともに残す</text>
+    <text x="60" y="292" font-weight="700">所有者</text><text x="230" y="292">物流の窓口の責任者</text>
+    <text x="60" y="320" font-weight="700">観測</text><text x="230" y="320">受け入れられなかった出荷結果と、その理由</text>
+    <text x="60" y="348" font-weight="700">準拠先</text><text x="230" y="348">自己改訂規範アーキテクチャ v1・最小構成</text>
   </g>
-  <path d="M60,138 H820 M60,184 H820 M60,254 H820" class="lt"/>
+  <path d="M60,112 H820 M60,148 H820 M60,206 H820" class="lt"/><path d="M60,266 H820" class="ln"/>
 </svg>
 ```
 
-第 6 章の在庫と物流の例で、欄を埋めた Contract です。相手の中の作り方には一字も触れず、あいだで約束することだけを書いています。
+第 6 章の在庫と物流の例で、欄を埋めた Contract です。相手の中の作り方には触れず、あいだの約束だけを書きます。下の 3 行が所有者・観測・準拠先です。
 
-※ 欄の中身と版の番号は、EAA 紹介 3 の説明のための仮定です。
+※ 欄の中身・所有者・観測・版の番号は、EAA 紹介 3 と第 10 章の、説明のための仮定です。準拠先は Core「4. 提案と変更」の字のとおり。
 
 ## 埋まらない欄は、まだ合意していない
 
@@ -250,7 +275,8 @@ Contract の所有者は、Contract を結ぶ Cell に属する人間 1 人で�
   <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">Contract に書く欄</text>
   <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">全部が採用して成立</text>
   <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">所有者の決め方と、後任の決め方</text>
-  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">所有者がいない間の扱い</text></g>
+  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">所有者がいない間の扱い</text>
+  <use href="#i-ok" x="60" y="248" width="22" height="22"/><text x="92" y="265">所有者・観測・準拠先を持つ</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
   <g class="ts"><text x="480" y="105">商取引上の契約書との関係</text><text x="480" y="145">後任の合意が成り立たないとき</text><text x="480" y="185">所有者本人が提起した改訂の承認者</text></g>
