@@ -6,10 +6,10 @@
 構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
 出どころ（構造の表のまま）: 素材 0・1（drafts/agentic-agile-materials/explanations/eaa/0-two-exits.html・1-between-two-collapses.html。SAFe・LeSS・Spotify の記述）、core.md:94-96。Core は publications origin/main 0d07f75 の core.md 版 6。
 本文: @ope-ultp1635 msg a8d86548（群ごとに 4 回。群一から）。
-引用の訳は素材 0 のもの（素材 0 の付記: 一次資料から取得し原文と照合、英文を訳した）。この本では原文に当たり直していない。
+引用の訳は素材 0 のもの（素材 0 の付記: 一次資料から取得し原文と照合、英文を訳した）。この本では原文に当たり直していない。当たり直すと群一の訳（EAA 紹介 0 と同じ字）と揃わなくなるので、当たり直さず、当たっていないことを p.2 の本文と絵で読み手に見せる（@ope-ultp1635 msg 8f940fc9 ①）。Lee の題と媒体は deep-research/research-archive/2026-09-28-eaa-intro-zero-two-lineages.md の出典欄（jeremiahlee.com/posts/failed-squad-goals/）から。
 「出口」「崩れ方」は比喩なので使わない（titles.md の判断と同じ）。「集める」「任せる」と、失敗の中身（判断待ちが伸びる・承認なしに書き換わる）で書く。
-「一人の PO が持てるチームの数が減る」「列が早く伸びる」は推論で実測ではない（素材 0 の付記）。p.8 の注に書いた。
-「実行が安くなった」は確定した事実として扱わない（素材 0 の付記）。p.7 の注に書いた。
+「一人の PO が持てるチームの数が減る」「列が早く伸びる」は推論で実測ではない（素材 0 の付記）。p.9 の注に書いた。
+「実行が安くなった」は確定した事実として扱わない（素材 0 の付記）。p.8 の注に書いた。
 -->
 
 > 実行の費用が下がるほど、集める側では判断待ちの列が伸び、任せる側では Contract を自分の側だけで改訂できてしまう。どちらのやり方も成り立つ範囲が狭くなる。
@@ -53,7 +53,33 @@
 
 大規模開発の手法は、あいだの合意を誰が持つかに、二つの答えを出してきました。一人や定例の場に集めるか、チームどうしに任せるかです。
 
-※ SAFe・LeSS・Spotify の三つを、当事者が書いたもので見ます。三つとも、それぞれの条件の下では機能しています。この本は優劣を判定しません。
+※ SAFe・LeSS・Spotify の三つを、当事者が書いたもの・話したものの引用で見ます。三つとも、それぞれの条件の下では機能しています。この本は優劣を判定しません。
+
+## 引用は、原文に当たり直していない
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="30" y="60" width="240" height="160" rx="8" class="lt" style="fill:#fff"/>
+  <text x="150" y="96" class="t" text-anchor="middle" font-weight="700">当事者の原文</text>
+  <g class="ts" text-anchor="middle"><text x="150" y="136">LeSS・SAFe の公開本文</text><text x="150" y="164">Kniberg の動画</text><text x="150" y="192">Lee のサイトの記事</text></g>
+  <rect x="320" y="60" width="240" height="160" rx="8" class="lt" style="fill:#f4f4f2"/>
+  <text x="440" y="96" class="t" text-anchor="middle" font-weight="700">EAA 紹介 0</text>
+  <g class="ts" text-anchor="middle"><text x="440" y="136">原文を取得して、</text><text x="440" y="164">引用を原文と照合し、</text><text x="440" y="192">英文を訳した</text></g>
+  <rect x="610" y="60" width="240" height="160" rx="8" class="hl" style="fill:#fff"/>
+  <text x="730" y="96" class="t hc" text-anchor="middle" font-weight="700">この本</text>
+  <g class="ts" text-anchor="middle"><text x="730" y="136">EAA 紹介 0 の</text><text x="730" y="164">引用と訳を、</text><text x="730" y="192">そのまま使う</text></g>
+  <path d="M270,140 H314" class="ln" marker-end="url(#arr)"/>
+  <path d="M560,140 H604" class="ln" marker-end="url(#arr)"/>
+  <path d="M730,222 V290 H150 V228" class="xl dash" marker-end="url(#arr-x)"/>
+  <use href="#i-no" x="428" y="278" width="24" height="24"/>
+  <text x="440" y="330" class="ts xc" text-anchor="middle">この本は、原文に当たり直していない</text>
+  <text x="440" y="366" class="tx" text-anchor="middle">EAA 紹介 0 の置き場所: publications の drafts/agentic-agile-materials/explanations/eaa/0-two-exits.html</text>
+</svg>
+```
+
+この章の引用と訳は、EAA 紹介 0 から取りました。原文の取得、引用と原文の照合、訳は、EAA 紹介 0 が行っています。この本は、原文に当たり直していません。
+
+※ EAA 紹介 0〜3 は、この本の前に書いた EAA の紹介資料です。0 の題は「あいだの合意を、誰が持つのか」。置き場所は絵の下に書きました。
 
 ## 集める：LeSS は PO の上限を書く
 
@@ -136,19 +162,20 @@ LeSS は、優先順位は一人の PO に集めつつ、チーム間の調整�
   <path d="M150,68 H180 M270,68 H300 M390,68 H420" class="ln"/>
   <text x="560" y="64" class="ts">疎結合だが、しっかり揃ったチーム</text>
   <rect x="60" y="120" width="450" height="56" rx="6" class="w"/><text x="285" y="154" class="ts" text-anchor="middle">大きな案件（いくつものチームにまたがる）</text>
-  <rect x="40" y="194" width="800" height="66" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="218" class="ts sub">Henrik Kniberg（2014）</text>
-  <text x="60" y="246" class="ts">大きな案件の進め方は、まだたくさん実験していて、まだうまくない。</text>
-  <rect x="40" y="270" width="800" height="92" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="294" class="ts sub">Jeremiah Lee（元 Spotify のプロダクトマネージャー、2020）</text>
-  <text x="60" y="322" class="ts">エンジニアリングチームの成果に責任を持つ人も、同じ責任の水準で</text>
-  <text x="60" y="348" class="ts">作業の優先順位を交渉できる人も、一人もいなかった。</text>
+  <rect x="40" y="186" width="800" height="66" rx="10" class="lt" style="fill:#fff"/>
+  <text x="60" y="210" class="ts sub">Henrik Kniberg「Spotify Engineering Culture part 2」（2014、動画）</text>
+  <text x="60" y="238" class="ts">大きな案件の進め方は、まだたくさん実験していて、まだうまくない。</text>
+  <rect x="40" y="262" width="800" height="112" rx="10" class="lt" style="fill:#fff"/>
+  <text x="60" y="284" class="ts sub">Jeremiah Lee（元 Spotify のプロダクトマネージャー）</text>
+  <text x="60" y="306" class="tx">「Spotify's Failed #SquadGoals」（2020、本人のサイトの記事）</text>
+  <text x="60" y="334" class="ts">エンジニアリングチームの成果に責任を持つ人も、同じ責任の水準で</text>
+  <text x="60" y="360" class="ts">作業の優先順位を交渉できる人も、一人もいなかった。</text>
 </svg>
 ```
 
 Spotify は、任せる側に大きく寄りました。目指したのは、疎結合だがしっかり揃ったチームです。当事者は、大きな案件の進め方はまだうまくない、と話しています。
 
-出典: Kniberg「Spotify Engineering Culture part 2」（2014、動画）、Jeremiah Lee（2020）。訳は EAA 紹介 0。一社の実践の記述です。
+出典: Kniberg と Lee の題・年・媒体は、絵の中に書きました。訳は EAA 紹介 0。一社の実践の記述です。
 
 ## 複数社で組んでも同じ二つ
 
