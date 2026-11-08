@@ -1,38 +1,60 @@
-# 第 7 章　仕事は Mission で渡し、作業や受け入れだけでは完了にしない
+# 第 7 章　仕事は、受ける Cell が自分の文脈だけで進められる形（Mission）で渡す
 
-群: Evidence・Mission・Contract と版
+群: 切っても残る結合の持ち方
 
 <!--
-構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
-出どころ（構造の表のまま）: core.md:32-35・65-67・106-110。Core は publications origin/main 0d07f75 の core.md 版 6。
-本文: @ope-ultp1635 msg f202fb67（群三）。
-足した出どころ: Mission と Contract の使い分けは素材 3（3-hand-over-versions.html「Contract という語について」）。Mission の例は delivery-guide.md:131-179（Mission Metadata Pattern。説明用の記法で確定スキーマではない、と 178 行）。依存する版は core.md:78。「PR の merge は完了ではない」は delivery-guide.md:214。GitHub での残し方は delivery-guide.md:104-127。
-用語を開いた所: Constraints・Authority は Core の概念表に定義が無い（core.md:65 で欄の名前として出るだけ）。本文では英語の欄名を残し、「守る条件」「任せる権限」の説明を添えた。説明は素材 3 の「守る条件・任せる範囲」による。注に書いた。Mission の例の acceptance の値（contract-change-e2e・rollback-tested）は日本語に開いた。
-Mission の例の ontology の参照先は、原文では enterprise:// で始まる。Ontology を持つ者が全体の側（Enterprise）になる形に読め、core.md:21「境界の両側が保持する」と食い違うので、（Ontology が一つであることは理由にしていない。二つの Cell が共有する一つの Ontology は全体の側の持ち物ではなく、第 6 章はその形を取る）参照先の名前は出さず「契約・請求プラン・顧客の Ontology」とだけ書いた。注に書いた。
-「子Mission」「親Goal」（core.md:67）は Mission の分け方の呼び名で、Cell の親子ではない。絵では Mission を Cell の枠の中に描いていない。
-完了を誰が判定するかは core.md:106-107 に名指しが無い。最後のページに書いた。
-新しく引く外部の文献は無い。
-⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの項目は core.md:11 の既知の不足に無いので「Core に書かれていない」に置き、「まだ」を落とした。
-⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 章題と章の概要（絵の結び・文）が完了の条件を Outcome と Acceptance Evidence だけにしていた。core.md:106 は Contract 更新・判断記録・権限違反の解消も要る（「完了に要るもの」のページは全部書いていた）。章題は core.md:107 の「作業実施や変更の受入だけでは完了しない」の字にし（titles.md に記録）、概要の文に残りの条件を足した。core.md:107 の「必要な職務分離」の「必要な」を戻した。p.「目的を変えるなら」は core.md:67 の「新Missionまたは改訂として提案する」の「提案する」を落としていたので戻し、見出しも変えた。p.「決めたことは、記録に戻す」の絵の「会話だけに残った決定は正式な決定として扱わない」は delivery-guide.md:127 の字で（そこからも「重要な」が落ちていた）、Core より強い内容なのに最後のページで「Core が決めていること」に入っていた。絵と最後のページを core.md:110 の字にし、Delivery Guide の字は適用例として注に置いた。
-2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの右の小見出しを「既知の不足にも挙がっていない」にした（理由は第 6 章の注と同じ）。
+構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（7a7f5737）の第 7 章。着手: @ope-ultp1635 msg 6ad8d3f2（群三）。
+所有者の字: 「そういう主体の脳みそにとってコンテキストスイッチが起きないように切り分ける」（structure-v5.md のイデア第 2 文の逐語）。この章がイデアに当たる所は「受ける Cell が自分の文脈だけで進められる形」。
+直した理由: @reader の目次の通読（349c4d63）で 6 体とも第 7 章を読む章に選ばず、2 周目（cea29c1f）で河野が Mission の例（契約プランの変更）を自分の出荷の話に当てられなかった。Contract には欄を埋める問いのページがあり、Mission には無かった。
+直し方（書き手が決めた。@ope-ultp1635 msg 6ad8d3f2 で「あなたが決めてください」）:
+(1) p.「欄を埋めるための問い」を足した。問いは書き手が作った。Core は欄の名前だけを挙げる（core.md:65・78）。各問いは Core の字と照合した — Acceptance Evidence の問いは core.md:22（受け取った側が作った側を介さずに確かめる）・39（成果や判断の成立）・40（受け入れる判断に使う）、Authority の問いは core.md:66（委任元が正当に与えられる範囲を越えない）、依存する版は core.md:78、背景と引受条件は core.md:65。Contract の問いで @reviewer 3 回目に出た形（問いに答えた Mission が Core を満たさない）を作らないため。
+(2) p.「書けたかは、聞きに戻るかで確かめる」を問いのページの次に置いた。イデアの字を判定の形にしたもので、書き手の読み。
+(3) 例を契約プランの変更から、第 4・6 章と同じ在庫と物流の組に替えた（追跡番号を出荷結果に載せる）。河野が当てられなかったのは、例が自分の組に無かったこと、Authority の「書いてよい：契約　書かない：請求」が何の持ち物かを決められなかったことの二つ。例を通しの組にし、p.「Authority は頼む側の持ち物まで」で、受ける側の中の作り方は Authority に書かないことを足した。これは core.md:62（各 Cell は内部方式と実行を決める）と 66 から書き手が導いた。注に書いた。
+(4) p.「聞きに戻る渡し方」を章の初めに置いた。書き手の読み（渡し直しは第 1 章、コンテキストスイッチは第 2 章の字）。
+2d0ca30 までの第 7 章（仕事は Mission で渡し、作業や受け入れだけでは完了にしない）から持ってきた: Mission・Goal・Outcome の定義（core.md:32-34）、一回の仕事と続く取り決め（素材 3）、欄（core.md:65）、依存する版（core.md:78）、Task は受けた Cell が分ける（core.md:35・66）、任せる権限は自分の持つ範囲まで（core.md:66）、目的を変えるなら提案する（core.md:67。⑥ の直しのまま）、完了に要るもの（core.md:106）、作業や受け入れだけでは完了しない（core.md:107。「必要な」職務分離は ⑥ のまま）、記録に戻す（core.md:109-110。Delivery Guide の字は注に置く ⑥ のまま）。旧本文は 2d0ca30 の eaa-ch07.md にある。持ってこなかったもの: 契約プランの変更の例（delivery-guide.md:131-179）。例を替えたため。Delivery Guide の例が説明用の記法で確定スキーマではないこと（178 行）は最後のページの出典に残した。
+@reviewer 2026-11-08 ch06-09 2-2 を入れた: 完了を判定する者は、人の名指しは Core に無いが、Cell の単位では Acceptance Evidence を確かめるのは Evidence を受け取った Cell（core.md:22・40）。p.「受け入れは頼んだ Cell が決める」に書いた。Contract 更新・判断記録・権限違反の解消を誰が判定するかは Core の字に無いので、最後のページに置いた。同 2-2 の「項目名」と「欄の名前」の取り違え: 左を「Mission に書く欄（Goal など）」、右を「Mission の記法（書く場所・書式）」にした。
+例の Mission の完了に Contract 版 2 の成立が要ることは、core.md:106（必要な Contract 更新）と、追跡番号の欄が Contract 版 1 の入出力に無いことから。版の移り方は第 9 章。
+用語: Constraints・Authority は Core の概念表に定義が無い（core.md:65 で欄の名前として出るだけ）。英語の欄名を残し「守る条件」「任せる権限」を添えた（素材 3）。Constitution は第 3 章で説明した語。
+「子Mission」「親Goal」（core.md:67）は Mission の分け方の呼び名で、Cell の親子ではない。
+絵: Mission を Cell の枠の中に描かない。頼む Cell と受ける Cell は横に並べる。
+例はすべて説明のために作った。
 -->
 
-> Mission には Goal・Constraints・Authority・Acceptance Evidence を書く。Task の分け方は受けた Cell が決め、作業したことや受け入れたことだけでは完了にならない。
+> Mission には Goal・Constraints・Authority・Acceptance Evidence と依存する版を書く。受ける Cell がこれだけを読み、頼む側に聞きに戻らずに Task に分けられるかで、書けたかを確かめる。
 
 ```svg
 <svg viewBox="0 0 880 300" width="880" height="300">
-  <rect x="30" y="30" width="250" height="200" rx="10" class="box"/><text x="155" y="66" class="t" text-anchor="middle" font-weight="700">頼む Cell</text>
-  <rect x="320" y="24" width="240" height="212" rx="3" class="hl" style="fill:#fff"/><text x="440" y="54" class="t hc" text-anchor="middle" font-weight="700">Mission</text>
-  <g class="ts"><text x="340" y="88">Goal</text><text x="340" y="120">Constraints</text><text x="340" y="152">Authority</text><text x="340" y="184">Acceptance Evidence</text></g>
-  <path d="M280,130 H316" class="ln" marker-end="url(#arr)"/><path d="M564,130 H596" class="ln" marker-end="url(#arr)"/>
-  <rect x="600" y="30" width="250" height="200" rx="10" class="box"/><text x="725" y="66" class="t" text-anchor="middle" font-weight="700">受けた Cell</text>
-  <rect x="630" y="90" width="190" height="40" rx="6" class="soft"/><text x="725" y="116" class="ts" text-anchor="middle">Task は自分で分ける</text>
-  <rect x="630" y="150" width="190" height="56" rx="6" class="soft"/><text x="725" y="174" class="ts" text-anchor="middle">完了に要るものを</text><text x="725" y="196" class="ts" text-anchor="middle">全部揃える</text>
-  <text x="440" y="274" class="t" text-anchor="middle" font-weight="700">渡すのは条件。完了は、作業でなく、要るものが揃ったかで決める</text>
+  <rect x="30" y="30" width="230" height="200" rx="10" class="box"/><text x="145" y="66" class="t" text-anchor="middle" font-weight="700">頼む Cell</text>
+  <text x="145" y="130" class="tx" text-anchor="middle">頼む側の事情</text>
+  <rect x="300" y="24" width="270" height="212" rx="3" class="hl" style="fill:#fff"/><text x="435" y="54" class="t hc" text-anchor="middle" font-weight="700">Mission</text>
+  <g class="ts"><text x="320" y="88">Goal</text><text x="320" y="114">Constraints・Authority</text><text x="320" y="140">Acceptance Evidence</text><text x="320" y="166">依存する版</text><text x="320" y="192" class="sub">背景と引き受ける条件</text></g>
+  <path d="M260,130 H296" class="ln" marker-end="url(#arr)"/><path d="M574,130 H606" class="ln" marker-end="url(#arr)"/>
+  <rect x="610" y="30" width="240" height="200" rx="10" class="box"/><text x="730" y="66" class="t" text-anchor="middle" font-weight="700">受ける Cell</text>
+  <rect x="635" y="96" width="190" height="40" rx="6" class="soft"/><text x="730" y="122" class="ts" text-anchor="middle">Task は自分で分ける</text>
+  <text x="730" y="180" class="ts" text-anchor="middle">聞きに戻らない</text>
+  <text x="440" y="274" class="t" text-anchor="middle" font-weight="700">頼む側の事情を知らなくても、これだけで進められる</text>
 </svg>
 ```
 
-一回の仕事は、目指す状態と条件を書いた Mission で渡します。完了には、成り立った変化と決めた Evidence に加え、要る記録と権限違反の解消が要ります。
+仕事は、受ける Cell が頼む側の事情を知らずに進められる形で渡します。目的・受け入れの Evidence・依存する版を書き、Task の分け方は受けた側が決めます。
+
+## 聞きに戻る渡し方
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="40" width="300" height="220" rx="10" class="box"/><text x="190" y="76" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <rect x="70" y="110" width="240" height="70" rx="3" class="lt" style="fill:#fff"/><text x="190" y="140" class="ts" text-anchor="middle">追跡番号を出してほしい</text><text x="190" y="164" class="tx" text-anchor="middle">詳しくは打合せで</text>
+  <rect x="540" y="40" width="300" height="220" rx="10" class="box"/><text x="690" y="76" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <g class="tx" text-anchor="middle"><text x="690" y="130">どこまでで終わり？</text><text x="690" y="160">何を変えてはだめ？</text><text x="690" y="190">何で受け入れる？</text></g>
+  <path d="M536,120 H344" class="xl" marker-end="url(#arr-x)"/><text x="440" y="110" class="tx xc" text-anchor="middle">聞きに戻る</text>
+  <path d="M344,200 H536" class="xl" marker-end="url(#arr-x)"/><text x="440" y="226" class="tx xc" text-anchor="middle">在庫の事情で返る</text>
+  <text x="440" y="320" class="t xc" text-anchor="middle" font-weight="700">受けた側が、頼んだ側の文脈を読みに行く</text>
+</svg>
+```
+
+「追跡番号を出してほしい、詳しくは打合せで」と渡すと、物流は終わりの形も守る条件も分からず、在庫の事情を聞きに戻ります。
+
+※ 書き手の読み。聞きに戻るのは、第 1 章の渡し直しで、第 2 章のコンテキストスイッチに当たる。例は説明のために作った。
 
 ## Mission は、今回の変化
 
@@ -59,118 +81,160 @@ Mission は、引き受けた責務のもとで今回実現する変化です。
   <path d="M440,20 V320" class="lt dash"/>
   <text x="220" y="54" class="t" text-anchor="middle" font-weight="700">Mission</text><text x="220" y="80" class="ts sub" text-anchor="middle">一回の仕事</text>
   <text x="660" y="54" class="t" text-anchor="middle" font-weight="700">Contract</text><text x="660" y="80" class="ts sub" text-anchor="middle">続いていく取り決め</text>
-  <rect x="80" y="110" width="280" height="150" rx="3" class="hl" style="fill:#fff"/><g class="ts" text-anchor="middle"><text x="220" y="150">出荷指示に</text><text x="220" y="176">希望時間帯の欄を足す</text><text x="220" y="220" class="sub">終わったら完了</text></g>
+  <rect x="80" y="110" width="280" height="150" rx="3" class="hl" style="fill:#fff"/><g class="ts" text-anchor="middle"><text x="220" y="150">出荷結果に</text><text x="220" y="176">追跡番号を載せる</text><text x="220" y="220" class="sub">終わったら完了</text></g>
   <rect x="520" y="110" width="280" height="150" rx="3" class="hl" style="fill:#fff"/><g class="ts" text-anchor="middle"><text x="660" y="150">在庫と物流のあいだの</text><text x="660" y="176">責任・条件・入出力・Evidence</text><text x="660" y="220" class="sub">変えるまで効き続ける</text></g>
-  <text x="440" y="350" class="ts sub" text-anchor="middle">Contract は第 8 章で見る</text>
+  <text x="440" y="350" class="ts sub" text-anchor="middle">Contract は第 6 章で見た</text>
 </svg>
 ```
 
-一回の仕事は Mission で渡し、続く取り決めは Contract に書きます。在庫と物流なら、欄を足す仕事が Mission、取り決めが Contract です。
+一回の仕事は Mission で渡し、続く取り決めは Contract に書きます。追跡番号を載せる仕事が Mission、在庫と物流の取り決めが Contract です。
 
-出典: EAA 紹介 3「Contract という語について」、EAA Core 版 6 の概念表。※ 欄を足す仕事は説明のための例です。
+出典: EAA 紹介 3「Contract という語について」、EAA Core 版 6 の概念表。※ 追跡番号の仕事は説明のための例。
 
 ## Mission に書く欄
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="30" width="800" height="250" rx="3" class="hl" style="fill:#fff"/>
-  <g class="ts">
-    <text x="70" y="70" font-weight="700">Goal</text><text x="330" y="70">目指す状態</text>
-    <text x="70" y="120" font-weight="700">Constraints</text><text x="330" y="120">守る条件</text>
-    <text x="70" y="170" font-weight="700">Authority</text><text x="330" y="170">任せる権限（触ってよい範囲と、触らない範囲）</text>
-    <text x="70" y="220" font-weight="700">Acceptance Evidence</text><text x="330" y="220">受け入れの判断に使う Evidence</text>
-    <text x="70" y="262" class="sub">そのほか</text><text x="330" y="262" class="sub">背景と、引き受ける条件を共有する</text>
-  </g>
-  <path d="M60,90 H820 M60,140 H820 M60,190 H820 M60,240 H820" class="lt"/>
-  <text x="440" y="330" class="ts sub" text-anchor="middle">左は Core の欄の名前。右の説明は EAA 紹介 3 による</text>
-</svg>
-```
-
-Mission には、Goal、Constraints、Authority、Acceptance Evidence を書き、背景と引き受ける条件も共有します。
-
-出典: EAA Core 版 6「2. 自治と権限」。※ 欄の説明（守る条件・任せる権限）は EAA 紹介 3 によります。Core は欄の名前だけを挙げます。
-
-## 例：契約プランの変更を渡す
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="20" width="800" height="300" rx="3" class="hl" style="fill:#fff"/>
-  <text x="60" y="52" class="t hc" font-weight="700">Mission</text>
   <g class="ts">
-    <text x="60" y="92" font-weight="700">Goal</text><text x="300" y="92">契約プランの変更を、すぐに反映できる</text>
-    <text x="60" y="136" font-weight="700">Constraints</text><text x="300" y="136">過去の契約を書き換えない</text><text x="300" y="160">確定済みの請求を変えない</text>
-    <text x="60" y="204" font-weight="700">Authority</text><text x="300" y="204">書いてよい：契約　　書かない：請求</text>
-    <text x="60" y="248" font-weight="700">Acceptance Evidence</text><text x="300" y="248">契約変更の通しのテストの結果</text><text x="300" y="272">切り戻しを試した結果</text>
+    <text x="70" y="60" font-weight="700">Goal</text><text x="330" y="60">目指す状態</text>
+    <text x="70" y="104" font-weight="700">Constraints</text><text x="330" y="104">守る条件</text>
+    <text x="70" y="148" font-weight="700">Authority</text><text x="330" y="148">任せる権限（使ってよい範囲と、使わない範囲）</text>
+    <text x="70" y="192" font-weight="700">Acceptance Evidence</text><text x="330" y="192">受け入れの判断に使う Evidence</text>
+    <text x="70" y="236" font-weight="700">依存する版</text><text x="330" y="236">前提にした Contract・Ontology・Constitution の版</text>
+    <text x="70" y="290" class="sub">そのほか</text><text x="330" y="290" class="sub">背景と、引き受ける条件を共有する</text>
   </g>
-  <path d="M60,112 H820 M60,180 H820 M60,224 H820" class="lt"/>
-  <text x="440" y="356" class="ts sub" text-anchor="middle">説明のための記法で、決まった書式ではない</text>
+  <path d="M60,78 H820 M60,122 H820 M60,166 H820 M60,210 H820 M60,256 H820" class="lt"/>
+  <text x="440" y="356" class="ts sub" text-anchor="middle">左は Core の欄の名前。右の説明は EAA 紹介 3 による</text>
 </svg>
 ```
 
-契約プランの変更をすぐ反映させる Mission の例です。請求に触らないことを、Constraints と Authority の両方に書いています。
+Mission には Goal・Constraints・Authority・Acceptance Evidence と依存する版を書きます。背景と引受条件も共有します。
 
-出典: EAA Delivery Guide「7.」の Mission の例（適用例）。値は日本語に開いた（contract-change-e2e → 契約変更の通しのテスト）。
+出典: EAA Core 版 6「2. 自治と権限」「3. 意味と合意」。※ 欄の説明は EAA 紹介 3 による。Core は欄の名前だけを挙げる。
 
-## 依存する版も、Mission に書く
+## 欄を埋めるための問い
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="40" width="360" height="260" rx="3" class="hl" style="fill:#fff"/><text x="220" y="76" class="t hc" text-anchor="middle" font-weight="700">Mission</text>
-  <g class="ts"><text x="70" y="120">Goal・Constraints・</text><text x="70" y="146">Authority・Acceptance Evidence</text></g>
-  <path d="M70,176 H370" class="lt"/>
-  <g class="ts"><text x="70" y="210">依存する Ontology の版</text><text x="70" y="240">依存する Constitution の版</text><text x="70" y="270">依存する Contract の版</text></g>
-  <path d="M400,240 H476" class="ln" marker-end="url(#arr)"/>
-  <rect x="480" y="160" width="360" height="140" rx="10" class="soft"/>
-  <text x="660" y="200" class="ts" text-anchor="middle" font-weight="700">どの版で頼んだかが決まる</text>
-  <text x="660" y="232" class="ts" text-anchor="middle">新しい版が出ても、</text><text x="660" y="258" class="ts" text-anchor="middle">自動では移らない（第 9 章）</text>
+  <rect x="40" y="10" width="800" height="330" rx="3" class="hl" style="fill:#fff"/>
+  <g class="ts">
+    <text x="60" y="44" font-weight="700">Goal</text><text x="270" y="44">終わったとき、何ができるようになっているか</text>
+    <text x="60" y="92" font-weight="700">Constraints</text><text x="270" y="92">進めるあいだ、何を変えてはいけないか</text>
+    <text x="60" y="140" font-weight="700">Authority</text><text x="270" y="140">頼む側が任せられるもののうち、何を使ってよく、</text><text x="270" y="162">何を使わないか</text>
+    <text x="60" y="208" font-weight="700">Acceptance Evidence</text><text x="270" y="208">何が残っていたら、成果と判断が成り立ったと、</text><text x="270" y="230" font-weight="700">頼んだ側が、受けた側を介さずに確かめられるか</text>
+    <text x="60" y="276" font-weight="700">依存する版</text><text x="270" y="276">どの版の Contract・Ontology・Constitution を前提にしたか</text>
+    <text x="60" y="320" class="sub">背景と条件</text><text x="270" y="320" class="sub">引き受けるかを決めるのに、受ける側は何を知る必要があるか</text>
+  </g>
+  <path d="M50,64 H830 M50,112 H830 M50,180 H830 M50,250 H830 M50,296 H830" class="lt"/>
+  <text x="440" y="368" class="ts sub" text-anchor="middle">左が Core の欄。右は、自分の案件で欄を埋めるときの問い</text>
 </svg>
 ```
 
-Mission には、依存する Ontology・Constitution・Contract の版を書きます。どの版を前提に頼んだかが、受けた側にも後から分かります。
+右の問いに答えると、Mission の欄が埋まります。問いは、受ける側が頼む側に聞かなくても答えが分かる形で書くためのものです。
 
-出典: EAA Core 版 6「3. 意味と合意」。※ 例の原文は Ontology の参照先の名前も書くが、ここでは出していない。
+※ 問いは書き手が作った。Core の字と照合した（Acceptance Evidence は「0.」と概念表、Authority は「2.」）。
+
+## 書けたかは、聞きに戻るかで確かめる
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="50" width="340" height="220" rx="3" class="hl" style="fill:#fff"/><text x="210" y="86" class="t hc" text-anchor="middle" font-weight="700">書いた Mission</text>
+  <path d="M380,160 H496" class="ln" marker-end="url(#arr)"/><text x="438" y="150" class="tx" text-anchor="middle">これだけ渡す</text>
+  <rect x="500" y="50" width="340" height="220" rx="10" class="box"/><text x="670" y="86" class="t" text-anchor="middle" font-weight="700">受ける Cell</text>
+  <use href="#i-ok" x="520" y="122" width="22" height="22"/><text x="552" y="139" class="ts">Task に分けられる</text>
+  <use href="#i-no" x="520" y="182" width="22" height="22"/><text x="552" y="199" class="ts">頼む側に聞きに戻る</text>
+  <text x="552" y="229" class="tx">→ その欄がまだ書けていない</text>
+  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">受ける Cell が自分の文脈だけで進められれば、書けている</text>
+</svg>
+```
+
+受ける Cell が、これだけを読んで Task に分けられれば、書けています。頼む側に聞きに戻る所があれば、その欄はまだ書けていません。
+
+※ 書き手の読み。所有者の「コンテキストスイッチが起きないように切り分ける」を、渡し方の判定にした。
+
+## 例：追跡番号を出荷結果に載せる
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="10" width="800" height="340" rx="3" class="hl" style="fill:#fff"/>
+  <text x="60" y="38" class="ts hc" font-weight="700">在庫の Cell から物流の Cell への Mission</text>
+  <g class="ts">
+    <text x="60" y="72" font-weight="700">Goal</text><text x="270" y="72">在庫が、出荷結果から配送業者の追跡番号を読める</text>
+    <text x="60" y="112" font-weight="700">Constraints</text><text x="270" y="112">15 時締めと当日出荷を変えない</text><text x="270" y="134">出荷結果のいまの欄の意味を変えない</text>
+    <text x="60" y="174" font-weight="700">Authority</text><text x="270" y="174">使ってよい：在庫の結合テスト環境に出荷結果を送る</text><text x="270" y="196">使わない：在庫の本番の引当データ</text>
+    <text x="60" y="236" font-weight="700">Acceptance Evidence</text><text x="270" y="236">結合テストの出荷結果 100 件で、在庫が配送業者の</text><text x="270" y="258">照会から追跡番号を引けた記録</text>
+    <text x="60" y="296" font-weight="700">依存する版</text><text x="270" y="296">在庫と物流の Contract 版 1・共有する Ontology 版 1</text>
+    <text x="60" y="332" class="sub">背景</text><text x="270" y="332" class="sub">届け先からの「荷物はどこか」に、在庫の窓口が答えたい</text>
+  </g>
+  <path d="M50,90 H830 M50,152 H830 M50,214 H830 M50,276 H830 M50,312 H830" class="lt"/>
+</svg>
+```
+
+前のページの問いに答えた Mission です。物流は、締め時刻を守り、在庫の本番データに触らず、在庫が自分で確かめられる記録を残せば受け入れられる、と読めます。
+
+※ 例は説明のために作った。書き方は決まった書式ではない。
 
 ## Task は、受けた Cell が分ける
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="260" height="220" rx="10" class="box"/><text x="170" y="96" class="t" text-anchor="middle" font-weight="700">頼む Cell</text>
-  <rect x="80" y="150" width="180" height="50" rx="3" class="hl" style="fill:#fff"/><text x="170" y="182" class="ts hc" text-anchor="middle">Mission</text>
-  <path d="M300,175 H536" class="ln" marker-end="url(#arr)"/>
-  <rect x="540" y="60" width="300" height="220" rx="10" class="box"/><text x="690" y="96" class="t" text-anchor="middle" font-weight="700">受けた Cell</text>
-  <g class="ts" text-anchor="middle"><rect x="570" y="124" width="110" height="36" rx="18" class="a"/><text x="625" y="148" class="on">Task</text><rect x="700" y="124" width="110" height="36" rx="18" class="a"/><text x="755" y="148" class="on">Task</text><rect x="570" y="176" width="110" height="36" rx="18" class="a"/><text x="625" y="200" class="on">Task</text><rect x="700" y="176" width="110" height="36" rx="18" class="a"/><text x="755" y="200" class="on">Task</text></g>
-  <text x="690" y="250" class="ts" text-anchor="middle">分け方は、この Cell が決める</text>
-  <path d="M300,240 C 380,300 480,300 560,240" class="xl dash" marker-end="url(#arr-x)"/><use href="#i-no" x="418" y="278" width="24" height="24"/><text x="430" y="330" class="ts xc" text-anchor="middle">頼む側が Task まで指定する</text>
+  <rect x="40" y="60" width="240" height="220" rx="10" class="box"/><text x="160" y="96" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <rect x="70" y="150" width="180" height="50" rx="3" class="hl" style="fill:#fff"/><text x="160" y="182" class="ts hc" text-anchor="middle">Mission</text>
+  <path d="M280,175 H496" class="ln" marker-end="url(#arr)"/>
+  <rect x="500" y="40" width="340" height="260" rx="10" class="box"/><text x="670" y="76" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <g class="ts"><rect x="520" y="96" width="300" height="36" rx="18" class="a"/><text x="670" y="120" class="on" text-anchor="middle">配送業者から番号を受け取る</text><rect x="520" y="144" width="300" height="36" rx="18" class="a"/><text x="670" y="168" class="on" text-anchor="middle">出荷結果を作る処理を直す</text><rect x="520" y="192" width="300" height="36" rx="18" class="a"/><text x="670" y="216" class="on" text-anchor="middle">結合テスト環境に送る</text></g>
+  <text x="670" y="270" class="ts" text-anchor="middle">分け方は、物流が決める</text>
+  <path d="M280,250 C 360,320 440,320 520,280" class="xl dash" marker-end="url(#arr-x)"/><use href="#i-no" x="388" y="292" width="24" height="24"/><text x="400" y="350" class="ts xc" text-anchor="middle">在庫が Task まで指定する</text>
 </svg>
 ```
 
-Mission を受けた Cell は、それを実現するための作業の単位を Task として自分で分けます。頼む側は、Task の分け方を指定しません。
+Mission を受けた物流は、それを実現する作業の単位を Task として自分で分けます。在庫は、Task の分け方を指定しません。
 
-出典: EAA Core 版 6 の概念表「Task」と「2. 自治と権限」。
+出典: EAA Core 版 6 の概念表「Task」と「2. 自治と権限」。※ Task の中身は説明のための例。
 
-## 任せる権限は、自分の持つ範囲まで
+## Authority は頼む側の持ち物まで
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="300" height="220" rx="10" class="box"/><text x="190" y="96" class="t" text-anchor="middle" font-weight="700">頼む Cell</text>
-  <rect x="70" y="120" width="240" height="130" rx="6" class="soft"/><text x="190" y="146" class="ts" text-anchor="middle">正当に与えられる権限</text>
-  <rect x="110" y="166" width="160" height="60" rx="3" class="hl" style="fill:#fff"/><text x="190" y="202" class="ts hc" text-anchor="middle">Authority に書く</text>
-  <path d="M340,196 H536" class="ln" marker-end="url(#arr)"/><use href="#i-ok" x="426" y="160" width="26" height="26"/>
-  <rect x="540" y="60" width="300" height="220" rx="10" class="box"/><text x="690" y="96" class="t" text-anchor="middle" font-weight="700">受けた Cell</text>
-  <text x="690" y="200" class="ts" text-anchor="middle">書かれた範囲で判断する</text>
-  <rect x="40" y="306" width="800" height="50" rx="6" class="xl" style="fill:#fff"/><use href="#i-no" x="60" y="319" width="24" height="24"/><text x="100" y="338" class="ts xc">自分が持っていない権限（たとえば請求への書き込み）は、Authority に書けない</text>
+  <rect x="40" y="50" width="340" height="230" rx="10" class="box"/><text x="210" y="86" class="t" text-anchor="middle" font-weight="700">在庫の Cell が持つもの</text>
+  <rect x="70" y="110" width="280" height="44" rx="3" class="hl" style="fill:#fff"/><text x="210" y="138" class="ts hc" text-anchor="middle">結合テスト環境を使わせる</text>
+  <text x="210" y="200" class="ts" text-anchor="middle">→ Authority に書く</text>
+  <rect x="500" y="50" width="340" height="230" rx="10" class="box"/><text x="670" y="86" class="t" text-anchor="middle" font-weight="700">物流の Cell がもともと持つもの</text>
+  <rect x="530" y="110" width="280" height="44" rx="6" class="soft"/><text x="670" y="138" class="ts" text-anchor="middle">自分の処理をどう直すか</text>
+  <text x="670" y="200" class="ts" text-anchor="middle">→ Authority に書かない</text>
+  <rect x="40" y="306" width="800" height="50" rx="6" class="xl" style="fill:#fff"/><use href="#i-no" x="60" y="319" width="24" height="24"/><text x="100" y="338" class="ts xc">頼む側が持っていない権限（たとえば配送業者のシステム）は、書いて渡せない</text>
 </svg>
 ```
 
-権限を任せるときは、任せる側が正当に与えられる範囲を越えません。自分が持っていない権限を、Mission に書いて渡すことはできません。
+Authority に書くのは、頼む側が持っていて受ける側に使わせるものです。物流の中の処理をどう直すかは、物流がもともと自分で決めるので書きません。
 
-出典: EAA Core 版 6「2. 自治と権限」。※ 請求の例は説明のためのものです。
+出典: EAA Core 版 6「2. 自治と権限」。※ 中の作り方を書かないのは、各 Cell が内部方式を決める行と委任の行から書き手が導いた。
+
+## 依存する版で、前提が動かない
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="40" width="360" height="260" rx="3" class="hl" style="fill:#fff"/><text x="220" y="76" class="t hc" text-anchor="middle" font-weight="700">Mission</text>
+  <g class="ts"><text x="70" y="126">Contract 版 1</text><text x="70" y="160">共有する Ontology 版 1</text></g>
+  <path d="M70,190 H370" class="lt"/>
+  <text x="70" y="230" class="tx">この版を前提に頼んだ</text>
+  <path d="M400,200 H476" class="ln" marker-end="url(#arr)"/>
+  <rect x="480" y="120" width="360" height="160" rx="10" class="soft"/>
+  <text x="660" y="160" class="ts" text-anchor="middle" font-weight="700">途中で新しい版が出ても</text>
+  <text x="660" y="196" class="ts" text-anchor="middle">物流は版 1 の上で進める</text><text x="660" y="226" class="ts" text-anchor="middle">自動では移らない（第 9 章）</text>
+</svg>
+```
+
+Mission に依存する版を書くと、途中で新しい版が出ても、受けた側は書かれた版の上で進められます。何を前提に頼んだかを、聞きに戻らずに分かります。
+
+出典: EAA Core 版 6「3. 意味と合意」（依存する版を特定する。新版の公開と採用は別で、自動追随しない）。
 
 ## 目的を変えるなら、提案する
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="40" width="300" height="100" rx="3" class="hl" style="fill:#fff"/><text x="190" y="80" class="ts hc" text-anchor="middle" font-weight="700">Mission の Goal</text><text x="190" y="110" class="ts" text-anchor="middle">契約プランの変更を、すぐに反映</text>
+  <rect x="40" y="40" width="300" height="100" rx="3" class="hl" style="fill:#fff"/><text x="190" y="80" class="ts hc" text-anchor="middle" font-weight="700">Mission の Goal</text><text x="190" y="110" class="ts" text-anchor="middle">在庫が追跡番号を読める</text>
   <rect x="540" y="40" width="300" height="100" rx="3" class="lt" style="fill:#fff"/><text x="690" y="80" class="ts" text-anchor="middle" font-weight="700">分けた Mission</text><text x="690" y="110" class="ts" text-anchor="middle">Goal への寄与を説明できる</text>
   <path d="M340,90 H536" class="ln" marker-end="url(#arr)"/>
   <rect x="40" y="190" width="800" height="150" rx="10" class="soft"/>
@@ -189,10 +253,10 @@ Mission を受けた Cell は、それを実現するための作業の単位を
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <g class="ts">
-    <rect x="40" y="40" width="390" height="110" rx="6" class="h"/><text x="235" y="86" class="on" text-anchor="middle" font-weight="700">Outcome の達成</text><text x="235" y="114" class="on" text-anchor="middle">変化が実際に成り立った</text>
-    <rect x="450" y="40" width="390" height="110" rx="6" class="h"/><text x="645" y="86" class="on" text-anchor="middle" font-weight="700">Acceptance Evidence の充足</text><text x="645" y="114" class="on" text-anchor="middle">決めた Evidence が揃った</text>
-    <rect x="40" y="170" width="390" height="110" rx="6" class="box"/><text x="235" y="216" text-anchor="middle" font-weight="700">Contract の更新と判断の記録</text><text x="235" y="244" text-anchor="middle">必要なものが済んだ</text>
-    <rect x="450" y="170" width="390" height="110" rx="6" class="box"/><text x="645" y="216" text-anchor="middle" font-weight="700">権限違反の解消</text><text x="645" y="244" text-anchor="middle">違反が残っていない</text>
+    <rect x="40" y="40" width="390" height="110" rx="6" class="h"/><text x="235" y="86" class="on" text-anchor="middle" font-weight="700">Outcome の達成</text><text x="235" y="114" class="on" text-anchor="middle">在庫が追跡番号を読める</text>
+    <rect x="450" y="40" width="390" height="110" rx="6" class="h"/><text x="645" y="86" class="on" text-anchor="middle" font-weight="700">Acceptance Evidence の充足</text><text x="645" y="114" class="on" text-anchor="middle">100 件を照会で引けた記録</text>
+    <rect x="40" y="170" width="390" height="110" rx="6" class="box"/><text x="235" y="216" text-anchor="middle" font-weight="700">Contract の更新と判断の記録</text><text x="235" y="244" text-anchor="middle">追跡番号の欄を足した版 2 の成立</text>
+    <rect x="450" y="170" width="390" height="110" rx="6" class="box"/><text x="645" y="216" text-anchor="middle" font-weight="700">権限違反の解消</text><text x="645" y="244" text-anchor="middle">本番の引当データに触れていない</text>
   </g>
   <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">全部が揃って、Mission は完了する</text>
 </svg>
@@ -200,7 +264,7 @@ Mission を受けた Cell は、それを実現するための作業の単位を
 
 完了には、Outcome の達成、Acceptance Evidence の充足、必要な Contract の更新と判断の記録、権限違反の解消のすべてが要ります。
 
-出典: EAA Core 版 6「5. 成果と記録」。
+出典: EAA Core 版 6「5. 成果と記録」。※ 例では追跡番号が Contract 版 1 の入出力に無いので、版 2 の成立が要る。
 
 ## 作業や受け入れだけでは完了しない
 
@@ -222,6 +286,23 @@ Mission を受けた Cell は、それを実現するための作業の単位を
 作業をやり終えたことや変更を受け入れたことだけでは、完了しません。PR の merge も同じです。合意した確かめの条件と、必要な職務分離を保ちます。
 
 出典: EAA Core 版 6「5. 成果と記録」、EAA Delivery Guide「8.」（PR merge は Mission の完了と同義ではない）。
+
+## 受け入れは頼んだ Cell が決める
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="60" width="300" height="200" rx="10" class="box"/><text x="190" y="96" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <text x="190" y="160" class="ts" text-anchor="middle">できました</text>
+  <path d="M340,150 H536" class="ln" marker-end="url(#arr)"/><use href="#i-pr" x="425" y="108" width="30" height="38"/><text x="440" y="172" class="ts" text-anchor="middle">Acceptance Evidence</text>
+  <rect x="540" y="60" width="300" height="200" rx="10" class="box"/><text x="690" y="96" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <use href="#i-ok" x="566" y="140" width="26" height="26"/><text x="700" y="160" class="ts okc" text-anchor="middle">記録で確かめて</text><text x="700" y="186" class="ts okc" text-anchor="middle">受け入れを決める</text>
+  <text x="440" y="320" class="t" text-anchor="middle" font-weight="700">Evidence を受け取った側が確かめる</text>
+</svg>
+```
+
+受け入れを決めるのは、Acceptance Evidence を受け取る頼んだ Cell です。物流が「できました」と言っても、在庫は記録で確かめてから受け入れます。
+
+出典: EAA Core 版 6「0. 目的と範囲」、概念表「Acceptance Evidence」。確かめ方は第 8 章で見る。
 
 ## 決めたことは、記録に戻す
 
@@ -251,17 +332,31 @@ Mission、実行、Evidence、受け入れ、改訂、引き継ぎを、後か�
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="30" width="380" height="290" rx="10" class="soft"/>
   <text x="60" y="64" class="t" font-weight="700">Core が決めていること</text>
-  <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">Mission に書く欄の名前</text>
+  <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">Mission に書く欄（Goal など）</text>
   <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">Task は受けた Cell が分ける</text>
   <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">完了に要るもの</text>
-  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">重要な決定を会話だけに残さない</text></g>
+  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">受け入れの Evidence を確かめる側</text>
+  <use href="#i-ok" x="60" y="248" width="22" height="22"/><text x="92" y="265">重要な決定を会話だけに残さない</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも挙がっていない</text><text x="480" y="166" class="ts">Mission の書式（項目名・記法）</text><text x="480" y="206" class="ts">欄ごとに何をどこまで書くか</text><text x="480" y="246" class="ts">完了を判定する者の名指し</text></g>
-  <text x="440" y="356" class="ts sub" text-anchor="middle">例の記法は、自分の案件で書き始めるための例</text>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも挙がっていない</text><text x="480" y="166" class="ts">Mission の記法（書く場所・書式）</text><text x="480" y="206" class="ts">欄を埋めるための問い</text><text x="480" y="246" class="ts">Contract 更新などを判定する者</text></g>
+  <text x="440" y="356" class="ts sub" text-anchor="middle">問いと例は、自分の案件で書き始めるためのもの</text>
 </svg>
 ```
 
-Mission の書式は Core に書かれていません。完了を判定する者も Core は名指しせず、合意した確かめの条件と必要な職務分離を保つことを求めています。
+欄と完了の条件は Core が決めています。Mission の記法と欄を埋める問いは Core に無く、Contract 更新などを誰が判定するかも書かれていません。
 
-出典: EAA Core 版 6「5. 成果と記録」、EAA Delivery Guide「7.」（説明用の記法で、確定した書式ではない）。
+出典: EAA Core 版 6「0.」「2.」「5.」、EAA Delivery Guide「7.」（Mission の例は説明用の記法で、確定した書式ではない）。
+
+## 次章へ：成果の確かめ方
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="60" y="80" width="260" height="160" rx="10" class="box"/><text x="190" y="166" class="t" text-anchor="middle" font-weight="700">作った Cell</text>
+  <rect x="560" y="80" width="260" height="160" rx="10" class="box"/><text x="690" y="166" class="t" text-anchor="middle" font-weight="700">受け取った Cell</text>
+  <path d="M320,160 H556" class="ln" marker-end="url(#arr)"/><use href="#i-pr" x="425" y="112" width="30" height="38"/><text x="440" y="184" class="ts" text-anchor="middle">Evidence</text>
+  <text x="440" y="300" class="ts" text-anchor="middle">第 8 章</text>
+</svg>
+```
+
+渡した仕事の成果は、Evidence で戻ってきます。第 8 章では、受け取った Cell が、作った Cell の文脈に入らずに確かめるやり方を見ます。
