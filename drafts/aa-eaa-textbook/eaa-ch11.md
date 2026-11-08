@@ -15,6 +15,7 @@ publications の APPROVALS.md「本書に書かないもの」は他の Cell で
 新しく引く外部の文献は無い。
 ⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: p.「採用しない部分は、相手に示す」の例は、同じ Contract について在庫と物流が別々の規定に従う状態を作るのに、最後のページがそれを挙げていなかった。core.md:121 は示すことまでしか求めないので、「Core に書かれていない」に足した。観測欄の「移行中の責任」はこの章では使っていない（⑤で出典欄から外した）。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの項目は core.md:11 の既知の不足に無いので「Core に書かれていない」に置いた。出典欄の「移行中の責任は既知の不足」は、3 項目のどれとも Core が結びつけていないので外した。
+2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの右の小見出しを「既知の不足にも挙がっていない」にした（理由は第 6 章の注と同じ）。
 -->
 
 > 採用を承認するのは Core の所有者ではない人間で、承認者を置けない Cell は採用しない。記録はその Cell が管理し、Core の所有者は書き換えない。
@@ -219,7 +220,7 @@ Core に新しい版が出ても、採用した Cell は自動では移りませ
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">記録は採用した Cell が持つ</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも、決める予定にも無い</text><text x="480" y="162" class="ts">記録の書式と置き場所</text><text x="480" y="194" class="ts">採用をやめるときの手続き</text><text x="480" y="226" class="ts">Core の版が違う Cell どうしの</text><text x="480" y="250" class="ts">あいだの扱い</text><text x="480" y="282" class="ts">不採用を示した後、同じ Contract で</text><text x="480" y="306" class="ts">両側が別の規定に従う状態の扱い</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも挙がっていない</text><text x="480" y="162" class="ts">記録の書式と置き場所</text><text x="480" y="194" class="ts">採用をやめるときの手続き</text><text x="480" y="226" class="ts">Core の版が違う Cell どうしの</text><text x="480" y="250" class="ts">あいだの扱い</text><text x="480" y="282" class="ts">不採用を示した後、同じ Contract で</text><text x="480" y="306" class="ts">両側が別の規定に従う状態の扱い</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">理解しているかは、Core では検査しない</text>
 </svg>
 ```

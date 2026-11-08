@@ -14,6 +14,7 @@ Ontology の形（③、@ope-ultp1635 msg 6ec153b2、@reviewer 2026-11-08 ch06-0
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの項目は core.md:11 の既知の不足に無いので「Core に書かれていない」に置き、「まだ」を落とした。
+2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの右の小見出し「既知の不足にも、決める予定にも無い」を「既知の不足にも挙がっていない」にした。「決める予定」の並びで、既知の不足＝決める予定と読まれた（長谷川・宮下）。core.md:11 は決める予定を書いていない。
 -->
 
 > Evidence は、受け取った Cell が、作った Cell を介さずに確かめられる形にする。意味のずれは Evidence が受け入れられなかったときに見えるので、推測で越えずに照会か変更提案で解く。
@@ -242,7 +243,7 @@ Core の「両側が保持する」は、各側が自分の定義を持つとも
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">様式と Ontology も所有者を持つ</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも、決める予定にも無い</text><text x="480" y="166" class="ts">Evidence の様式に書く項目</text><text x="480" y="206" class="ts">共有する Ontology の所有者の決め方</text><text x="480" y="246" class="ts">Evidence の様式の所有者の決め方</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも挙がっていない</text><text x="480" y="166" class="ts">Evidence の様式に書く項目</text><text x="480" y="206" class="ts">共有する Ontology の所有者の決め方</text><text x="480" y="246" class="ts">Evidence の様式の所有者の決め方</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">所有者の決め方を書いているのは、Contract だけ</text>
 </svg>
 ```

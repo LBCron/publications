@@ -14,6 +14,7 @@
 新しく引く外部の文献は無い。
 ⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: p.「承認して、新しい版を公開する」は、在庫の側が承認しない理由を「提起した者は承認しない」（core.md:94）にしていた。core.md:94 は人の単位の規定で、Cell の単位の分離ではない。在庫の側が承認しないのは、改訂を判断するのが所有者（core.md:90）で、所有者が物流の側にいる（core.md:98・第 8 章の例）から。理由をそちらに替え、core.md:94 は人の単位で満たしていることを注に書いた。第 1 章の「片側で書き換わる」の注と同じ取り違え。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの見出しを「詳しい手順が未定のこと」にし、各項目が core.md:11 の既知の不足であることを書いた。以前は見出しが「決めていないこと」で、扱い全体が未決に読めた（緊急時・合意不成立には core.md:71・101・102 の字がある）。
+2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの絵の「既知の不足」の小見出しの下に「詳しい手順は未定。いつ決めるかは書いていない」を足し、項目を下げた（core.md:11 は詳細手順が未定と挙げるだけ。第 5 章の注と同じ）。
 -->
 
 > 変えたい側は提案し、受け入れるかは対象の Cell が決める。親子・兄弟・横断のどの向きでも同じ手続きで、基盤を担う Cell も CI/CD の変更を PR で提案する。
@@ -297,7 +298,7 @@ GitHub では、正本を改訂する PR と採用版を更新する PR を分�
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">どの向きでも同じ手続き</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">詳しい手順が未定のこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="138" class="ts">移行中の責任</text><text x="480" y="174" class="ts">複数の Cell にまたがる変更の</text><text x="480" y="198" class="ts">互換性・適用順・部分失敗からの復旧</text><text x="480" y="234" class="ts">合意不成立の調整</text><text x="480" y="270" class="ts">外部の制約の変化・緊急時の調整</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="126" class="tx">詳しい手順は未定。いつ決めるかは書いていない</text><text x="480" y="160" class="ts">移行中の責任</text><text x="480" y="194" class="ts">複数の Cell にまたがる変更の</text><text x="480" y="218" class="ts">互換性・適用順・部分失敗からの復旧</text><text x="480" y="252" class="ts">合意不成立の調整</text><text x="480" y="286" class="ts">外部の制約の変化・緊急時の調整</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">手順が未定の調整を、ほかの Cell からの一方的な強制で埋めない</text>
 </svg>
 ```

@@ -14,6 +14,7 @@ Mission の例の ontology の参照先は、原文では enterprise:// で始�
 新しく引く外部の文献は無い。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの項目は core.md:11 の既知の不足に無いので「Core に書かれていない」に置き、「まだ」を落とした。
 ⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 章題と章の概要（絵の結び・文）が完了の条件を Outcome と Acceptance Evidence だけにしていた。core.md:106 は Contract 更新・判断記録・権限違反の解消も要る（「完了に要るもの」のページは全部書いていた）。章題は core.md:107 の「作業実施や変更の受入だけでは完了しない」の字にし（titles.md に記録）、概要の文に残りの条件を足した。core.md:107 の「必要な職務分離」の「必要な」を戻した。p.「目的を変えるなら」は core.md:67 の「新Missionまたは改訂として提案する」の「提案する」を落としていたので戻し、見出しも変えた。p.「決めたことは、記録に戻す」の絵の「会話だけに残った決定は正式な決定として扱わない」は delivery-guide.md:127 の字で（そこからも「重要な」が落ちていた）、Core より強い内容なのに最後のページで「Core が決めていること」に入っていた。絵と最後のページを core.md:110 の字にし、Delivery Guide の字は適用例として注に置いた。
+2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの右の小見出しを「既知の不足にも挙がっていない」にした（理由は第 6 章の注と同じ）。
 -->
 
 > Mission には Goal・Constraints・Authority・Acceptance Evidence を書く。Task の分け方は受けた Cell が決め、作業したことや受け入れたことだけでは完了にならない。
@@ -256,7 +257,7 @@ Mission、実行、Evidence、受け入れ、改訂、引き継ぎを、後か�
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">重要な決定を会話だけに残さない</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも、決める予定にも無い</text><text x="480" y="166" class="ts">Mission の書式（項目名・記法）</text><text x="480" y="206" class="ts">欄ごとに何をどこまで書くか</text><text x="480" y="246" class="ts">完了を判定する者の名指し</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも挙がっていない</text><text x="480" y="166" class="ts">Mission の書式（項目名・記法）</text><text x="480" y="206" class="ts">欄ごとに何をどこまで書くか</text><text x="480" y="246" class="ts">完了を判定する者の名指し</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">例の記法は、自分の案件で書き始めるための例</text>
 </svg>
 ```

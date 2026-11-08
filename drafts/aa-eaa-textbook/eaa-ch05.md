@@ -13,6 +13,7 @@ development-model.md:58 にある比喩の語は本文に持ち込まない（ro
 新しく引く外部の文献は無い。
 ⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目、項 15）: core.md の「移行」は版の移行（core.md:79・80）の語で、分割の引継ぎ（core.md:57）には「移行」の字が無い。core.md:11 の「移行中の責任」が分割の引継ぎに当たるかは Core の字では決まらないので、最後のページの注にそう書いた。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの「決めていないこと」を、Core の既知の不足（core.md:11 の移行中の責任）と、Profiles が未決・未確定とした引継ぎ・移行の手順（profiles.md:83・135）に分けた。
+2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの絵の「既知の不足」の小見出しの下に「詳しい手順は未定。いつ決めるかは書いていない」を足した（文は上限 80 字に余りが無いので絵に持たせた。第 8・9 章も同じ）。core.md:11 は観測欄で「既知の不足として、…は、詳細手順が未定である」と挙げるだけで、後の版で決めるとは書いていない。そのため「決める予定」とは書かず、いつ・どの版で決めるかは書いていない、とした。
 -->
 
 > 業務機能と基盤を扱ってきた Cell から、基盤の判断の負荷が増えたので Platform を別の Cell に分ける例で、移すものと再合意が要る場面を示す。引継ぎの詳細手順は、Core ではなく Profiles が未決として残している。
@@ -208,7 +209,7 @@ Cell を分ける・まとめる・責務を外すときは、権限から、ま
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">保証を変えるなら合意し直す</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="132" class="ts">移行中の責任（分割に当たるかは未定）</text><text x="480" y="182" class="ts" font-weight="700">Profiles が未決・未確定とした</text><text x="480" y="212" class="ts">引き継ぎの細かい手順</text><text x="480" y="242" class="ts">分離・再統合の移行の手順</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="126" class="tx">詳しい手順は未定。いつ決めるかは書いていない</text><text x="480" y="156" class="ts">移行中の責任（分割に当たるかは未定）</text><text x="480" y="202" class="ts" font-weight="700">Profiles が未決・未確定とした</text><text x="480" y="232" class="ts">引き継ぎの細かい手順</text><text x="480" y="262" class="ts">分離・再統合の移行の手順</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">手順が未定の調整を、ほかの Cell からの一方的な強制で埋めない</text>
 </svg>
 ```

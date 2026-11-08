@@ -16,6 +16,7 @@ publications の #135・#136・#137 と APPROVALS 行 12〜15 を実例として
 準拠先（③、@ope-ultp1635 msg 6ec153b2）: 例の 3 項目は在庫と物流の Contract の欄で、Cell 間で共有する文書の準拠先は core.md:94 で自己改訂規範アーキテクチャ v1・最小構成と決まっている（core.md:12 の Core 自身の準拠先も同じ）。前の版は「EAA Core 版 6」と書いており誤りだったので、第 8 章の例に揃えた。各 Cell の中の規範が Core に準拠する話はこの章では書いていない。
 ⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 章題「改訂は提起した者以外が承認する」と最後のページから「所有者が承認する」（core.md:90）が落ちていた。「以外」だと所有者でない人でも承認できると読める。章題を「改訂は人間の所有者が承認し、提起した者は承認しない」にし（titles.md に記録）、最後のページの左と文に足した。p.「中の改訂の手続き」は、絵の結び・文が「Core の条件は中の規範に及ばない」、注が「緩めない行は中にも及ぶ」で逆だった。core.md:94-95 で中に及ばないのは「所有者・観測・準拠先を持つ」（同アーキテクチャへの準拠）の要求で、core.md:96 は文書を限っていない。絵の結び・文の主語をその要求に絞り、注が指す行を前の 2 ページと書いた。
 ⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページで、所有者本人の改訂の承認者を「決めていないこと」から外し、core.md:90・94・98 からの帰結として左に書いた。例のページの文に core.md:90（改訂を判断するのは所有者）を足した。残りの 2 項目は core.md:11 に無いので「Core に書かれていない」。権限が足りないときの戻し先を core.md:70 の字「正当な判断主体」に揃えた（第 2・4 章と同じ）。
+2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの右の小見出しを「既知の不足にも挙がっていない」にした（理由は第 6 章の注と同じ）。例のページの絵の準拠先の行に「Core 自身の準拠先も同じ」を足した（core.md:12）。
 -->
 
 > 実行者は、自分を縛る規範を緩める変更も、自分の権限を広げる変更も自己承認できない。行う者と、承認・検証する者を分ける。
@@ -65,7 +66,7 @@ Contract、共有する Profile・Ontology、Evidence の様式と Core は、�
   <g class="ts">
     <text x="60" y="110" font-weight="700">所有者</text><text x="220" y="110">物流の窓口の責任者</text><text x="560" y="110" class="tx">変更を承認する人</text>
     <text x="60" y="180" font-weight="700">観測</text><text x="220" y="180">受け入れられなかった出荷結果と、</text><text x="220" y="204">その理由</text><text x="560" y="180" class="tx">見直しの根拠に残す記録</text>
-    <text x="60" y="274" font-weight="700">準拠先</text><text x="220" y="262">自己改訂規範アーキテクチャ</text><text x="220" y="286">v1・最小構成</text><text x="560" y="274" class="tx">従う上位の規範と、その版</text>
+    <text x="60" y="274" font-weight="700">準拠先</text><text x="220" y="262">自己改訂規範アーキテクチャ</text><text x="220" y="286">v1・最小構成</text><text x="560" y="262" class="tx">従う上位の規範と、その版</text><text x="560" y="286" class="tx">Core 自身の準拠先も同じ</text>
   </g>
   <path d="M40,70 H840 M40,140 H840 M40,234 H840 M40,304 H840" class="lt"/>
 </svg>
@@ -231,7 +232,7 @@ Profile の正本を編集できる権限だけでは、合意した義務を消
   <text x="60" y="304" class="ts" font-weight="700">→ 所有者本人の改訂は、承認できる者がいない</text>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも、決める予定にも無い</text><text x="480" y="166" class="ts">提起した者と承認した者が別だと、</text><text x="480" y="190" class="ts">記録の上でどう示すか</text><text x="480" y="230" class="ts">承認の手続きの細部</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも挙がっていない</text><text x="480" y="166" class="ts">提起した者と承認した者が別だと、</text><text x="480" y="190" class="ts">記録の上でどう示すか</text><text x="480" y="230" class="ts">承認の手続きの細部</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">承認の手続きは、それぞれの判断に当てる手続きに任せている</text>
 </svg>
 ```
