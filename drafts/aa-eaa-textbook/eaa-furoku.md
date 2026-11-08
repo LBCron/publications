@@ -1,4 +1,4 @@
-# 付録　LeSS・SAFe・Spotify は、チームのあいだの決定を、一か所に集めるものと各チームに任せるものに分けている
+# 付録　大規模開発の枠組みは、集める決定と任せる決定を分けている
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（77de7781）の付録。着手: @ope-ultp1635 msg cfe0fe59（群五）。

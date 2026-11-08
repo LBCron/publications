@@ -34,6 +34,7 @@ export const BODY_MAX = 80;   // 1 ページの文の上限（字。空白と md
 export const NOTE_MAX = 90;   // 注の上限
 const COURSE_MAX = 40;        // 読み方の 1 枚のコースの上限
 const HEAD_MAX = 20;          // 見出しの上限
+const TITLE_MAX = 30;         // 章題の上限（「第 N 章　」「付録　」を除く）。章題は一つの主張で止め、理由・帰結・限定は章の概要に書く。AA の章題 10 本の最長 29 字に合わせた（2026-11-08、@ope-ultp1635 msg 12bf66b5）
 
 export class BuildError extends Error {}
 const fail = msg => { throw new BuildError(msg); };
@@ -73,6 +74,8 @@ export function readChapter(file) {
   const h1 = md.match(/^# (.+)$/m) || fail(`${name}: 章の題（# …）が無い`);
   const parts = md.split(/^## /m);
   const appendix = /^(巻末|付録)/.test(h1[1].trim());   // 付録（<本>-furoku.md）も巻末と同じ組み方。章の後ろ・巻末の前に置く
+  const titleBody = h1[1].trim().replace(/^(第 \d+ 章|付録|巻末)　/, '');
+  if (countChars(titleBody) > TITLE_MAX) fail(`${name}: 章題が ${countChars(titleBody)} 字（上限 ${TITLE_MAX}）。理由・帰結・限定は章の概要に移す`);
   // 章題が章の主張を言い切る。「群:」1 行で群に入れる（巻末以外は必須）。「> 」1 行のリードは任意で、題に無い事を足すときだけ書く
   let cover = parts.shift().replace(/^# .+$/m, '');
   const group = appendix ? '' : (cover.match(/^群[:：]\s*(.+)$/m) || fail(`${name}: 章題の下に「群: …」が無い`))[1].trim();
