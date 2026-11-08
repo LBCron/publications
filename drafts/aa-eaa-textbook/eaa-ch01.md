@@ -1,357 +1,206 @@
-# 第 1 章　合意を一人に集めれば判断待ちが伸び、各チームに任せれば承認なしに書き換わる
+# 第 1 章　人間は職能で分業してきたが、職能は Agent にとって分業の軸になるほどの文脈ではない
 
-群: チームのあいだの合意と、集中・分散の失敗
+群: 巨大なシステムの分業という問い
 
 <!--
-構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
-出どころ（構造の表のまま）: 素材 0・1（drafts/agentic-agile-materials/explanations/eaa/0-two-exits.html・1-between-two-collapses.html。SAFe・LeSS・Spotify の記述）、core.md:94-96。Core は publications origin/main 0d07f75 の core.md 版 6。
-本文: @ope-ultp1635 msg a8d86548（群ごとに 4 回。群一から）。
-引用の訳は素材 0 のもの（素材 0 の付記: 一次資料から取得し原文と照合、英文を訳した）。この本では原文に当たり直していない。当たり直すと群一の訳（EAA 紹介 0 と同じ字）と揃わなくなるので、当たり直さず、当たっていないことを p.2 の本文と絵で読み手に見せる（@ope-ultp1635 msg 8f940fc9 ①）。Lee の題と媒体は deep-research/research-archive/2026-09-28-eaa-intro-zero-two-lineages.md の出典欄（jeremiahlee.com/posts/failed-squad-goals/）から。
-「出口」「崩れ方」は比喩なので使わない（titles.md の判断と同じ）。「集める」「任せる」と、失敗の中身（判断待ちが伸びる・承認なしに書き換わる）で書く。
-「一人の PO が持てるチームの数が減る」「列が早く伸びる」は推論で実測ではない（素材 0 の付記）。p.9 の注に書いた。
-「実行が安くなった」は確定した事実として扱わない（素材 0 の付記）。p.8 の注に書いた。
-⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: p.「書いても、片側で書き換わる」の注は、以前「所有者は人間・提起者は承認しない」で防ぐと書き、第 10 章を指していた。core.md:98 で Contract の所有者は結ぶ Cell のどれか一つに属する人なので、A 側の人が提起して A 側の所有者が承認すれば、その二つを満たしたまま片側で改訂を承認できる。防ぐのは core.md:79（自動追随しない）・80（全 Cell が同じ版を採用して成立）・91（採用は採用側の所有者が判断）なので、その字にし、参照先を版の採用の第 9 章にした。LeSS の 2 件に URL と参照日を足した（注の上限に収まらないので、Kniberg・Lee と同じく絵の中に書いた。参照日は EAA 紹介 0 の調査で取得した日）。URL と参照日は deep-research/research-archive/2026-09-28-eaa-intro-zero-two-lineages.md（調査日 2026-09-28、§検索クエリ列の curl 先）による。この本では当たり直していない（上の行と同じ）。
-2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: p.「引用は、原文に当たり直していない」の絵の下にあった EAA 紹介 0 の置き場所（publications の drafts/agentic-agile-materials/explanations/eaa/0-two-exits.html）を外した。読み手が開けない場所を書くと、紹介資料を先に読むべきだったかと止まる（長谷川・桜井・宮下）。置き場所はこの注にだけ残す。※ の注に、紹介資料を先に読む必要はないことと、引用の出どころは各ページの出典にあることを書いた。
+構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（6e3f57bf・dd08b888）の第 1 章。GO: @ope-ultp1635 msg b918626f。
+2d0ca30 までの第 1 章（LeSS・SAFe・Spotify の、合意を集める／任せるの二つ）は v5 の付録へ移す。この章には持ってこない。移すとき、旧第 1 章の書き手のメモにある直し（引用は原文に当たり直していないことを本文と絵で見せる・LeSS の URL と参照日・片側改訂を防ぐのは core.md:79・80・91・EAA 紹介 0 の置き場所を本文から外す）を落とさない。旧本文は 2d0ca30 の eaa-ch01.md にある。
+所有者の言葉の引用は structure-v5.md「イデア」の逐語。
+p.「AA のレビュー分離は別の目的」: AA の本の第 2 章は、レビューを書いた AI から切り離す（作成者の文脈を持たない者に確かめさせる）。この章の「職能で切らない」と食い違って読まれないよう、あれは分業ではなく職務分離（core.md:45「同じ判断について、行う者と、承認または検証する者を別の者にすること」）だと書いた。AA の本の字: aa-ch02.md「判定は残し、レビュアーを文脈から切る」「レビューは回数でなく、文脈を分ける」。
+「人間は職能ごとに覚えることが多いので、渡し直しを払っても職能で分けた」は structure-v5.md 第 1 章の行の字。所有者の字は「人間は職能に応じて分業してた」まで。理由の部分は書き手の導出（structure-v5 でそう書いて GO を受けた）。
 -->
 
-> 実行の費用が下がるほど、集める側では判断待ちの列が伸び、任せる側では Contract を自分の側だけで改訂できてしまう。どちらのやり方も成り立つ範囲が狭くなる。
-
 ```svg
-<svg viewBox="0 0 880 300" width="880" height="300">
-  <path d="M440,20 V250" class="lt dash"/>
-  <text x="220" y="36" class="t" text-anchor="middle" font-weight="700">一人に集める</text>
-  <text x="660" y="36" class="t" text-anchor="middle" font-weight="700">各チームに任せる</text>
-  <rect x="320" y="90" width="80" height="56" rx="6" class="h"/><text x="360" y="124" class="ts on" text-anchor="middle">一人</text>
-  <g><use href="#i-wait" x="50" y="104" width="22" height="30"/><use href="#i-wait" x="80" y="104" width="22" height="30"/><use href="#i-wait" x="110" y="104" width="22" height="30"/><use href="#i-wait" x="140" y="104" width="22" height="30"/><use href="#i-wait" x="170" y="104" width="22" height="30"/><use href="#i-wait" x="200" y="104" width="22" height="30"/><use href="#i-wait" x="230" y="104" width="22" height="30"/><use href="#i-wait" x="260" y="104" width="22" height="30"/></g>
-  <path d="M286,118 H314" class="ln" marker-end="url(#arr)"/>
-  <text x="200" y="180" class="t" text-anchor="middle" font-weight="700" fill="#777">判断待ちが伸びる</text>
-  <rect x="490" y="80" width="80" height="66" rx="8" class="box"/><text x="530" y="118" class="ts" text-anchor="middle">チーム</text>
-  <rect x="750" y="80" width="80" height="66" rx="8" class="box"/><text x="790" y="118" class="ts" text-anchor="middle">チーム</text>
-  <rect x="610" y="74" width="100" height="78" rx="3" class="xl" style="fill:#fff"/><text x="660" y="104" class="ts xc" text-anchor="middle">取り決め</text><text x="660" y="132" class="ts xc" text-anchor="middle">版 3→版 4</text>
-  <path d="M570,113 H606" class="xl" marker-end="url(#arr-x)"/>
-  <text x="660" y="180" class="t xc" text-anchor="middle" font-weight="700">承認なしに書き換わる</text>
-  <path d="M60,222 H820" class="ln" marker-end="url(#arr)"/>
-  <text x="440" y="246" class="ts sub" text-anchor="middle">実行が安くなるほど、どちらも早く起きる</text>
-</svg>
-```
-
-## あいだの合意の持ち方は二つ
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <path d="M440,20 V320" class="lt dash"/>
-  <text x="220" y="44" class="t" text-anchor="middle" font-weight="700">集める</text>
-  <text x="660" y="44" class="t" text-anchor="middle" font-weight="700">任せる</text>
-  <rect x="160" y="80" width="120" height="56" rx="6" class="h"/><text x="220" y="105" class="ts on" text-anchor="middle">一人</text><text x="220" y="126" class="tx" text-anchor="middle" style="fill:#fff">または定例の場</text>
-  <g class="box"><rect x="50" y="230" width="70" height="50" rx="6"/><rect x="135" y="230" width="70" height="50" rx="6"/><rect x="235" y="230" width="70" height="50" rx="6"/><rect x="320" y="230" width="70" height="50" rx="6"/></g>
-  <path d="M85,228 L200,140 M170,228 L212,140 M270,228 L228,140 M355,228 L240,140" class="ln" marker-end="url(#arr)"/>
-  <g class="box"><rect x="500" y="90" width="70" height="50" rx="6"/><rect x="750" y="90" width="70" height="50" rx="6"/><rect x="500" y="230" width="70" height="50" rx="6"/><rect x="750" y="230" width="70" height="50" rx="6"/></g>
-  <path d="M570,115 H750 M570,255 H750 M535,140 V230 M785,140 V230 M570,140 L750,230" class="ln"/>
-  <text x="660" y="108" class="tx" text-anchor="middle">直接合わせる</text>
-  <text x="220" y="330" class="ts sub" text-anchor="middle">一人や定例の場が、あいだを決める</text>
-  <text x="660" y="330" class="ts sub" text-anchor="middle">関係するチームどうしが、話して合わせる</text>
-</svg>
-```
-
-大規模開発の手法は、あいだの合意を誰が持つかに、二つの答えを出してきました。一人や定例の場に集めるか、チームどうしに任せるかです。
-
-※ SAFe・LeSS・Spotify の三つを、当事者が書いたもの・話したものの引用で見ます。三つとも、それぞれの条件の下では機能しています。この本は優劣を判定しません。
-
-## 引用は、原文に当たり直していない
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="30" y="60" width="240" height="160" rx="8" class="lt" style="fill:#fff"/>
-  <text x="150" y="96" class="t" text-anchor="middle" font-weight="700">当事者の原文</text>
-  <g class="ts" text-anchor="middle"><text x="150" y="136">LeSS・SAFe の公開本文</text><text x="150" y="164">Kniberg の動画</text><text x="150" y="192">Lee のサイトの記事</text></g>
-  <rect x="320" y="60" width="240" height="160" rx="8" class="lt" style="fill:#f4f4f2"/>
-  <text x="440" y="96" class="t" text-anchor="middle" font-weight="700">EAA 紹介 0</text>
-  <g class="ts" text-anchor="middle"><text x="440" y="136">原文を取得して、</text><text x="440" y="164">引用を原文と照合し、</text><text x="440" y="192">英文を訳した</text></g>
-  <rect x="610" y="60" width="240" height="160" rx="8" class="hl" style="fill:#fff"/>
-  <text x="730" y="96" class="t hc" text-anchor="middle" font-weight="700">この本</text>
-  <g class="ts" text-anchor="middle"><text x="730" y="136">EAA 紹介 0 の</text><text x="730" y="164">引用と訳を、</text><text x="730" y="192">そのまま使う</text></g>
-  <path d="M270,140 H314" class="ln" marker-end="url(#arr)"/>
-  <path d="M560,140 H604" class="ln" marker-end="url(#arr)"/>
-  <path d="M730,222 V290 H150 V228" class="xl dash" marker-end="url(#arr-x)"/>
-  <use href="#i-no" x="428" y="278" width="24" height="24"/>
-  <text x="440" y="330" class="ts xc" text-anchor="middle">この本は、原文に当たり直していない</text>
-</svg>
-```
-
-この章の引用と訳は、EAA 紹介 0 から取りました。原文の取得、引用と原文の照合、訳は、EAA 紹介 0 が行っています。この本は、原文に当たり直していません。
-
-※ EAA 紹介 0〜3 は、この本の前に書いた EAA の紹介資料です。0 の題は「あいだの合意を、誰が持つのか」。この本を読むのに、紹介資料を先に読む必要はありません。
-
-## 集める：LeSS は PO の上限を書く
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <text x="160" y="40" class="t" text-anchor="middle" font-weight="700">50 チーム</text>
-  <g fill="#fff" stroke="#555" stroke-width="1.5">
-    <rect x="40" y="60" width="20" height="20"/><rect x="64" y="60" width="20" height="20"/><rect x="88" y="60" width="20" height="20"/><rect x="112" y="60" width="20" height="20"/><rect x="136" y="60" width="20" height="20"/><rect x="160" y="60" width="20" height="20"/><rect x="184" y="60" width="20" height="20"/><rect x="208" y="60" width="20" height="20"/><rect x="232" y="60" width="20" height="20"/><rect x="256" y="60" width="20" height="20"/>
-    <rect x="40" y="84" width="20" height="20"/><rect x="64" y="84" width="20" height="20"/><rect x="88" y="84" width="20" height="20"/><rect x="112" y="84" width="20" height="20"/><rect x="136" y="84" width="20" height="20"/><rect x="160" y="84" width="20" height="20"/><rect x="184" y="84" width="20" height="20"/><rect x="208" y="84" width="20" height="20"/><rect x="232" y="84" width="20" height="20"/><rect x="256" y="84" width="20" height="20"/>
-    <rect x="40" y="108" width="20" height="20"/><rect x="64" y="108" width="20" height="20"/><rect x="88" y="108" width="20" height="20"/><rect x="112" y="108" width="20" height="20"/><rect x="136" y="108" width="20" height="20"/><rect x="160" y="108" width="20" height="20"/><rect x="184" y="108" width="20" height="20"/><rect x="208" y="108" width="20" height="20"/><rect x="232" y="108" width="20" height="20"/><rect x="256" y="108" width="20" height="20"/>
-    <rect x="40" y="132" width="20" height="20"/><rect x="64" y="132" width="20" height="20"/><rect x="88" y="132" width="20" height="20"/><rect x="112" y="132" width="20" height="20"/><rect x="136" y="132" width="20" height="20"/><rect x="160" y="132" width="20" height="20"/><rect x="184" y="132" width="20" height="20"/><rect x="208" y="132" width="20" height="20"/><rect x="232" y="132" width="20" height="20"/><rect x="256" y="132" width="20" height="20"/>
-    <rect x="40" y="156" width="20" height="20"/><rect x="64" y="156" width="20" height="20"/><rect x="88" y="156" width="20" height="20"/><rect x="112" y="156" width="20" height="20"/><rect x="136" y="156" width="20" height="20"/><rect x="160" y="156" width="20" height="20"/><rect x="184" y="156" width="20" height="20"/><rect x="208" y="156" width="20" height="20"/><rect x="232" y="156" width="20" height="20"/><rect x="256" y="156" width="20" height="20"/>
+<svg viewBox="0 0 880 340" width="880" height="340">
+  <text x="215" y="30" class="t" text-anchor="middle" font-weight="700">職能で分ける</text>
+  <g class="ts" text-anchor="middle">
+    <rect x="30" y="50" width="80" height="200" rx="8" class="box"/><text x="70" y="76">設計</text>
+    <rect x="125" y="50" width="80" height="200" rx="8" class="box"/><text x="165" y="76">実装</text>
+    <rect x="220" y="50" width="80" height="200" rx="8" class="box"/><text x="260" y="76">テスト</text>
+    <rect x="315" y="50" width="80" height="200" rx="8" class="box"/><text x="355" y="76">レビュー</text>
   </g>
-  <path d="M290,118 H360" class="ln" marker-end="url(#arr)"/>
-  <g><use href="#i-pr" x="380" y="70" width="22" height="28"/><use href="#i-pr" x="406" y="70" width="22" height="28"/><use href="#i-pr" x="432" y="70" width="22" height="28"/><use href="#i-pr" x="458" y="70" width="22" height="28"/><use href="#i-pr" x="484" y="70" width="22" height="28"/><use href="#i-pr" x="380" y="104" width="22" height="28"/><use href="#i-pr" x="406" y="104" width="22" height="28"/><use href="#i-pr" x="432" y="104" width="22" height="28"/><use href="#i-pr" x="458" y="104" width="22" height="28"/><use href="#i-pr" x="484" y="104" width="22" height="28"/><use href="#i-pr" x="380" y="138" width="22" height="28"/><use href="#i-pr" x="406" y="138" width="22" height="28"/><use href="#i-pr" x="432" y="138" width="22" height="28"/><use href="#i-pr" x="458" y="138" width="22" height="28"/><use href="#i-pr" x="484" y="138" width="22" height="28"/></g>
-  <text x="443" y="40" class="t" text-anchor="middle" font-weight="700">PBI 200 件</text>
-  <text x="443" y="192" class="tx" text-anchor="middle">1 回の iteration で</text>
-  <path d="M520,118 H600" class="ln" marker-end="url(#arr)"/>
-  <rect x="610" y="90" width="90" height="56" rx="6" class="h"/><text x="655" y="124" class="ts on" text-anchor="middle">PO 一人</text>
-  <use href="#i-pile" x="716" y="96" width="40" height="40"/>
-  <text x="740" y="176" class="ts xc" text-anchor="middle">一人には多すぎる</text>
-  <rect x="40" y="236" width="800" height="110" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="270" class="ts sub">LeSS の記述（訳）　less.works/less/less-huge/area-product-owner（2026-09-28 参照）</text>
-  <text x="60" y="302" class="t">50 チームなら、1 iteration だけで PBI は 200 件になる。</text>
-  <text x="60" y="332" class="t">200 件の優先順位を付けるのは、一人の PO には多すぎる。</text>
+  <g class="a"><rect x="40" y="140" width="60" height="30" rx="4"/><rect x="135" y="140" width="60" height="30" rx="4"/><rect x="230" y="140" width="60" height="30" rx="4"/><rect x="325" y="140" width="60" height="30" rx="4"/></g>
+  <path d="M100,155 H133 M195,155 H228 M290,155 H323" class="xl" marker-end="url(#arr-x)"/>
+  <text x="212" y="276" class="ts xc" text-anchor="middle">一つの機能の文脈を、持ち場ごとに渡し直す</text>
+  <text x="212" y="306" class="ts sub" text-anchor="middle">人間には、職能で分ける理由があった</text>
+  <rect x="480" y="50" width="370" height="200" rx="10" class="hl" style="fill:#fff"/>
+  <text x="665" y="30" class="t hc" text-anchor="middle" font-weight="700">Agent には職能が小さな文脈</text>
+  <rect x="555" y="80" width="220" height="44" rx="22" class="a"/><text x="665" y="108" class="ts on" text-anchor="middle">Agent</text>
+  <text x="665" y="160" class="ts" text-anchor="middle">設計・実装・テスト・レビュー</text>
+  <text x="665" y="190" class="ts" text-anchor="middle">どれも頼める</text>
+  <text x="665" y="306" class="ts hc" text-anchor="middle">職能で切ると、渡し直しだけが残る</text>
 </svg>
 ```
 
-LeSS は、優先順位の最終決定を一人の Product Owner（PO）に置き、その上限を数で書いています。PO を補う役を置く主な理由も、過負荷を防ぐためです。
+人間が職能で分けたのは、職能ごとに覚えることが多いからです。Agent にとって職能は大きな文脈ではないので、職能で切ると渡し直しだけが残ります。
 
-出典: LeSS「Area Product Owner」（英文。URL・参照日は絵の中。訳は EAA 紹介 0）。PBI は Product Backlog の項目、iteration は開発の 1 周期。
-
-## 集める：SAFe は範囲を限る
+## 所有者の言葉
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="370" y="30" width="140" height="56" rx="6" class="h"/><text x="440" y="64" class="ts on" text-anchor="middle">中央で決める</text>
-  <g class="box"><rect x="60" y="230" width="110" height="50" rx="6"/><rect x="200" y="230" width="110" height="50" rx="6"/><rect x="570" y="230" width="110" height="50" rx="6"/><rect x="710" y="230" width="110" height="50" rx="6"/></g>
-  <g class="ts" text-anchor="middle"><text x="115" y="261">チーム</text><text x="255" y="261">チーム</text><text x="625" y="261">チーム</text><text x="765" y="261">チーム</text></g>
-  <rect x="330" y="120" width="220" height="60" rx="6" class="hl" style="fill:#fff"/>
-  <text x="440" y="144" class="ts hc" text-anchor="middle">頻度が低く、長く効き、</text><text x="440" y="166" class="ts hc" text-anchor="middle">規模の経済が大きい決定</text>
-  <path d="M440,118 V92" class="hl" marker-end="url(#arr)"/>
-  <g class="tx"><text x="115" y="214" text-anchor="middle">ほかの決定</text><text x="255" y="214" text-anchor="middle">ほかの決定</text><text x="625" y="214" text-anchor="middle">ほかの決定</text><text x="765" y="214" text-anchor="middle">ほかの決定</text></g>
-  <rect x="40" y="300" width="800" height="62" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="324" class="ts sub">SAFe の記述（訳）</text>
-  <text x="60" y="350" class="ts">ほとんどの決定に管理者の関与が必要だと、決定を求める列ができ、進行を止める。</text>
+  <rect x="60" y="40" width="760" height="250" rx="10" class="soft"/>
+  <text x="90" y="90" class="t hc" font-weight="700">人間は職能に応じて分業してたが、</text>
+  <text x="90" y="130" class="t hc" font-weight="700">職能はエージェントにとっては大したコンテキストではない。</text>
+  <text x="90" y="190" class="t" font-weight="700">それよりもドメインとか価値とか権限とかで</text>
+  <text x="90" y="230" class="t" font-weight="700">分けた方が疎結合になる。</text>
+  <text x="440" y="340" class="ts sub" text-anchor="middle">EAA Core の所有者の言葉（原文のまま）。この章は色の付いた前半を扱う</text>
 </svg>
 ```
 
-SAFe は、複数チームの計画を周期ごとの PI Planning でまとめて立て、そのうえで中央に集める決定を、頻度が低く長く効き、規模の経済が大きいものに限ります。
+この章は、この言葉の前半を扱います。人間はなぜ職能で分けてきたのか、それが Agent ではなぜ成り立たないのか、です。後半の切り方は、第 2 章から見ます。
 
-出典: SAFe「Principle #9 Decentralize Decision-Making」（Web Archive の 2022 年 1 月・2023 年 12 月の版。訳は EAA 紹介 0 による）。
+※ 出典: EAA Core の所有者（Kazuhiro）が、この本の構成を決めるときに書いた考え。
 
-## 任せる：LeSS の "just talk"
+## 職能で分けると機能が切れる
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="80" y="70" width="180" height="120" rx="10" class="box"/><text x="170" y="136" class="t" text-anchor="middle">チーム</text>
-  <rect x="620" y="70" width="180" height="120" rx="10" class="box"/><text x="710" y="136" class="t" text-anchor="middle">チーム</text>
-  <path d="M260,110 H614" class="hl" marker-end="url(#arr)"/><path d="M620,150 H266" class="hl" marker-end="url(#arr)"/>
-  <text x="440" y="100" class="ts hc" text-anchor="middle">行く・電話する・メール</text>
-  <text x="440" y="176" class="ts hc" text-anchor="middle">"just talk"（とにかく話す）</text>
-  <rect x="360" y="216" width="160" height="50" rx="6" fill="#b5b5b5" opacity=".7"/><text x="440" y="247" class="ts on" text-anchor="middle">正式な調整の場</text>
-  <use href="#i-no" x="510" y="206" width="24" height="24"/><text x="546" y="247" class="tx">要らない</text>
-  <rect x="40" y="290" width="800" height="72" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="314" class="ts sub">LeSS の記述（訳）　less.works/less/framework/coordination-and-integration（2026-09-28 参照）</text>
-  <text x="60" y="344" class="ts">調整のために、正式で、たいてい遅い仕組みは要らない。</text>
+  <g class="ts" text-anchor="middle">
+    <rect x="40" y="60" width="180" height="220" rx="8" class="box"/><text x="130" y="90" font-weight="700">設計</text>
+    <rect x="245" y="60" width="180" height="220" rx="8" class="box"/><text x="335" y="90" font-weight="700">実装</text>
+    <rect x="450" y="60" width="180" height="220" rx="8" class="box"/><text x="540" y="90" font-weight="700">テスト</text>
+    <rect x="655" y="60" width="180" height="220" rx="8" class="box"/><text x="745" y="90" font-weight="700">レビュー</text>
+  </g>
+  <rect x="40" y="150" width="795" height="40" rx="4" class="hl" style="fill:none"/>
+  <text x="440" y="140" class="ts hc" text-anchor="middle">一つの機能（在庫の引当）</text>
+  <path d="M220,170 H245 M425,170 H450 M630,170 H655" class="xl"/>
+  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">持ち場を越えるたび（赤）に、機能の前提を渡し直す</text>
 </svg>
 ```
 
-LeSS は、優先順位は一人の PO に集めつつ、チーム間の調整は任せる側に寄せています。調整が要るなら、相手のチームと直接話して合わせます。
+設計・実装・テスト・レビューで分けると、一つの機能の文脈が持ち場ごとに切られます。持ち場を越えるたびに、その機能の前提を渡し直します。
 
-出典: LeSS「Coordination and Integration」（英文。URL・参照日は絵の中。訳は EAA 紹介 0）。
+※ 例の機能は説明のために選んだ。
 
-## 任せる：Spotify と大きな案件
+## 人間は渡し直しを払ってきた
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <g class="box"><rect x="60" y="40" width="90" height="56" rx="6"/><rect x="180" y="40" width="90" height="56" rx="6"/><rect x="300" y="40" width="90" height="56" rx="6"/><rect x="420" y="40" width="90" height="56" rx="6"/></g>
-  <path d="M150,68 H180 M270,68 H300 M390,68 H420" class="ln"/>
-  <text x="560" y="64" class="ts">疎結合だが、しっかり揃ったチーム</text>
-  <rect x="60" y="120" width="450" height="56" rx="6" class="w"/><text x="285" y="154" class="ts" text-anchor="middle">大きな案件（いくつものチームにまたがる）</text>
-  <rect x="40" y="186" width="800" height="66" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="210" class="ts sub">Henrik Kniberg「Spotify Engineering Culture part 2」（2014、動画）</text>
-  <text x="60" y="238" class="ts">大きな案件の進め方は、まだたくさん実験していて、まだうまくない。</text>
-  <rect x="40" y="262" width="800" height="112" rx="10" class="lt" style="fill:#fff"/>
-  <text x="60" y="284" class="ts sub">Jeremiah Lee（元 Spotify のプロダクトマネージャー）</text>
-  <text x="60" y="306" class="tx">「Spotify's Failed #SquadGoals」（2020、本人のサイトの記事）</text>
-  <text x="60" y="334" class="ts">エンジニアリングチームの成果に責任を持つ人も、同じ責任の水準で</text>
-  <text x="60" y="360" class="ts">作業の優先順位を交渉できる人も、一人もいなかった。</text>
+  <rect x="40" y="60" width="380" height="230" rx="10" class="box"/>
+  <text x="230" y="96" class="t" text-anchor="middle" font-weight="700">職能で分ける理由</text>
+  <g class="ts"><text x="70" y="140">職能ごとに、覚える知識と</text><text x="70" y="166">手の技が多い</text><text x="70" y="210">一人で全部はこなせない</text></g>
+  <rect x="460" y="60" width="380" height="230" rx="10" class="box"/>
+  <text x="650" y="96" class="t" text-anchor="middle" font-weight="700">職能で分ける手間</text>
+  <g class="ts"><text x="490" y="140">持ち場を越えるたびの</text><text x="490" y="166">渡し直し</text></g>
+  <path d="M420,175 H456" class="ln" marker-end="url(#arr)"/>
+  <text x="440" y="340" class="t hc" text-anchor="middle" font-weight="700">理由が手間を上回るので、人間は職能で分けた</text>
 </svg>
 ```
 
-Spotify は、任せる側に大きく寄りました。目指したのは、疎結合だがしっかり揃ったチームです。当事者は、大きな案件の進め方はまだうまくない、と話しています。
+人間は、職能ごとに覚える知識と手の技が多く、一人で全部はこなせません。だから渡し直しの手間を払っても、職能で分けてきました。
 
-出典: Kniberg と Lee の題・年・媒体は、絵の中に書きました。訳は EAA 紹介 0。一社の実践の記述です。
-
-## 複数社で組んでも同じ二つ
+## Agent には持ち場を問わず頼める
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <path d="M440,20 V320" class="lt dash"/>
-  <text x="220" y="44" class="t" text-anchor="middle" font-weight="700">発注側が集める</text>
-  <text x="660" y="44" class="t" text-anchor="middle" font-weight="700">ベンダーに任せる</text>
-  <rect x="150" y="70" width="140" height="56" rx="6" class="h"/><text x="220" y="104" class="ts on" text-anchor="middle">発注側の定例会議</text>
-  <g class="box"><rect x="60" y="200" width="100" height="50" rx="6"/><rect x="280" y="200" width="100" height="50" rx="6"/></g>
-  <g class="ts" text-anchor="middle"><text x="110" y="231">ベンダー</text><text x="330" y="231">ベンダー</text></g>
-  <path d="M110,198 L190,130 M330,198 L250,130" class="ln" marker-end="url(#arr)"/>
-  <rect x="155" y="150" width="130" height="40" rx="3" class="lt" style="fill:#fff"/><text x="220" y="175" class="tx" text-anchor="middle">契約・検収の条件</text>
-  <g class="box"><rect x="500" y="130" width="100" height="50" rx="6"/><rect x="720" y="130" width="100" height="50" rx="6"/></g>
-  <g class="ts" text-anchor="middle"><text x="550" y="161">ベンダー</text><text x="770" y="161">ベンダー</text></g>
-  <path d="M600,146 H714" class="hl" marker-end="url(#arr)"/><path d="M720,166 H606" class="hl" marker-end="url(#arr)"/>
-  <text x="660" y="214" class="ts hc" text-anchor="middle">直接合わせる</text>
-  <text x="220" y="300" class="ts sub" text-anchor="middle">一社の中の「集める」と同じ形</text>
-  <text x="660" y="300" class="ts sub" text-anchor="middle">一社の中の「任せる」と同じ形</text>
+  <rect x="330" y="140" width="220" height="60" rx="30" class="a"/><text x="440" y="178" class="t on" text-anchor="middle">Agent</text>
+  <g class="ts" text-anchor="middle">
+    <rect x="60" y="50" width="160" height="44" rx="6" class="soft"/><text x="140" y="78">設計</text>
+    <rect x="660" y="50" width="160" height="44" rx="6" class="soft"/><text x="740" y="78">実装</text>
+    <rect x="60" y="250" width="160" height="44" rx="6" class="soft"/><text x="140" y="278">テスト</text>
+    <rect x="660" y="250" width="160" height="44" rx="6" class="soft"/><text x="740" y="278">レビュー</text>
+  </g>
+  <path d="M220,72 L330,150 M660,72 L550,150 M220,272 L330,192 M660,272 L550,192" class="ln"/>
+  <text x="440" y="340" class="t" text-anchor="middle" font-weight="700">職能ごとの覚えることの多さは、分ける理由にならない</text>
 </svg>
 ```
 
-複数社で組む現場にも、同じ二つのやり方があります。発注側の定例会議で合わせて契約と検収の条件に書くか、ベンダーどうしで直接合わせてもらうかです。
+Agent には、設計・実装・テスト・レビューのどれも頼めます。職能ごとに覚えることが多いという理由は、Agent を分ける理由になりません。
 
-## 実行が安くなり、判断が残る
+※ AA の本の第 2 章は、作る役と判定する役を、どちらも Agent に頼む形を扱った。
+
+## 職能で切ると渡し直しだけ残る
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <text x="40" y="34" class="ts" font-weight="700">これまで</text>
-  <rect x="40" y="44" width="300" height="38" class="a"/><text x="190" y="69" class="ts on" text-anchor="middle">実行</text>
-  <rect x="340" y="44" width="200" height="38" class="h"/><text x="440" y="69" class="ts on" text-anchor="middle">判断</text>
-  <text x="40" y="114" class="ts" font-weight="700">Agent が実行する</text>
-  <rect x="40" y="124" width="60" height="38" class="a"/><text x="70" y="149" class="tx" text-anchor="middle" style="fill:#fff">実行</text>
-  <rect x="100" y="124" width="200" height="38" class="h"/><text x="200" y="149" class="ts on" text-anchor="middle">判断</text>
-  <text x="40" y="194" class="ts" font-weight="700">実行を 3 倍に増やす</text>
-  <rect x="40" y="204" width="180" height="38" class="a"/><text x="130" y="229" class="ts on" text-anchor="middle">実行 × 3</text>
-  <rect x="220" y="204" width="600" height="38" class="h"/><text x="520" y="229" class="ts on" text-anchor="middle">判断 × 3</text>
-  <text x="440" y="290" class="t" text-anchor="middle" font-weight="700">判断する人と、実行する者が分かれた</text>
-  <text x="440" y="324" class="ts sub" text-anchor="middle">実行を増やすほど、全体の速さは判断で決まる</text>
-  <text x="440" y="356" class="tx" text-anchor="middle">長さは説明のための目安で、実測ではない</text>
+  <g>
+    <text x="220" y="50" class="t" text-anchor="middle" font-weight="700">人間</text>
+    <rect x="60" y="80" width="150" height="120" rx="6" class="ok"/><text x="135" y="146" class="ts on" text-anchor="middle">分ける理由</text>
+    <rect x="230" y="80" width="150" height="120" rx="6" class="xl" style="fill:#fff"/><text x="305" y="146" class="ts xc" text-anchor="middle">渡し直し</text>
+  </g>
+  <path d="M440,40 V260" class="lt dash"/>
+  <g>
+    <text x="660" y="50" class="t" text-anchor="middle" font-weight="700">Agent</text>
+    <rect x="500" y="80" width="150" height="120" rx="6" class="lt dash" style="fill:#fff"/><text x="575" y="146" class="ts sub" text-anchor="middle">理由は無い</text>
+    <rect x="670" y="80" width="150" height="120" rx="6" class="xl" style="fill:#fff"/><text x="745" y="146" class="ts xc" text-anchor="middle">渡し直し</text>
+  </g>
+  <text x="440" y="320" class="t xc" text-anchor="middle" font-weight="700">理由が消えても、手間は消えない</text>
 </svg>
 ```
 
-Agent が実装を担えるようになり、実行が安くなりました。判断する人と実行する者が分かれ、実行を増やすほど、全体の速さは判断で決まるようになります。
+Agent を職能で分けると、人間が職能で分けた理由は無いまま、機能の文脈を持ち場ごとに渡し直す手間だけが残ります。
 
-※ Agent は、計画し、道具を使い、結果を確かめて直す AI。「実行が安くなった」の裏づけは売り手側の調査が多く、逆向きの実測もあります。
-
-## 集める側：判断待ちの列が伸びる
+## 人の役割の割り当ても職能
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <text x="60" y="50" class="ts" font-weight="700">これまで</text>
-  <g class="box"><rect x="60" y="66" width="44" height="36" rx="4"/><rect x="112" y="66" width="44" height="36" rx="4"/><rect x="164" y="66" width="44" height="36" rx="4"/><rect x="216" y="66" width="44" height="36" rx="4"/><rect x="268" y="66" width="44" height="36" rx="4"/><rect x="320" y="66" width="44" height="36" rx="4"/></g>
-  <use href="#i-wait" x="440" y="70" width="20" height="28"/><use href="#i-wait" x="466" y="70" width="20" height="28"/>
-  <path d="M370,84 H430" class="ln" marker-end="url(#arr)"/>
-  <rect x="740" y="62" width="80" height="44" rx="6" class="h"/><text x="780" y="90" class="ts on" text-anchor="middle">一人</text>
-  <path d="M494,84 H734" class="ln" marker-end="url(#arr)"/>
-  <text x="60" y="170" class="ts" font-weight="700">1 チームが出すものが増える</text>
-  <g class="box"><rect x="60" y="186" width="44" height="36" rx="4"/><rect x="112" y="186" width="44" height="36" rx="4"/><rect x="164" y="186" width="44" height="36" rx="4"/><rect x="216" y="186" width="44" height="36" rx="4"/><rect x="268" y="186" width="44" height="36" rx="4"/><rect x="320" y="186" width="44" height="36" rx="4"/></g>
-  <path d="M370,204 H430" class="ln" marker-end="url(#arr)"/>
-  <g><use href="#i-wait" x="440" y="190" width="20" height="28"/><use href="#i-wait" x="466" y="190" width="20" height="28"/><use href="#i-wait" x="492" y="190" width="20" height="28"/><use href="#i-wait" x="518" y="190" width="20" height="28"/><use href="#i-wait" x="544" y="190" width="20" height="28"/><use href="#i-wait" x="570" y="190" width="20" height="28"/><use href="#i-wait" x="596" y="190" width="20" height="28"/><use href="#i-wait" x="622" y="190" width="20" height="28"/><use href="#i-wait" x="648" y="190" width="20" height="28"/><use href="#i-wait" x="674" y="190" width="20" height="28"/><use href="#i-wait" x="700" y="190" width="20" height="28"/></g>
-  <rect x="740" y="182" width="80" height="44" rx="6" class="h"/><text x="780" y="210" class="ts on" text-anchor="middle">一人</text>
-  <text x="440" y="290" class="t" text-anchor="middle" font-weight="700">同じ一人が持てるチームの数が減る</text>
-  <text x="440" y="324" class="ts sub" text-anchor="middle">決定を求める列も、同じ理由で早く伸びる</text>
+  <g class="ts" text-anchor="middle">
+    <rect x="40" y="60" width="180" height="50" rx="6" class="h"/><text x="130" y="91" class="on">設計担当の人</text>
+    <rect x="40" y="140" width="180" height="50" rx="6" class="h"/><text x="130" y="171" class="on">実装担当の人</text>
+    <rect x="40" y="220" width="180" height="50" rx="6" class="h"/><text x="130" y="251" class="on">テスト担当の人</text>
+    <rect x="660" y="60" width="180" height="50" rx="25" class="a"/><text x="750" y="91" class="on">設計担当の Agent</text>
+    <rect x="660" y="140" width="180" height="50" rx="25" class="a"/><text x="750" y="171" class="on">実装担当の Agent</text>
+    <rect x="660" y="220" width="180" height="50" rx="25" class="a"/><text x="750" y="251" class="on">テスト担当の Agent</text>
+  </g>
+  <path d="M220,85 H654 M220,165 H654 M220,245 H654" class="lt dash" marker-end="url(#arr)"/>
+  <text x="440" y="330" class="t xc" text-anchor="middle" font-weight="700">切る軸は、人の職能のまま</text>
 </svg>
 ```
 
-実行が安くなると、一つのチームが 1 回の iteration で出すものが増えます。同じ一人の PO が持てるチームの数が減り、決定を求める列も早く伸びます。
+設計担当・実装担当・テスト担当のように、人の役割を Agent に割り当てる形は、職能の分業を写したものです。何で分けるかという問いには答えていません。
 
-※ LeSS と SAFe が書いたことに、前のページの前提を当てた推論です。実測ではありません。
-
-## 任せる側：合わせた中身が書かれない
+## AA のレビュー分離は別の目的
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <text x="60" y="44" class="ts" font-weight="700">これまで</text>
-  <rect x="60" y="60" width="70" height="48" rx="6" class="h"/><text x="95" y="90" class="ts on" text-anchor="middle">人</text>
-  <rect x="300" y="60" width="70" height="48" rx="6" class="h"/><text x="335" y="90" class="ts on" text-anchor="middle">人</text>
-  <path d="M130,84 H294" class="hl"/><text x="215" y="76" class="tx hc" text-anchor="middle">話して合わせる</text>
-  <path d="M335,110 V150" class="hl" marker-end="url(#arr)"/>
-  <rect x="270" y="156" width="130" height="40" rx="4" class="h"/><text x="335" y="182" class="ts on" text-anchor="middle">同じ人が作る</text>
-  <text x="215" y="236" class="ts sub" text-anchor="middle">書かなくても、作る所まで届いた</text>
-  <path d="M440,20 V260" class="lt dash"/>
-  <text x="500" y="44" class="ts" font-weight="700">Agent が実行</text>
-  <rect x="500" y="60" width="70" height="48" rx="6" class="h"/><text x="535" y="90" class="ts on" text-anchor="middle">人</text>
-  <rect x="740" y="60" width="70" height="48" rx="6" class="h"/><text x="775" y="90" class="ts on" text-anchor="middle">人</text>
-  <path d="M570,84 H734" class="hl"/><text x="655" y="76" class="tx hc" text-anchor="middle">話して合わせる</text>
-  <path d="M775,110 V150" class="lt dash" marker-end="url(#arr)"/><text x="765" y="136" class="tx xc" text-anchor="end">書かれていない</text>
-  <rect x="720" y="156" width="110" height="40" rx="4" class="a"/><text x="775" y="182" class="ts on" text-anchor="middle">Agent が作る</text>
-  <g class="ts xc" text-anchor="middle"><text x="660" y="236">欠けた所を、毎回違う形で埋める</text></g>
-  <text x="440" y="300" class="t" text-anchor="middle" font-weight="700">合わせた人と、実行する者が分かれた</text>
+  <rect x="40" y="50" width="380" height="240" rx="10" class="box"/>
+  <text x="230" y="84" class="t" text-anchor="middle" font-weight="700">AA の本：レビューの切り離し</text>
+  <rect x="70" y="120" width="140" height="44" rx="22" class="a"/><text x="140" y="148" class="ts on" text-anchor="middle">作る Agent</text>
+  <rect x="250" y="120" width="140" height="44" rx="22" class="a"/><text x="320" y="148" class="ts on" text-anchor="middle">判定する Agent</text>
+  <path d="M230,110 V180" class="xl dash"/>
+  <text x="230" y="220" class="ts" text-anchor="middle">作った文脈を持たない者が確かめる</text>
+  <text x="230" y="250" class="tx" text-anchor="middle">職務分離</text>
+  <rect x="460" y="50" width="380" height="240" rx="10" class="hl" style="fill:#fff"/>
+  <text x="650" y="84" class="t hc" text-anchor="middle" font-weight="700">この本：分業の軸</text>
+  <text x="650" y="150" class="ts" text-anchor="middle">各主体が、自分の仕事の文脈を</text>
+  <text x="650" y="176" class="ts" text-anchor="middle">切り替えずに持てるように分ける</text>
+  <text x="650" y="250" class="tx" text-anchor="middle">価値・ドメイン・権限</text>
+  <text x="440" y="340" class="ts sub" text-anchor="middle">左は確かめを独立させる決まりで、右は仕事を分ける軸。どちらも要る</text>
 </svg>
 ```
 
-話して合わせた中身は、書かれていませんでした。合わせた本人が実行していたので、書かなくても実行に届きました。Agent が実行すると、そうはいきません。
+AA の本は、レビューを書いた AI から切り離しました。これは仕事を分けるためではなく、作った文脈を持たない者に確かめさせるためです。
 
-※ Agent は書かれていない前提を持たず、欠けた所をもっともらしく、毎回違う形で埋めます。AA の本の前提「書かれたものだけが効く」と同じです。
+※ EAA Core の職務分離（同じ判断について、行う者と、承認または検証する者を別の者にすること）に当たる。出典: EAA Core 版 6「0.」の用語表。
 
-## 書かれなければ、全部見るしかない
+## Agent の文脈は扱う対象の側にある
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="140" width="200" height="70" rx="6" class="lt" style="fill:#fff"/><text x="140" y="170" class="ts" text-anchor="middle">合わせた中身が</text><text x="140" y="194" class="ts" text-anchor="middle">書かれていない</text>
-  <path d="M240,160 L400,90" class="ln" marker-end="url(#arr)"/><path d="M240,190 L400,260" class="ln" marker-end="url(#arr)"/>
-  <rect x="410" y="56" width="200" height="64" rx="6" class="h"/><text x="510" y="94" class="ts on" text-anchor="middle">合わせた人が全部見る</text>
-  <rect x="410" y="228" width="200" height="64" rx="6" class="a"/><text x="510" y="266" class="ts on" text-anchor="middle">見ずに進める</text>
-  <path d="M610,88 H660" class="ln" marker-end="url(#arr)"/><path d="M610,260 H660" class="ln" marker-end="url(#arr)"/>
-  <use href="#i-wait" x="672" y="70" width="24" height="34"/><text x="710" y="94" class="ts">判断待ち</text>
-  <use href="#i-pile" x="670" y="240" width="34" height="34"/><text x="714" y="264" class="ts xc">揃わない</text>
-  <text x="710" y="124" class="tx">集める側と同じ</text>
-  <text x="440" y="350" class="t" text-anchor="middle" font-weight="700">揃ったかどうかが、書いたもので確かめられない</text>
+  <rect x="200" y="50" width="480" height="240" rx="10" class="hl" style="fill:#fff"/>
+  <text x="440" y="86" class="t hc" text-anchor="middle" font-weight="700">Agent が判断に使う文脈</text>
+  <g class="ts" text-anchor="middle">
+    <rect x="230" y="116" width="420" height="40" rx="4" class="soft"/><text x="440" y="142">扱う対象の語と記録（ドメイン）</text>
+    <rect x="230" y="166" width="420" height="40" rx="4" class="soft"/><text x="440" y="192">何を優先するか（価値）</text>
+    <rect x="230" y="216" width="420" height="40" rx="4" class="soft"/><text x="440" y="242">何を決められるか（権限）</text>
+  </g>
+  <g opacity=".6"><rect x="30" y="140" width="130" height="60" rx="6" class="lt dash" style="fill:#fff"/><text x="95" y="176" class="ts sub" text-anchor="middle">職能</text></g>
+  <text x="440" y="340" class="t" text-anchor="middle" font-weight="700">この側で切れば、主体の中で文脈を切り替えずに済む</text>
 </svg>
 ```
 
-書かれていないと、揃ったかどうかが分かりません。確かめるには合わせた人が全部を見るしかなく、それは集める側と同じ判断待ちです。見なければ揃わないまま進みます。
+Agent が判断に使う文脈は、職能ではなく、扱う対象の語と記録、優先する価値、判断の権限の側にあります。この側で切れば、主体の中で文脈を切り替えずに済みます。
 
-## 書いても、片側で書き換わる
+## 次章へ：切り方の判定
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="70" width="200" height="160" rx="10" class="box"/><text x="140" y="104" class="t" text-anchor="middle" font-weight="700">チーム</text>
-  <rect x="640" y="70" width="200" height="160" rx="10" class="box"/><text x="740" y="104" class="t" text-anchor="middle" font-weight="700">チーム</text>
-  <rect x="340" y="50" width="200" height="70" rx="3" class="lt" style="fill:#fff"/><text x="440" y="80" class="ts" text-anchor="middle">取り決め 版 3</text><text x="440" y="106" class="tx" text-anchor="middle">インターフェース・受入の条件</text>
-  <rect x="340" y="160" width="200" height="70" rx="3" class="xw"/><text x="440" y="190" class="ts xc" text-anchor="middle" font-weight="700">取り決め 版 4</text><text x="440" y="214" class="tx xc" text-anchor="middle">自分の側だけで改訂</text>
-  <path d="M240,190 H334" class="xl" marker-end="url(#arr-x)"/><text x="287" y="180" class="tx xc" text-anchor="middle">書き換える</text>
-  <path d="M440,122 V156" class="xl" marker-end="url(#arr-x)"/>
-  <path d="M546,85 H640" class="ln"/><text x="740" y="160" class="ts" text-anchor="middle">まだ版 3 のつもり</text>
-  <use href="#i-no" x="728" y="176" width="24" height="24"/>
-  <text x="440" y="290" class="t xc" text-anchor="middle" font-weight="700">相手の承認なしに変わり、取り決めでなくなる</text>
-  <text x="440" y="326" class="ts sub" text-anchor="middle">インターフェースも受入の条件も、相手の都合でいつでも変わりうる</text>
+  <rect x="140" y="70" width="600" height="160" rx="10" class="hl" style="fill:#fff"/>
+  <text x="440" y="120" class="t hc" text-anchor="middle" font-weight="700">判定は一つ</text>
+  <text x="440" y="164" class="t" text-anchor="middle">その主体の中で、コンテキストスイッチが起きないか</text>
+  <text x="440" y="200" class="ts sub" text-anchor="middle">価値・ドメイン・権限は、この判定に通る切り方の例</text>
+  <text x="440" y="300" class="ts" text-anchor="middle">第 2 章</text>
 </svg>
 ```
 
-書いても、その取り決めを自分の側だけで改訂できれば、相手の承認なしに書き換わります。インターフェースも受入の条件も、いつでも変わりうるものになります。
-
-※ EAA は、採用は各 Cell の所有者が決め、Contract は結ぶ Cell の全部が同じ版を採用して成り立つ、として防ぎます（第 8・9 章）。出典: EAA Core 版 6「3.」「4.」。
-
-## 相手の中は、こちらから選べない
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="70" width="240" height="180" rx="10" class="box"/><text x="160" y="104" class="t" text-anchor="middle" font-weight="700">自分たち</text>
-  <rect x="125" y="140" width="70" height="48" rx="6" class="h"/><text x="160" y="170" class="ts on" text-anchor="middle">人</text>
-  <rect x="600" y="70" width="240" height="180" rx="10" class="box"/><text x="720" y="104" class="t" text-anchor="middle" font-weight="700">組んでいる一社</text>
-  <rect x="620" y="140" width="70" height="48" rx="6" class="h" opacity=".45"/><text x="655" y="170" class="ts on" text-anchor="middle">人</text>
-  <path d="M694,164 H732" class="ln" marker-end="url(#arr)"/>
-  <rect x="740" y="140" width="80" height="48" rx="6" class="a"/><text x="780" y="170" class="ts on" text-anchor="middle">Agent</text>
-  <text x="720" y="226" class="tx" text-anchor="middle">相手が自分で決める</text>
-  <path d="M280,130 H594" class="ln"/><rect x="380" y="108" width="120" height="44" rx="3" class="lt" style="fill:#fff"/><text x="440" y="136" class="ts" text-anchor="middle">あいだの合意</text>
-  <text x="440" y="304" class="t" text-anchor="middle" font-weight="700">相手が実行を Agent に移せば、</text>
-  <text x="440" y="338" class="t" text-anchor="middle" font-weight="700">あいだの合意にも同じことが起きる</text>
-</svg>
-```
-
-相手の中が Agent で動くかどうかは、こちらからは選べません。組んでいる一社が実行を Agent に移せば、その一社とのあいだの合意に同じことが起きます。
-
-※ 自分のチームや組んでいるベンダーにまだ Agent が入っていなくても、入った時点でこうなります。
-
-## 二つのやり方が、どちらも狭くなる
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <path d="M440,20 V200" class="lt dash"/>
-  <text x="220" y="44" class="t" text-anchor="middle" font-weight="700">集める</text>
-  <text x="660" y="44" class="t" text-anchor="middle" font-weight="700">任せる</text>
-  <rect x="110" y="66" width="220" height="56" rx="6" class="lt" style="fill:#fff"/><text x="220" y="100" class="ts" text-anchor="middle">判断待ちの列が伸びる</text>
-  <rect x="550" y="66" width="220" height="56" rx="6" class="lt" style="fill:#fff"/><text x="660" y="90" class="ts" text-anchor="middle">書かなければ全部見るか、</text><text x="660" y="112" class="ts" text-anchor="middle">見ずに揃わない</text>
-  <rect x="550" y="132" width="220" height="56" rx="6" class="xl" style="fill:#fff"/><text x="660" y="156" class="ts xc" text-anchor="middle">書いても、片側で</text><text x="660" y="178" class="ts xc" text-anchor="middle">承認なしに書き換わる</text>
-  <rect x="40" y="226" width="800" height="136" rx="10" class="hl" style="fill:#fff"/>
-  <text x="440" y="266" class="tl hc" text-anchor="middle">あいだの合意を、一人にも会議にも預けず、</text>
-  <text x="440" y="302" class="tl hc" text-anchor="middle">誰がどう持つか</text>
-  <a href="#ch2"><text x="440" y="342" class="ts" text-anchor="middle">答えは第 2 章から組み立てる</text></a>
-</svg>
-```
-
-集めれば判断待ちが伸び、任せれば承認なしに書き換わります。あいだの合意を一人にも会議にも預けず、誰がどう持つか。その答えを、第 2 章から組み立てます。
-
-※ AA の本の第 1 章で見た、人が全部見るか外すかの板挟みが、チームのあいだに出た形です。
+では、どこで切れば文脈が疎結合になるか。第 2 章で、切り方の判定を一つに定めます。その主体の中で、コンテキストスイッチが起きないかです。
