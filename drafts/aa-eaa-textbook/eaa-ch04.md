@@ -7,6 +7,7 @@
 この章に当たる章は 2d0ca30 までの本に無い。新しく書いた。2d0ca30 の第 3 章（責務を先に Profile に書く）から、Profile の定義（core.md:30）・業務に固有の責務は Domain Profile（profiles.md 2 節）・一つの Cell が複数 Profile を担ってよい（core.md:50）・Profile やサービスの数で Cell の数を決めない（working-notes.md「2.」の「Profile数やサービス数から組織数を決めない」。適用例）を持ってきた。持ってこなかったもの: 組織を先に作ると調整先が増える・最初の Mission に要る範囲から書く（群五の第 12 章で扱う）、判断の負荷が続けて増えたら分ける（群五の第 11 章）。旧本文は 2d0ca30 の eaa-ch03.md にある。
 所有者の字: 「ドメインとか価値とか権限とかで分けた方が疎結合になる」。
 Ontology の扱いは 2d0ca30 の第 2 章・第 6 章の直し（ef92a3f「2 つの Cell が共有する 1 つの文書を両側が持つ」）と揃えた。core.md:21（境界の両側が保持し、境界を越えて流れない）・36（意味の違いと対応を保持）・76（推測で越境しない、照会または変更提案で解く）。
+群四の着手便（@ope-ultp1635 msg adc84781）で直した: p.「またぐ語は Ontology に書く」は「境目の両側がそれぞれ持ちます」と書いていて、③ の読み（二つの Cell のあいだに共有する Ontology が一つあり、両側がそれを持つ）と字が揃っていなかった。「それぞれ持つ」は各側が別の定義を持つ形に読める（2 周目に松田・長谷川が止まった所の根）。文と絵を「一つを両側が持つ」にし、絵の Ontology を各 Cell の枠の中から二つの Cell のあいだへ移した（第 6 章の Contract と同じ置き方）。続けて p.「同じ定義を両側が共有して持つ、と読む」を 2d0ca30 の第 6 章から持ってきた。Core の字だけでは決まらないので、読みだと断るページ。根拠は core.md:94（Ontology を Cell 間で共有する文書に数える）と core.md:36（意味の違いと対応を保持する）。絵の Cell に在庫・物流の名を入れたのだけを変えた。
 「出荷日」の例は書き手が作った（注に書いた）。在庫と物流は 2d0ca30 の第 6〜12 章で通した例と同じ組。
 p.「変わる理由も分かれる」は書き手の読み。目次の 1 行（使う語・見る記録・変わる理由が違う）の字による。
 p.「ドメインで切るのも Core の外」は第 3 章と同じ扱い。
@@ -150,18 +151,46 @@ p.「ドメインで切るのも Core の外」は第 3 章と同じ扱い。
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="70" width="240" height="190" rx="10" class="hl" style="fill:#fff"/><text x="160" y="106" class="ts hc" text-anchor="middle" font-weight="700">在庫の Cell</text>
-  <rect x="70" y="150" width="180" height="60" rx="6" class="soft"/><text x="160" y="186" class="tx" text-anchor="middle">Ontology を持つ</text>
-  <rect x="600" y="70" width="240" height="190" rx="10" class="hl" style="fill:#fff"/><text x="720" y="106" class="ts hc" text-anchor="middle" font-weight="700">物流の Cell</text>
-  <rect x="630" y="150" width="180" height="60" rx="6" class="soft"/><text x="720" y="186" class="tx" text-anchor="middle">Ontology を持つ</text>
-  <path d="M290,180 H590" class="ln" marker-end="url(#arr)"/><text x="440" y="170" class="tx" text-anchor="middle">流れるのは Evidence</text>
-  <text x="440" y="320" class="ts sub" text-anchor="middle">Ontology は境目を越えて流れない。両側がそれぞれ持つ</text>
+  <rect x="40" y="70" width="220" height="190" rx="10" class="hl" style="fill:#fff"/><text x="150" y="170" class="ts hc" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <rect x="620" y="70" width="220" height="190" rx="10" class="hl" style="fill:#fff"/><text x="730" y="170" class="ts hc" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <rect x="310" y="60" width="260" height="140" rx="3" class="hl" style="fill:#fff"/>
+  <text x="440" y="96" class="t hc" text-anchor="middle" font-weight="700">共有する Ontology</text>
+  <text x="440" y="136" class="ts" text-anchor="middle">境目をまたぐ語の定義</text>
+  <text x="440" y="170" class="tx" text-anchor="middle">在庫と物流の両方が、これを持つ</text>
+  <path d="M260,130 H306 M574,130 H616" class="ln"/>
+  <path d="M260,236 H616" class="ln" marker-end="url(#arr)"/><text x="440" y="228" class="tx" text-anchor="middle">流れるのは Evidence</text>
+  <text x="440" y="320" class="ts sub" text-anchor="middle">Ontology は一つで、境目を越えて流れない</text>
 </svg>
 ```
 
-在庫と物流のあいだで渡す語の意味は、両側が共有する語の定義に書きます。Core はこれを Ontology と呼び、境目の両側がそれぞれ持ちます。
+在庫と物流のあいだで渡す語の意味は、共有する語の定義に書きます。Core はこれを Ontology と呼びます。あいだに一つあり、在庫と物流の両方がそれを持ちます。
 
-出典: EAA Core 版 6「0. 目的と範囲」（Ontology は境界の両側が保持し、境界を越えて流れない）、同 概念表「Ontology」。
+出典: EAA Core 版 6「0. 目的と範囲」、概念表「Ontology」。※「一つを両側が持つ」は、Core の字だけでは決まらない、この本の読み。次のページで見ます。
+
+## 同じ定義を両側が共有して持つ、と読む
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <path d="M440,30 V300" class="lt dash"/>
+  <text x="220" y="50" class="t" text-anchor="middle" font-weight="700">各側が自分の定義を持つ</text>
+  <rect x="30" y="80" width="170" height="150" rx="10" class="box"/><text x="115" y="110" class="ts" text-anchor="middle">在庫の Cell</text>
+  <rect x="50" y="160" width="130" height="44" rx="4" class="lt" style="fill:#fff"/><text x="115" y="187" class="tx" text-anchor="middle">在庫の定義</text>
+  <rect x="240" y="80" width="170" height="150" rx="10" class="box"/><text x="325" y="110" class="ts" text-anchor="middle">物流の Cell</text>
+  <rect x="260" y="160" width="130" height="44" rx="4" class="lt" style="fill:#fff"/><text x="325" y="187" class="tx" text-anchor="middle">物流の定義</text>
+  <text x="220" y="270" class="tx" text-anchor="middle">字の上ではこうも読める</text>
+  <text x="660" y="50" class="t hc" text-anchor="middle" font-weight="700">同じ定義を両側が持つ</text>
+  <rect x="465" y="80" width="105" height="150" rx="10" class="box"/><text x="517" y="160" class="ts" text-anchor="middle">在庫</text>
+  <rect x="750" y="80" width="105" height="150" rx="10" class="box"/><text x="802" y="160" class="ts" text-anchor="middle">物流</text>
+  <rect x="585" y="125" width="150" height="60" rx="3" class="hl" style="fill:#fff"/><text x="660" y="160" class="ts hc" text-anchor="middle">共有する Ontology</text>
+  <path d="M570,155 H585 M735,155 H750" class="ln"/>
+  <use href="#i-ok" x="574" y="252" width="22" height="22"/><text x="606" y="270" class="ts okc">この本の読み</text>
+  <text x="440" y="344" class="ts sub" text-anchor="middle">Core が Ontology を、Contract と同じく Cell のあいだで共有する文書に数えているから</text>
+</svg>
+```
+
+Core の「両側が保持する」は、各側が別の定義を持つとも読めます。Ontology は共有する文書に数えられているので、この本は同じ定義を両側が持つと読みます。
+
+出典: EAA Core 版 6「0.」、概念表「Ontology」、「4.」。※ これは読みで、Core の字が決めたことではない。各 Cell の中の語の使い方は Ontology と呼ばない。
 
 ## 違いは消さずに対応を書く
 

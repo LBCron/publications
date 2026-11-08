@@ -1,23 +1,21 @@
-# 第 9 章　新しい版を公開しても、各 Cell が採用するまで合意は変わらない
+# 第 9 章　取り決めを変えるときも、各 Cell は採用中の版の上で、相手の変更に引きずられずに仕事を続ける
 
-群: Evidence・Mission・Contract と版
+群: 分業を続けながら切れ目を保つ
 
 <!--
-構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
-出どころ（構造の表のまま）: core.md:78-80・84-92、profiles.md 4 節・7 節、素材 3。Core は publications origin/main 0d07f75 の core.md 版 6。
-本文: @ope-ultp1635 msg f202fb67（群三）。
-リードの「変えたい側は提案する」は、骨格で題から外してリードに置いた主張（titles.md「短さと中身のどちらを取ったか」）。本文の 3〜9 ページ目（提案・例・承認・採用・判断する者・逆向き・どの向きでも）で受けた。
-足した出どころ: core.md:93-94（採用は実装の受入権限だけでは判断できない・提起者は承認しない）、core.md:70（義務を一方的に捨てない）、core.md:11・71（未定の調整と、一方的な強制で補わない）。PR での実装例は delivery-guide.md:517-533（20. Profile改訂・採用 Pattern）と 115 行。素材 3 の例（希望時間帯・締めの時刻・採用の進み方の表）は、版 6 の 79・80・84・91・94 行に当て直した。
+構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（0f0a562c）の第 9 章。着手: @ope-ultp1635 msg adc84781（群四）。
+所有者の字: 「コンテキストの疎結合性だと思うけどね」「そういう主体の脳みそにとってコンテキストスイッチが起きないように切り分ける」（structure-v5.md のイデア第 2 文の逐語）。
+2d0ca30 までの第 9 章（新しい版を公開しても、各 Cell が採用するまで合意は変わらない）の中身を、この章に持ってきた: 公開と採用は別（core.md:79）、採用の進み方の表（core.md:80、素材 3）、提案（core.md:84）、希望時間帯の例（素材 3）、承認して公開（core.md:90・98）、採用は各 Cell の規範の所有者（core.md:91）、判断する者の表と採用は通常の受入権限だけでは判断できない（core.md:89-91・93）、逆向きの変更（core.md:70、素材 3）、どの向きでも同じ手続き（core.md:85、profiles.md 7 節）、基盤の Cell も PR で提案（profiles.md 7 節）、導入の完了は Evidence（profiles.md 7 節）、正本の改訂と採用版の変更を分ける（profiles.md 4 節）、別の PR に（delivery-guide.md:517-533。適用例）、最後のページ。旧本文は 2d0ca30 の eaa-ch09.md にある。
+直しを落とさずに持ってきた: ⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）— p.「承認して、新しい版を公開する」で在庫の側が承認しない理由は、改訂を判断するのが所有者（core.md:90）で所有者が物流の側にいる（core.md:98、第 6 章の例）から。core.md:94（提起者は承認しない）は人の単位の規定で、Cell の単位の分離ではない。注のまま。⑤（msg 281e5366）— 最後のページの見出しは「詳しい手順が未定のこと」、各項目は core.md:11 の既知の不足。2 周目（msg 8fbac4e5、@reader r2 cea29c1f）— 「既知の不足」の下の「詳しい手順は未定。いつ決めるかは書いていない」。
+@reader 目次の通読（349c4d63）で長谷川が止まった所への答え: 第 6 章「すべてが同じ版を採用」と第 9 章「各 Cell は採用中の版の上で」の関係が組み立てられなかった。p.「成り立つ版は一つ、採用する版は Cell ごと」を置いた。Core は「採用中」を二つの所に使っている — core.md:80「Contractは、それを結ぶCellのすべてが同じ版を採用中になったときに」は各 Cell が採用した版、core.md:79「採用中の合意は移行が成立するまで有効である」はいま成り立っている合意。章題の「採用中の版の上で」は後者の側で、移行が成り立つまで、どの Cell もいま成り立っている版の上で仕事を続ける。表のページの右の列の名を「効いている版」から「成り立っている版」にし、2 列の違いを文に書いた。章題は v5 のまま使った（@ope-ultp1635 msg adc84781「v5 の章題は肯定で立ててあります。そのまま使ってください」）。
+p.「相手の切り替えを強いると、文脈が戻る」と p.「時間の上の疎結合は、この本の読み」は書き手の読み（第 2 章のコンテキストスイッチの判定を時間の上に当てた）。Core は疎結合・コンテキスト・切り替えの語を使っていない（core.md を grep で確認、どれも 0 件）。注に書いた。
+旧本文の p.「基盤の Cell も、PR で提案する」の注「第 5 章の Platform を分けた例の続き」は、群二で書き直した第 5 章に Platform の例が無いので、第 5 章 p.「親も横断も上書きしない」の続きに替えた。p.「導入は、PR を出しても終わらない」の見出しを「導入の完了は、導入後の Evidence で確かめる」にした（中身は変えない）。
 包含と同じ形の字として、profiles.md:62「EnterpriseがDomain Profileを提供する場合、Enterpriseが正本を管理する」と、profiles.md:107「EnterpriseのOntology」、development-model.md:45「DomainからEnterpriseへのOntology訂正」は使っていない（development-model.md:24 の Enterprise／Domain と同じ字の組）。提供側・引受側の表（profiles.md:65-68）は Enterprise の字を含まないので使った。
-提起者が承認しないことの理由と、Core の採用の承認は第 10・11 章が言う。この章では手続きの順序の中で一度だけ触れ、先の章を指した。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
-⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: p.「承認して、新しい版を公開する」は、在庫の側が承認しない理由を「提起した者は承認しない」（core.md:94）にしていた。core.md:94 は人の単位の規定で、Cell の単位の分離ではない。在庫の側が承認しないのは、改訂を判断するのが所有者（core.md:90）で、所有者が物流の側にいる（core.md:98・第 8 章の例）から。理由をそちらに替え、core.md:94 は人の単位で満たしていることを注に書いた。第 1 章の「片側で書き換わる」の注と同じ取り違え。
-⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの見出しを「詳しい手順が未定のこと」にし、各項目が core.md:11 の既知の不足であることを書いた。以前は見出しが「決めていないこと」で、扱い全体が未決に読めた（緊急時・合意不成立には core.md:71・101・102 の字がある）。
-2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの絵の「既知の不足」の小見出しの下に「詳しい手順は未定。いつ決めるかは書いていない」を足し、項目を下げた（core.md:11 は詳細手順が未定と挙げるだけ。第 5 章の注と同じ）。
 -->
 
-> 変えたい側は提案し、受け入れるかは対象の Cell が決める。親子・兄弟・横断のどの向きでも同じ手続きで、基盤を担う Cell も CI/CD の変更を PR で提案する。
+> 新しい版は公開と採用を分け、変えたい側は提案し、採用は各 Cell の規範の所有者が決める。Contract が成り立つ版は一つで、移行が成り立つまで、どの Cell もいま成り立っている版の上で仕事を続ける。
 
 ```svg
 <svg viewBox="0 0 880 300" width="880" height="300">
@@ -29,11 +27,32 @@
   <rect x="640" y="154" width="200" height="40" rx="3" class="hl" style="fill:#fff"/><text x="740" y="180" class="ts hc" text-anchor="middle">版 2 を採用</text>
   <path d="M260,40 V220" class="lt dash"/><text x="260" y="32" class="tx" text-anchor="middle">版 2 を公開</text>
   <path d="M640,40 V220" class="ln"/><text x="640" y="32" class="ts okc" text-anchor="middle">ここで版 2 に移る</text>
-  <text x="450" y="284" class="t" text-anchor="middle" font-weight="700">公開から移行までのあいだ、効いているのは版 1</text>
+  <text x="450" y="284" class="t" text-anchor="middle" font-weight="700">移るまで、在庫も物流も版 1 の上で仕事を続ける</text>
 </svg>
 ```
 
-新しい版を公開することと、各 Cell が採用することは別の行為です。結ぶ Cell が全部採用するまで、いま効いている合意は変わりません。
+取り決めを変えるあいだも、各 Cell は相手の変更に引きずられずに仕事を続けます。新しい版の公開と各 Cell の採用は別の行為で、結ぶ Cell が全部採用するまで、いま成り立っている版が効き続けるからです。
+
+## 相手の切り替えを強いると、文脈が戻る
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <path d="M440,30 V300" class="lt dash"/>
+  <text x="220" y="56" class="t" text-anchor="middle" font-weight="700">変えた時点で、相手も切り替える</text>
+  <rect x="40" y="80" width="360" height="190" rx="10" class="box"/><text x="220" y="116" class="ts" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <text x="220" y="160" class="ts" text-anchor="middle">自分の仕事を止めて、</text><text x="220" y="186" class="ts" text-anchor="middle">在庫が変えた事情を読む</text>
+  <use href="#i-no" x="206" y="212" width="28" height="28"/>
+  <text x="660" y="56" class="t hc" text-anchor="middle" font-weight="700">採用するまで、前の版のまま</text>
+  <rect x="480" y="80" width="360" height="190" rx="10" class="hl" style="fill:#fff"/><text x="660" y="116" class="ts hc" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <text x="660" y="160" class="ts" text-anchor="middle">版 1 の上で仕事を続け、</text><text x="660" y="186" class="ts" text-anchor="middle">採用するかを自分で決める</text>
+  <use href="#i-ok" x="646" y="212" width="28" height="28"/>
+  <text x="440" y="340" class="ts sub" text-anchor="middle">第 2 章の判定（自分の仕事のあいだに別の文脈へ切り替えずに済むか）を、時間の上に当てる</text>
+</svg>
+```
+
+一方の変更が相手に即時の切り替えを強いると、相手は仕事を止め、変えた側の事情を読んでから戻ります。公開と採用を分ければ、相手は前の版の上で続けられます。
+
+※ 書き手の読み。Core は疎結合・切り替えの語を使っていない。
 
 ## 公開と採用は、別の行為
 
@@ -51,27 +70,47 @@
 </svg>
 ```
 
-規範の新しい版を公開することと、各 Cell がそれを採用することは別の行為で、採用は自動では追随しません。採用中の合意は、移行が成り立つまで効きます。
+規範の新しい版を公開することと、各 Cell がそれを採用することは別の行為で、採用は自動では追随しません。いま成り立っている合意は、移行が成り立つまで効きます。
 
 出典: EAA Core 版 6「3. 意味と合意」。
 
-## 採用の進み方と、効いている版
+## 成り立つ版と、Cell ごとの採用
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="210" y="30" width="460" height="100" rx="3" class="hl" style="fill:#fff"/>
+  <text x="440" y="64" class="t hc" text-anchor="middle" font-weight="700">Contract が成り立っている版</text>
+  <text x="440" y="100" class="ts" text-anchor="middle">一つ。全部が同じ版を採用したときに決まる（第 6 章）</text>
+  <rect x="40" y="190" width="340" height="120" rx="10" class="box"/><text x="210" y="226" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <text x="210" y="270" class="ts" text-anchor="middle">在庫が採用中の版</text>
+  <rect x="500" y="190" width="340" height="120" rx="10" class="box"/><text x="670" y="226" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <text x="670" y="270" class="ts" text-anchor="middle">物流が採用中の版</text>
+  <path d="M210,186 V150 H670 V186 M440,150 V134" class="lt"/>
+  <text x="440" y="356" class="ts sub" text-anchor="middle">二つが違うあいだは、前に成り立った版が効き、どの Cell もその上で仕事を続ける</text>
+</svg>
+```
+
+第 6 章の「同じ版」は Contract に一つ成り立つ版で、採用中の版は Cell ごとです。違うあいだは前に成り立った版が効き、どの Cell もその上で続けます。
+
+出典: EAA Core 版 6「3.」。※ Core は「採用中」を、各 Cell が採用した版にも、いま成り立っている合意にも使う。章の題の「採用中の版」は後者。
+
+## 採用の進み方と、成り立っている版
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <g class="ts">
-    <text x="60" y="54" font-weight="700">できごと</text><text x="520" y="54" font-weight="700" text-anchor="middle">在庫が採用中</text><text x="650" y="54" font-weight="700" text-anchor="middle">物流が採用中</text><text x="780" y="54" font-weight="700" text-anchor="middle">効いている版</text>
+    <text x="60" y="54" font-weight="700">できごと</text><text x="520" y="54" font-weight="700" text-anchor="middle">在庫が採用中</text><text x="650" y="54" font-weight="700" text-anchor="middle">物流が採用中</text><text x="780" y="54" font-weight="700" text-anchor="middle">成り立っている版</text>
     <text x="60" y="104">両方が版 1 を採用する</text><text x="520" y="104" text-anchor="middle">1</text><text x="650" y="104" text-anchor="middle">1</text><text x="780" y="104" text-anchor="middle">1（成立）</text>
     <text x="60" y="164">所有者が版 2 を公開する</text><text x="520" y="164" text-anchor="middle">1</text><text x="650" y="164" text-anchor="middle">1</text><text x="780" y="164" text-anchor="middle">1</text>
     <text x="60" y="224">在庫が版 2 を採用する</text><text x="520" y="224" text-anchor="middle" class="hc" font-weight="700">2</text><text x="650" y="224" text-anchor="middle">1</text><text x="780" y="224" text-anchor="middle" font-weight="700">1</text>
     <text x="60" y="284">物流が版 2 を採用する</text><text x="520" y="284" text-anchor="middle" class="hc" font-weight="700">2</text><text x="650" y="284" text-anchor="middle" class="hc" font-weight="700">2</text><text x="780" y="284" text-anchor="middle" class="okc" font-weight="700">2（移行）</text>
   </g>
   <path d="M40,72 H840 M40,132 H840 M40,192 H840 M40,252 H840" class="lt"/>
-  <text x="440" y="342" class="ts sub" text-anchor="middle">3 行目、在庫は版 2 を採用しているが、効いているのは版 1</text>
+  <text x="440" y="342" class="ts sub" text-anchor="middle">3 行目、在庫は版 2 を採用しているが、在庫も物流も版 1 の上で仕事をする</text>
 </svg>
 ```
 
-在庫が版 2 を採用しても、物流が採用するまでは版 1 が効いています。在庫は、物流に版 2 に従えとは言えません。物流が採用しなければ、版 1 のままです。
+在庫が版 2 を採用しても、物流が採用するまでは版 1 が成り立っています。在庫は物流に版 2 に従えとは言えず、物流は在庫の採用に合わせて切り替えずに済みます。
 
 出典: EAA Core 版 6「3. 意味と合意」。※ 表は EAA 紹介 3 のもので、版の番号は説明のための仮定です。
 
@@ -223,9 +262,9 @@ Cell のあいだの変更は、提案する側が内容・理由・根拠を示
 
 Platform を担う Cell も、CI/CD の変更は PR で提案します。受け取った Cell が、規範と Contract に合うかを確かめて受け入れます。
 
-出典: EAA Profiles「7. 横断責務の実行」。第 5 章の Platform を分けた例の続きです。
+出典: EAA Profiles「7. 横断責務の実行」。第 5 章 p.「親も横断も上書きしない」の続きです。
 
-## 導入は、PR を出しても終わらない
+## 導入の完了は Evidence で
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -286,6 +325,22 @@ GitHub では、正本を改訂する PR と採用版を更新する PR を分�
 
 出典: EAA Delivery Guide「20. Profile 改訂・採用 Pattern」（適用例）。
 
+## 時間の上の疎結合は、この本の読み
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="60" y="60" width="370" height="220" rx="10" class="box"/>
+  <text x="245" y="96" class="t" text-anchor="middle" font-weight="700">Core が定めること</text>
+  <g class="ts"><text x="90" y="146">公開と採用は別で、自動追随しない</text><text x="90" y="186">全部が同じ版を採用して移る</text><text x="90" y="226">変えたい側は提案する</text></g>
+  <rect x="450" y="60" width="370" height="220" rx="10" class="hl" style="fill:#fff"/>
+  <text x="635" y="96" class="t hc" text-anchor="middle" font-weight="700">この本の読み</text>
+  <g class="ts"><text x="480" y="146">版の移り方で、時間の上でも</text><text x="480" y="176">文脈の疎結合が保たれる</text><text x="480" y="222" class="tx">所有者の考えを当てた読み</text></g>
+  <text x="440" y="336" class="ts sub" text-anchor="middle">第 3〜5 章「〜で切るのも Core の外」と同じ扱い</text>
+</svg>
+```
+
+公開と採用を分けること、全部が採用して移ること、変えたい側が提案することは Core の規定です。それを時間の上の疎結合と読むのは、この本の読みです。
+
 ## Core はここまでしか決めていない
 
 ```svg
@@ -306,3 +361,16 @@ GitHub では、正本を改訂する PR と採用版を更新する PR を分�
 右の項目は、どれも Core が冒頭で既知の不足として挙げたものです。扱いが無いのではなく、未定なのは詳しい手順です。
 
 出典: EAA Core 版 6 冒頭の観測欄（既知の不足）と「2. 自治と権限」。
+
+## 次章へ：改訂の承認
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="60" y="80" width="260" height="160" rx="10" class="box"/><text x="190" y="150" class="t" text-anchor="middle" font-weight="700">提起する者</text><text x="190" y="186" class="ts" text-anchor="middle">改訂を出す</text>
+  <rect x="560" y="80" width="260" height="160" rx="10" class="hl" style="fill:#fff"/><text x="690" y="150" class="t hc" text-anchor="middle" font-weight="700">承認する者</text><text x="690" y="186" class="ts" text-anchor="middle">人間の所有者</text>
+  <path d="M320,160 H556" class="ln" marker-end="url(#arr)"/>
+  <text x="440" y="300" class="ts" text-anchor="middle">第 10 章</text>
+</svg>
+```
+
+この章では、版を出すのは所有者の承認でした。第 10 章では、その承認を誰が担うかで、権限で切った切れ目を保つ形を見ます。
