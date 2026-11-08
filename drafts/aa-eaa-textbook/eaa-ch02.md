@@ -9,7 +9,8 @@
 絵: Cell はどれも枠の外に対等に並べ、どの Cell もほかの Cell の枠の中に描かない（同 msg。core.md:43）。骨格にあった「（保留）子 Cell を親 Cell の枠の中に描くか」は、描かないで閉じた。
 development-model.md:30-41 のうち 33 行（「外部には一つの責任主体、内部には複数Cell」）は包含の字なので使っていない（同 msg）。表の残りの行（31・32・34）と 36-41 行だけを使った。
 「Cell の数え方」は、core.md:28 の Cell の定義（責任・権限・実行能力）と、development-model.md:37（Task を Agent へ配るだけでは分割にならない）から読んだ。数えるのが判断の責任者だと Core が一文で言っている行は無い。「Agent に配っても Cell は増えない」の注に書いた。
-Local Delivery Model の表は Delivery Guide の「例」で、規範ではない。p.4 の注に書いた。語は Delivery Guide のまま。
+Local Delivery Model の表は Delivery Guide の「例」で、規範ではない。p.4 の注に書いた。中の作り方の名前は Delivery Guide のまま。
+④（@ope-ultp1635 msg 02ab9595、@reviewer 2026-11-08 ch10-12 1-3）: delivery-guide.md:20「各 Domain は」を「業務ごとに」と書いていたのを「Cell ごとに」に直した。内部方式を決める単位は core.md:62 で Cell、core.md:50 で一つの Cell が複数 Profile を担うので、業務と Cell は 1 対 1 ではない。表の Domain 名は日本語にし、Cell の枠に業務の名前として「Contract」が残らないようにした（「契約」。第 3 章の Domain Profile の例と同じ字）。delivery-guide.md:35 の「Escalation できる」は「上げられる」と書いていたのを、core.md:70 の字（明示し、正当な判断主体との調整へ戻す）に直した。core.md:70 は向きを持たず、core.md:63 は親 Cell も上書きしないとするので、「上げる」は第 4 章と逆の形になる。
 新しく引く外部の文献は無い（Scrum・Kanban・SAFe ART は名前を挙げるだけで、記述を引いていない）。
 -->
 
@@ -82,22 +83,22 @@ Cell どうしは互いの中の方式を指定せず、共有する文書を通
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <g class="ts">
-    <rect x="40" y="30" width="250" height="90" rx="10" class="box"/><text x="60" y="64" font-weight="700">Integration</text><text x="60" y="94" class="ac">Full Agentic</text>
-    <rect x="315" y="30" width="250" height="90" rx="10" class="box"/><text x="335" y="64" font-weight="700">Contract</text><text x="335" y="94">Scrum + Coding Agent</text>
-    <rect x="590" y="30" width="250" height="90" rx="10" class="box"/><text x="610" y="64" font-weight="700">Billing</text><text x="610" y="94">Kanban + Agent</text>
-    <rect x="40" y="140" width="250" height="90" rx="10" class="box"/><text x="60" y="174" font-weight="700">Legacy Master</text><text x="60" y="204" class="hc">Predictive / Vendor</text>
-    <rect x="315" y="140" width="250" height="90" rx="10" class="box"/><text x="335" y="174" font-weight="700">Package Domain</text><text x="335" y="204">Package implementation</text>
-    <rect x="590" y="140" width="250" height="90" rx="10" class="box"/><text x="610" y="174" font-weight="700">Large Product Domain</text><text x="610" y="204">SAFe ART</text>
+    <rect x="40" y="30" width="250" height="90" rx="10" class="box"/><text x="60" y="64" font-weight="700">連携の Cell</text><text x="60" y="94" class="ac">Full Agentic</text>
+    <rect x="315" y="30" width="250" height="90" rx="10" class="box"/><text x="335" y="64" font-weight="700">契約の Cell</text><text x="335" y="94">Scrum + Coding Agent</text>
+    <rect x="590" y="30" width="250" height="90" rx="10" class="box"/><text x="610" y="64" font-weight="700">請求の Cell</text><text x="610" y="94">Kanban + Agent</text>
+    <rect x="40" y="140" width="250" height="90" rx="10" class="box"/><text x="60" y="174" font-weight="700">旧マスタの Cell</text><text x="60" y="204" class="hc">Predictive / Vendor</text>
+    <rect x="315" y="140" width="250" height="90" rx="10" class="box"/><text x="335" y="174" font-weight="700">パッケージの Cell</text><text x="335" y="204">Package implementation</text>
+    <rect x="590" y="140" width="250" height="90" rx="10" class="box"/><text x="610" y="174" font-weight="700">大規模製品の Cell</text><text x="610" y="204">SAFe ART</text>
   </g>
   <path d="M290,75 H315 M565,75 H590 M290,185 H315 M565,185 H590 M165,120 V140 M440,120 V140 M715,120 V140" class="hl"/>
-  <text x="440" y="282" class="t" text-anchor="middle" font-weight="700">業務ごとに、中の作り方が違ってよい</text>
-  <text x="440" y="316" class="ts sub" text-anchor="middle">各枠の上は業務の名前、下はその中の作り方</text>
+  <text x="440" y="282" class="t" text-anchor="middle" font-weight="700">Cell ごとに、中の作り方が違ってよい</text>
+  <text x="440" y="316" class="ts sub" text-anchor="middle">各枠の上は Cell が担う業務、下はその Cell の中の作り方</text>
 </svg>
 ```
 
-業務ごとに、中の作り方は違ってかまいません。全部を Agent に任せる Cell の横に、委託先が従来の工程で作る Cell が並んでも、つながれます。
+Cell ごとに、中の作り方は違ってかまいません。全部を Agent に任せる Cell の横に、委託先が従来の工程で作る Cell が並んでも、つながれます。
 
-出典: EAA Delivery Guide「3. Local Delivery Model」の表。適用例で規範ではない。語は原文のまま（ART は Agile Release Train）。
+出典: EAA Delivery Guide「3.」の表（適用例）。原文の Domain を Cell と書いた（単位は Core 版 6「2. 自治と権限」）。Contract は「契約」と書いた。
 
 ## 揃えるのは外とのつながり方
 
@@ -108,14 +109,14 @@ Cell どうしは互いの中の方式を指定せず、共有する文書を通
   <path d="M270,185 H326" class="ln" marker-end="url(#arr)"/>
   <rect x="330" y="40" width="510" height="290" rx="6" class="hl" style="fill:#fff"/>
   <text x="360" y="74" class="ts hc" font-weight="700">どの Cell も最低限できること</text>
-  <g class="t"><text x="380" y="118">Mission を受け取る</text><text x="380" y="160">Ontology と Contract を読む</text><text x="380" y="202">与えられた権限を越えない</text><text x="380" y="244" font-weight="700">Evidence を返す</text><text x="380" y="286">判断できない問題を上げられる</text></g>
+  <g class="t"><text x="380" y="118">Mission を受け取る</text><text x="380" y="160">Ontology と Contract を読む</text><text x="380" y="202">与えられた権限を越えない</text><text x="380" y="244" font-weight="700">Evidence を返す</text><text x="380" y="286">判断できない問題を示し、調整に戻せる</text></g>
   <g><use href="#i-ok" x="346" y="100" width="22" height="22"/><use href="#i-ok" x="346" y="142" width="22" height="22"/><use href="#i-ok" x="346" y="184" width="22" height="22"/><use href="#i-ok" x="346" y="226" width="22" height="22"/><use href="#i-ok" x="346" y="268" width="22" height="22"/></g>
 </svg>
 ```
 
 EAA が揃えるのは、中の作り方ではなく外とのつながり方です。絵に並べたことを、中がどう作られていても、どの Cell にもできるようにします。
 
-出典: EAA Delivery Guide「3. Local Delivery Model」。原文の「Escalation できる」を「判断できない問題を上げられる」と書いた。
+出典: EAA Delivery Guide「3.」。「Escalation できる」は、向きを持たない Core 版 6「2. 自治と権限」の字（正当な判断主体との調整へ戻す）で書いた。
 
 ## 全部を担う AA は、Cell が一つの EAA
 

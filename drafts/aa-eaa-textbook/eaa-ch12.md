@@ -9,7 +9,7 @@
 「Operator の判断は規範に書き直していく」は骨格で題から落とし書き手メモに残したもの（@ope-ultp1635 msg d407be50）。群四の便で必ず入れると指示があった。章の概要の文と、8 ページ目「判断を規範に書き直していく」の文に字のまま入れた。
 足した出どころ: delivery-guide.md 2 節（判断の削減と成果・安全性を一緒に観測する）、profiles.md 6 節（Supplier の責務。第 8 章の注と同じ）、各適用例の冒頭の「位置づけ：適用例（非規範）」（最後のページ）。
 例は第 6〜11 章の在庫と物流を続けた。在庫は自社の Scrum、物流は委託先の標準工程（第 6 章の例のまま）。あいだを定例会議で合わせていた、は第 1 章「複数社で組んでも同じ二つ」の発注側の定例会議につないだ説明のための仮定。
-包含と同じ形の字: adoption-guide.md:296「Domain が自律できる境界を作る」は「Cell が自律できる境界」と書いた。delivery-guide.md:20・35「各 Domain は」は「各 Cell は」と書いた（Domain／Enterprise の組は development-model.md:24 と同じ字の組で、第 9 章の書き手メモと同じ扱い）。role-model.md 5 節「Enterpriseの責務」（全体の目的・制約・資源配分）は出どころの 2 節の外で、使っていない。
+包含と同じ形の字: adoption-guide.md:296「Domain が自律できる境界を作る」は、④（@ope-ultp1635 msg 02ab9595、@reviewer 2026-11-08 ch10-12 1-4）で「Cell が自律する範囲を、規範と Contract の案にする」に直した。前の版の「Cell が自律できる境界を作る」は、Operator が Cell の自律の範囲を作ることになり、core.md:62（範囲は合意して採用した規範と Contract）・第 4 章 109 行と閉じなかった。ページの題も「任せる境界を作る」から変えた。delivery-guide.md:20・35 の Domain は、第 12 章ではなく第 2 章で書き換えている（第 2 章の書き手メモ）。原文の delivery-guide の Domain は Integration・Contract・Billing など業務の名前で、Enterprise と組になった位置の呼び名ではない（delivery-guide.md:1-60 に Enterprise の字は無い）。role-model.md 5 節「Enterpriseの責務」（全体の目的・制約・資源配分）は出どころの 2 節の外で、使っていない。
 adoption-guide.md:270-277 の英語の段は日本語に開いた（Recorded Decision → 記録した判断、Machine-readable Control → 機械で読める制御、Future Autonomy → 次からは任せられる）。Operator Dependency(t) は「Operator への依存」と書いた。
 第 2・3 章と重なる所（つながり方の最低限、Profile の数で Cell を決めない）は、ページを立てずに前の章を指した。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
@@ -243,7 +243,7 @@ Operator の判断は規範に書き直していきます。判断を記録し�
 
 出典: EAA Adoption Guide「6.」（適用例。Operator Dependency(t) ↓ を「Operator への依存が減る」と書いた）。
 
-## Operator は、任せる境界を作る
+## Operator は、自律の範囲を案にする
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -252,16 +252,17 @@ Operator の判断は規範に書き直していきます。判断を記録し�
     <text x="60" y="120">統治の曖昧さを、Authority・Constraint・例外に訳す</text>
     <text x="60" y="180">例外を分類する</text>
     <text x="60" y="240">繰り返す判断を規則にする</text>
-    <text x="60" y="300">Cell が自律できる境界を作る</text>
+    <text x="60" y="300">Cell が自律する範囲を、規範と Contract の案にする</text>
   </g>
   <path d="M40,80 H840 M40,140 H840 M40,200 H840 M40,260 H840 M40,320 H840" class="lt"/>
-  <text x="640" y="200" class="ts sub" text-anchor="middle">判断の件数の多さではない</text>
+  <text x="820" y="60" class="ts sub" text-anchor="end">判断の件数の多さではない</text>
+  <text x="440" y="356" class="ts hc" text-anchor="middle">範囲が決まるのは、案が承認され、採用されたとき</text>
 </svg>
 ```
 
-Operator の価値は、判断の件数ではありません。曖昧な所を権限・制約・例外に訳し、Cell が自律できる境界を作ることです。
+Operator の価値は、判断の件数ではありません。曖昧な所を権限・制約・例外に訳し、Cell が自律する範囲を規範と Contract の案にすることです。
 
-出典: EAA Adoption Guide「6.」（適用例。原文の Domain を Cell と書いた）。
+出典: EAA Adoption Guide「6.」（適用例。原文は「Domain が自律できる境界を作る」）。範囲を決めるのが承認と採用だとするのは、第 4 章からのこの本の読みです。
 
 ## 判断を減らしても、成果と安全は保つ
 

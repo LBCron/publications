@@ -9,6 +9,7 @@
 足した出どころ: core.md:7-12（Core 自身の所有者・観測・準拠先の表。語の意味をここから取った）、core.md:70（権限が足りないときは調整へ戻す）、core.md:93（承認の手続きは各判断に適用される手続きに任せる）、core.md:98（Contract の所有者は 1 人）、core.md:107・109（職務分離の維持と、改訂を追える記録）。編集権の行は profiles.md:73。
 例は第 6〜9 章の在庫と物流を続けた。締めの時刻の改訂は第 9 章の「逆向きの変更」のページの続き。所有者本人が提起したときの承認者は第 8 章の最後のページが未定として挙げたもので、ここでは例で見せ、最後のページに残した。
 publications の #135・#136・#137 と APPROVALS 行 12〜15 を実例として使うかは書き手の判断に任された（@ope-ultp1635 msg dfcb091f）。使っていない。理由: (1) 公開の記録どうしが食い違っている — 行 12・14 の備考は「operator が記入した」と書き、行を入れた commit 383a09c の件名は「下書き・commit は @philosopher、確定は operator の照合」と書く。どちらが事実かを本が決めて書くことはできない。(2) 読み手は自分の案件に Core を当てるエンジニアで、所有者の言葉を operator が中継する形は読み手の案件から遠い。実例から取れる一般の問い（提起した者と承認した者が別だと、記録の上でどう示すか）は、Core が決めていないこととして最後のページに置いた。
+④の洗い出し（@ope-ultp1635 msg 02ab9595、@reviewer 2026-11-08 ch10-12 4-1）: 「編集できても、承認ではない」は profiles.md:73 の「共有するProfileの正本の改訂」の文を、文書一般に広げて書いていた。字を Profile の正本に戻した。
 包含と同じ形の字: profiles.md 4 節の 51 行「Enterprise Cellが複数Profileをまとめて引き受けてよい」・62 行「EnterpriseがDomain Profileを提供する場合、Enterpriseが正本を管理する」は使っていない。使ったのは 73 行だけ。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。人は橙の四角、Agent は青の丸い札（第 0・2 章と同じ）。
 新しく引く外部の文献は無い。
@@ -167,7 +168,7 @@ Contract、共有する Profile・Ontology、Evidence の様式と Core は、�
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="60" width="340" height="220" rx="10" class="soft"/>
-  <text x="210" y="100" class="t" text-anchor="middle" font-weight="700">文書を編集できる</text>
+  <text x="210" y="100" class="t" text-anchor="middle" font-weight="700">Profile の正本を編集できる</text>
   <use href="#i-pr" x="195" y="130" width="30" height="38"/>
   <text x="210" y="210" class="ts" text-anchor="middle">GitHub に書き込める</text><text x="210" y="236" class="ts" text-anchor="middle">権限も、これに当たる</text>
   <path d="M380,170 H496" class="xl dash"/><use href="#i-no" x="424" y="142" width="28" height="28"/>
@@ -176,9 +177,9 @@ Contract、共有する Profile・Ontology、Evidence の様式と Core は、�
 </svg>
 ```
 
-文書を編集できる権限だけでは、合意した義務を消したり緩めたり、権限を足したりできません。リポジトリに書き込めることも、承認ではありません。
+Profile の正本を編集できる権限だけでは、合意した義務を消したり緩めたり、権限を足したりできません。リポジトリに書き込めることも、承認ではありません。
 
-出典: EAA Profiles「4.」の「改訂元と採用先を分ける」。※ 書き込みの権限を「文書の編集権」に当てたのは、この本の読みです。
+出典: EAA Profiles「4.」の「改訂元と採用先を分ける」（共有する Profile の正本の改訂の行）。※ 書き込みの権限を文書の編集権に当てたのは、この本の読みです。
 
 ## 中の改訂の手続きは、各 Cell が決める
 
