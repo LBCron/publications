@@ -1,4 +1,4 @@
-# 第 1 章　人間は職能で分業してきたが、職能は Agent にとって分業の軸になるほどの文脈ではない
+# 第 1 章　職能で分ける理由は人間にあったが、職能は Agent にとって分業の軸になるほどの文脈ではない
 
 群: 巨大なシステムの分業という問い
 
@@ -8,6 +8,12 @@
 所有者の言葉の引用は structure-v5.md「イデア」の逐語。
 p.「AA のレビュー分離は別の目的」: AA の本の第 2 章は、レビューを書いた AI から切り離す（作成者の文脈を持たない者に確かめさせる）。この章の「職能で切らない」と食い違って読まれないよう、あれは分業ではなく職務分離（core.md:45「同じ判断について、行う者と、承認または検証する者を別の者にすること」）だと書いた。AA の本の字: aa-ch02.md「判定は残し、レビュアーを文脈から切る」「レビューは回数でなく、文脈を分ける」。
 「人間は職能ごとに覚えることが多いので、渡し直しを払っても職能で分けた」は structure-v5.md 第 1 章の行の字。所有者の字は「人間は職能に応じて分業してた」まで。理由の部分は書き手の導出（structure-v5 でそう書いて GO を受けた）。
+群二で直したこと（@ope-ultp1635 msg 83d1e0ea、@reader 目次 v5 の通読 349c4d63 の桜井）: 章題「人間は職能で分業してきた」は事実として誤り。LeSS・SAFe・Spotify はチームを職能で分けず、要る技能を一つのチームに揃える。原文に当たり直した（2026-11-08、WebFetch）:
+- LeSS「Feature Teams」https://less.works/less/structure/feature-teams —「a long-lived, cross-functional, cross-component team that completes many end-to-end customer features」「a component team structure reinforces sequential development」（待ち・仕掛り・多くの handoff を生むと続く）。表で component team は「focus on single specialization」、feature team は「focus on multiple specializations」。
+- SAFe「Agile Teams」https://framework.scaledagile.com/agile-teams —「An Agile Team is a cross-functional group of typically ten or fewer individuals with all the skills necessary to define, build, test, and deliver increments of value」。「Agile Release Train」https://framework.scaledagile.com/agile-release-train —「ARTs are cross-functional and contain all the necessary capabilities for the solution they deliver」「Organizing ARTs around value」。
+群一の旧第 1 章は EAA 紹介 0 の訳に揃えるため当たり直さなかった。今回の字は紹介 0 に無い（紹介 0 は合意の持ち方を引いた）ので、揃える訳が無く、当たり直した。
+直し方: 章題を「職能で分ける理由は人間にあった」にし、人間が必ず職能で分けたとは書かない。p.「LeSS・SAFe は職能で分けない」「枠組みが減らしたのも渡し直し」「チームの中には職能が残る」を足した。枠組みが職能で分けないのはこの章の主張（職能で切ると渡し直しが残る）を人間の側で先に示したもので、主張を弱めない。「チームの中には職能が残る」は書き手の読み（SAFe の all the skills・LeSS の multiple specializations は、技能を持つ人が複数いることを前提にする）で、注に書いた。
+Spotify は付録で引くので、この章では名前を挙げない（付録の旧本文は EAA 紹介 0 の訳）。
 -->
 
 ```svg
@@ -32,7 +38,7 @@ p.「AA のレビュー分離は別の目的」: AA の本の第 2 章は、レ�
 </svg>
 ```
 
-人間が職能で分けたのは、職能ごとに覚えることが多いからです。Agent にとって職能は大きな文脈ではないので、職能で切ると渡し直しだけが残ります。
+人間が職能で分けるのは、職能ごとに覚えることが多いからです。大規模開発の枠組みは、その渡し直しを減らすために、チームを職能で分けなくなりました。Agent にとって職能は大きな文脈ではないので、職能で切ると渡し直しだけが残ります。
 
 ## 所有者の言葉
 
@@ -47,7 +53,7 @@ p.「AA のレビュー分離は別の目的」: AA の本の第 2 章は、レ�
 </svg>
 ```
 
-この章は、この言葉の前半を扱います。人間はなぜ職能で分けてきたのか、それが Agent ではなぜ成り立たないのか、です。後半の切り方は、第 2 章から見ます。
+この章は、この言葉の前半を扱います。人間が職能で分ける理由は何か、それが Agent ではなぜ成り立たないのか、です。後半の切り方は、第 2 章から見ます。
 
 ※ 出典: EAA Core の所有者（Kazuhiro）が、この本の構成を決めるときに書いた考え。
 
@@ -72,7 +78,7 @@ p.「AA のレビュー分離は別の目的」: AA の本の第 2 章は、レ�
 
 ※ 例の機能は説明のために選んだ。
 
-## 人間は渡し直しを払ってきた
+## 人間には職能で分ける理由がある
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -83,11 +89,85 @@ p.「AA のレビュー分離は別の目的」: AA の本の第 2 章は、レ�
   <text x="650" y="96" class="t" text-anchor="middle" font-weight="700">職能で分ける手間</text>
   <g class="ts"><text x="490" y="140">持ち場を越えるたびの</text><text x="490" y="166">渡し直し</text></g>
   <path d="M420,175 H456" class="ln" marker-end="url(#arr)"/>
-  <text x="440" y="340" class="t hc" text-anchor="middle" font-weight="700">理由が手間を上回るので、人間は職能で分けた</text>
+  <text x="440" y="340" class="t hc" text-anchor="middle" font-weight="700">理由が手間を上回るとき、人間は職能で分ける</text>
 </svg>
 ```
 
-人間は、職能ごとに覚える知識と手の技が多く、一人で全部はこなせません。だから渡し直しの手間を払っても、職能で分けてきました。
+人間は、職能ごとに覚える知識と手の技が多く、一人で全部はこなせません。だから職能で分ける組織は、渡し直しの手間を払ってきました。
+
+## LeSS・SAFe は職能で分けない
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <g opacity=".6">
+    <text x="200" y="40" class="ts sub" text-anchor="middle">職能で分けたチーム</text>
+    <g class="tx" text-anchor="middle">
+      <rect x="40" y="60" width="70" height="40" rx="6" class="soft"/><text x="75" y="85">設計</text>
+      <rect x="120" y="60" width="70" height="40" rx="6" class="soft"/><text x="155" y="85">実装</text>
+      <rect x="200" y="60" width="70" height="40" rx="6" class="soft"/><text x="235" y="85">テスト</text>
+      <rect x="280" y="60" width="80" height="40" rx="6" class="soft"/><text x="320" y="85">レビュー</text>
+    </g>
+  </g>
+  <path d="M200,112 V150" class="ln" marker-end="url(#arr)"/>
+  <rect x="40" y="160" width="320" height="120" rx="10" class="hl" style="fill:#fff"/>
+  <text x="200" y="190" class="ts hc" text-anchor="middle" font-weight="700">一つのチームに技能を揃える</text>
+  <g class="tx" text-anchor="middle"><text x="200" y="222">設計・実装・テスト・レビュー</text><text x="200" y="250">顧客に届ける価値の単位で組む</text></g>
+  <g class="ts">
+    <text x="420" y="110" font-weight="700">LeSS</text><text x="420" y="136" class="tx">cross-functional なフィーチャーチーム</text>
+    <text x="420" y="196" font-weight="700">SAFe</text><text x="420" y="222" class="tx">cross-functional なチームと ART</text><text x="420" y="246" class="tx">ART は価値の単位で組む</text>
+  </g>
+  <text x="440" y="336" class="ts sub" text-anchor="middle">英文は LeSS「Feature Teams」、SAFe「Agile Teams」「Agile Release Train」（2026-11-08 参照）</text>
+</svg>
+```
+
+大規模開発の枠組みのうち LeSS と SAFe は、チームを職能で分けません。どちらも、作るのに要る技能を一つのチームに揃えます。
+
+出典: LeSS「Feature Teams」、SAFe「Agile Teams」「Agile Release Train」。この本で原文に当たった。ART は SAFe の、チームを束ねた単位。
+
+## 枠組みが減らしたのも渡し直し
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="60" width="380" height="220" rx="10" class="box"/>
+  <text x="230" y="94" class="t" text-anchor="middle" font-weight="700">一つの専門に寄せたチーム</text>
+  <g class="tx" text-anchor="middle">
+    <rect x="70" y="140" width="80" height="40" rx="4" class="soft"/><rect x="190" y="140" width="80" height="40" rx="4" class="soft"/><rect x="310" y="140" width="80" height="40" rx="4" class="soft"/>
+  </g>
+  <path d="M150,160 H188 M270,160 H308" class="xl" marker-end="url(#arr-x)"/>
+  <text x="230" y="230" class="ts xc" text-anchor="middle">順に渡す・待つ・渡しが増える</text>
+  <rect x="460" y="60" width="380" height="220" rx="10" class="hl" style="fill:#fff"/>
+  <text x="650" y="94" class="t hc" text-anchor="middle" font-weight="700">フィーチャーチーム</text>
+  <rect x="500" y="140" width="300" height="40" rx="4" class="soft"/>
+  <text x="650" y="166" class="tx" text-anchor="middle">一つの機能を、一つのチームで最後まで</text>
+  <text x="650" y="230" class="ts" text-anchor="middle">チームのあいだの渡しが減る</text>
+  <text x="440" y="336" class="ts sub" text-anchor="middle">LeSS「Feature Teams」の対比を、この章の語で書いた</text>
+</svg>
+```
+
+LeSS は、一つの専門や部品に寄せたチームは順に渡す開発を強め、渡しと待ちを増やすと書いています。枠組みが職能で分けないのも、渡し直しを減らすためです。
+
+出典: LeSS「Feature Teams」の component team と feature team の対比。
+
+## チームの中には職能が残る
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="200" y="50" width="480" height="230" rx="10" class="hl" style="fill:#fff"/>
+  <text x="440" y="84" class="t hc" text-anchor="middle" font-weight="700">技能を揃えたチーム</text>
+  <g class="ts" text-anchor="middle">
+    <rect x="230" y="120" width="90" height="44" rx="6" class="h"/><text x="275" y="148" class="on">設計の人</text>
+    <rect x="335" y="120" width="90" height="44" rx="6" class="h"/><text x="380" y="148" class="on">実装の人</text>
+    <rect x="440" y="120" width="100" height="44" rx="6" class="h"/><text x="490" y="148" class="on">テストの人</text>
+    <rect x="555" y="120" width="100" height="44" rx="6" class="h"/><text x="605" y="148" class="on">レビューの人</text>
+  </g>
+  <text x="440" y="220" class="ts" text-anchor="middle">人は、得意な職能を持ったまま一つのチームにいる</text>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">人間に職能ごとに覚えることが多いのは、変わらない</text>
+</svg>
+```
+
+枠組みは技能をチームの中に揃えて、チームのあいだの渡し直しを減らしました。チームの中では、人は今も得意な職能を持ちます。
+
+※ 書き手の読み。SAFe の「all the skills necessary」と LeSS の「multiple specializations」は、技能の違う人が一つのチームにいる形を指す。
 
 ## Agent には持ち場を問わず頼める
 
@@ -147,7 +227,7 @@ Agent を職能で分けると、人間が職能で分けた理由は無いま�
 </svg>
 ```
 
-設計担当・実装担当・テスト担当のように、人の役割を Agent に割り当てる形は、職能の分業を写したものです。何で分けるかという問いには答えていません。
+人の役割を設計担当・実装担当のように Agent に割り当てる形は、職能の分業の写しです。枠組みがチームのあいだから外した切り方を、Agent のあいだに戻します。
 
 ## AA のレビュー分離は別の目的
 

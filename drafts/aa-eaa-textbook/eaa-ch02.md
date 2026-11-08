@@ -1,194 +1,231 @@
-# 第 2 章　Cell は判断の責任と権限で数え、作り方では数えない
+# 第 2 章　分ける単位は、一つの主体の中でコンテキストスイッチが起きない範囲にする
 
-群: Cell の分割と自治
+群: 文脈が疎結合になる切り方
 
 <!--
-構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
-出どころ（構造の表のまま）: core.md:16-18・28-29、development-model.md:30-41、delivery-guide.md:18-47。Core は publications origin/main 0d07f75 の core.md 版 6。
-本文: @ope-ultp1635 msg 18751c19（群二）。
-絵: Cell はどれも枠の外に対等に並べ、どの Cell もほかの Cell の枠の中に描かない（同 msg。core.md:43）。骨格にあった「（保留）子 Cell を親 Cell の枠の中に描くか」は、描かないで閉じた。
-development-model.md:30-41 のうち 33 行（「外部には一つの責任主体、内部には複数Cell」）は包含の字なので使っていない（同 msg）。表の残りの行（31・32・34）と 36-41 行だけを使った。
-「Cell の数え方」は、core.md:28 の Cell の定義（責任・権限・実行能力）と、development-model.md:37（Task を Agent へ配るだけでは分割にならない）から読んだ。数えるのが判断の責任者だと Core が一文で言っている行は無い。「Agent に配っても Cell は増えない」の注に書いた。
-Local Delivery Model の表は Delivery Guide の「例」で、規範ではない。p.4 の注に書いた。中の作り方の名前は Delivery Guide のまま。
-④（@ope-ultp1635 msg 02ab9595、@reviewer 2026-11-08 ch10-12 1-3）: delivery-guide.md:20「各 Domain は」を「業務ごとに」と書いていたのを「Cell ごとに」に直した。内部方式を決める単位は core.md:62 で Cell、core.md:50 で一つの Cell が複数 Profile を担うので、業務と Cell は 1 対 1 ではない。表の Domain 名は日本語にし、Cell の枠に業務の名前として「Contract」が残らないようにした（「契約」。第 3 章の Domain Profile の例と同じ字）。delivery-guide.md:35 の「Escalation できる」は「上げられる」と書いていたのを、core.md:70 の字（明示し、正当な判断主体との調整へ戻す）に直した。core.md:70 は向きを持たず、core.md:63 は親 Cell も上書きしないとするので、「上げる」は第 4 章と逆の形になる。
-新しく引く外部の文献は無い（Scrum・Kanban・SAFe ART は名前を挙げるだけで、記述を引いていない）。
-⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: p.「揃えるのは外とのつながり方」の出典欄に「（適用例）」を足した。
-⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目）: 「Cell の数は判断の責任者の数」は、読みだと断ったのが「Agent に配っても」の注だけで、章題・章の概要の文・絵の結び・第 0 章の見出しは規範の形だった。しかも中身が Core と閉じていなかった — core.md:42 は一つの Cell に責任を共有する人が複数いることを認め、core.md:52 は渡し先を「責任主体」と書いて人に限らない。数える物を「判断の責任と権限」（core.md:28 の定義の語）にし、増えるのは責務と判断権限を別の責任主体に渡したとき（core.md:52）と書いた。章題も同じ字に変えた（titles.md に記録）。導いたものであることは章の概要のページにも書いた。
-2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: p.「中の作り方は Cell ごとに選ぶ」の出典欄から「Contract は「契約」と書いた」を外した。Contract＝契約と読む取り違えを強めた（松田・河野・片山）。原文の Domain 名 Contract を「契約」と訳したことはこの注にだけ残す。絵の下の「各枠の上は Cell が担う業務」で業務の名前だと読める。
+構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（dd08b888）の第 2 章。着手: @ope-ultp1635 msg 83d1e0ea（群二）。
+2d0ca30 までの第 2 章（Cell は判断の責任と権限で数え、作り方では数えない）から、この章に持ってきたもの: Cell の定義（core.md:28）、Agent に配っても Cell は増えない（core.md:35・52）、渡す先は責任主体で人に限らない・責任を複数の人で負ってよい（core.md:42・52。@reviewer 2-1 の直しのまま）、中の作り方は Cell ごとに選ぶ（core.md:18・29）。持ってこなかったもの: Delivery Guide の Local Delivery Model の表・揃えるのは外とのつながり方（群三の第 6 章で Contract と一緒に扱う）。旧本文は 2d0ca30 の eaa-ch02.md にある。
+目次の「この単位を Cell と呼ぶ」は「この範囲の境目を Cell の境目にする」に変えた。Cell の名前は第 0 章 p.「AA と Cell」で付けている。目次では第 0 章の題で Cell が先に出て、長谷川・河野が止まった（@reader 349c4d63）。第 0 章の題は「一つの開発単位」に直した。この章は名前を付ける章ではなく、Cell の境目をどこに引くかを決める章にした。
+判定（コンテキストスイッチが起きないか）は Core に無い。core.md:52 は分割を定義するだけで、どこで分けるかを書かない（@reviewer 2-2、第 0 章 p.「切り方は、Core の外の提案」と同じ所）。p.「判定は一つ」の注に書いた。
+「文脈」の中身（判断に使う語と記録・優先する価値・判断の権限）は第 0 章 p.「答え：文脈を疎結合に分ける」の注と同じ字。
+p.「人のチームにも同じ判定」は書き手の読み。所有者の字は「主体の脳みそ」で、主体を Agent に限っていない。
+p.「中は人のチームでもよい」は、目次の通読で河野（Agent を入れていない会社が読む本か）が止まったことへの答えを、この章の中身として置いた。core.md:18 の字による。
+絵の Cell の枠は入れ子にしない（core.md:43）。
 -->
 
-> Federation は Cell の内部方式を指定しない。AA で動く Cell も、Scrum のチームも、委託先の標準工程も同じ形でつながり、全責務を一つの AA が担う構成は Cell が一つの EAA である。
-
 ```svg
-<svg viewBox="0 0 880 300" width="880" height="300">
-  <rect x="30" y="40" width="230" height="150" rx="10" class="box"/><text x="145" y="72" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="110" y="88" width="70" height="32" rx="6" class="h"/><text x="145" y="110" class="tx" text-anchor="middle" style="fill:#fff">責任者</text>
-  <rect x="70" y="134" width="150" height="34" rx="17" class="a"/><text x="145" y="157" class="ts on" text-anchor="middle">AA で動く</text>
-  <rect x="325" y="40" width="230" height="150" rx="10" class="box"/><text x="440" y="72" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="405" y="88" width="70" height="32" rx="6" class="h"/><text x="440" y="110" class="tx" text-anchor="middle" style="fill:#fff">責任者</text>
-  <g class="h"><rect x="378" y="134" width="34" height="34" rx="6"/><rect x="423" y="134" width="34" height="34" rx="6"/><rect x="468" y="134" width="34" height="34" rx="6"/></g>
-  <rect x="620" y="40" width="230" height="150" rx="10" class="box"/><text x="735" y="72" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="700" y="88" width="70" height="32" rx="6" class="h"/><text x="735" y="110" class="tx" text-anchor="middle" style="fill:#fff">責任者</text>
-  <path d="M660,152 H812" class="ln" marker-end="url(#arr)"/><g class="tx"><text x="668" y="144">要件</text><text x="718" y="144">設計</text><text x="768" y="144">試験</text></g>
-  <path d="M260,115 H325 M555,115 H620" class="hl"/>
-  <use href="#i-pr" x="282" y="128" width="20" height="26"/><use href="#i-pr" x="578" y="128" width="20" height="26"/>
-  <text x="145" y="214" class="ts" text-anchor="middle">AA</text><text x="440" y="214" class="ts" text-anchor="middle">Scrum のチーム</text><text x="735" y="214" class="ts" text-anchor="middle">委託先の標準工程</text>
-  <text x="440" y="262" class="t" text-anchor="middle" font-weight="700">中の作り方は違っても、同じ形で横に並んでつながる</text>
-</svg>
-```
-
-Cell は、判断の責任と権限で数えます。中が AA でも、人のチームでも、委託先の工程でも、つながり方は変わりません。
-
-※ 数え方は、Core の Cell の定義と分割の規定から導いたもので、Core が数え方として書いた行はありません（このページの読みの根拠は「Agent に配っても Cell は増えない」）。
-
-## Cell は責任・権限・実行能力の単位
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="250" y="40" width="380" height="250" rx="12" class="box"/>
-  <text x="440" y="76" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="280" y="100" width="100" height="56" rx="6" class="h"/><text x="330" y="134" class="ts on" text-anchor="middle">責任</text>
-  <rect x="390" y="100" width="100" height="56" rx="6" class="h"/><text x="440" y="134" class="ts on" text-anchor="middle">権限</text>
-  <rect x="500" y="100" width="100" height="56" rx="6" class="a"/><text x="550" y="134" class="ts on" text-anchor="middle">実行能力</text>
-  <text x="440" y="196" class="ts" text-anchor="middle">一定の目的に対して、これを持つ</text>
-  <rect x="320" y="222" width="240" height="44" rx="6" class="soft"/><text x="440" y="250" class="ts" text-anchor="middle">自律して成果を出す</text>
-  <rect x="40" y="200" width="150" height="70" rx="3" class="hl" style="fill:#fff"/><text x="115" y="230" class="ts hc" text-anchor="middle">外との合意</text><text x="115" y="254" class="tx" text-anchor="middle">これに基づいて</text>
-  <path d="M190,236 H246" class="ln" marker-end="url(#arr)"/>
-  <text x="440" y="340" class="ts sub" text-anchor="middle">責任・権限・実行能力のどれかが欠けると、自律して成果を出せない</text>
-</svg>
-```
-
-Cell は、一定の目的に対する責任・権限・実行能力を持ち、外との合意に基づいて自律して成果を出す単位です。
-
-出典: EAA Core 版 6 の概念表「Cell」。
-
-## Federation は中を指定しない
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="70" width="220" height="200" rx="10" class="box"/><text x="150" y="104" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="620" y="70" width="220" height="200" rx="10" class="box"/><text x="730" y="104" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="70" y="130" width="160" height="110" rx="6" fill="url(#hatch)"/><text x="150" y="190" class="ts sub" text-anchor="middle">中の方式</text>
-  <rect x="650" y="130" width="160" height="110" rx="6" fill="url(#hatch)"/><text x="730" y="190" class="ts sub" text-anchor="middle">中の方式</text>
-  <use href="#i-no" x="218" y="120" width="22" height="22"/><use href="#i-no" x="798" y="120" width="22" height="22"/>
-  <rect x="320" y="60" width="240" height="220" rx="6" class="hl" style="fill:#fff"/>
-  <text x="440" y="90" class="ts hc" text-anchor="middle" font-weight="700">共有する文書でつなぐ</text>
-  <g class="ts" text-anchor="middle"><text x="440" y="130">責任</text><text x="440" y="164">権限</text><text x="440" y="198">合意</text><text x="440" y="232" font-weight="700">Evidence</text></g>
-  <path d="M260,170 H316 M564,170 H620" class="ln"/>
-  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">相手の中の方式を、接続の条件にしない</text>
-</svg>
-```
-
-Cell どうしは互いの中の方式を指定せず、共有する文書を通して責任・権限・合意・Evidence をつなぎます。この関係を Federation と呼びます。
-
-出典: EAA Core 版 6 の概念表「Federation」、同「0. 目的と範囲」。
-
-## 中の作り方は Cell ごとに選ぶ
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <g class="ts">
-    <rect x="40" y="30" width="250" height="90" rx="10" class="box"/><text x="60" y="64" font-weight="700">連携の Cell</text><text x="60" y="94" class="ac">Full Agentic</text>
-    <rect x="315" y="30" width="250" height="90" rx="10" class="box"/><text x="335" y="64" font-weight="700">契約の Cell</text><text x="335" y="94">Scrum + Coding Agent</text>
-    <rect x="590" y="30" width="250" height="90" rx="10" class="box"/><text x="610" y="64" font-weight="700">請求の Cell</text><text x="610" y="94">Kanban + Agent</text>
-    <rect x="40" y="140" width="250" height="90" rx="10" class="box"/><text x="60" y="174" font-weight="700">旧マスタの Cell</text><text x="60" y="204" class="hc">Predictive / Vendor</text>
-    <rect x="315" y="140" width="250" height="90" rx="10" class="box"/><text x="335" y="174" font-weight="700">パッケージの Cell</text><text x="335" y="204">Package implementation</text>
-    <rect x="590" y="140" width="250" height="90" rx="10" class="box"/><text x="610" y="174" font-weight="700">大規模製品の Cell</text><text x="610" y="204">SAFe ART</text>
+<svg viewBox="0 0 880 340" width="880" height="340">
+  <text x="200" y="30" class="t" text-anchor="middle" font-weight="700">一つの主体が切り替える</text>
+  <rect x="40" y="50" width="320" height="220" rx="10" class="box"/>
+  <rect x="140" y="130" width="120" height="44" rx="22" class="a"/><text x="200" y="158" class="ts on" text-anchor="middle">主体</text>
+  <g class="tx" text-anchor="middle">
+    <rect x="60" y="70" width="90" height="30" rx="4" class="xl" style="fill:#fff"/><text x="105" y="90">文脈 A</text>
+    <rect x="250" y="70" width="90" height="30" rx="4" class="xl" style="fill:#fff"/><text x="295" y="90">文脈 B</text>
+    <rect x="155" y="220" width="90" height="30" rx="4" class="xl" style="fill:#fff"/><text x="200" y="240">文脈 C</text>
   </g>
-  <path d="M290,75 H315 M565,75 H590 M290,185 H315 M565,185 H590 M165,120 V140 M440,120 V140 M715,120 V140" class="hl"/>
-  <text x="440" y="282" class="t" text-anchor="middle" font-weight="700">Cell ごとに、中の作り方が違ってよい</text>
-  <text x="440" y="316" class="ts sub" text-anchor="middle">各枠の上は Cell が担う業務、下はその Cell の中の作り方</text>
+  <use href="#i-no" x="320" y="230" width="26" height="26"/>
+  <path d="M390,160 H440" class="ln" marker-end="url(#arr)"/>
+  <text x="665" y="30" class="t hc" text-anchor="middle" font-weight="700">切り替えずに済む範囲で切る</text>
+  <g>
+    <rect x="460" y="50" width="120" height="220" rx="10" class="hl" style="fill:#fff"/><text x="520" y="90" class="ts" text-anchor="middle" font-weight="700">Cell</text><rect x="480" y="130" width="80" height="30" rx="4" class="soft"/><text x="520" y="150" class="tx" text-anchor="middle">文脈 A</text>
+    <rect x="605" y="50" width="120" height="220" rx="10" class="hl" style="fill:#fff"/><text x="665" y="90" class="ts" text-anchor="middle" font-weight="700">Cell</text><rect x="625" y="130" width="80" height="30" rx="4" class="soft"/><text x="665" y="150" class="tx" text-anchor="middle">文脈 B</text>
+    <rect x="750" y="50" width="120" height="220" rx="10" class="hl" style="fill:#fff"/><text x="810" y="90" class="ts" text-anchor="middle" font-weight="700">Cell</text><rect x="770" y="130" width="80" height="30" rx="4" class="soft"/><text x="810" y="150" class="tx" text-anchor="middle">文脈 C</text>
+  </g>
+  <text x="665" y="306" class="ts sub" text-anchor="middle">中に Agent がいくついても、文脈が一つなら Cell は一つ</text>
 </svg>
 ```
 
-Cell ごとに、中の作り方は違ってかまいません。全部を Agent に任せる Cell の横に、委託先が従来の工程で作る Cell が並んでも、つながれます。
+分ける単位は、一つの主体が自分の仕事を進めるあいだに、別の文脈へ切り替えずに済む範囲にします。その範囲の境目を、Cell の境目にします。中に Agent をいくつ置いても、文脈が一つなら Cell は一つです。
 
-出典: EAA Delivery Guide「3.」の表（適用例）。原文の Domain を Cell と書いた（単位は Core 版 6「2. 自治と権限」）。
-
-## 揃えるのは外とのつながり方
+## 判定は一つ
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="230" height="250" rx="10" class="box"/><text x="155" y="96" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="70" y="120" width="170" height="160" rx="6" fill="url(#hatch)"/><text x="155" y="206" class="ts sub" text-anchor="middle">中は揃えない</text>
-  <path d="M270,185 H326" class="ln" marker-end="url(#arr)"/>
-  <rect x="330" y="40" width="510" height="290" rx="6" class="hl" style="fill:#fff"/>
-  <text x="360" y="74" class="ts hc" font-weight="700">どの Cell も最低限できること</text>
-  <g class="t"><text x="380" y="118">Mission を受け取る</text><text x="380" y="160">Ontology と Contract を読む</text><text x="380" y="202">与えられた権限を越えない</text><text x="380" y="244" font-weight="700">Evidence を返す</text><text x="380" y="286">判断できない問題を示し、調整に戻せる</text></g>
-  <g><use href="#i-ok" x="346" y="100" width="22" height="22"/><use href="#i-ok" x="346" y="142" width="22" height="22"/><use href="#i-ok" x="346" y="184" width="22" height="22"/><use href="#i-ok" x="346" y="226" width="22" height="22"/><use href="#i-ok" x="346" y="268" width="22" height="22"/></g>
+  <rect x="120" y="60" width="640" height="200" rx="10" class="hl" style="fill:#fff"/>
+  <text x="440" y="110" class="t hc" text-anchor="middle" font-weight="700">切り方の判定</text>
+  <text x="440" y="160" class="t" text-anchor="middle">その主体は、自分の仕事を進めるあいだに</text>
+  <text x="440" y="196" class="t" text-anchor="middle">別の文脈へ切り替えずに済むか</text>
+  <g class="ts"><use href="#i-ok" x="250" y="292" width="24" height="24"/><text x="282" y="310">済む → その範囲で切る</text>
+  <use href="#i-no" x="500" y="292" width="24" height="24"/><text x="532" y="310">済まない → まだ切る</text></g>
 </svg>
 ```
 
-EAA が揃えるのは、中の作り方ではなく外とのつながり方です。絵に並べたことを、中がどう作られていても、どの Cell にもできるようにします。
+切り方の判定は一つです。その主体が、自分の仕事を進めるあいだに、別の文脈へ切り替えずに済むか。済むなら、その範囲で切ります。
 
-出典: EAA Delivery Guide「3.」（適用例）。「Escalation できる」は、向きを持たない Core 版 6「2.」の字（正当な判断主体との調整へ戻す）で書いた。
+※ 所有者の考え「主体の脳みそにとってコンテキストスイッチが起きないように切り分ける」による。Core の規定ではない（第 0 章）。
 
-## 全部を担う AA は、Cell が一つの EAA
+## 文脈は語・価値・権限
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="300" height="230" rx="10" class="box"/><text x="190" y="96" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="150" y="112" width="80" height="40" rx="6" class="h"/><text x="190" y="138" class="ts on" text-anchor="middle">責任者</text>
-  <rect x="80" y="176" width="220" height="44" rx="22" class="a"/><text x="190" y="204" class="ts on" text-anchor="middle">AA が全責務を担う</text>
-  <text x="190" y="262" class="ts sub" text-anchor="middle">これだけで開発は進む</text>
-  <path d="M370,175 H450" class="ln" marker-end="url(#arr)"/><text x="410" y="164" class="tx" text-anchor="middle">分けると</text>
-  <rect x="470" y="60" width="170" height="230" rx="10" class="box"/><text x="555" y="96" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="670" y="60" width="170" height="230" rx="10" class="box"/><text x="755" y="96" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="515" y="112" width="80" height="40" rx="6" class="h"/><text x="555" y="138" class="ts on" text-anchor="middle">責任者</text>
-  <rect x="715" y="112" width="80" height="40" rx="6" class="h"/><text x="755" y="138" class="ts on" text-anchor="middle">責任者</text>
-  <rect x="495" y="176" width="120" height="44" rx="22" class="a"/><text x="555" y="204" class="ts on" text-anchor="middle">AA</text>
-  <rect x="695" y="176" width="120" height="44" rx="22" class="a"/><text x="755" y="204" class="ts on" text-anchor="middle">AA</text>
-  <path d="M640,175 H670" class="hl"/>
-  <text x="655" y="316" class="ts sub" text-anchor="middle">どちらの AA も、同じ AA</text>
-  <text x="440" y="356" class="t" text-anchor="middle" font-weight="700">AA の原則は、分けても書き直さない</text>
+  <rect x="60" y="50" width="340" height="230" rx="10" class="box"/>
+  <text x="230" y="84" class="t" text-anchor="middle" font-weight="700">主体が判断に使う文脈</text>
+  <g class="ts" text-anchor="middle">
+    <rect x="90" y="110" width="280" height="40" rx="4" class="soft"/><text x="230" y="136">語と記録</text>
+    <rect x="90" y="160" width="280" height="40" rx="4" class="soft"/><text x="230" y="186">優先する価値</text>
+    <rect x="90" y="210" width="280" height="40" rx="4" class="soft"/><text x="230" y="236">判断の権限</text>
+  </g>
+  <path d="M410,165 H470" class="xl" marker-end="url(#arr-x)"/>
+  <rect x="480" y="50" width="340" height="230" rx="10" class="xl" style="fill:#fff"/>
+  <text x="650" y="84" class="t xc" text-anchor="middle" font-weight="700">別の組に替わる</text>
+  <text x="650" y="170" class="ts" text-anchor="middle">判断の途中で、語・価値・権限の組が</text>
+  <text x="650" y="196" class="ts" text-anchor="middle">別の仕事のものに入れ替わる</text>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">これをコンテキストスイッチと呼ぶ</text>
 </svg>
 ```
 
-一つの AA が全責務を担う構成は、Cell が一つの EAA です。分けた後の各 Cell を担う AA も、同じ AA です。分けても AA の原則は書き直しません。
+文脈は、その主体が判断に使う語と記録、優先する価値、判断の権限を指します。判断の途中でこの組が別の仕事のものに替わることを、コンテキストスイッチと呼びます。
 
-出典: EAA Core 版 6「0. 目的と範囲」、EAA 考え方と開発の姿「3. 分割しても開発原則は変わらない」。
-
-## Agent に配っても Cell は増えない
+## 一つのループは通らない
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="40" width="380" height="250" rx="10" class="box"/><text x="230" y="76" class="t" text-anchor="middle" font-weight="700">Cell は一つ</text>
-  <rect x="190" y="94" width="80" height="40" rx="6" class="h"/><text x="230" y="120" class="ts on" text-anchor="middle">責任者</text>
-  <g class="a"><rect x="66" y="180" width="56" height="40" rx="20"/><rect x="132" y="180" width="56" height="40" rx="20"/><rect x="198" y="180" width="56" height="40" rx="20"/><rect x="264" y="180" width="56" height="40" rx="20"/><rect x="330" y="180" width="56" height="40" rx="20"/></g>
-  <path d="M230,134 V160 M94,160 H358 M94,160 V178 M160,160 V178 M226,160 V178 M292,160 V178 M358,160 V178" class="ln"/>
-  <text x="230" y="250" class="ts sub" text-anchor="middle">Task を何体もの Agent に配った</text>
-  <rect x="470" y="40" width="170" height="250" rx="10" class="box"/><text x="555" y="76" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="670" y="40" width="170" height="250" rx="10" class="box"/><text x="755" y="76" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="515" y="94" width="80" height="40" rx="6" class="h"/><text x="555" y="120" class="ts on" text-anchor="middle">責任者</text>
-  <rect x="715" y="94" width="80" height="40" rx="6" class="h"/><text x="755" y="120" class="ts on" text-anchor="middle">責任者</text>
-  <rect x="527" y="180" width="56" height="40" rx="20" class="a"/><rect x="727" y="180" width="56" height="40" rx="20" class="a"/>
-  <path d="M640,114 H670" class="hl"/>
-  <text x="655" y="316" class="ts sub" text-anchor="middle">責務と判断の権限を別の責任主体に渡した</text>
-  <text x="440" y="356" class="t" text-anchor="middle" font-weight="700">Cell が増えるのは、判断の権限を渡したとき</text>
+  <rect x="200" y="40" width="480" height="250" rx="10" class="box"/>
+  <text x="440" y="74" class="t" text-anchor="middle" font-weight="700">一つのループ（第 0 章）</text>
+  <circle cx="440" cy="180" r="70" class="ln" stroke-dasharray="6 5"/>
+  <g class="ts" text-anchor="middle">
+    <rect x="240" y="150" width="110" height="36" rx="4" class="xl" style="fill:#fff"/><text x="295" y="174">決済：止めない</text>
+    <rect x="530" y="150" width="120" height="36" rx="4" class="xl" style="fill:#fff"/><text x="590" y="174">推薦：速く変える</text>
+  </g>
+  <text x="440" y="186" class="tx xc" text-anchor="middle">判断のたびに切り替える</text>
+  <use href="#i-no" x="428" y="300" width="24" height="24"/>
+  <text x="440" y="352" class="ts xc" text-anchor="middle">判定に通らない</text>
 </svg>
 ```
 
-Task を何体の Agent に配っても、Cell は一つのままです。Cell が増えるのは、責務と判断の権限を別の責任主体に渡したときです。
+第 0 章の、一つのループが決済と推薦を扱い、判断のたびに止めないことと速く変えることを切り替える状態は、この判定に通りません。
 
-出典: EAA Core 版 6「1.」、EAA 考え方と開発の姿「3.」。※ 渡す先は責任主体で、人に限りません。一つの Cell の責任を、複数の人で負ってもかまいません。
-
-## つないでも、相手は AA にならない
+## 境目を Cell の境目にする
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="260" height="220" rx="10" class="box"/><text x="170" y="96" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <rect x="70" y="120" width="200" height="44" rx="22" class="a"/><text x="170" y="148" class="ts on" text-anchor="middle">AA で動く</text>
-  <rect x="580" y="60" width="260" height="220" rx="10" class="box"/><text x="710" y="96" class="t" text-anchor="middle" font-weight="700">Cell</text>
-  <g class="h"><rect x="620" y="120" width="50" height="44" rx="6"/><rect x="685" y="120" width="50" height="44" rx="6"/><rect x="750" y="120" width="50" height="44" rx="6"/></g>
-  <text x="710" y="200" class="ts" text-anchor="middle">既存の人のチーム</text>
-  <text x="710" y="226" class="ts sub" text-anchor="middle">Agent を使わない</text>
-  <path d="M300,170 H580" class="hl"/><use href="#i-pr" x="428" y="138" width="24" height="30"/><text x="440" y="196" class="ts" text-anchor="middle">Evidence</text>
-  <rect x="302" y="216" width="276" height="44" rx="6" class="soft"/><text x="440" y="244" class="tx" text-anchor="middle">内部方式の異なる Cell の Federation</text>
-  <text x="710" y="262" class="tx" text-anchor="middle">つないでも、AA にはならない</text>
-  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">相手が Agent を使うかを、つなぐ条件にしない</text>
+  <rect x="80" y="60" width="300" height="220" rx="10" class="hl" style="fill:#fff"/>
+  <text x="230" y="96" class="t hc" text-anchor="middle" font-weight="700">Cell</text>
+  <g class="tx" text-anchor="middle"><text x="230" y="140">目的</text><text x="230" y="168">責任</text><text x="230" y="196">権限</text><text x="230" y="224">実行能力</text></g>
+  <rect x="500" y="60" width="300" height="220" rx="10" class="hl" style="fill:#fff"/>
+  <text x="650" y="96" class="t hc" text-anchor="middle" font-weight="700">Cell</text>
+  <g class="tx" text-anchor="middle"><text x="650" y="140">目的</text><text x="650" y="168">責任</text><text x="650" y="196">権限</text><text x="650" y="224">実行能力</text></g>
+  <path d="M440,40 V300" class="xl dash"/>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">文脈が切り替わる所に、Cell の境目を引く</text>
 </svg>
 ```
 
-AA の Cell と既存のチームは、内部方式の異なる Cell としてつながります。相手が Agent を使うかは条件にせず、つないでも相手の中は AA になりません。
+判定に通る範囲の境目を、Cell の境目にします。Cell は第 0 章で見た、目的に対する責任・権限・実行能力を持つ単位です。
 
-出典: EAA 考え方と開発の姿「3. 分割しても開発原則は変わらない」の表と本文。
+出典: EAA Core 版 6 の概念表「Cell」。Core は Cell を定めるが、どこを境目にするかは書いていない。
+
+## 職能では決まらない
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="220" y="50" width="440" height="230" rx="10" class="hl" style="fill:#fff"/>
+  <text x="440" y="86" class="t hc" text-anchor="middle" font-weight="700">一つの Cell</text>
+  <g class="ts" text-anchor="middle">
+    <rect x="250" y="130" width="80" height="40" rx="6" class="soft"/><text x="290" y="156">設計</text>
+    <rect x="345" y="130" width="80" height="40" rx="6" class="soft"/><text x="385" y="156">実装</text>
+    <rect x="440" y="130" width="80" height="40" rx="6" class="soft"/><text x="480" y="156">テスト</text>
+    <rect x="535" y="130" width="100" height="40" rx="6" class="soft"/><text x="585" y="156">レビュー</text>
+  </g>
+  <text x="440" y="230" class="ts" text-anchor="middle">どの職能の作業も、この中で行う</text>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">境目は目的・責任・権限・実行能力で決まる</text>
+</svg>
+```
+
+Cell は目的・責任・権限・実行能力で決まり、職能では決まりません。一つの Cell の中で、設計も実装もテストもレビューも行います。
+
+※ 確かめを作った文脈から切り離す職務分離は、Cell の中でも外でも要る（第 1 章）。
+
+## Agent の数では増えない
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="200" y="50" width="480" height="230" rx="10" class="hl" style="fill:#fff"/>
+  <text x="440" y="86" class="t hc" text-anchor="middle" font-weight="700">一つの Cell（文脈は一つ）</text>
+  <g class="tx" text-anchor="middle">
+    <rect x="240" y="130" width="90" height="36" rx="18" class="a"/><text x="285" y="153" class="on">Agent</text>
+    <rect x="345" y="130" width="90" height="36" rx="18" class="a"/><text x="390" y="153" class="on">Agent</text>
+    <rect x="450" y="130" width="90" height="36" rx="18" class="a"/><text x="495" y="153" class="on">Agent</text>
+    <rect x="555" y="130" width="90" height="36" rx="18" class="a"/><text x="600" y="153" class="on">Agent</text>
+  </g>
+  <text x="440" y="226" class="ts" text-anchor="middle">Task をどう配るかは、この Cell が決める</text>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">Agent を足しても、Cell は一つのまま</text>
+</svg>
+```
+
+中に Agent をいくつ置いても、文脈が一つなら Cell は一つです。Task を何体の Agent に配っても、Cell は増えません。
+
+出典: EAA Core 版 6 の概念表「Task」（Mission を引き受けた Cell が分けた作業の単位。分け方はその Cell が決める）。
+
+## 増えるのは判断を渡すとき
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="60" y="80" width="300" height="180" rx="10" class="hl" style="fill:#fff"/>
+  <text x="210" y="120" class="t hc" text-anchor="middle" font-weight="700">Cell</text>
+  <rect x="520" y="80" width="300" height="180" rx="10" class="hl" style="fill:#fff"/>
+  <text x="670" y="120" class="t hc" text-anchor="middle" font-weight="700">Cell</text>
+  <path d="M370,170 H510" class="ln" marker-end="url(#arr)"/>
+  <text x="440" y="150" class="ts" text-anchor="middle">責務と判断の権限</text>
+  <g class="tx" text-anchor="middle"><text x="670" y="180">受け取った側が</text><text x="670" y="204">自分で判断する</text></g>
+  <text x="440" y="330" class="ts sub" text-anchor="middle">渡す先は責任主体。人に限らない</text>
+</svg>
+```
+
+Cell が増えるのは、責務と自分で判断する権限を、別の責任主体に渡したときです。権限で分けることは第 5 章で見ます。
+
+出典: EAA Core 版 6「1. 責務と分割」。一つの Cell の責任を複数の人で負ってもかまわない（同 概念表「Cell に属する」）。
+
+## 中は人のチームでもよい
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <g>
+    <rect x="40" y="60" width="240" height="200" rx="10" class="hl" style="fill:#fff"/><text x="160" y="96" class="ts hc" text-anchor="middle" font-weight="700">Cell</text>
+    <rect x="90" y="140" width="140" height="40" rx="20" class="a"/><text x="160" y="166" class="ts on" text-anchor="middle">Agent（AA）</text>
+    <rect x="320" y="60" width="240" height="200" rx="10" class="hl" style="fill:#fff"/><text x="440" y="96" class="ts hc" text-anchor="middle" font-weight="700">Cell</text>
+    <rect x="370" y="140" width="140" height="40" rx="6" class="h"/><text x="440" y="166" class="ts on" text-anchor="middle">人のチーム</text>
+    <rect x="600" y="60" width="240" height="200" rx="10" class="hl" style="fill:#fff"/><text x="720" y="96" class="ts hc" text-anchor="middle" font-weight="700">Cell</text>
+    <rect x="640" y="140" width="160" height="40" rx="6" class="soft"/><text x="720" y="166" class="ts" text-anchor="middle">委託先の工程</text>
+  </g>
+  <path d="M280,220 H320 M560,220 H600" class="ln"/>
+  <text x="440" y="320" class="t" text-anchor="middle" font-weight="700">中の作り方は問わず、同じ形でつながる</text>
+</svg>
+```
+
+Cell の中の作り方は、Cell ごとに選びます。中が Agent でも、人のチームでも、委託先の従来の工程でも、Cell としてつながれます。
+
+出典: EAA Core 版 6「0. 目的と範囲」（Federation は内部方式を指定せず、AA 以外の開発主体も接続できる）。
+
+## 人のチームにも同じ判定
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="220" y="50" width="440" height="230" rx="10" class="box"/>
+  <text x="440" y="86" class="t" text-anchor="middle" font-weight="700">人のチーム</text>
+  <rect x="380" y="120" width="120" height="44" rx="6" class="h"/><text x="440" y="148" class="ts on" text-anchor="middle">担当者</text>
+  <g class="tx" text-anchor="middle">
+    <rect x="250" y="200" width="150" height="32" rx="4" class="xl" style="fill:#fff"/><text x="325" y="221">止めない仕事</text>
+    <rect x="480" y="200" width="150" height="32" rx="4" class="xl" style="fill:#fff"/><text x="555" y="221">速く変える仕事</text>
+  </g>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">主体が人でも、判定は同じ</text>
+</svg>
+```
+
+判定は、中の作り方を問いません。人のチームでも、判断のたびに優先する価値を切り替えているなら、同じ判定に通りません。
+
+※ 書き手の読み。所有者の字は「主体の脳みそ」で、主体を Agent に限っていない。
+
+## 次章へ：価値で切る
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <g>
+    <rect x="80" y="70" width="220" height="160" rx="10" class="hl" style="fill:#fff"/><text x="190" y="140" class="t hc" text-anchor="middle" font-weight="700">価値</text><text x="190" y="180" class="ts" text-anchor="middle">第 3 章</text>
+    <rect x="330" y="70" width="220" height="160" rx="10" class="box"/><text x="440" y="140" class="t" text-anchor="middle" font-weight="700">ドメイン</text><text x="440" y="180" class="ts" text-anchor="middle">第 4 章</text>
+    <rect x="580" y="70" width="220" height="160" rx="10" class="box"/><text x="690" y="140" class="t" text-anchor="middle" font-weight="700">権限</text><text x="690" y="180" class="ts" text-anchor="middle">第 5 章</text>
+  </g>
+  <text x="440" y="300" class="ts sub" text-anchor="middle">どの切り方も、この章の判定に通す</text>
+</svg>
+```
+
+第 3〜5 章で、この判定に通る切り方を、価値・ドメイン・権限の順に見ます。最初は、第 0 章の問いに直接つながる価値です。

@@ -1,219 +1,254 @@
-# 第 5 章　Cell の分割と統合では、権限・記録・残件・未履行の保証を引き継ぐ
+# 第 5 章　権限で分けると、一つの Cell が判断のたびに他へ問い合わせずに済み、判断の責任を負う人間がその範囲を追える
 
-群: Cell の分割と自治
+群: 文脈が疎結合になる切り方
 
 <!--
-構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
-出どころ（構造の表のまま）: core.md:57-58、profiles.md 5 節、development-model.md:52-64。Core は publications origin/main 0d07f75 の core.md 版 6。
-リードの「引継ぎの詳細手順は Profiles が未決として残している」は profiles.md:83・135 による（⑤、@ope-ultp1635 msg 281e5366。以前は「Core でも」と書き、Profiles の字を Core に帰属させていた）。Core の既知の不足（core.md:11）に当たるのは「移行中の責任」だけ。最後のページの注に書いた。同じページの絵の「一方的な強制で埋めない」は core.md:71。
-本文: @ope-ultp1635 msg 18751c19（群二）。
-絵: 元の Cell と分かれた Cell は横に並べ、どの Cell もほかの Cell の枠の中に描かない（同 msg。core.md:43）。
-Platform の分離は development-model.md:55「構成例であり、効果の実証ではない」。例のページの注と、効果のページの注に書いた。
-development-model.md:58 にある比喩の語は本文に持ち込まない（root CLAUDE.md「成果物の文章の作法」の語の表）。
-新しく引く外部の文献は無い。
-⑥（@ope-ultp1635 msg 6fc17eeb、@reviewer 2〜4 回目、項 15）: core.md の「移行」は版の移行（core.md:79・80）の語で、分割の引継ぎ（core.md:57）には「移行」の字が無い。core.md:11 の「移行中の責任」が分割の引継ぎに当たるかは Core の字では決まらないので、最後のページの注にそう書いた。
-⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの「決めていないこと」を、Core の既知の不足（core.md:11 の移行中の責任）と、Profiles が未決・未確定とした引継ぎ・移行の手順（profiles.md:83・135）に分けた。
-2 周目（@ope-ultp1635 msg 8fbac4e5、@reader r2 cea29c1f）: 最後のページの絵の「既知の不足」の小見出しの下に「詳しい手順は未定。いつ決めるかは書いていない」を足した（文は上限 80 字に余りが無いので絵に持たせた。第 8・9 章も同じ）。core.md:11 は観測欄で「既知の不足として、…は、詳細手順が未定である」と挙げるだけで、後の版で決めるとは書いていない。そのため「決める予定」とは書かず、いつ・どの版で決めるかは書いていない、とした。
+構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（dd08b888）の第 5 章。着手: @ope-ultp1635 msg 83d1e0ea（群二）。
+章題: 目次の「所有者である人間がその範囲を管理できる」を「判断の責任を負う人間がその範囲を追える」に変えた。Core の「所有者」は規範・共有する文書の所有者（core.md:90・91・94・98）で、Cell の判断の責任を負う人は「正当な判断責任者」（core.md:49）・「Cell に属する」人（core.md:42）。目次の通読で松田・河野が第 10 章の「所有者」を誰かと止まった（@reader 349c4d63）。同じ語を Cell の責任者に使うと、第 10 章の規範の所有者と混ざる。「管理できる」を「追える」にしたのは、第 0 章 p.「一つの Cell の判断は追い切れない」の字に揃えるため。
+2d0ca30 までの第 4 章（分割で渡した判断権限は、親 Cell も上書きしない）の中身を、この章に移した: 分割は判断権限ごと渡す（core.md:52）、渡したものは受け取った側のもの・範囲は新しい版を採用するまで変わらない（core.md:53）、親・子は由来の呼び名（core.md:43）、親も横断も上書きしない（core.md:63）、断ることと義務を捨てることは別（core.md:70。「正当な判断主体」は ⑤ の直しのまま）。持ってこなかったもの: 上書きしないので届いた側が確かめる（core.md:22。群三の第 8 章で Evidence と一緒に扱う。⑥ の直し — Evidence の受け手と分割の受け手を混ぜない — を落とさない）。旧本文は 2d0ca30 の eaa-ch04.md にある。
+2d0ca30 の第 5 章（分割と統合の引き継ぎ）は群五の第 11 章へ移す。この章には持ってこない。
+p.「問い合わせも切り替え」「上書きを許すと文脈が戻る」は書き手の読み。Core が上書きしない理由として書いた行は無い。注に書いた。
+p.「責任を負う人間が追える大きさ」は第 0 章の問い「人間が管理し切れるか」からの書き手の導出（structure-v5.md 注 3 番目）。Core は Cell の大きさを書かない。
+p.「例：最後に誰が決めるか」は、目次の通読で松田（最後はテックリードが決めているのは上書きか）が止まった所に、この章の中身で答えた。例の注文画面・在庫連携は @reader のペルソナの設定から借りた形で、書き手が作った例として書いた。
+p.「自分の権限は自分で広げない」は core.md:96。保ち方は群四の第 10 章。
+絵: 親 Cell と子 Cell は横に並べ、子を親の枠の中に描かない（core.md:43）。
 -->
 
-> 業務機能と基盤を扱ってきた Cell から、基盤の判断の負荷が増えたので Platform を別の Cell に分ける例で、移すものと再合意が要る場面を示す。引継ぎの詳細手順は、Core ではなく Profiles が未決として残している。
-
 ```svg
-<svg viewBox="0 0 880 300" width="880" height="300">
-  <rect x="30" y="30" width="260" height="190" rx="10" class="box"/><text x="160" y="62" class="t" text-anchor="middle" font-weight="700">元の Cell</text>
-  <rect x="590" y="30" width="260" height="190" rx="10" class="box"/><text x="720" y="62" class="t" text-anchor="middle" font-weight="700">分かれた Cell</text>
-  <g class="ts" text-anchor="middle">
-    <rect x="330" y="30" width="220" height="30" rx="3" class="hl" style="fill:#fff"/><text x="440" y="51">権限・資源</text>
-    <rect x="330" y="66" width="220" height="30" rx="3" class="hl" style="fill:#fff"/><text x="440" y="87">管理対象・記録</text>
-    <rect x="330" y="102" width="220" height="30" rx="3" class="hl" style="fill:#fff"/><text x="440" y="123">進行中の Mission・残件</text>
-    <rect x="330" y="138" width="220" height="30" rx="3" class="xl" style="fill:#fff"/><text x="440" y="159" class="xc" font-weight="700">まだ果たしていない保証</text>
-  </g>
-  <path d="M290,184 H586" class="ln" marker-end="url(#arr)"/><text x="440" y="206" class="tx" text-anchor="middle">全部を移す</text>
-  <text x="440" y="262" class="t" text-anchor="middle" font-weight="700">移した後に、誰も持たない責任を残さない</text>
+<svg viewBox="0 0 880 340" width="880" height="340">
+  <rect x="40" y="60" width="300" height="200" rx="10" class="hl" style="fill:#fff"/>
+  <text x="190" y="96" class="t hc" text-anchor="middle" font-weight="700">渡した Cell</text>
+  <rect x="540" y="60" width="300" height="200" rx="10" class="hl" style="fill:#fff"/>
+  <text x="690" y="96" class="t hc" text-anchor="middle" font-weight="700">受け取った Cell</text>
+  <rect x="640" y="114" width="100" height="40" rx="6" class="h"/><text x="690" y="140" class="ts on" text-anchor="middle">責任者</text>
+  <text x="690" y="190" class="ts" text-anchor="middle">自分の範囲は自分で判断</text>
+  <text x="690" y="220" class="tx" text-anchor="middle">責任者が追える大きさ</text>
+  <path d="M350,120 H530" class="ln" marker-end="url(#arr)"/><text x="440" y="110" class="tx" text-anchor="middle">責務と判断の権限</text>
+  <g opacity=".6"><path d="M530,200 H350" class="xl dash" marker-end="url(#arr-x)"/><use href="#i-no" x="428" y="210" width="24" height="24"/><text x="440" y="252" class="tx xc" text-anchor="middle">上書き</text></g>
+  <text x="440" y="310" class="t" text-anchor="middle" font-weight="700">変えたいときは、上書きせず提案する</text>
 </svg>
 ```
 
-Cell を分ける・まとめる・責務を外すときは、権限から、まだ果たしていない保証までを引き継ぎます。誰も持たない責任と、重なって決める権限を残しません。
+権限で分けると、一つの Cell が判断のたびに他へ問い合わせずに済みます。Cell の範囲は、その判断の責任を負う人間が追える大きさに収めます。親の Cell も横断の Cell も、分けた Cell の判断を上書きせず、提案を通して変えます。
 
-## 移すものは、権限から残件まで
+## 問い合わせも切り替え
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="40" width="200" height="260" rx="10" class="box"/><text x="140" y="76" class="t" text-anchor="middle" font-weight="700">元の Cell</text>
-  <rect x="640" y="40" width="200" height="260" rx="10" class="box"/><text x="740" y="76" class="t" text-anchor="middle" font-weight="700">引き継ぐ Cell</text>
-  <g class="ts" text-anchor="middle">
-    <rect x="300" y="40" width="280" height="34" rx="6" class="h"/><text x="440" y="63" class="on">権限</text>
-    <rect x="300" y="84" width="280" height="34" rx="6" class="h"/><text x="440" y="107" class="on">資源</text>
-    <rect x="300" y="128" width="280" height="34" rx="6" class="a"/><text x="440" y="151" class="on">管理している対象</text>
-    <rect x="300" y="172" width="280" height="34" rx="3" class="lt" style="fill:#fff"/><text x="440" y="195">記録</text>
-    <rect x="300" y="216" width="280" height="34" rx="3" class="lt" style="fill:#fff"/><text x="440" y="239">進行中の Mission</text>
-    <rect x="300" y="260" width="280" height="34" rx="3" class="lt" style="fill:#fff"/><text x="440" y="283">残件</text>
-  </g>
-  <path d="M240,170 H296 M584,170 H636" class="ln" marker-end="url(#arr)"/>
-  <text x="440" y="340" class="ts sub" text-anchor="middle">分ける・まとめ直す・責務を外す、のどれでも同じ</text>
+  <rect x="60" y="60" width="320" height="220" rx="10" class="box"/><text x="220" y="96" class="t" text-anchor="middle" font-weight="700">判断する主体</text>
+  <rect x="160" y="140" width="120" height="44" rx="22" class="a"/><text x="220" y="168" class="ts on" text-anchor="middle">主体</text>
+  <rect x="500" y="60" width="320" height="220" rx="10" class="box"/><text x="660" y="96" class="t" text-anchor="middle" font-weight="700">決めてよいかを持つ主体</text>
+  <text x="660" y="168" class="ts" text-anchor="middle">相手の事情・相手の語</text>
+  <path d="M380,140 H498" class="xl" marker-end="url(#arr-x)"/><text x="440" y="130" class="tx xc" text-anchor="middle">決めてよいか</text>
+  <path d="M498,200 H380" class="xl" marker-end="url(#arr-x)"/><text x="440" y="226" class="tx xc" text-anchor="middle">相手の文脈で返る</text>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">判断のたびに、相手の文脈を読んでから戻る</text>
 </svg>
 ```
 
-分ける・まとめ直す・責務を外す、のどれでも、権限・資源・管理している対象・記録・進行中の Mission・残件を引き継ぎます。
+判断のたびに、決めてよいかを他の主体に問い合わせると、相手の事情を読んでから自分の仕事に戻ります。これもコンテキストスイッチです。
 
-出典: EAA Core 版 6「1. 責務と分割」、EAA Profiles「5. 分離可能な責務」。
+※ 書き手の読み。所有者は「権限とかで分けた方が疎結合になる」と書いた。
 
-## 責任の空白と、決定権の重なり
+## 分割は判断権限ごと渡す
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <path d="M440,20 V310" class="lt dash"/>
-  <text x="220" y="44" class="t xc" text-anchor="middle" font-weight="700">空白</text>
-  <text x="660" y="44" class="t xc" text-anchor="middle" font-weight="700">重なり</text>
-  <rect x="40" y="80" width="150" height="120" rx="10" class="box"/><text x="115" y="146" class="ts" text-anchor="middle">元の Cell</text>
-  <rect x="250" y="80" width="150" height="120" rx="10" class="box"/><text x="325" y="146" class="ts" text-anchor="middle">引き継ぐ Cell</text>
-  <rect x="150" y="226" width="140" height="44" rx="3" class="xl" style="fill:#fff"/><text x="220" y="254" class="ts xc" text-anchor="middle">障害の対応</text>
-  <text x="220" y="296" class="ts" text-anchor="middle">どちらも自分の担当と思っていない</text>
-  <rect x="480" y="80" width="150" height="120" rx="10" class="box"/><text x="555" y="146" class="ts" text-anchor="middle">元の Cell</text>
-  <rect x="690" y="80" width="150" height="120" rx="10" class="box"/><text x="765" y="146" class="ts" text-anchor="middle">引き継ぐ Cell</text>
-  <rect x="590" y="226" width="140" height="44" rx="3" class="xl" style="fill:#fff"/><text x="660" y="254" class="ts xc" text-anchor="middle">本番への反映</text>
-  <path d="M555,200 L630,224 M765,200 L690,224" class="xl"/>
-  <text x="660" y="296" class="ts" text-anchor="middle">両方が決めて、食い違う</text>
-  <text x="440" y="346" class="ts sub" text-anchor="middle">項目は説明のための例</text>
+  <rect x="40" y="50" width="380" height="240" rx="10" class="hl" style="fill:#fff"/>
+  <text x="230" y="84" class="t hc" text-anchor="middle" font-weight="700">分割</text>
+  <g class="ts"><text x="70" y="140">責務を渡す</text><text x="70" y="180">自分で判断する権限も渡す</text></g>
+  <use href="#i-ok" x="70" y="220" width="24" height="24"/>
+  <rect x="460" y="50" width="380" height="240" rx="10" class="xl" style="fill:#fff"/>
+  <text x="650" y="84" class="t xc" text-anchor="middle" font-weight="700">分割ではない</text>
+  <g class="ts"><text x="490" y="140">責務だけを渡す</text><text x="490" y="180">判断は手元に残す</text></g>
+  <use href="#i-no" x="490" y="220" width="24" height="24"/>
+  <text x="440" y="340" class="ts sub" text-anchor="middle">判断が手元に残ると、受けた側は毎回問い合わせる</text>
 </svg>
 ```
 
-引き継ぎでは、どちらの Cell も持っていない責任が残るか、同じことを両方の Cell が決めて食い違うかの失敗が起きます。どちらも残しません。
+分割は、責務と、自分で判断する権限を、別の責任主体に渡すことです。責務だけを渡し、判断を手元に残すのは分割ではありません。
 
-出典: EAA Core 版 6「1. 責務と分割」。絵の項目は説明のための例で、Core の字ではない。
+出典: EAA Core 版 6「1. 責務と分割」。
 
-## まだ果たしていない保証を消さない
+## 渡した判断は相手のもの
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="200" height="160" rx="10" class="box"/><text x="140" y="96" class="t" text-anchor="middle" font-weight="700">元の Cell</text>
-  <rect x="340" y="60" width="200" height="160" rx="10" class="box"/><text x="440" y="96" class="t" text-anchor="middle" font-weight="700">引き継ぐ Cell</text>
-  <rect x="640" y="60" width="200" height="160" rx="10" class="box"/><text x="740" y="96" class="t" text-anchor="middle" font-weight="700">保証を受ける側</text>
-  <rect x="80" y="140" width="120" height="44" rx="3" class="hl" style="fill:#fff"/><text x="140" y="168" class="ts hc" text-anchor="middle">約束した保証</text>
-  <path d="M200,162 H376" class="ln" marker-end="url(#arr)"/>
-  <rect x="380" y="140" width="120" height="44" rx="3" class="hl" style="fill:#fff"/><text x="440" y="168" class="ts hc" text-anchor="middle">約束した保証</text>
-  <path d="M540,162 H636" class="hl"/>
-  <rect x="200" y="256" width="480" height="86" rx="10" class="soft"/>
-  <text x="440" y="290" class="ts" text-anchor="middle" font-weight="700">保証の中身を変えるなら</text>
-  <text x="440" y="320" class="ts" text-anchor="middle">保証を受ける側と、合意し直す</text>
+  <rect x="40" y="60" width="340" height="200" rx="10" class="hl" style="fill:#fff"/><text x="210" y="96" class="t hc" text-anchor="middle" font-weight="700">渡した Cell</text>
+  <rect x="80" y="140" width="260" height="40" rx="6" class="x"/><text x="210" y="166" class="ts on" text-anchor="middle">後で範囲が変わる（版 2）</text>
+  <rect x="500" y="60" width="340" height="200" rx="10" class="hl" style="fill:#fff"/><text x="670" y="96" class="t hc" text-anchor="middle" font-weight="700">受け取った Cell</text>
+  <rect x="540" y="140" width="260" height="40" rx="6" class="soft"/><text x="670" y="166" class="ts" text-anchor="middle">範囲は版 1 のまま</text>
+  <text x="670" y="220" class="tx" text-anchor="middle">版 2 を採用するまで変わらない</text>
+  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">渡したものは、受け取った Cell のもの</text>
 </svg>
 ```
 
-まだ果たしていない保証は、分けても消しません。引き継ぐ Cell に移します。外に約束した保証を変えるなら、関係する相手と合意し直します。
+渡した責務と判断権限は、受け取った Cell のものになります。渡した側の範囲が後で変わっても、受け取った側が新しい版を採用するまで変わりません。
 
-出典: EAA Core 版 6「1. 責務と分割」、EAA Profiles「5.」。
+出典: EAA Core 版 6「1. 責務と分割」。版の採用は第 9 章で見る。
 
-## 例：業務と基盤を一つの Cell で扱う
+## 親・子は由来の呼び名
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="140" y="30" width="600" height="280" rx="10" class="box"/><text x="170" y="64" class="t" font-weight="700">Cell</text>
-  <rect x="400" y="46" width="80" height="40" rx="6" class="h"/><text x="440" y="72" class="ts on" text-anchor="middle">責任者</text>
-  <rect x="180" y="116" width="240" height="70" rx="3" class="hl" style="fill:#fff"/><text x="300" y="158" class="ts hc" text-anchor="middle">業務機能</text>
-  <rect x="460" y="116" width="240" height="70" rx="3" class="hl" style="fill:#fff"/><text x="580" y="158" class="ts hc" text-anchor="middle">基盤</text>
-  <rect x="200" y="220" width="200" height="44" rx="22" class="a"/><text x="300" y="248" class="ts on" text-anchor="middle">Agent が作る</text>
-  <rect x="480" y="220" width="200" height="44" rx="22" class="a"/><text x="580" y="248" class="ts on" text-anchor="middle">Agent が作る</text>
-  <text x="440" y="350" class="ts sub" text-anchor="middle">判断は、どちらも同じ責任者がする</text>
+  <rect x="40" y="80" width="240" height="160" rx="10" class="hl" style="fill:#fff"/><text x="160" y="150" class="t hc" text-anchor="middle" font-weight="700">親 Cell</text><text x="160" y="186" class="tx" text-anchor="middle">渡した側</text>
+  <rect x="320" y="80" width="240" height="160" rx="10" class="hl" style="fill:#fff"/><text x="440" y="150" class="t hc" text-anchor="middle" font-weight="700">子 Cell</text><text x="440" y="186" class="tx" text-anchor="middle">受け取った側</text>
+  <rect x="600" y="80" width="240" height="160" rx="10" class="hl" style="fill:#fff"/><text x="720" y="150" class="t hc" text-anchor="middle" font-weight="700">ほかの Cell</text>
+  <path d="M280,200 H320 M560,200 H600" class="ln"/>
+  <text x="440" y="300" class="t" text-anchor="middle" font-weight="700">分割の後は、どの線も同じ Cell どうしの関係</text>
 </svg>
 ```
 
-ここから、一つの例で追います。最初は一つの Cell が、業務の機能と基盤の両方を扱っています。判断は一人の責任者がしています。
+渡した Cell を親、受け取った Cell を子と呼びます。呼び名は分割の由来を示すだけで、分割の後の両者は、ほかの Cell どうしと同じ関係です。
 
-出典: EAA 考え方と開発の姿「5. IaC 化から Platform を分離する例」。構成の例で、効果を実証したものではない。
+出典: EAA Core 版 6 の概念表「親 Cell・子 Cell」。
 
-## 例：基盤の判断が続けて増える
+## 親も横断も上書きしない
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="30" width="460" height="280" rx="10" class="box"/><text x="70" y="64" class="t" font-weight="700">Cell</text>
-  <rect x="230" y="46" width="80" height="40" rx="6" class="h"/><text x="270" y="72" class="ts on" text-anchor="middle">責任者</text>
-  <g><use href="#i-wait" x="80" y="120" width="22" height="30"/><use href="#i-wait" x="110" y="120" width="22" height="30"/><use href="#i-wait" x="140" y="120" width="22" height="30"/><use href="#i-wait" x="170" y="120" width="22" height="30"/><use href="#i-wait" x="200" y="120" width="22" height="30"/><use href="#i-wait" x="230" y="120" width="22" height="30"/></g>
-  <text x="170" y="180" class="ts" text-anchor="middle">基盤の判断待ち</text>
-  <rect x="300" y="116" width="170" height="40" rx="3" class="hl" style="fill:#fff"/><text x="385" y="142" class="ts hc" text-anchor="middle">業務機能</text>
-  <rect x="80" y="220" width="380" height="60" rx="3" class="hl" style="fill:#fff"/><text x="270" y="256" class="ts hc" text-anchor="middle">Platform の責務を Profile に書く</text>
-  <path d="M500,250 H560" class="ln" marker-end="url(#arr)"/>
-  <rect x="570" y="190" width="270" height="120" rx="10" class="soft"/>
-  <rect x="650" y="206" width="110" height="40" rx="6" class="h"/><text x="705" y="232" class="ts on" text-anchor="middle">別の責任者</text>
-  <text x="705" y="276" class="ts" text-anchor="middle">引き受けることを合意する</text>
+  <rect x="40" y="40" width="240" height="110" rx="10" class="hl" style="fill:#fff"/><text x="160" y="102" class="ts hc" text-anchor="middle" font-weight="700">親 Cell</text>
+  <rect x="40" y="190" width="240" height="110" rx="10" class="hl" style="fill:#fff"/><text x="160" y="240" class="ts hc" text-anchor="middle" font-weight="700">横断の Cell</text><text x="160" y="266" class="tx" text-anchor="middle">複数の Cell にまたがる責務</text>
+  <rect x="580" y="100" width="260" height="140" rx="10" class="hl" style="fill:#fff"/><text x="710" y="164" class="t hc" text-anchor="middle" font-weight="700">分けた Cell</text><text x="710" y="196" class="tx" text-anchor="middle">自分の判断</text>
+  <g opacity=".7"><path d="M280,95 L576,150 M280,245 L576,195" class="xl dash" marker-end="url(#arr-x)"/></g>
+  <use href="#i-no" x="420" y="108" width="24" height="24"/><use href="#i-no" x="420" y="210" width="24" height="24"/>
+  <text x="440" y="346" class="ts sub" text-anchor="middle">どちらも、一方的に上書きしない</text>
 </svg>
 ```
 
-基盤についての判断が、続けて増えてきました。そこで Platform の責務を Profile に書き、別の責任者がそれを引き受けることを合意します。
+親の Cell も、複数の Cell にまたがる責務を担う横断の Cell も、分けた Cell の判断を一方的に上書きしません。
 
-出典: EAA 考え方と開発の姿「5.」。Role Model の呼び名では、ここで別の Operator が引き受ける。
+出典: EAA Core 版 6「2. 自治と権限」、同 概念表「横断責務」。
 
-## 例：移してから、独立させる
+## 上書きを許すと文脈が戻る
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="40" width="260" height="240" rx="10" class="box"/><text x="170" y="76" class="t" text-anchor="middle" font-weight="700">元の Cell</text>
-  <rect x="130" y="94" width="80" height="40" rx="6" class="h"/><text x="170" y="120" class="ts on" text-anchor="middle">責任者</text>
-  <rect x="80" y="160" width="180" height="44" rx="3" class="hl" style="fill:#fff"/><text x="170" y="188" class="ts hc" text-anchor="middle">業務機能</text>
-  <rect x="580" y="40" width="260" height="240" rx="10" class="box"/><text x="710" y="76" class="t" text-anchor="middle" font-weight="700">Platform の Cell</text>
-  <rect x="670" y="94" width="80" height="40" rx="6" class="h"/><text x="710" y="120" class="ts on" text-anchor="middle">責任者</text>
-  <rect x="620" y="160" width="180" height="44" rx="3" class="hl" style="fill:#fff"/><text x="710" y="188" class="ts hc" text-anchor="middle">基盤</text>
-  <g class="ts" text-anchor="middle"><text x="440" y="70">権限</text><text x="440" y="100">資源</text><text x="440" y="130">資産</text><text x="440" y="160">記録</text><text x="440" y="190">残件</text></g>
-  <path d="M300,216 H576" class="ln" marker-end="url(#arr)"/><text x="440" y="240" class="tx" text-anchor="middle">移す</text>
-  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">分かれた後は、横に並ぶ別の Cell</text>
+  <rect x="60" y="60" width="300" height="200" rx="10" class="hl" style="fill:#fff"/><text x="210" y="96" class="t hc" text-anchor="middle" font-weight="700">分けた Cell</text>
+  <text x="210" y="160" class="ts" text-anchor="middle">いつ書き換えられるか</text><text x="210" y="186" class="ts" text-anchor="middle">を知るために</text>
+  <path d="M360,160 H518" class="xl" marker-end="url(#arr-x)"/><text x="440" y="150" class="tx xc" text-anchor="middle">読みに行く</text>
+  <rect x="520" y="60" width="300" height="200" rx="10" class="box"/><text x="670" y="96" class="t" text-anchor="middle" font-weight="700">上書きできる Cell</text>
+  <text x="670" y="170" class="ts" text-anchor="middle">相手の事情・相手の価値</text>
+  <text x="440" y="330" class="t xc" text-anchor="middle" font-weight="700">分けても、文脈は一つに戻る</text>
 </svg>
 ```
 
-権限・資源・資産・記録・残件を移し、Platform の Cell を独立させます。分かれた後は、どちらも横に並ぶ別の Cell です。
+上書きを許すと、分けた Cell は、いつ書き換えられるかを知るために相手の文脈まで読みます。分けても、文脈は一つに戻ります。
 
-出典: EAA 考え方と開発の姿「5.」。
+※ 書き手の読み。Core が上書きしない理由として書いた行ではない。
 
-## 例：以後の変更は、提案と受入で
+## 変えるときは提案で
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="260" height="220" rx="10" class="box"/><text x="170" y="96" class="t" text-anchor="middle" font-weight="700">Platform の Cell</text>
-  <rect x="580" y="60" width="260" height="220" rx="10" class="box"/><text x="710" y="96" class="t" text-anchor="middle" font-weight="700">業務の Cell</text>
-  <path d="M300,140 H576" class="ln" marker-end="url(#arr)"/><use href="#i-pr" x="425" y="100" width="30" height="38"/><text x="440" y="164" class="ts" text-anchor="middle">CI/CD の変更を PR で提案</text>
-  <use href="#i-ok" x="616" y="126" width="28" height="28"/><text x="730" y="146" class="ts okc" text-anchor="middle">受け入れるか決める</text>
-  <path d="M576,230 H304" class="ln" marker-end="url(#arr)"/><text x="440" y="220" class="ts" text-anchor="middle">提供の条件を変えてほしい</text>
-  <use href="#i-ok" x="92" y="140" width="26" height="26"/><text x="200" y="159" class="ts okc" text-anchor="middle">受け入れるか決める</text>
-  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">どちらの向きでも、相手の中を直接変えない</text>
+  <rect x="40" y="70" width="260" height="180" rx="10" class="hl" style="fill:#fff"/><text x="170" y="106" class="t hc" text-anchor="middle" font-weight="700">変えたい側</text>
+  <g class="tx"><text x="70" y="150">内容</text><text x="70" y="176">理由</text><text x="70" y="202">根拠</text></g>
+  <path d="M300,160 H448" class="ln" marker-end="url(#arr)"/><text x="374" y="150" class="tx" text-anchor="middle">提案</text>
+  <rect x="450" y="70" width="390" height="180" rx="10" class="hl" style="fill:#fff"/><text x="645" y="106" class="t hc" text-anchor="middle" font-weight="700">受けた Cell が確かめて決める</text>
+  <g class="ts" text-anchor="middle"><text x="530" y="180">受け入れる</text><text x="645" y="180">直しを求める</text><text x="770" y="180">受け入れない</text></g>
+  <text x="440" y="320" class="ts sub" text-anchor="middle">親子・兄弟・横断に、同じ原則を当てる</text>
 </svg>
 ```
 
-分かれた後は、CI/CD の変更も基盤の改善も、互いに提案し、相手が受け入れるかを決めます。Platform の Cell も、業務の Cell の中を直接は変えません。
+変えたい側は、内容・理由・根拠を示して提案します。受けた Cell が確かめて、受け入れるか、直しを求めるか、受け入れないかを決めます。
 
-出典: EAA 考え方と開発の姿「5.」。提案と受入の手続きは第 9 章で見ます。
+出典: EAA Core 版 6「4. 提案と変更」。
 
-## 例：効果は判断の集中と保証で見る
+## 断ることと義務を捨てることは別
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="40" width="800" height="70" rx="10" class="soft"/>
-  <text x="440" y="84" class="t" text-anchor="middle" font-weight="700">分けて変わるのは、責務を担う主体と、つなぎ方</text>
-  <text x="440" y="160" class="ts sub" text-anchor="middle">分けた効果を、次の項目で確かめる</text>
-  <rect x="80" y="186" width="340" height="110" rx="10" class="box"/><text x="250" y="226" class="ts" text-anchor="middle" font-weight="700">元の責任者への判断の集中</text><text x="250" y="262" class="ts" text-anchor="middle">減ったか</text>
-  <rect x="460" y="186" width="340" height="110" rx="10" class="box"/><text x="630" y="226" class="ts" text-anchor="middle" font-weight="700">成果と外への保証</text><text x="630" y="262" class="ts" text-anchor="middle">保てたか</text>
-  <text x="440" y="344" class="ts sub" text-anchor="middle">どちらも、確かめる項目で、確かめた結果ではない</text>
+  <rect x="40" y="60" width="380" height="220" rx="10" class="box"/><text x="230" y="96" class="t" text-anchor="middle" font-weight="700">新しい提案を受け入れない</text>
+  <use href="#i-ok" x="218" y="140" width="24" height="24"/><text x="230" y="200" class="ts" text-anchor="middle">受けた Cell が決めてよい</text>
+  <rect x="460" y="60" width="380" height="220" rx="10" class="xl" style="fill:#fff"/><text x="650" y="96" class="t xc" text-anchor="middle" font-weight="700">合意した義務を捨てる</text>
+  <use href="#i-no" x="638" y="140" width="24" height="24"/><text x="650" y="200" class="ts" text-anchor="middle">一方的にはしない</text>
+  <text x="440" y="336" class="ts sub" text-anchor="middle">果たせないときは示して、正当な判断主体との調整に戻す</text>
 </svg>
 ```
 
-分けて変わるのは、責務を担う主体とつなぎ方です。元の責任者への判断の集中が減ったか、成果と外への保証を保てたかで、分けた効果を確かめます。
+提案を受け入れないことと、合意した義務を一方的に捨てることは別です。果たせないときは、それを示して、正当な判断主体との調整に戻します。
 
-※ 確かめる項目を挙げたもので、この例で効果が出たという実測ではありません。出典: EAA 考え方と開発の姿「5.」。
+出典: EAA Core 版 6「2. 自治と権限」。
 
-## Core はここまでしか決めていない
+## 責任者が追える大きさ
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="30" width="380" height="290" rx="10" class="soft"/>
-  <text x="60" y="64" class="t" font-weight="700">Core が決めていること</text>
-  <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">移すもの</text>
-  <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">空白と重なりを残さない</text>
-  <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">まだ果たしていない保証を消さない</text>
-  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">保証を変えるなら合意し直す</text></g>
-  <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
-  <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="126" class="tx">詳しい手順は未定。いつ決めるかは書いていない</text><text x="480" y="156" class="ts">移行中の責任（分割に当たるかは未定）</text><text x="480" y="202" class="ts" font-weight="700">Profiles が未決・未確定とした</text><text x="480" y="232" class="ts">引き継ぎの細かい手順</text><text x="480" y="262" class="ts">分離・再統合の移行の手順</text></g>
-  <text x="440" y="356" class="ts sub" text-anchor="middle">手順が未定の調整を、ほかの Cell からの一方的な強制で埋めない</text>
+  <rect x="40" y="50" width="380" height="240" rx="10" class="box"/>
+  <rect x="190" y="70" width="80" height="40" rx="6" class="h"/><text x="230" y="96" class="ts on" text-anchor="middle">責任者</text>
+  <g class="tx" text-anchor="middle" opacity=".8"><text x="100" y="160">判断</text><text x="170" y="150">判断</text><text x="240" y="170">判断</text><text x="310" y="150">判断</text><text x="370" y="170">判断</text><text x="120" y="220">判断</text><text x="200" y="240">判断</text><text x="280" y="220">判断</text><text x="360" y="240">判断</text></g>
+  <use href="#i-no" x="380" y="70" width="24" height="24"/><text x="230" y="276" class="ts xc" text-anchor="middle">追い切れない</text>
+  <path d="M430,170 H470" class="ln" marker-end="url(#arr)"/>
+  <rect x="480" y="50" width="170" height="240" rx="10" class="hl" style="fill:#fff"/><rect x="525" y="70" width="80" height="40" rx="6" class="h"/><text x="565" y="96" class="ts on" text-anchor="middle">責任者</text><g class="tx" text-anchor="middle"><text x="565" y="170">判断</text><text x="565" y="210">判断</text></g>
+  <rect x="670" y="50" width="170" height="240" rx="10" class="hl" style="fill:#fff"/><rect x="715" y="70" width="80" height="40" rx="6" class="h"/><text x="755" y="96" class="ts on" text-anchor="middle">責任者</text><g class="tx" text-anchor="middle"><text x="755" y="170">判断</text><text x="755" y="210">判断</text></g>
+  <text x="440" y="340" class="t" text-anchor="middle" font-weight="700">追えないなら、判断の権限を渡して分ける</text>
 </svg>
 ```
 
-何を移し、何を残してはいけないかは Core が決めています。引き継ぎと移行の手順は Profiles が未確定としています。
+Cell の範囲は、その判断の責任を負う人間が、中で下される判断を追える大きさに収めます。追えないなら、判断の権限を渡して分けます。
 
-出典: EAA Core 版 6 冒頭の観測欄・「2.」、EAA Profiles「5.」「10.」。※ Core の「移行」は版の移行（「3.」）の語で、分割の引き継ぎに当たるかは決まらない。
+※ 第 0 章の問い「人間が管理し切れるか」から書き手が導いた。Core は Cell の大きさを書いていない。Core の字では、責任を負う人は「正当な判断責任者」。
+
+## 例：最後に誰が決めるか
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="60" width="340" height="200" rx="10" class="hl" style="fill:#fff"/><text x="210" y="96" class="t hc" text-anchor="middle" font-weight="700">注文画面の Cell</text>
+  <rect x="160" y="120" width="100" height="40" rx="6" class="h"/><text x="210" y="146" class="ts on" text-anchor="middle">責任者 A</text>
+  <rect x="500" y="60" width="340" height="200" rx="10" class="hl" style="fill:#fff"/><text x="670" y="96" class="t hc" text-anchor="middle" font-weight="700">在庫連携の Cell</text>
+  <rect x="620" y="120" width="100" height="40" rx="6" class="h"/><text x="670" y="146" class="ts on" text-anchor="middle">責任者 B</text>
+  <g opacity=".7"><path d="M496,190 H384" class="xl dash" marker-end="url(#arr-x)"/><text x="440" y="180" class="tx xc" text-anchor="middle">B が決め直す</text><use href="#i-no" x="428" y="198" width="24" height="24"/></g>
+  <text x="440" y="310" class="ts" text-anchor="middle">別の Cell なら、B は提案する。一つの Cell なら、A と B で責任を共有する</text>
+</svg>
+```
+
+注文画面と在庫連携を別の Cell にしたなら、在庫連携の責任者が注文画面の判断を決め直すのは上書きです。決めたいことは提案にします。
+
+※ 例は説明のために作った。一つの Cell の責任を複数の人で負うこともできる（EAA Core 版 6 の概念表「Cell に属する」）。
+
+## 自分の権限は自分で広げない
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="200" y="50" width="480" height="230" rx="10" class="hl" style="fill:#fff"/>
+  <text x="440" y="86" class="t hc" text-anchor="middle" font-weight="700">Cell の権限の範囲</text>
+  <rect x="260" y="120" width="360" height="100" rx="6" class="soft"/>
+  <g opacity=".7"><rect x="240" y="110" width="400" height="120" rx="6" class="xl dash" style="fill:none"/></g>
+  <use href="#i-no" x="640" y="100" width="24" height="24"/>
+  <text x="440" y="176" class="ts" text-anchor="middle">自分で緩める・自分で広げる</text>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">片側の都合で、切れ目が動く</text>
+</svg>
+```
+
+権限で切った切れ目は、片側が自分の権限を自分で広げれば動きます。Core はこれを禁じています。切れ目の保ち方は、第 10 章で見ます。
+
+出典: EAA Core 版 6「4. 提案と変更」（実行者が自分を縛る規範を緩める変更を自己承認したり、自ら権限を拡大したりしてはならない）。
+
+## 権限で切るのも Core の外
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="60" y="60" width="370" height="220" rx="10" class="box"/>
+  <text x="245" y="96" class="t" text-anchor="middle" font-weight="700">Core が定めること</text>
+  <g class="ts"><text x="90" y="146">分割は判断権限ごと渡す</text><text x="90" y="186">上書きせず、提案で変える</text></g>
+  <rect x="450" y="60" width="370" height="220" rx="10" class="hl" style="fill:#fff"/>
+  <text x="635" y="96" class="t hc" text-anchor="middle" font-weight="700">この本の提案</text>
+  <g class="ts"><text x="480" y="146">責任者が追える大きさで分ける</text><text x="480" y="192" class="tx">所有者の問いからの導出</text></g>
+  <text x="440" y="336" class="ts sub" text-anchor="middle">第 3・4 章と同じ扱い</text>
+</svg>
+```
+
+Core は、分割で判断の権限ごと渡すことと、上書きせず提案で変えることを定めます。どこで分けるか、どの大きさに収めるかは、Core の規定ではありません。
+
+## 次章へ：切っても残る結合
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="60" y="80" width="260" height="160" rx="10" class="hl" style="fill:#fff"/><text x="190" y="166" class="t hc" text-anchor="middle" font-weight="700">Cell</text>
+  <rect x="560" y="80" width="260" height="160" rx="10" class="hl" style="fill:#fff"/><text x="690" y="166" class="t hc" text-anchor="middle" font-weight="700">Cell</text>
+  <rect x="350" y="130" width="180" height="60" rx="6" class="box"/><text x="440" y="166" class="ts" text-anchor="middle">渡すもの</text>
+  <path d="M320,160 H350 M530,160 H560" class="ln"/>
+  <text x="440" y="300" class="ts" text-anchor="middle">第 6 章</text>
+</svg>
+```
+
+価値・ドメイン・権限で切っても、Cell のあいだで渡すものは残ります。第 6 章から、その結合を狭く、書いた形で持つやり方を見ます。
