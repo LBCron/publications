@@ -12,6 +12,7 @@ development-model.md:30-41 のうち 33 行（「外部には一つの責任主�
 Local Delivery Model の表は Delivery Guide の「例」で、規範ではない。p.4 の注に書いた。中の作り方の名前は Delivery Guide のまま。
 ④（@ope-ultp1635 msg 02ab9595、@reviewer 2026-11-08 ch10-12 1-3）: delivery-guide.md:20「各 Domain は」を「業務ごとに」と書いていたのを「Cell ごとに」に直した。内部方式を決める単位は core.md:62 で Cell、core.md:50 で一つの Cell が複数 Profile を担うので、業務と Cell は 1 対 1 ではない。表の Domain 名は日本語にし、Cell の枠に業務の名前として「Contract」が残らないようにした（「契約」。第 3 章の Domain Profile の例と同じ字）。delivery-guide.md:35 の「Escalation できる」は「上げられる」と書いていたのを、core.md:70 の字（明示し、正当な判断主体との調整へ戻す）に直した。core.md:70 は向きを持たず、core.md:63 は親 Cell も上書きしないとするので、「上げる」は第 4 章と逆の形になる。
 新しく引く外部の文献は無い（Scrum・Kanban・SAFe ART は名前を挙げるだけで、記述を引いていない）。
+⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: p.「揃えるのは外とのつながり方」の出典欄に「（適用例）」を足した。
 -->
 
 > Federation は Cell の内部方式を指定しない。AA で動く Cell も、Scrum のチームも、委託先の標準工程も同じ形でつながり、全責務を一つの AA が担う構成は Cell が一つの EAA である。
@@ -116,7 +117,7 @@ Cell ごとに、中の作り方は違ってかまいません。全部を Agent
 
 EAA が揃えるのは、中の作り方ではなく外とのつながり方です。絵に並べたことを、中がどう作られていても、どの Cell にもできるようにします。
 
-出典: EAA Delivery Guide「3.」。「Escalation できる」は、向きを持たない Core 版 6「2. 自治と権限」の字（正当な判断主体との調整へ戻す）で書いた。
+出典: EAA Delivery Guide「3.」（適用例）。「Escalation できる」は、向きを持たない Core 版 6「2.」の字（正当な判断主体との調整へ戻す）で書いた。
 
 ## 全部を担う AA は、Cell が一つの EAA
 

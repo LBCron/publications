@@ -13,6 +13,7 @@
 Ontology の形（③、@ope-ultp1635 msg 6ec153b2、@reviewer 2026-11-08 ch06-09 1-1・1-2）: core.md:21「両側が保持する共通語の定義」が、同じ定義を両側が持つ意味か、各側が自分の定義を持つ意味かは、Core の字だけでは決まらない。この本は、core.md:94 が Ontology を Cell 間で共有する文書に数え、core.md:36 が意味の違いと対応を Ontology が保持するとしていることから、二つの Cell のあいだに共有する Ontology が一つあり、両側がそれを持つ、と読む。読みであることは本文の「語の定義は、両側が共有して持つ」のページに断った。絵は Contract・Evidence の様式と同じく、二つの Cell の間に一つ置く（第 0・8 章と同じ形）。各 Cell の中の語の使い方は Core が扱わないので、Ontology とは呼ばずに描く。「出荷日」がまだ共有する Ontology に無いという設定も説明のための仮定で、本文の注に書いた。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
+⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの項目は core.md:11 の既知の不足に無いので「Core に書かれていない」に置き、「まだ」を落とした。
 -->
 
 > Evidence は、受け取った Cell が、作った Cell を介さずに確かめられる形にする。意味のずれは Evidence が受け入れられなかったときに見えるので、推測で越えずに照会か変更提案で解く。
@@ -241,11 +242,11 @@ Core の「両側が保持する」は、各側が自分の定義を持つとも
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">様式と Ontology も所有者を持つ</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="105">Evidence の様式に書く項目</text><text x="480" y="145">共有する Ontology の所有者の決め方</text><text x="480" y="185">Evidence の様式の所有者の決め方</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも、決める予定にも無い</text><text x="480" y="166" class="ts">Evidence の様式に書く項目</text><text x="480" y="206" class="ts">共有する Ontology の所有者の決め方</text><text x="480" y="246" class="ts">Evidence の様式の所有者の決め方</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">所有者の決め方を書いているのは、Contract だけ</text>
 </svg>
 ```
 
-Evidence の様式に何の項目を書くかを、Core は決めていません。共有する Ontology と様式の所有者をどう決めるかも、まだ書いていません。
+Evidence の様式に書く項目と、共有する Ontology・様式の所有者の決め方は、Core に書かれていません。冒頭の既知の不足にも挙がっていません。
 
 出典: EAA Core 版 6「4. 提案と変更」。所有者の決め方は、Contract についてだけ書いている（第 8 章）。

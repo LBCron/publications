@@ -12,6 +12,7 @@ development-model.md:18-27 のうち 24・25 行（Enterprise／Domain は全体
 リードの「サービスの数から Cell の数を決めず」は working-notes.md:19 による（同ファイルの 13 行ではない）。p.「Profile やサービスの数で決めない」の注に書いた。
 判断の責任者を Role Model は Operator（Ope）と呼ぶ。Role Model は適用例で規範ではない。p.「分けるのは、判断を渡すとき」の注に書いた。
 新しく引く外部の文献は無い。
+⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: p.「Profile は責務の版付きの仕様」の出典欄の「まだ決まっていない」を、未確定としているのは Profiles（profiles.md:5・135）だと書き直した。
 -->
 
 > Profile は組織図より先に書く。一つの Cell が複数の Profile を担ってよい。Profile の数やサービスの数から Cell の数を決めず、判断の負荷が増えて別の Operator に渡すときに分ける。
@@ -78,7 +79,7 @@ development-model.md:18-27 のうち 24・25 行（Enterprise／Domain は全体
 
 Profile は、Cell が引き受ける責務を定める版付きの仕様です。何を成り立たせ、どこまで自分で判断し、外に何を保証し、それをどう確かめるかを書きます。
 
-出典: EAA Profiles「1.」「3. 責務定義と割当」。項目名・記法・必須の欄はまだ決まっていない。
+出典: EAA Profiles「1.」「3. 責務定義と割当」。項目名・記法・必須の欄は、Profiles が詳細スキーマとして未確定にしている。
 
 ## Standard と Domain は同じ形
 

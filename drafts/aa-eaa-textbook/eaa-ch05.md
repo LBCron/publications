@@ -5,15 +5,16 @@
 <!--
 構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
 出どころ（構造の表のまま）: core.md:57-58、profiles.md 5 節、development-model.md:52-64。Core は publications origin/main 0d07f75 の core.md 版 6。
-リードの「引継ぎの詳細手順は Core でもまだ決まっていない」は core.md:11（観測欄の既知の不足「移行中の責任」）と profiles.md:83・135 による。最後のページの注に書いた。同じページの絵の「一方的な強制で埋めない」は core.md:71。
+リードの「引継ぎの詳細手順は Profiles が未決として残している」は profiles.md:83・135 による（⑤、@ope-ultp1635 msg 281e5366。以前は「Core でも」と書き、Profiles の字を Core に帰属させていた）。Core の既知の不足（core.md:11）に当たるのは「移行中の責任」だけ。最後のページの注に書いた。同じページの絵の「一方的な強制で埋めない」は core.md:71。
 本文: @ope-ultp1635 msg 18751c19（群二）。
 絵: 元の Cell と分かれた Cell は横に並べ、どの Cell もほかの Cell の枠の中に描かない（同 msg。core.md:43）。
 Platform の分離は development-model.md:55「構成例であり、効果の実証ではない」。例のページの注と、効果のページの注に書いた。
 development-model.md:58 にある比喩の語は本文に持ち込まない（root CLAUDE.md「成果物の文章の作法」の語の表）。
 新しく引く外部の文献は無い。
+⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの「決めていないこと」を、Core の既知の不足（core.md:11 の移行中の責任）と、Profiles が未決・未確定とした引継ぎ・移行の手順（profiles.md:83・135）に分けた。
 -->
 
-> 業務機能と基盤を扱ってきた Cell から、基盤の判断の負荷が増えたので Platform を別の Cell に分ける例で、移すものと再合意が要る場面を示す。引継ぎの詳細手順は Core でもまだ決まっていない。
+> 業務機能と基盤を扱ってきた Cell から、基盤の判断の負荷が増えたので Platform を別の Cell に分ける例で、移すものと再合意が要る場面を示す。引継ぎの詳細手順は、Core ではなく Profiles が未決として残している。
 
 ```svg
 <svg viewBox="0 0 880 300" width="880" height="300">
@@ -206,11 +207,11 @@ Cell を分ける・まとめる・責務を外すときは、権限から、ま
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">保証を変えるなら合意し直す</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="105">引き継ぎの細かい手順</text><text x="480" y="145">移している間の責任</text><text x="480" y="185">分離・再統合の移行の手順</text></g>
-  <text x="440" y="356" class="ts sub" text-anchor="middle">決まっていない所を、ほかの Cell からの一方的な強制で埋めない</text>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="132" class="ts">移している間の責任</text><text x="480" y="182" class="ts" font-weight="700">Profiles が未決・未確定とした</text><text x="480" y="212" class="ts">引き継ぎの細かい手順</text><text x="480" y="242" class="ts">分離・再統合の移行の手順</text></g>
+  <text x="440" y="356" class="ts sub" text-anchor="middle">手順が未定の調整を、ほかの Cell からの一方的な強制で埋めない</text>
 </svg>
 ```
 
-何を移し、何を残してはいけないかは Core が決めています。引き継ぎの細かい手順と、移している間の責任は、まだ決まっていません。
+何を移し、何を残してはいけないかは Core が決めています。移している間の責任は Core の既知の不足、引き継ぎと移行の手順は Profiles が未確定としています。
 
 出典: EAA Core 版 6 の冒頭の観測欄（既知の不足）と「2. 自治と権限」、EAA Profiles「5.」「10. 今後定める仕様」。

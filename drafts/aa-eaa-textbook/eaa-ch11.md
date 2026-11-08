@@ -13,6 +13,7 @@ publications の APPROVALS.md「本書に書かないもの」は他の Cell で
 包含と同じ形の字: 採用の記録を全体の側が一つ持つ形は書いていない（core.md:123 の「記録はそのCellが管理し」のとおり、記録は各 Cell の枠の中に描いた）。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。Core の文書は Cell の上に置くが、どの Cell も囲まない。
 新しく引く外部の文献は無い。
+⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの項目は core.md:11 の既知の不足に無いので「Core に書かれていない」に置いた。出典欄の「移行中の責任は既知の不足」は、3 項目のどれとも Core が結びつけていないので外した。
 -->
 
 > 採用を承認するのは Core の所有者ではない人間で、承認者を置けない Cell は採用しない。記録はその Cell が管理し、Core の所有者は書き換えない。
@@ -217,11 +218,11 @@ Core に新しい版が出ても、採用した Cell は自動では移りませ
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">記録は採用した Cell が持つ</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="105">記録の書式と置き場所</text><text x="480" y="145">採用をやめるときの手続き</text><text x="480" y="185">Core の版が違う Cell どうしの</text><text x="480" y="209">あいだの扱い</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも、決める予定にも無い</text><text x="480" y="166" class="ts">記録の書式と置き場所</text><text x="480" y="206" class="ts">採用をやめるときの手続き</text><text x="480" y="246" class="ts">Core の版が違う Cell どうしの</text><text x="480" y="270" class="ts">あいだの扱い</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">理解しているかは、Core では検査しない</text>
 </svg>
 ```
 
-記録の書式と置き場所を、Core は決めていません。採用をやめるときの手続きと、Core の版が違う Cell どうしのあいだの扱いも、まだ書いていません。
+記録の書式と置き場所、採用をやめる手続き、Core の版が違う Cell どうしの扱いは、Core に書かれていません。既知の不足にも挙がっていません。
 
-出典: EAA Core 版 6「6. 本書の採用」と冒頭の観測欄（移行中の責任は既知の不足）。
+出典: EAA Core 版 6「6. 本書の採用」と冒頭の観測欄（右の項目は、どれも既知の不足に無い）。

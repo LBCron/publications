@@ -12,6 +12,7 @@ Mission の例の ontology の参照先は、原文では enterprise:// で始�
 「子Mission」「親Goal」（core.md:67）は Mission の分け方の呼び名で、Cell の親子ではない。絵では Mission を Cell の枠の中に描いていない。
 完了を誰が判定するかは core.md:106-107 に名指しが無い。最後のページに書いた。
 新しく引く外部の文献は無い。
+⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後のページの項目は core.md:11 の既知の不足に無いので「Core に書かれていない」に置き、「まだ」を落とした。
 -->
 
 > Mission には Goal・Constraints・Authority・Acceptance Evidence を書く。Task の分け方は受けた Cell が決め、作業したことや受け入れたことだけでは完了にならない。
@@ -254,11 +255,11 @@ Mission、実行、Evidence、受け入れ、改訂、引き継ぎを、後か�
   <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">決定を記録に残す</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
-  <g class="ts"><text x="480" y="105">Mission の書式（項目名・記法）</text><text x="480" y="145">欄ごとに何をどこまで書くか</text><text x="480" y="185">完了を判定する者の名指し</text></g>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも、決める予定にも無い</text><text x="480" y="166" class="ts">Mission の書式（項目名・記法）</text><text x="480" y="206" class="ts">欄ごとに何をどこまで書くか</text><text x="480" y="246" class="ts">完了を判定する者の名指し</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">例の記法は、自分の案件で書き始めるための例</text>
 </svg>
 ```
 
-Mission の書式は、まだ決まっていません。完了を誰が判定するかも、Core は名指ししておらず、確かめの条件と職務分離を保つことだけを求めています。
+Mission の書式は Core に書かれていません。完了を判定する者も Core は名指しせず、確かめの条件と職務分離を保つことだけを求めています。
 
 出典: EAA Core 版 6「5. 成果と記録」、EAA Delivery Guide「7.」（説明用の記法で、確定した書式ではない）。

@@ -14,6 +14,7 @@ adoption-guide.md:270-277 の英語の段は日本語に開いた（Recorded Dec
 第 2・3 章と重なる所（つながり方の最低限、Profile の数で Cell を決めない）は、ページを立てずに前の章を指した。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
+⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後の絵の「各 Cell の中の作り方」を「自分の案件で決めること」から外し、Core の側に「各 Cell が決める」（core.md:62）として置いた。第 2・4 章と本文に揃う。
 -->
 
 > 既存の Scrum・SAFe・委託先の工程は残し、Evidence を観測して責務を Profile に書き、独立した判断が要る所だけ Cell を分ける。
@@ -289,10 +290,11 @@ Operator の価値は、判断の件数ではありません。曖昧な所を�
   <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">責務と分割、自治と権限</text>
   <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">流す Evidence と、流さない Ontology</text>
   <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">版と採用、提案と変更</text>
-  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">成果と記録、Core の採用</text></g>
+  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">成果と記録、Core の採用</text>
+  <use href="#i-ok" x="60" y="248" width="22" height="22"/><text x="92" y="265">各 Cell の中の作り方は、各 Cell が決める</text></g>
   <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">自分の案件で決めること</text>
-  <g class="ts"><text x="480" y="105">導入の順序と進める速さ</text><text x="480" y="145">Operator の置き方</text><text x="480" y="185">成熟の測り方</text><text x="480" y="225">各 Cell の中の作り方</text></g>
+  <g class="ts"><text x="480" y="105">導入の順序と進める速さ</text><text x="480" y="145">Operator の置き方</text><text x="480" y="185">成熟の測り方</text></g>
   <text x="440" y="356" class="ts sub" text-anchor="middle">この章の手順は、どれも適用例で、Core の規範ではない</text>
 </svg>
 ```
