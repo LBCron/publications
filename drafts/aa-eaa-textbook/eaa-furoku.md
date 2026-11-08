@@ -4,7 +4,7 @@
 
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（77de7781）の付録。着手: @ope-ultp1635 msg cfe0fe59（群五）。
-v5 の付録の題は「LeSS・SAFe・Spotify は、人間の分業のあいだの合意を一人に集めるか、各チームに任せて持つ」。群二で「SAFe をどちらに置くかは付録を書くとき原文で決める」と残していた（structure-v5.md「本文を書いて変えた所（群一・群二）」）。@reader 目次の通読（349c4d63）で桜井（SAFe の RTE・SPC）が題で確かめに行った。
+v5 の付録の題は「LeSS・SAFe・Spotify は、人間の分業のあいだの合意を一人に集めるか、各チームに任せて持つ」。群二で「SAFe をどちらに置くかは付録を書くとき原文で決める」と残していた（structure-v5.md「本文を書いて変えた所（群一・群二）」）。@reader 目次の通読（349c4d63）で読者（SAFe の RTE・SPC）が題で確かめに行った。
 SAFe の置き場所の判定（原文に当たった。2026-11-08）:
 - Principle #9 の Web Archive 2022-02-01 版（web.archive.org/web/20220201024706/https://www.scaledagileframework.com/decentralize-decision-making/、SAFe 5.1 の頃）: 見出し「Centralize Strategic Decisions」の下で「Of course, not all decisions should be decentralized. Some decisions are strategic, have far-reaching impact, and are outside the scope, knowledge, or responsibilities of the teams.」、性質は「Infrequent」「Long-lasting」「Provide significant economies of scale」。見出し「Decentralize Everything Else」の下で「The vast majority of decisions do not reach the threshold of strategic importance. All other decisions should be decentralized.」。
 - 同 2023-12-16 版（web.archive.org/web/20231216044729/https://scaledagileframework.com/decentralize-decision-making/）: 「take vs delegate」の考える道具（frequency・time-criticality・economies of scale を 0〜2 で付け、0〜3 は take、4〜6 は delegate）。「delegating the decision to others closer to the task is the critical element of decentralizing decision-making」。
@@ -20,8 +20,8 @@ p.「この本の切り方との対応」は書き手の読み。枠組みの語
 77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff、@reviewer 2026-11-08 ch09-12-furoku、@reader r3）:
 - 事実の誤り: p.「SAFe：既定は任せる側」の注「2023 年 12 月の版は…考える形に書き直している」。2022-02-01 の版にも「A Lightweight Thinking Tool for Decision-Making」がある。2023 年版で変わったのは Take / Delegate などの選択肢と点数。注から「書き直している」を外した。
 - 引用の版: 「Centralize Strategic Decisions」「Decentralize Everything Else」「All other decisions should be decentralized.」は 2022 年版の字で、2023-12-16 版に 0 件（@reviewer）。現在形「既定にしています」を「2022 年の版の SAFe は…既定にしていました」にし、見出しと一覧の SAFe 行に版を書いた。p.「SAFe：集めすぎると判断待ちの列」はいまの版の導入部の字なので「いまの版の SAFe は、任せる理由の一つに」とし、既定がどちらかを言わせない。
-- 本の中の食い違い: 対応表の「ART を価値の単位で組む（SAFe）→ 価値で分ける（第 3 章）」は、第 3 章が別の語とした「価値」の字だけでつないでいた。2022 年版の SAFe は value stream に沿った組み直しを集める側（Long-lasting）に置く。行を外し、外した理由を注に書いた（桜井 p.212）。
-- 「EAA 紹介 3」の説明が本に無かった（松田・長谷川・宮下）。第 6 章の最初の出現と、このページの注に置いた。
+- 本の中の食い違い: 対応表の「ART を価値の単位で組む（SAFe）→ 価値で分ける（第 3 章）」は、第 3 章が別の語とした「価値」の字だけでつないでいた。2022 年版の SAFe は value stream に沿った組み直しを集める側（Long-lasting）に置く。行を外し、外した理由を注に書いた（@reader p.212）。
+- 「EAA 紹介 3」の説明が本に無かった（@reader の読者 3 体）。第 6 章の最初の出現と、このページの注に置いた。
 付録は巻末と同じ組み方（章の概要・群・リードを持たない）。build.mjs に <本>-furoku.md を読む行を足した（付録の判定・並べる順・公開してよい名前の一覧）。
 新しく引く外部の文献: 上の SAFe・LeSS・Lee の原文（どれも旧第 1 章で引いた文書の当たり直しか、同じ枠組みの別のページ）。
 -->

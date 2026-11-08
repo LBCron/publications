@@ -6,14 +6,14 @@
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（dd08b888）の第 3 章。着手: @ope-ultp1635 msg 83d1e0ea（群二）。
 この章に当たる章は 2d0ca30 までの本に無い。新しく書いた。
-所有者の問いと考えは structure-v5.md の「イデア」「AA がスケールしない理由」。本文には口語の原文を載せず、第 0 章 p.「一つの Cell への問い」・第 1 章の本の言葉に揃える（@ope-ultp1635 msg 62a8ef68）。
-「価値」の語: structure-v5.md の字は「価値観」で、判断が割れたときに何を先に取るかを指す。SAFe の value stream（顧客に届ける価値の流れ）とは別の語。目次の通読で桜井が第 3 章の「価値ごとに Cell を分け」を ART を value stream で切るのと同じ向きと読んだ（@reader 349c4d63）。同じ向きと読まれても主張は崩れないが、語の取り違えは群三・群四で効くので、p.「価値は何を先に取るか」の注で分けた。
+この本の問いと考えは structure-v5.md の「イデア」「AA がスケールしない理由」。本文には口語の原文を載せず、第 0 章 p.「一つの Cell への問い」・第 1 章の本の言葉に揃える（@ope-ultp1635 msg 62a8ef68）。
+「価値」の語: structure-v5.md の字は「価値観」で、判断が割れたときに何を先に取るかを指す。SAFe の value stream（顧客に届ける価値の流れ）とは別の語。目次の通読で読者が第 3 章の「価値ごとに Cell を分け」を ART を value stream で切るのと同じ向きと読んだ（@reader 349c4d63）。同じ向きと読まれても主張は崩れないが、語の取り違えは群三・群四で効くので、p.「価値は何を先に取るか」の注で分けた。
 「価値は一つのループに置かず、各 Cell の規範（Constitution）に書く」は structure-v5.md 判定の記録 4 番目の (b) の読み。Constitution の定義は core.md:37。各 Cell が規範の範囲で中を決めるのは core.md:62、上書きしないのは core.md:63、提案は core.md:84。
 決済・推薦・請求の例と「障害が出た日に予定の変更を出すか」は書き手が作った（注に書いた）。第 0 章の決済・推薦と同じ例を使った。
 p.「切り替えは外から見えない」は、第 0 章の問い「人間が管理し切れるか」と価値の問いをつなぐ書き手の導出。注に書いた。
 p.「価値で切るのも Core の外」: Core は Constitution を価値を定める規範として置くが、価値ごとに Cell を分けることは書かない（core.md:52 は分割を定義するだけ）。第 0 章 p.「切り方は、Core の外の提案」と同じ扱い。
 絵の Cell の枠は入れ子にしない（core.md:43）。
-77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: p.「価値は Constitution に書く」で、各 Cell の規範を Constitution と読むのは推論なので、注で断った（core.md:37 に「Cell ごと」が無い）。p.「サービスの数とは揃わない」の注の「（Profile）」を外した（Profile の定義は第 4 章。長谷川 p.43）。p.「価値で切るのも Core の外」を外した（第 0 章の注にまとめた）。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: p.「価値は Constitution に書く」で、各 Cell の規範を Constitution と読むのは推論なので、注で断った（core.md:37 に「Cell ごと」が無い）。p.「サービスの数とは揃わない」の注の「（Profile）」を外した（Profile の定義は第 4 章。@reader p.43）。p.「価値で切るのも Core の外」を外した（第 0 章の注にまとめた）。
 -->
 
 ```svg

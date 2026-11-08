@@ -6,10 +6,10 @@
 <!--
 構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（6e3f57bf・dd08b888）の第 1 章。GO: @ope-ultp1635 msg b918626f。
 2d0ca30 までの第 1 章（LeSS・SAFe・Spotify の、合意を集める／任せるの二つ）は v5 の付録へ移す。この章には持ってこない。移すとき、旧第 1 章の書き手のメモにある直し（引用は原文に当たり直していないことを本文と絵で見せる・LeSS の URL と参照日・片側改訂を防ぐのは core.md:79・80・91・EAA 紹介 0 の置き場所を本文から外す）を落とさない。旧本文は 2d0ca30 の eaa-ch01.md にある。
-所有者の考えは structure-v5.md「イデア」を、本の主張として本の言葉に書き直して載せる。口語の原文と個人名は載せない（publications は公開 repo。@ope-ultp1635 msg 62a8ef68）。
+この本の考えは structure-v5.md「イデア」を、本の主張として本の言葉に書き直して載せる。口語の原文と個人名は載せない（publications は公開 repo。@ope-ultp1635 msg 62a8ef68）。
 p.「AA のレビュー分離は別の目的」: AA の本の第 2 章は、レビューを書いた AI から切り離す（作成者の文脈を持たない者に確かめさせる）。この章の「職能で切らない」と食い違って読まれないよう、あれは分業ではなく職務分離（core.md:45「同じ判断について、行う者と、承認または検証する者を別の者にすること」）だと書いた。AA の本の字: aa-ch02.md「判定は残し、レビュアーを文脈から切る」「レビューは回数でなく、文脈を分ける」。
-「人間は職能ごとに覚えることが多いので、渡し直しを払っても職能で分けた」は structure-v5.md 第 1 章の行の字。所有者の字（structure-v5.md）は、人間が職能で分けてきたことまでで、理由を言っていない。理由の部分は書き手の導出（structure-v5 でそう書いて GO を受けた）。
-群二で直したこと（@ope-ultp1635 msg 83d1e0ea、@reader 目次 v5 の通読 349c4d63 の桜井）: 章題「人間は職能で分業してきた」は事実として誤り。LeSS・SAFe・Spotify はチームを職能で分けず、要る技能を一つのチームに揃える。原文に当たり直した（2026-11-08、WebFetch）:
+「人間は職能ごとに覚えることが多いので、渡し直しを払っても職能で分けた」は structure-v5.md 第 1 章の行の字。structure-v5.md「イデア」の字は、人間が職能で分けてきたことまでで、理由を言っていない。理由の部分は書き手の導出（structure-v5 でそう書いて GO を受けた）。
+群二で直したこと（@ope-ultp1635 msg 83d1e0ea、@reader 目次 v5 の通読 349c4d63 の読者）: 章題「人間は職能で分業してきた」は事実として誤り。LeSS・SAFe・Spotify はチームを職能で分けず、要る技能を一つのチームに揃える。原文に当たり直した（2026-11-08、WebFetch）:
 - LeSS「Feature Teams」https://less.works/less/structure/feature-teams —「a long-lived, cross-functional, cross-component team that completes many end-to-end customer features」「a component team structure reinforces sequential development」（待ち・仕掛り・多くの handoff を生むと続く）。表で component team は「focus on single specialization」、feature team は「focus on multiple specializations」。
 - SAFe「Agile Teams」https://framework.scaledagile.com/agile-teams —「An Agile Team is a cross-functional group of typically ten or fewer individuals with all the skills necessary to define, build, test, and deliver increments of value」。「Agile Release Train」https://framework.scaledagile.com/agile-release-train —「ARTs are cross-functional and contain all the necessary capabilities for the solution they deliver」「Organizing ARTs around value」。
 群一の旧第 1 章は EAA 紹介 0 の訳に揃えるため当たり直さなかった。今回の字は紹介 0 に無い（紹介 0 は合意の持ち方を引いた）ので、揃える訳が無く、当たり直した。
