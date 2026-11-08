@@ -1,4 +1,4 @@
-# 第 10 章　権限で切った切れ目は、共有する文書の改訂を人間の所有者が承認し、自分の権限を自分で広げないことで保つ
+# 第 10 章　改訂を提起した者と別の人間の所有者が承認し、実行者が自分の権限を広げないので、権限で切った切れ目は一人の都合では動かない
 
 群: 分業を続けながら切れ目を保つ
 
@@ -21,6 +21,7 @@ publications の #135・#136・#137 と APPROVALS 行 12〜15 は、2d0ca30 の�
 例は第 6〜9 章の在庫と物流を続けた。締めの時刻の改訂は第 9 章 p.「逆向きの変更も、同じ順序で」の続き。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。人は橙の四角、Agent は青の丸い札（第 0・2 章と同じ）。
 新しく引く外部の文献は無い。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: 章題を変えた。「承認で切れ目を保つ」は閉じていなかった — 所有者は片側の Cell にいる（core.md:98）ので、片側の中だけで承認まで進む。片側で変わらないのは採用（core.md:80・91、第 9 章と付録）。承認の決まりは人の単位で、一人の都合の版を相手に届く前に止める。章題・章の概要・p.「一人の都合の改訂は、相手に届く前に止める」（旧 p.「切れ目を片側で動かすと、相手の文脈が戻る」）をこの形に。所有者には聞いていない（Core の字で決まる話。第 9 章の題を変えたときと同じ）。structure-v5.md の第 10 章の行は直していない。p.「承認で切れ目を保つのは、この本の読み」を外した。最後のページの右に「所有者本人が出したい改訂を、どう進めるか」を足した（松田・河野 p.161〜163）。
 -->
 
 > 共有する文書の改訂は、その文書の人間の所有者が承認し、改訂を提起した者はその改訂を承認しない。実行者は、自分を縛る規範を緩める変更を自分で承認せず、権限が足りなければ示して調整に戻す。所有者が離れたら、後任が決まるまで改訂は承認されない。
@@ -38,26 +39,26 @@ publications の #135・#136・#137 と APPROVALS 行 12〜15 は、2d0ca30 の�
 </svg>
 ```
 
-権限で切った切れ目は、片側の都合で動かせると保てません。共有する文書の改訂はその文書の人間の所有者が承認し、提起した者はその改訂を承認しません。実行者は自分の権限を自分で広げません。
+権限で切った切れ目は、一人の都合で動かせると保てません。共有する文書の改訂は、提起した者とは別の人間の所有者が承認します。実行者は自分の権限を自分で広げません。片側の Cell の都合で版が変わらないのは、各 Cell の採用によります（第 9 章）。
 
-## 切れ目を片側で動かすと、相手の文脈が戻る
+## 一人の都合の改訂は、相手に届く前に止める
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="60" width="260" height="200" rx="10" class="box"/><text x="170" y="96" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
-  <text x="170" y="150" class="ts" text-anchor="middle">Contract を自分で</text><text x="170" y="176" class="ts" text-anchor="middle">書き換えて、自分で承認</text>
-  <rect x="330" y="110" width="220" height="80" rx="3" class="xl" style="fill:#fff"/><text x="440" y="146" class="ts xc" text-anchor="middle" font-weight="700">Contract</text><text x="440" y="172" class="tx" text-anchor="middle">片側の都合で動いた</text>
+  <text x="170" y="150" class="ts" text-anchor="middle">改訂を提起した者が、</text><text x="170" y="176" class="ts" text-anchor="middle">自分で承認する</text>
+  <rect x="330" y="110" width="220" height="80" rx="3" class="xl" style="fill:#fff"/><text x="440" y="146" class="ts xc" text-anchor="middle" font-weight="700">Contract</text><text x="440" y="172" class="tx" text-anchor="middle">一人の都合の版</text>
   <path d="M300,150 H326 M554,150 H576" class="ln"/>
   <rect x="580" y="60" width="260" height="200" rx="10" class="box"/><text x="710" y="96" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
-  <text x="710" y="150" class="ts" text-anchor="middle">物流がなぜ変えたかを</text><text x="710" y="176" class="ts" text-anchor="middle">読まないと判断できない</text>
+  <text x="710" y="150" class="ts" text-anchor="middle">採用を決めるたびに、</text><text x="710" y="176" class="ts" text-anchor="middle">一人の都合を読み解く</text>
   <use href="#i-no" x="696" y="200" width="28" height="28"/>
-  <text x="440" y="320" class="t" text-anchor="middle" font-weight="700">切れ目は、承認を片側に置かないことで保つ</text>
+  <text x="440" y="320" class="t" text-anchor="middle" font-weight="700">承認を提起と別の人にすると、一人の都合の版は届く前に止まる</text>
 </svg>
 ```
 
-片側が共有する文書を自分で書き換えて自分で承認できると、もう一方は相手がなぜ変えたかを読まないと判断できません。改訂の承認を誰が担うかで、切れ目を保ちます。
+提起した者が自分で承認できると、一人の都合の版が相手に届き、相手は採用のたびにそれを読み解きます。承認を別の人にすると、その版は届く前に止まります。
 
-※ 書き手の読み。第 5 章「上書きを許すと文脈が戻る」と同じ形を、共有する文書に当てた。
+※ 書き手の読み。承認は人の単位の決まりで、片側の Cell の中で承認まで進む。相手の側で変わらないのは採用による（第 9 章）。
 
 ## 共有する文書は、所有者を持つ
 
@@ -317,22 +318,6 @@ Profile の正本を編集できる権限だけでは、合意した義務を消
 
 ※ 例は説明のための仮定です。出典: EAA Core 版 6「4. 提案と変更」。所有者以外の者を承認者に充てることは、改訂を判断するのは所有者という行と合いません。
 
-## 承認で切れ目を保つのは、この本の読み
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="60" y="60" width="370" height="220" rx="10" class="box"/>
-  <text x="245" y="96" class="t" text-anchor="middle" font-weight="700">Core が定めること</text>
-  <g class="ts"><text x="90" y="146">改訂は人間の所有者が承認する</text><text x="90" y="186">提起した者は承認しない</text><text x="90" y="226">自分の権限を自分で広げない</text></g>
-  <rect x="450" y="60" width="370" height="220" rx="10" class="hl" style="fill:#fff"/>
-  <text x="635" y="96" class="t hc" text-anchor="middle" font-weight="700">この本の読み</text>
-  <g class="ts"><text x="480" y="146">これで、権限で切った切れ目が</text><text x="480" y="176">片側の都合で動かない</text><text x="480" y="222" class="tx">所有者の考えを当てた読み</text></g>
-  <text x="440" y="336" class="ts sub" text-anchor="middle">第 3〜5 章「〜で切るのも Core の外」と同じ扱い</text>
-</svg>
-```
-
-改訂の承認と自己承認の禁止は Core の規定です。それを、権限で切った切れ目を保つ形と読むのは、この本の読みです。
-
 ## Core はここまでしか決めていない
 
 ```svg
@@ -351,12 +336,12 @@ Profile の正本を編集できる権限だけでは、合意した義務を消
   <rect x="460" y="30" width="380" height="390" rx="10" fill="url(#hatch)"/>
   <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
   <g class="ts"><text x="480" y="102" class="ts" font-weight="700">既知の不足（Core の冒頭が挙げた）</text><text x="480" y="126" class="tx">詳しい手順は未定。いつ決めるかは書いていない</text><text x="480" y="160" class="ts">合意不成立の詳しい手順</text>
-  <text x="480" y="214" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="238" class="tx">既知の不足にも挙がっていない</text><text x="480" y="278" class="ts">提起した者と承認した者が別だと、</text><text x="480" y="302" class="ts">記録の上でどう示すか</text><text x="480" y="342" class="ts">承認の手続きの細部</text></g>
+  <text x="480" y="214" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="238" class="tx">既知の不足にも挙がっていない</text><text x="480" y="278" class="ts">提起した者と承認した者が別だと、</text><text x="480" y="302" class="ts">記録の上でどう示すか</text><text x="480" y="342" class="ts">承認の手続きの細部</text><text x="480" y="376" class="ts">所有者本人が出したい改訂を、</text><text x="480" y="400" class="ts">どう進めるか</text></g>
   <text x="440" y="460" class="ts sub" text-anchor="middle">承認の手続きは、それぞれの判断に当てる手続きに任せている</text>
 </svg>
 ```
 
-改訂は人間の所有者が承認し、提起した者は承認せず、所有者は 1 人です。所有者本人の改訂に承認できる者がいないのは、未決ではなく Core の字からの帰結です。
+所有者本人の改訂に承認できる者がいないのは、未決ではなく Core の字からの帰結です。その先どう進めるかは、Core に書かれていません。
 
 出典: EAA Core 版 6「4. 提案と変更」「5. 成果と記録」と冒頭の観測欄（合意不成立）。Core は職務分離を保つことと、改訂を後から追える記録に残すことだけを求めています。
 

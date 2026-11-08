@@ -14,6 +14,7 @@ p.「AA のレビュー分離は別の目的」: AA の本の第 2 章は、レ�
 群一の旧第 1 章は EAA 紹介 0 の訳に揃えるため当たり直さなかった。今回の字は紹介 0 に無い（紹介 0 は合意の持ち方を引いた）ので、揃える訳が無く、当たり直した。
 直し方: 章題を「職能で分ける理由は人間にあった」にし、人間が必ず職能で分けたとは書かない。p.「LeSS・SAFe は職能で分けない」「枠組みが減らしたのも渡し直し」「チームの中には職能が残る」を足した。枠組みが職能で分けないのはこの章の主張（職能で切ると渡し直しが残る）を人間の側で先に示したもので、主張を弱めない。「チームの中には職能が残る」は書き手の読み（SAFe の all the skills・LeSS の multiple specializations は、技能を持つ人が複数いることを前提にする）で、注に書いた。
 Spotify は付録で引くので、この章では名前を挙げない（付録の旧本文は EAA 紹介 0 の訳）。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: 第 3 章が SAFe の value stream と別の語だとした「価値」を、SAFe の側で先に使っていた（絵「価値の単位で組む」）。「機能を最後まで作る」「value stream に沿って組む」にした。「枠組みが職能で分けないのも渡し直しを減らすため」は出典が LeSS だけなので、LeSS に限った。「チームの中には職能が残る」は LeSS が直接言っているので「書き手の読み」を出典に替えた（@reviewer 1 便）。
 -->
 
 ```svg
@@ -38,7 +39,7 @@ Spotify は付録で引くので、この章では名前を挙げない（付録
 </svg>
 ```
 
-人間が職能で分けるのは、職能ごとに覚えることが多いからです。大規模開発の枠組みは、その渡し直しを減らすために、チームを職能で分けなくなりました。Agent にとって職能は大きな文脈ではないので、職能で切ると渡し直しだけが残ります。
+人間が職能で分けるのは、職能ごとに覚えることが多いからです。大規模開発の枠組みは、チームを職能で分けなくなりました。LeSS は、その理由に渡しと待ちが増えることを挙げます。Agent にとって職能は大きな文脈ではないので、職能で切ると渡し直しだけが残ります。
 
 ## 所有者の言葉
 
@@ -111,10 +112,10 @@ Spotify は付録で引くので、この章では名前を挙げない（付録
   <path d="M200,112 V150" class="ln" marker-end="url(#arr)"/>
   <rect x="40" y="160" width="320" height="120" rx="10" class="hl" style="fill:#fff"/>
   <text x="200" y="190" class="ts hc" text-anchor="middle" font-weight="700">一つのチームに技能を揃える</text>
-  <g class="tx" text-anchor="middle"><text x="200" y="222">設計・実装・テスト・レビュー</text><text x="200" y="250">顧客に届ける価値の単位で組む</text></g>
+  <g class="tx" text-anchor="middle"><text x="200" y="222">設計・実装・テスト・レビュー</text><text x="200" y="250">顧客に届ける機能を最後まで作る</text></g>
   <g class="ts">
     <text x="420" y="110" font-weight="700">LeSS</text><text x="420" y="136" class="tx">cross-functional なフィーチャーチーム</text>
-    <text x="420" y="196" font-weight="700">SAFe</text><text x="420" y="222" class="tx">cross-functional なチームと ART</text><text x="420" y="246" class="tx">ART は価値の単位で組む</text>
+    <text x="420" y="196" font-weight="700">SAFe</text><text x="420" y="222" class="tx">cross-functional なチームと ART</text><text x="420" y="246" class="tx">ART は value stream に沿って組む</text>
   </g>
   <text x="440" y="336" class="ts sub" text-anchor="middle">英文は LeSS「Feature Teams」、SAFe「Agile Teams」「Agile Release Train」（2026-11-08 参照）</text>
 </svg>
@@ -124,7 +125,7 @@ Spotify は付録で引くので、この章では名前を挙げない（付録
 
 出典: LeSS「Feature Teams」、SAFe「Agile Teams」「Agile Release Train」。この本で原文に当たった。ART は SAFe の、チームを束ねた単位。
 
-## 枠組みが減らしたのも渡し直し
+## LeSS が減らしたのも渡し直し
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -144,7 +145,7 @@ Spotify は付録で引くので、この章では名前を挙げない（付録
 </svg>
 ```
 
-LeSS は、一つの専門や部品に寄せたチームは順に渡す開発を強め、渡しと待ちを増やすと書いています。枠組みが職能で分けないのも、渡し直しを減らすためです。
+LeSS は、一つの専門や部品に寄せたチームは順に渡す開発を強め、渡しと待ちを増やすと書いています。LeSS が職能で分けないのも、渡し直しを減らすためです。
 
 出典: LeSS「Feature Teams」の component team と feature team の対比。
 
@@ -165,9 +166,9 @@ LeSS は、一つの専門や部品に寄せたチームは順に渡す開発を
 </svg>
 ```
 
-枠組みは技能をチームの中に揃えて、チームのあいだの渡し直しを減らしました。チームの中では、人は今も得意な職能を持ちます。
+枠組みは、技能をチームの中に揃えました。チームの中では、人は今も得意な職能を持ちます。
 
-※ 書き手の読み。SAFe の「all the skills necessary」と LeSS の「multiple specializations」は、技能の違う人が一つのチームにいる形を指す。
+出典: LeSS「Feature Teams」（people still specialize）。SAFe の all the skills も同じ形と読んだ。
 
 ## Agent には持ち場を問わず頼める
 

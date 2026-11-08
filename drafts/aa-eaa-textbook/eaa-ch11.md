@@ -13,6 +13,7 @@
 包含と同じ形の字: 分けた後の Cell を元の Cell の中に描いていない。親・子は由来の呼び名（core.md:43、第 5 章 p.「親・子は由来の呼び名」）。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: p.「切り替えが始まったら分ける」の注に、Adoption Guide「6.」（adoption-guide.md:281）の負荷・専門性との関係を書き手の読みとして書いた（負荷は第 5 章の追える大きさ、専門性は語と記録の違い）。p.「行き来が多すぎれば、まとめる」に「Mission と Contract に書いても」の条件を足し、第 7 章の判定・第 12 章の左の直し方と区別した。p.「人のチームの組み直しも同じ」の絵を「チーム・ART の中で、人が」にし、注に SAFe 2022 年版が value stream に沿った組み直しを戦略的な決定に置くことを書いた。p.「いつ分け直すかは、この本の読み」を外した。次章へのページの「職能で切っている」を「チームや会社で分かれている」にした（第 12 章の例は業務と会社で分かれている）。
 -->
 
 > 分け直すときも、まとめ直すときも、権限・資源・管理している対象・記録・進行中の Mission・残件を引き継ぐ。誰も持たない責任と、重なって決める権限を残さず、まだ果たしていない保証を消さない。
@@ -48,7 +49,7 @@
 
 分けたときに第 2 章の判定に通っても、仕事が増えると通らなくなることがあります。同じ判定を時々当て直し、切り替えが始まった Cell を分けます。
 
-※ 書き手の読み。Core は分離で何を引き継ぐかを決めるが、いつ分けるかは書いていない。
+※ 書き手の読み。Core はいつ分けるかを書いていない。Adoption Guide「6.」の負荷は第 5 章の追える大きさ、専門性は語と記録の違いとして、この判定で見る。
 
 ## 例：在庫の Cell に返品が加わる
 
@@ -73,14 +74,14 @@
   <rect x="40" y="70" width="240" height="160" rx="10" class="box"/><text x="160" y="160" class="t" text-anchor="middle" font-weight="700">Cell</text>
   <rect x="600" y="70" width="240" height="160" rx="10" class="box"/><text x="720" y="160" class="t" text-anchor="middle" font-weight="700">Cell</text>
   <g class="ln"><path d="M284,100 H596"/><path d="M596,130 H284"/><path d="M284,160 H596"/><path d="M596,190 H284"/></g>
-  <text x="440" y="90" class="tx" text-anchor="middle">Mission のたびに照会</text><text x="440" y="214" class="tx" text-anchor="middle">Contract の改訂が止まらない</text>
+  <text x="440" y="90" class="tx" text-anchor="middle">書いても、Mission のたびに照会</text><text x="440" y="214" class="tx" text-anchor="middle">Contract の改訂が止まらない</text>
   <rect x="140" y="270" width="600" height="60" rx="10" class="soft"/><text x="440" y="306" class="ts" text-anchor="middle">相手の文脈を読まないと進まないなら、二つの文脈は一つ</text>
 </svg>
 ```
 
-逆に、Mission のたびに照会が要り、Contract の改訂が止まらない Cell どうしは、切れ目が文脈の境目に合っていません。まとめ直します。
+逆に、Mission と Contract に書いても照会が要り、改訂が止まらない Cell どうしは、切れ目が文脈の境目に合っていません。まとめ直すか、引き直します。
 
-※ 書き手の読み。Core は再統合でも同じものを引き継ぐとするが、いつまとめるかは書いていない。出典: EAA Core 版 6「1. 責務と分割」。
+※ 書き手の読み。書けていないだけなら、直す先は Mission と Contract（第 7・12 章）。Core はいつまとめるかを書いていない。
 
 ## 分け直しは、判断の権限を渡すこと
 
@@ -215,7 +216,7 @@
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="60" width="360" height="220" rx="10" class="box"/><text x="220" y="96" class="t" text-anchor="middle" font-weight="700">組み直す前</text>
-  <text x="220" y="150" class="ts" text-anchor="middle">一つのチーム・一つの ART が、</text><text x="220" y="176" class="ts" text-anchor="middle">二つの価値を切り替えている</text>
+  <text x="220" y="150" class="ts" text-anchor="middle">一つのチーム・ART の中で、</text><text x="220" y="176" class="ts" text-anchor="middle">人が二つの価値を切り替えている</text>
   <path d="M400,170 H476" class="ln" marker-end="url(#arr)"/>
   <rect x="480" y="60" width="360" height="220" rx="10" class="box"/><text x="660" y="96" class="t" text-anchor="middle" font-weight="700">組み直すとき</text>
   <g class="ts"><text x="510" y="146">同じ判定で切り方を決める</text><text x="510" y="182">権限から残件までを引き継ぐ</text><text x="510" y="218">空白と重なりを残さない</text></g>
@@ -225,7 +226,7 @@
 
 中が人のチームでも、判定と引き継ぎは同じです。SAFe の ART を組み直すときも、切り方は第 2 章の判定で決め、移すものと空白を同じように確かめます。
 
-※ 書き手の読み（第 2 章 p.「人のチームにも同じ判定」）。SAFe が ART の組み直しに何を求めるかは、この本では当たっていない。
+※ 書き手の読み（第 2 章）。誰が組み直しを決めるかは書いていない。SAFe の 2022 年の版は、value stream に沿った組み直しを戦略的な決定に置く（付録）。
 
 ## サービスを切り直すときも同じ判定
 
@@ -260,22 +261,6 @@
 
 出典: EAA Core 版 6「5. 成果と記録」。
 
-## いつ分け直すかは、この本の読み
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="60" y="60" width="370" height="220" rx="10" class="box"/>
-  <text x="245" y="96" class="t" text-anchor="middle" font-weight="700">Core が定めること</text>
-  <g class="ts"><text x="90" y="146">分離・再統合で引き継ぐもの</text><text x="90" y="186">空白と重なりを残さない</text><text x="90" y="226">保証を消さない</text></g>
-  <rect x="450" y="60" width="370" height="220" rx="10" class="hl" style="fill:#fff"/>
-  <text x="635" y="96" class="t hc" text-anchor="middle" font-weight="700">この本の読み</text>
-  <g class="ts"><text x="480" y="146">切り替えが始まったら分け、</text><text x="480" y="176">行き来が多すぎればまとめる</text><text x="480" y="222" class="tx">所有者の考えを当てた読み</text></g>
-  <text x="440" y="336" class="ts sub" text-anchor="middle">第 3〜5 章「〜で切るのも Core の外」と同じ扱い</text>
-</svg>
-```
-
-分け直すときに何を引き継ぐかは Core の規定です。切り替えが始まったら分け、行き来が多すぎればまとめる、という時の決め方は、この本の読みです。
-
 ## Core はここまでしか決めていない
 
 ```svg
@@ -303,7 +288,7 @@
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="60" y="80" width="260" height="160" rx="10" class="box"/><text x="190" y="150" class="t" text-anchor="middle" font-weight="700">いまの分業</text><text x="190" y="186" class="ts" text-anchor="middle">職能で切っている</text>
+  <rect x="60" y="80" width="260" height="160" rx="10" class="box"/><text x="190" y="150" class="t" text-anchor="middle" font-weight="700">いまの分業</text><text x="190" y="186" class="ts" text-anchor="middle">チームや会社で分かれている</text>
   <rect x="560" y="80" width="260" height="160" rx="10" class="hl" style="fill:#fff"/><text x="690" y="150" class="t hc" text-anchor="middle" font-weight="700">記録を見る</text><text x="690" y="186" class="ts" text-anchor="middle">どこを越えて行き来しているか</text>
   <path d="M320,160 H556" class="ln" marker-end="url(#arr)"/>
   <text x="440" y="300" class="ts" text-anchor="middle">第 12 章</text>

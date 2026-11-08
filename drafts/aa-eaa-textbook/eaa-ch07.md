@@ -18,9 +18,10 @@
 「子Mission」「親Goal」（core.md:67）は Mission の分け方の呼び名で、Cell の親子ではない。
 絵: Mission を Cell の枠の中に描かない。頼む Cell と受ける Cell は横に並べる。
 例はすべて説明のために作った。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: (1) p.「書けたかは、聞きに戻るかで確かめる」を p.「聞きに戻る所は、書けていない所」にした。聞きに戻らないことは、推測で埋めた場合と区別できず証拠にならない（core.md:76）。直す先は Mission の欄とは限らず、Ontology・Contract もある。章の頭の要約も同じに。(2) p.「Authority は頼む側の持ち物まで」: 渡すものが無ければ「無い」と書く（core.md:65、長谷川 p.104）、中の直し方は「規範と Contract の範囲で」（core.md:62）、例の Contract 版 2 の改訂と採用はどちらの持ち物でもなく第 9 章の手続き、を書いた。(3) 例の Mission の依存する版に「完了には版 2 の成立が要る」を書き、p.「依存する版で、前提が動かない」と食い違わないようにした。版 2 は在庫も採用して成り立つ・所有者が自分で提起すると承認できない、を注に（長谷川 p.107）。(4) 二つの「受け入れ」: p.「作業や受け入れだけでは完了しない」を「変更の提案を受け入れた」、次のページを「成果の受け入れは頼んだ Cell が決める」にし、確かめる Cell が受け入れも決めるのは読みだと断った（片山 p.108・p.111）。(5) 例の Acceptance Evidence を、物流が残し在庫が物流を介さずに引き直せる形にした（第 8 章「残すのは作る側」と合わせた）。
 -->
 
-> Mission には Goal・Constraints・Authority・Acceptance Evidence と依存する版を書く。受ける Cell がこれだけを読み、頼む側に聞きに戻らずに Task に分けられるかで、書けたかを確かめる。
+> Mission には Goal・Constraints・Authority・Acceptance Evidence と依存する版を書く。受ける Cell が頼む側に聞きに戻った所は、まだ書けていない所として、そこを直す。
 
 ```svg
 <svg viewBox="0 0 880 300" width="880" height="300">
@@ -135,23 +136,24 @@ Mission には Goal・Constraints・Authority・Acceptance Evidence と依存す
 
 ※ 問いは書き手が作った。Core の字と照合した（Acceptance Evidence は「0.」と概念表、Authority は「2.」）。
 
-## 書けたかは、聞きに戻るかで確かめる
+## 聞きに戻る所は、書けていない所
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="50" width="340" height="220" rx="3" class="hl" style="fill:#fff"/><text x="210" y="86" class="t hc" text-anchor="middle" font-weight="700">書いた Mission</text>
-  <path d="M380,160 H496" class="ln" marker-end="url(#arr)"/><text x="438" y="150" class="tx" text-anchor="middle">これだけ渡す</text>
-  <rect x="500" y="50" width="340" height="220" rx="10" class="box"/><text x="670" y="86" class="t" text-anchor="middle" font-weight="700">受ける Cell</text>
-  <use href="#i-ok" x="520" y="122" width="22" height="22"/><text x="552" y="139" class="ts">Task に分けられる</text>
-  <use href="#i-no" x="520" y="182" width="22" height="22"/><text x="552" y="199" class="ts">頼む側に聞きに戻る</text>
-  <text x="552" y="229" class="tx">→ その欄がまだ書けていない</text>
-  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">受ける Cell が自分の文脈だけで進められれば、書けている</text>
+  <rect x="40" y="50" width="300" height="220" rx="10" class="box"/><text x="190" y="86" class="t" text-anchor="middle" font-weight="700">受ける Cell</text>
+  <use href="#i-no" x="70" y="140" width="24" height="24"/><text x="104" y="158" class="ts">頼む側に聞きに戻った所</text>
+  <path d="M344,160 H436" class="ln" marker-end="url(#arr)"/>
+  <g class="ts"><text x="460" y="96" font-weight="700">直す先</text>
+  <text x="460" y="140">Mission の欄のこと</text><text x="700" y="140" class="hc">→ その欄</text>
+  <text x="460" y="184">語の意味のこと</text><text x="700" y="184" class="hc">→ Ontology</text>
+  <text x="460" y="228">取り決めの条件のこと</text><text x="700" y="228" class="hc">→ Contract</text></g>
+  <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">聞きに戻らないだけでは、書けた証拠にならない</text>
 </svg>
 ```
 
-受ける Cell が、これだけを読んで Task に分けられれば、書けています。頼む側に聞きに戻る所があれば、その欄はまだ書けていません。
+受ける Cell が聞きに戻った所は、まだ書けていない所です。直す先は、欄のことなら Mission、語の意味なら Ontology、取り決めなら Contract です。
 
-※ 書き手の読み。所有者の「コンテキストスイッチが起きないように切り分ける」を、渡し方の判定にした。
+※ 書き手の読み。推測で埋めても聞きに戻らないので、戻らないことは証拠にならない。推測で越えることは Core「3.」が禁じる。
 
 ## 例：追跡番号を出荷結果に載せる
 
@@ -163,8 +165,8 @@ Mission には Goal・Constraints・Authority・Acceptance Evidence と依存す
     <text x="60" y="72" font-weight="700">Goal</text><text x="270" y="72">在庫が、出荷結果から配送業者の追跡番号を読める</text>
     <text x="60" y="112" font-weight="700">Constraints</text><text x="270" y="112">15 時締めと当日出荷を変えない</text><text x="270" y="134">出荷結果のいまの欄の意味を変えない</text>
     <text x="60" y="174" font-weight="700">Authority</text><text x="270" y="174">使ってよい：在庫の結合テスト環境に出荷結果を送る</text><text x="270" y="196">使わない：在庫の本番の引当データ</text>
-    <text x="60" y="236" font-weight="700">Acceptance Evidence</text><text x="270" y="236">結合テストの出荷結果 100 件で、在庫が配送業者の</text><text x="270" y="258">照会から追跡番号を引けた記録</text>
-    <text x="60" y="296" font-weight="700">依存する版</text><text x="270" y="296">在庫と物流の Contract 版 1・共有する Ontology 版 1</text>
+    <text x="60" y="236" font-weight="700">Acceptance Evidence</text><text x="270" y="236">物流が結合テストで送った出荷結果 100 件。在庫が</text><text x="270" y="258">配送業者の照会で、物流を介さずに引き直せる形</text>
+    <text x="60" y="296" font-weight="700">依存する版</text><text x="270" y="296">Contract 版 1・Ontology 版 1（完了には版 2 の成立が要る）</text>
     <text x="60" y="332" class="sub">背景</text><text x="270" y="332" class="sub">届け先からの「荷物はどこか」に、在庫の窓口が答えたい</text>
   </g>
   <path d="M50,90 H830 M50,152 H830 M50,214 H830 M50,276 H830 M50,312 H830" class="lt"/>
@@ -201,15 +203,15 @@ Mission を受けた物流は、それを実現する作業の単位を Task と
   <rect x="70" y="110" width="280" height="44" rx="3" class="hl" style="fill:#fff"/><text x="210" y="138" class="ts hc" text-anchor="middle">結合テスト環境を使わせる</text>
   <text x="210" y="200" class="ts" text-anchor="middle">→ Authority に書く</text>
   <rect x="500" y="50" width="340" height="230" rx="10" class="box"/><text x="670" y="86" class="t" text-anchor="middle" font-weight="700">物流の Cell がもともと持つもの</text>
-  <rect x="530" y="110" width="280" height="44" rx="6" class="soft"/><text x="670" y="138" class="ts" text-anchor="middle">自分の処理をどう直すか</text>
+  <rect x="530" y="110" width="280" height="44" rx="6" class="soft"/><text x="670" y="138" class="ts" text-anchor="middle">自分の処理をどう直すか</text><text x="670" y="176" class="tx" text-anchor="middle">規範と Contract の範囲で</text>
   <text x="670" y="200" class="ts" text-anchor="middle">→ Authority に書かない</text>
-  <rect x="40" y="306" width="800" height="50" rx="6" class="xl" style="fill:#fff"/><use href="#i-no" x="60" y="319" width="24" height="24"/><text x="100" y="338" class="ts xc">頼む側が持っていない権限（たとえば配送業者のシステム）は、書いて渡せない</text>
+  <rect x="40" y="306" width="800" height="50" rx="6" class="xl" style="fill:#fff"/><use href="#i-no" x="60" y="319" width="24" height="24"/><text x="100" y="338" class="ts xc">頼む側が持っていない権限は、書いて渡せない。渡すものが無ければ「無い」と書く</text>
 </svg>
 ```
 
-Authority に書くのは、頼む側が持っていて受ける側に使わせるものです。物流の中の処理をどう直すかは、物流がもともと自分で決めるので書きません。
+Authority には、頼む側が持っていて使わせるものを書き、無ければ無いと書きます。中の直し方は、規範と Contract の範囲で物流が決めるので書きません。
 
-出典: EAA Core 版 6「2. 自治と権限」。※ 中の作り方を書かないのは、各 Cell が内部方式を決める行と委任の行から書き手が導いた。
+出典: EAA Core 版 6「2. 自治と権限」。※ 書き手が導いた。例の Contract 版 2 の改訂と採用は、どちらの持ち物でもなく、第 9 章の手続きで決める。
 
 ## 依存する版で、前提が動かない
 
@@ -226,9 +228,9 @@ Authority に書くのは、頼む側が持っていて受ける側に使わせ�
 </svg>
 ```
 
-Mission に依存する版を書くと、途中で新しい版が出ても、受けた側は書かれた版の上で進められます。何を前提に頼んだかを、聞きに戻らずに分かります。
+Mission に依存する版を書くと、途中で別の版が出ても、受けた側は書かれた版の上で進められます。例では版 1 の上で作り、完了には版 2 の成立が要ります。
 
-出典: EAA Core 版 6「3. 意味と合意」（依存する版を特定する。新版の公開と採用は別で、自動追随しない）。
+出典: EAA Core 版 6「3. 意味と合意」。※ 版 2 は在庫も採用して成り立つので、物流だけでは完了できない（第 9 章）。
 
 ## 目的を変えるなら、提案する
 
@@ -254,7 +256,7 @@ Mission に依存する版を書くと、途中で新しい版が出ても、受
 <svg viewBox="0 0 880 380" width="880" height="380">
   <g class="ts">
     <rect x="40" y="40" width="390" height="110" rx="6" class="h"/><text x="235" y="86" class="on" text-anchor="middle" font-weight="700">Outcome の達成</text><text x="235" y="114" class="on" text-anchor="middle">在庫が追跡番号を読める</text>
-    <rect x="450" y="40" width="390" height="110" rx="6" class="h"/><text x="645" y="86" class="on" text-anchor="middle" font-weight="700">Acceptance Evidence の充足</text><text x="645" y="114" class="on" text-anchor="middle">100 件を照会で引けた記録</text>
+    <rect x="450" y="40" width="390" height="110" rx="6" class="h"/><text x="645" y="86" class="on" text-anchor="middle" font-weight="700">Acceptance Evidence の充足</text><text x="645" y="114" class="on" text-anchor="middle">100 件を在庫が照会で引き直せた</text>
     <rect x="40" y="170" width="390" height="110" rx="6" class="box"/><text x="235" y="216" text-anchor="middle" font-weight="700">Contract の更新と判断の記録</text><text x="235" y="244" text-anchor="middle">追跡番号の欄を足した版 2 の成立</text>
     <rect x="450" y="170" width="390" height="110" rx="6" class="box"/><text x="645" y="216" text-anchor="middle" font-weight="700">権限違反の解消</text><text x="645" y="244" text-anchor="middle">本番の引当データに触れていない</text>
   </g>
@@ -264,7 +266,7 @@ Mission に依存する版を書くと、途中で新しい版が出ても、受
 
 完了には、Outcome の達成、Acceptance Evidence の充足、必要な Contract の更新と判断の記録、権限違反の解消のすべてが要ります。
 
-出典: EAA Core 版 6「5. 成果と記録」。※ 例では追跡番号が Contract 版 1 の入出力に無いので、版 2 の成立が要る。
+出典: EAA Core 版 6「5. 成果と記録」。※ 例では追跡番号が Contract 版 1 の入出力に無いので、版 2 の成立が要る。所有者が自分で提起すると承認できない（第 10 章）。
 
 ## 作業や受け入れだけでは完了しない
 
@@ -272,7 +274,7 @@ Mission に依存する版を書くと、途中で新しい版が出ても、受
 <svg viewBox="0 0 880 380" width="880" height="380">
   <g class="ts" text-anchor="middle">
     <rect x="40" y="60" width="240" height="70" rx="6" class="soft"/><text x="160" y="102">作業をやり終えた</text>
-    <rect x="320" y="60" width="240" height="70" rx="6" class="soft"/><text x="440" y="102">変更を受け入れた</text>
+    <rect x="320" y="60" width="240" height="70" rx="6" class="soft"/><text x="440" y="102">変更の提案を受け入れた</text>
     <rect x="600" y="60" width="240" height="70" rx="6" class="soft"/><text x="720" y="102">PR を merge した</text>
   </g>
   <use href="#i-no" x="146" y="146" width="28" height="28"/><use href="#i-no" x="426" y="146" width="28" height="28"/><use href="#i-no" x="706" y="146" width="28" height="28"/>
@@ -283,11 +285,11 @@ Mission に依存する版を書くと、途中で新しい版が出ても、受
 </svg>
 ```
 
-作業をやり終えたことや変更を受け入れたことだけでは、完了しません。PR の merge も同じです。合意した確かめの条件と、必要な職務分離を保ちます。
+作業をやり終えたことや、変更の提案を受け入れたことだけでは、完了しません。PR の merge も同じです。合意した確かめの条件と、必要な職務分離を保ちます。
 
 出典: EAA Core 版 6「5. 成果と記録」、EAA Delivery Guide「8.」（PR merge は Mission の完了と同義ではない）。
 
-## 受け入れは頼んだ Cell が決める
+## 成果の受け入れは頼んだ Cell が決める
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
@@ -300,9 +302,9 @@ Mission に依存する版を書くと、途中で新しい版が出ても、受
 </svg>
 ```
 
-受け入れを決めるのは、Acceptance Evidence を受け取る頼んだ Cell です。物流が「できました」と言っても、在庫は記録で確かめてから受け入れます。
+成果の受け入れを決めるのは、Acceptance Evidence を受け取る頼んだ Cell です。物流の「できました」の後も、在庫は記録で確かめて受け入れます。
 
-出典: EAA Core 版 6「0. 目的と範囲」、概念表「Acceptance Evidence」。確かめ方は第 8 章で見る。
+出典: EAA Core 版 6「0.」、概念表「Acceptance Evidence」。※ 確かめる Cell が受け入れも決める、は書き手の読み。前のページの変更の提案を受け入れるのは物流。
 
 ## 決めたことは、記録に戻す
 

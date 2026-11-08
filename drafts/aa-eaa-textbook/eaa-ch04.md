@@ -12,6 +12,7 @@ Ontology の扱いは 2d0ca30 の第 2 章・第 6 章の直し（ef92a3f「2 �
 p.「変わる理由も分かれる」は書き手の読み。目次の 1 行（使う語・見る記録・変わる理由が違う）の字による。
 p.「ドメインで切るのも Core の外」は第 3 章と同じ扱い。
 絵の Cell の枠は入れ子にしない（core.md:43）。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: p.「境目で切ると語が閉じる」の「在庫の意味だけを読む」が、両側が一つの Ontology を持つ（この章の後半・第 8 章）と両立していなかった。「自分の仕事の中では」に限り、境目では Ontology の対応で自分の意味に置き換えて読む、と注に書いた。p.「同じ定義を両側が共有して持つ、と読む」の根拠を core.md:94（「共有する Ontology」と限っている）から core.md:21「境界の両側が保持する共通語の定義」に替え、共有しない Ontology もありうると注に書いた。「各 Cell の中の語の使い方は Ontology と呼ばない」は Core に根拠が無いので外した。p.「ドメインで切るのも Core の外」を外した。
 -->
 
 ```svg
@@ -67,15 +68,17 @@ p.「ドメインで切るのも Core の外」は第 3 章と同じ扱い。
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="60" y="60" width="340" height="220" rx="10" class="hl" style="fill:#fff"/><text x="230" y="96" class="t hc" text-anchor="middle" font-weight="700">在庫の Cell</text>
-  <text x="230" y="160" class="ts" text-anchor="middle">「出荷日」＝引当を確定した日</text><text x="230" y="196" class="tx" text-anchor="middle">在庫の意味だけを読む</text>
+  <text x="230" y="160" class="ts" text-anchor="middle">「出荷日」＝引当を確定した日</text><text x="230" y="196" class="tx" text-anchor="middle">自分の仕事は在庫の意味で</text>
   <rect x="480" y="60" width="340" height="220" rx="10" class="hl" style="fill:#fff"/><text x="650" y="96" class="t hc" text-anchor="middle" font-weight="700">物流の Cell</text>
-  <text x="650" y="160" class="ts" text-anchor="middle">「出荷日」＝便に積んだ日</text><text x="650" y="196" class="tx" text-anchor="middle">物流の意味だけを読む</text>
+  <text x="650" y="160" class="ts" text-anchor="middle">「出荷日」＝便に積んだ日</text><text x="650" y="196" class="tx" text-anchor="middle">自分の仕事は物流の意味で</text>
   <path d="M440,40 V300" class="xl dash"/>
-  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">どちらの Cell も、意味を切り替えずに済む</text>
+  <text x="440" y="336" class="t" text-anchor="middle" font-weight="700">自分の仕事の中では、意味を切り替えずに済む</text>
 </svg>
 ```
 
-ドメインの境目で切ると、Cell は自分のドメインの語と記録だけで仕事を進められます。在庫の Cell は、在庫の意味の「出荷日」だけを読みます。
+ドメインの境目で切ると、Cell は自分のドメインの語と記録で仕事を進められます。在庫の Cell の中では、「出荷日」は在庫の意味だけです。
+
+※ 境目で相手の記録を読むときは、両側が持つ Ontology の対応で、自分の意味に置き換えて読む（この章の後半と第 8 章）。
 
 ## 変わる理由も分かれる
 
@@ -184,13 +187,13 @@ p.「ドメインで切るのも Core の外」は第 3 章と同じ扱い。
   <rect x="585" y="125" width="150" height="60" rx="3" class="hl" style="fill:#fff"/><text x="660" y="160" class="ts hc" text-anchor="middle">共有する Ontology</text>
   <path d="M570,155 H585 M735,155 H750" class="ln"/>
   <use href="#i-ok" x="574" y="252" width="22" height="22"/><text x="606" y="270" class="ts okc">この本の読み</text>
-  <text x="440" y="344" class="ts sub" text-anchor="middle">Core が Ontology を、Contract と同じく Cell のあいだで共有する文書に数えているから</text>
+  <text x="440" y="344" class="ts sub" text-anchor="middle">Core が Ontology を「境界の両側が保持する共通語の定義」と書いているから</text>
 </svg>
 ```
 
-Core の「両側が保持する」は、各側が別の定義を持つとも読めます。Ontology は共有する文書に数えられているので、この本は同じ定義を両側が持つと読みます。
+「両側が保持する」は、各側が別の定義を持つとも読めます。Core は Ontology を「共通語の定義」と呼ぶので、この本は、同じ定義を両側が持つと読みます。
 
-出典: EAA Core 版 6「0.」、概念表「Ontology」、「4.」。※ これは読みで、Core の字が決めたことではない。各 Cell の中の語の使い方は Ontology と呼ばない。
+出典: EAA Core 版 6「0.」「4.」。※ 読みで、Core の字が決めたことではない。Core は「共有する Ontology」と限るので、共有しないものもありうる。
 
 ## 違いは消さずに対応を書く
 
@@ -227,22 +230,6 @@ Ontology は、在庫の「出荷日」と物流の「出荷日」を一つの�
 相手の語の意味が分からないとき、推測で読み進めません。照会か変更提案で解き、分かった対応を Ontology に足します。
 
 出典: EAA Core 版 6「0. 目的と範囲」「3. 意味と合意」。
-
-## ドメインで切るのも Core の外
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="60" y="60" width="370" height="220" rx="10" class="box"/>
-  <text x="245" y="96" class="t" text-anchor="middle" font-weight="700">Core が定めること</text>
-  <g class="ts"><text x="90" y="146">責務は Profile に書く</text><text x="90" y="186">またぐ語は Ontology で読む</text></g>
-  <rect x="450" y="60" width="370" height="220" rx="10" class="hl" style="fill:#fff"/>
-  <text x="635" y="96" class="t hc" text-anchor="middle" font-weight="700">この本の提案</text>
-  <g class="ts"><text x="480" y="146">ドメインの境目で Cell を分ける</text><text x="480" y="192" class="tx">所有者の考え</text></g>
-  <text x="440" y="336" class="ts sub" text-anchor="middle">第 3 章「価値で切るのも Core の外」と同じ扱い</text>
-</svg>
-```
-
-Core は、責務を Profile に書き、またぐ語を Ontology で読みます。ドメインで Cell を分けることは所有者の考えで、Core の規定ではありません。
 
 ## 次章へ：権限で切る
 

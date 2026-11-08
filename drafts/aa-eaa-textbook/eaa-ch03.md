@@ -12,6 +12,7 @@
 p.「切り替えは外から見えない」は、第 0 章の問い「人間が管理し切れるか」と価値の問いをつなぐ書き手の導出。注に書いた。
 p.「価値で切るのも Core の外」: Core は Constitution を価値を定める規範として置くが、価値ごとに Cell を分けることは書かない（core.md:52 は分割を定義するだけ）。第 0 章 p.「切り方は、Core の外の提案」と同じ扱い。
 絵の Cell の枠は入れ子にしない（core.md:43）。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: p.「価値は Constitution に書く」で、各 Cell の規範を Constitution と読むのは推論なので、注で断った（core.md:37 に「Cell ごと」が無い）。p.「サービスの数とは揃わない」の注の「（Profile）」を外した（Profile の定義は第 4 章。長谷川 p.43）。p.「価値で切るのも Core の外」を外した（第 0 章の注にまとめた）。
 -->
 
 ```svg
@@ -152,7 +153,7 @@ p.「価値で切るのも Core の外」: Core は Constitution を価値を定
 
 価値の数とサービスの数は揃いません。止めないことを取る決済と請求は、一つの Cell に集めてかまいません。
 
-※ Core は、一つの Cell が複数の責務（Profile）を担ってよいとする。出典: EAA Core 版 6「1. 責務と分割」。例は説明のために作った。
+※ Core は、一つの Cell が複数の責務を担ってよいとする。出典: EAA Core 版 6「1. 責務と分割」。例は説明のために作った。
 
 ## 価値は Constitution に書く
 
@@ -168,9 +169,9 @@ p.「価値で切るのも Core の外」: Core は Constitution を価値を定
 </svg>
 ```
 
-価値は一つのループに置かず、各 Cell の規範に書きます。Core はこの規範を Constitution と呼び、目的・価値・制約・権限・禁止事項を定めます。
+価値は一つのループに置かず、各 Cell の規範に書きます。Core は、目的・価値・制約・権限・禁止事項を定める規範を Constitution と呼びます。
 
-出典: EAA Core 版 6 の概念表「Constitution」。
+出典: EAA Core 版 6 の概念表「Constitution」。※ 各 Cell の規範を Constitution と読むのは書き手の読み。Core の定義に「Cell ごと」の字は無い。
 
 ## 規範の範囲で中を決める
 
@@ -240,24 +241,6 @@ p.「価値で切るのも Core の外」: Core は Constitution を価値を定
 ```
 
 止めないことを取る仕事どうしでも、在庫と物流では読む語と記録が違います。価値で切った後もまだ文脈が混ざるなら、ドメインでも切ります。
-
-## 価値で切るのも Core の外
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="60" y="60" width="370" height="220" rx="10" class="box"/>
-  <text x="245" y="96" class="t" text-anchor="middle" font-weight="700">Core が定めること</text>
-  <g class="ts"><text x="90" y="146">Constitution は</text><text x="90" y="172">価値を定める規範</text><text x="90" y="218">各 Cell は規範の範囲で決める</text></g>
-  <rect x="450" y="60" width="370" height="220" rx="10" class="hl" style="fill:#fff"/>
-  <text x="635" y="96" class="t hc" text-anchor="middle" font-weight="700">この本の提案</text>
-  <g class="ts"><text x="480" y="146">価値ごとに Cell を分ける</text><text x="480" y="192" class="tx">所有者の考え</text></g>
-  <text x="440" y="336" class="ts sub" text-anchor="middle">第 0 章「切り方は、Core の外の提案」と同じ扱い</text>
-</svg>
-```
-
-Core は、Constitution を価値を定める規範として置きます。価値ごとに Cell を分けることは所有者の考えで、Core の規定ではありません。
-
-出典: EAA Core 版 6 の概念表「Constitution」、同「1. 責務と分割」（分割を定めるが、どこで分けるかは書いていない）。
 
 ## 次章へ：ドメインで切る
 

@@ -21,6 +21,7 @@ Operator: 新しい構成では第 0〜11 章に Operator の字が無い（grep
 包含と同じ形の字: 採用の記録を全体の側が一つ持つ形は書いていない（core.md:123）。delivery-guide.md・role-model.md 5 節の Enterprise は使っていない（旧第 12 章の注と同じ）。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: 章の概要の絵の「1」「2」を「最初に」「次に」にした（p.「導入の順序」の 1 と二つあった）。p.「導入の順序」の注に、記録を見る一歩は 1 段目の前に足す読みで 1〜6 段目の順は変えない、を書いた。p.「一つのあいだから試す」の「一番多いあいだ」は 7 節に無いので書き手の読みと断った。p.「中の作り方は、そのまま残す」の「SAFe の ART」を「ART の中の SAFe」にし、第 11 章で ART を Cell とする扱いとつないだ（原文は「SAFe ART」と注に）。p.「最初に決めること」の注に、中の規範に所有者がいない Cell は採用の前に中の手続きで決める、を書いた（第 10 章で中の規範には所有者の要求が及ばない。河野 p.191〜194）。
 -->
 
 > 最初に、いまの分業でチームの境目を越えて行き来している記録を見る。中の作り方は残し、行き来の多い一つのあいだから Contract に書き、Core の採用は各 Cell の規範の所有者が承認して記録する。
@@ -30,12 +31,12 @@ Operator: 新しい構成では第 0〜11 章に Operator の字が無い（grep
   <rect x="30" y="50" width="150" height="120" rx="10" class="box"/><text x="105" y="104" class="ts" text-anchor="middle" font-weight="700">在庫</text><text x="105" y="130" class="tx" text-anchor="middle">Scrum</text>
   <rect x="300" y="50" width="150" height="120" rx="10" class="box"/><text x="375" y="104" class="ts" text-anchor="middle" font-weight="700">物流</text><text x="375" y="130" class="tx" text-anchor="middle">委託先の工程</text>
   <g class="ln"><path d="M184,80 H296"/><path d="M296,105 H184"/><path d="M184,130 H296"/></g>
-  <text x="240" y="200" class="ts hc" text-anchor="middle" font-weight="700">1　行き来を記録で見る</text>
+  <text x="240" y="200" class="ts hc" text-anchor="middle" font-weight="700">最初に　行き来を記録で見る</text>
   <path d="M470,110 H520" class="ln" marker-end="url(#arr)"/>
   <rect x="540" y="50" width="120" height="120" rx="10" class="box"/><text x="600" y="104" class="ts" text-anchor="middle" font-weight="700">在庫</text>
   <rect x="740" y="50" width="120" height="120" rx="10" class="box"/><text x="800" y="104" class="ts" text-anchor="middle" font-weight="700">物流</text>
   <rect x="664" y="86" width="72" height="48" rx="3" class="hl" style="fill:#fff"/><text x="700" y="115" class="tx hc" text-anchor="middle">Contract</text>
-  <text x="700" y="200" class="ts" text-anchor="middle">2　一つのあいだを書く</text>
+  <text x="700" y="200" class="ts" text-anchor="middle">次に　一つのあいだを書く</text>
   <text x="440" y="262" class="t" text-anchor="middle" font-weight="700">中は今のまま。替わるのは、あいだの線から</text>
 </svg>
 ```
@@ -100,7 +101,7 @@ Operator: 新しい構成では第 0〜11 章に Operator の字が無い（grep
 
 最初は、行き来の一番多いあいだ一本だけを替えます。ほかのあいだは今のままにし、一本で確かめてから次へ広げます。
 
-出典: EAA Adoption Guide「7.」（適用例。gradual substitution を「少しずつ置き換える」と書いた）。※ 図の組は説明のための仮定です。
+出典: EAA Adoption Guide「7.」（gradual substitution を「少しずつ置き換える」と書いた）。※ 一番多いあいだから選ぶのは書き手の読み。図の組は仮定。
 
 ## 中の作り方は、そのまま残す
 
@@ -108,7 +109,7 @@ Operator: 新しい構成では第 0〜11 章に Operator の字が無い（grep
 <svg viewBox="0 0 880 380" width="880" height="380">
   <g class="ts" text-anchor="middle">
     <rect x="20" y="80" width="150" height="120" rx="10" class="box"/><text x="95" y="134">Scrum</text>
-    <rect x="195" y="80" width="150" height="120" rx="10" class="box"/><text x="270" y="134">SAFe の ART</text>
+    <rect x="195" y="80" width="150" height="120" rx="10" class="box"/><text x="270" y="134">ART の中の SAFe</text>
     <rect x="370" y="80" width="150" height="120" rx="10" class="box"/><text x="445" y="134">計画型の工程</text>
     <rect x="545" y="80" width="150" height="120" rx="10" class="box"/><text x="620" y="134">委託先の工程</text>
     <rect x="720" y="80" width="150" height="120" rx="10" class="box"/><text x="795" y="134">パッケージ導入</text>
@@ -119,9 +120,9 @@ Operator: 新しい構成では第 0〜11 章に Operator の字が無い（grep
 </svg>
 ```
 
-Scrum、SAFe の ART、計画型の工程、委託先の工程、パッケージの導入は、どれもその Cell の中の作り方として残せます。
+Scrum、ART の中の SAFe の進め方、計画型の工程、委託先の工程、パッケージの導入は、どれもその Cell の中の作り方として残せます。
 
-出典: EAA Adoption Guide「7.」（適用例）。Predictive を計画型と書いた。ART は SAFe の、チームを束ねた単位（第 1 章）。
+出典: EAA Adoption Guide「7.」（原文は「SAFe ART」）。Predictive を計画型と書いた。ART を一つの Cell とすれば、その中の進め方（第 11 章）。
 
 ## 導入の順序
 
@@ -142,7 +143,7 @@ Scrum、SAFe の ART、計画型の工程、委託先の工程、パッケージ
 
 Core でつなぎ、中の作り方を残し、Evidence を観測し、責務を Profile に書き、独立した判断が要る所だけを分け、要らない制約だけを外します。
 
-出典: EAA Adoption Guide「7.」（適用例）。※ この章の最初の一歩（記録を見る）は、1 段目でどこをつなぐかを決めるための、この本の読み。
+出典: EAA Adoption Guide「7.」（適用例）。※ 記録を見る一歩は、どこをつなぐかを決めるために、この本が 1 段目の前に足す読み。1〜6 段目の順は変えない。
 
 ## 例：在庫と物流を Core でつなぐ
 
@@ -198,7 +199,7 @@ Core でつなぎ、中の作り方を残し、Evidence を観測し、責務を
 
 始めるあいだを選んだら、その Contract の所有者、各 Cell で Core を採用するかの承認者、受け入れを確かめる Evidence を決めます。
 
-出典: EAA Core 版 6「4.」「6.」。※ 1 行目は書き手の読み。所有者は第 6 章、採用は次のページから。
+出典: EAA Core 版 6「4.」「6.」。※ 1 行目は書き手の読み。中の規範に所有者がいない Cell は、採用の前に中の手続きで決める（第 10 章）。
 
 ## Core の採用は、Cell ごとに決める
 

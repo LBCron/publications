@@ -12,6 +12,7 @@ p.「責任を負う人間が追える大きさ」は第 0 章の問い「人間
 p.「例：最後に誰が決めるか」は、目次の通読で松田（最後はテックリードが決めているのは上書きか）が止まった所に、この章の中身で答えた。例の注文画面・在庫連携は @reader のペルソナの設定から借りた形で、書き手が作った例として書いた。
 p.「自分の権限は自分で広げない」は core.md:96。保ち方は群四の第 10 章。
 絵: 親 Cell と子 Cell は横に並べ、子を親の枠の中に描かない（core.md:43）。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: p.「渡した判断は相手のもの」の「版」を Profile の版と書いた（core.md:53・30。松田・長谷川 p.68）。p.「断ることと義務を捨てることは別」に core.md:70 の後半（既存権限で判断できない問題）を足した。p.「責任者が追える大きさ」: 文脈が一つのまま追えないとき第 2 章では切らず第 5 章では切る、が閉じていなかった。「文脈で切れる所があれば分け、無ければ責務ごとに責任者を置く」とし、正当な判断責任者は Profile ごと（core.md:49・50）と注に書いた。p.「例：最後に誰が決めるか」に、一つか二つかは第 2 章の判定で決める・一つの Cell ならその判断の責務の責任者が決める、を書いた（書き手の読み。松田 p.75）。p.「自分の権限は自分で広げない」の主語を core.md:96 の「実行者」にした。p.「権限で切るのも Core の外」を外した。
 -->
 
 ```svg
@@ -74,17 +75,17 @@ p.「自分の権限は自分で広げない」は core.md:96。保ち方は群�
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
   <rect x="40" y="60" width="340" height="200" rx="10" class="hl" style="fill:#fff"/><text x="210" y="96" class="t hc" text-anchor="middle" font-weight="700">渡した Cell</text>
-  <rect x="80" y="140" width="260" height="40" rx="6" class="x"/><text x="210" y="166" class="ts on" text-anchor="middle">後で範囲が変わる（版 2）</text>
+  <rect x="80" y="140" width="260" height="40" rx="6" class="x"/><text x="210" y="166" class="ts on" text-anchor="middle">後で範囲が変わる（Profile 版 2）</text>
   <rect x="500" y="60" width="340" height="200" rx="10" class="hl" style="fill:#fff"/><text x="670" y="96" class="t hc" text-anchor="middle" font-weight="700">受け取った Cell</text>
-  <rect x="540" y="140" width="260" height="40" rx="6" class="soft"/><text x="670" y="166" class="ts" text-anchor="middle">範囲は版 1 のまま</text>
+  <rect x="540" y="140" width="260" height="40" rx="6" class="soft"/><text x="670" y="166" class="ts" text-anchor="middle">範囲は Profile 版 1 のまま</text>
   <text x="670" y="220" class="tx" text-anchor="middle">版 2 を採用するまで変わらない</text>
   <text x="440" y="330" class="t" text-anchor="middle" font-weight="700">渡したものは、受け取った Cell のもの</text>
 </svg>
 ```
 
-渡した責務と判断権限は、受け取った Cell のものになります。渡した側の範囲が後で変わっても、受け取った側が新しい版を採用するまで変わりません。
+渡した責務と判断権限は、受け取った Cell のものになります。渡した側の範囲が後で変わっても、受け取った側が Profile の新しい版を採用するまで変わりません。
 
-出典: EAA Core 版 6「1. 責務と分割」。版の採用は第 9 章で見る。
+出典: EAA Core 版 6「1. 責務と分割」。Profile は第 4 章、版の採用は第 9 章で見る。
 
 ## 親・子は由来の呼び名
 
@@ -161,11 +162,11 @@ p.「自分の権限は自分で広げない」は core.md:96。保ち方は群�
   <use href="#i-ok" x="218" y="140" width="24" height="24"/><text x="230" y="200" class="ts" text-anchor="middle">受けた Cell が決めてよい</text>
   <rect x="460" y="60" width="380" height="220" rx="10" class="xl" style="fill:#fff"/><text x="650" y="96" class="t xc" text-anchor="middle" font-weight="700">合意した義務を捨てる</text>
   <use href="#i-no" x="638" y="140" width="24" height="24"/><text x="650" y="200" class="ts" text-anchor="middle">一方的にはしない</text>
-  <text x="440" y="336" class="ts sub" text-anchor="middle">果たせないときは示して、正当な判断主体との調整に戻す</text>
+  <text x="440" y="336" class="ts sub" text-anchor="middle">果たせない・自分の権限で判断できないときは示して、正当な判断主体との調整に戻す</text>
 </svg>
 ```
 
-提案を受け入れないことと、合意した義務を一方的に捨てることは別です。果たせないときは、それを示して、正当な判断主体との調整に戻します。
+提案を受け入れないことと、合意した義務を一方的に捨てることは別です。果たせないときや、自分の権限で判断できないときは、示して正当な判断主体との調整に戻します。
 
 出典: EAA Core 版 6「2. 自治と権限」。
 
@@ -180,13 +181,13 @@ p.「自分の権限は自分で広げない」は core.md:96。保ち方は群�
   <path d="M430,170 H470" class="ln" marker-end="url(#arr)"/>
   <rect x="480" y="50" width="170" height="240" rx="10" class="hl" style="fill:#fff"/><rect x="525" y="70" width="80" height="40" rx="6" class="h"/><text x="565" y="96" class="ts on" text-anchor="middle">責任者</text><g class="tx" text-anchor="middle"><text x="565" y="170">判断</text><text x="565" y="210">判断</text></g>
   <rect x="670" y="50" width="170" height="240" rx="10" class="hl" style="fill:#fff"/><rect x="715" y="70" width="80" height="40" rx="6" class="h"/><text x="755" y="96" class="ts on" text-anchor="middle">責任者</text><g class="tx" text-anchor="middle"><text x="755" y="170">判断</text><text x="755" y="210">判断</text></g>
-  <text x="440" y="340" class="t" text-anchor="middle" font-weight="700">追えないなら、判断の権限を渡して分ける</text>
+  <text x="440" y="340" class="t" text-anchor="middle" font-weight="700">追えないなら、文脈の切れ目で権限を渡して分ける</text>
 </svg>
 ```
 
-Cell の範囲は、その判断の責任を負う人間が、中で下される判断を追える大きさに収めます。追えないなら、判断の権限を渡して分けます。
+Cell の範囲は、判断の責任者が中の判断を追える大きさに収めます。追えないとき、文脈で切れる所があれば分け、無ければ責務ごとに責任者を置きます。
 
-※ 第 0 章の問い「人間が管理し切れるか」から書き手が導いた。Core は Cell の大きさを書いていない。Core の字では、責任を負う人は「正当な判断責任者」。
+※ 第 0 章の問いから書き手が導いた。Core は大きさを書かず、正当な判断責任者を責務（Profile）ごとに明らかにするとする（「1.」）。
 
 ## 例：最後に誰が決めるか
 
@@ -197,13 +198,13 @@ Cell の範囲は、その判断の責任を負う人間が、中で下される
   <rect x="500" y="60" width="340" height="200" rx="10" class="hl" style="fill:#fff"/><text x="670" y="96" class="t hc" text-anchor="middle" font-weight="700">在庫連携の Cell</text>
   <rect x="620" y="120" width="100" height="40" rx="6" class="h"/><text x="670" y="146" class="ts on" text-anchor="middle">責任者 B</text>
   <g opacity=".7"><path d="M496,190 H384" class="xl dash" marker-end="url(#arr-x)"/><text x="440" y="180" class="tx xc" text-anchor="middle">B が決め直す</text><use href="#i-no" x="428" y="198" width="24" height="24"/></g>
-  <text x="440" y="310" class="ts" text-anchor="middle">別の Cell なら、B は提案する。一つの Cell なら、A と B で責任を共有する</text>
+  <text x="440" y="296" class="ts" text-anchor="middle">一つか二つかは、第 2 章の判定で決める</text><text x="440" y="326" class="ts" text-anchor="middle">二つなら B は提案する。一つなら、その判断の責務の責任者が決める</text>
 </svg>
 ```
 
-注文画面と在庫連携を別の Cell にしたなら、在庫連携の責任者が注文画面の判断を決め直すのは上書きです。決めたいことは提案にします。
+二つの Cell なら、在庫連携の責任者が注文画面の判断を決め直すのは上書きで、提案にします。一つの Cell なら、その判断の責務を持つ責任者が決めます。
 
-※ 例は説明のために作った。一つの Cell の責任を複数の人で負うこともできる（EAA Core 版 6 の概念表「Cell に属する」）。
+※ 例は説明のために作った。一つの Cell に責任者が複数いてよく（概念表「Cell に属する」）、判断責任者は責務ごとに置く（「1.」）。書き手の読み。
 
 ## 自分の権限は自分で広げない
 
@@ -219,25 +220,9 @@ Cell の範囲は、その判断の責任を負う人間が、中で下される
 </svg>
 ```
 
-権限で切った切れ目は、片側が自分の権限を自分で広げれば動きます。Core はこれを禁じています。切れ目の保ち方は、第 10 章で見ます。
+権限で切った切れ目は、片側の実行者が自分の権限を自分で広げれば動きます。Core は、実行者が自ら権限を広げることを禁じています。保ち方は第 10 章で見ます。
 
 出典: EAA Core 版 6「4. 提案と変更」（実行者が自分を縛る規範を緩める変更を自己承認したり、自ら権限を拡大したりしてはならない）。
-
-## 権限で切るのも Core の外
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="60" y="60" width="370" height="220" rx="10" class="box"/>
-  <text x="245" y="96" class="t" text-anchor="middle" font-weight="700">Core が定めること</text>
-  <g class="ts"><text x="90" y="146">分割は判断権限ごと渡す</text><text x="90" y="186">上書きせず、提案で変える</text></g>
-  <rect x="450" y="60" width="370" height="220" rx="10" class="hl" style="fill:#fff"/>
-  <text x="635" y="96" class="t hc" text-anchor="middle" font-weight="700">この本の提案</text>
-  <g class="ts"><text x="480" y="146">責任者が追える大きさで分ける</text><text x="480" y="192" class="tx">所有者の問いからの導出</text></g>
-  <text x="440" y="336" class="ts sub" text-anchor="middle">第 3・4 章と同じ扱い</text>
-</svg>
-```
-
-Core は、分割で判断の権限ごと渡すことと、上書きせず提案で変えることを定めます。どこで分けるか、どの大きさに収めるかは、Core の規定ではありません。
 
 ## 次章へ：切っても残る結合
 

@@ -14,6 +14,7 @@ p.「相手の切り替えを強いると、文脈が戻る」と p.「時間の
 包含と同じ形の字として、profiles.md:62「EnterpriseがDomain Profileを提供する場合、Enterpriseが正本を管理する」と、profiles.md:107「EnterpriseのOntology」、development-model.md:45「DomainからEnterpriseへのOntology訂正」は使っていない（development-model.md:24 の Enterprise／Domain と同じ字の組）。提供側・引受側の表（profiles.md:65-68）は Enterprise の字を含まないので使った。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: p.「相手の切り替えを強いると、文脈が戻る」: 公開と採用を分けても、採用を決めるときに相手の事情は読む。変わるのは読む時期を相手が決められること（@reviewer 3 便 1.）。絵と文を直し、左の「在庫が変えた」（例では在庫は Contract を変えられない）を「変えた事情」にした。p.「時間の上の疎結合は、この本の読み」を外し、その中身をこのページの注にまとめた。次章へのページの文を第 10 章の新しい題に合わせた。
 -->
 
 > 新しい版は公開と採用を分け、変えたい側は提案し、採用は各 Cell の規範の所有者が決める。Contract が成り立つ版は一つで、移行が成り立つまで、どの Cell もいま成り立っている版の上で仕事を続ける。
@@ -41,19 +42,19 @@ p.「相手の切り替えを強いると、文脈が戻る」と p.「時間の
   <path d="M440,30 V300" class="lt dash"/>
   <text x="220" y="56" class="t" text-anchor="middle" font-weight="700">変えた時点で、相手も切り替える</text>
   <rect x="40" y="80" width="360" height="190" rx="10" class="box"/><text x="220" y="116" class="ts" text-anchor="middle" font-weight="700">物流の Cell</text>
-  <text x="220" y="160" class="ts" text-anchor="middle">自分の仕事を止めて、</text><text x="220" y="186" class="ts" text-anchor="middle">在庫が変えた事情を読む</text>
+  <text x="220" y="160" class="ts" text-anchor="middle">自分の仕事を止めて、</text><text x="220" y="186" class="ts" text-anchor="middle">変えた事情をすぐ読む</text>
   <use href="#i-no" x="206" y="212" width="28" height="28"/>
   <text x="660" y="56" class="t hc" text-anchor="middle" font-weight="700">採用するまで、前の版のまま</text>
   <rect x="480" y="80" width="360" height="190" rx="10" class="hl" style="fill:#fff"/><text x="660" y="116" class="ts hc" text-anchor="middle" font-weight="700">物流の Cell</text>
-  <text x="660" y="160" class="ts" text-anchor="middle">版 1 の上で仕事を続け、</text><text x="660" y="186" class="ts" text-anchor="middle">採用するかを自分で決める</text>
+  <text x="660" y="160" class="ts" text-anchor="middle">版 1 の上で仕事を続け、事情は</text><text x="660" y="186" class="ts" text-anchor="middle">採用を決めるときに読む</text>
   <use href="#i-ok" x="646" y="212" width="28" height="28"/>
   <text x="440" y="340" class="ts sub" text-anchor="middle">第 2 章の判定（自分の仕事のあいだに別の文脈へ切り替えずに済むか）を、時間の上に当てる</text>
 </svg>
 ```
 
-一方の変更が相手に即時の切り替えを強いると、相手は仕事を止め、変えた側の事情を読んでから戻ります。公開と採用を分ければ、相手は前の版の上で続けられます。
+一方の変更が即時の切り替えを強いると、相手は仕事を止めて事情を読みます。公開と採用を分けても事情は読みますが、いつ読むかを相手が決められます。
 
-※ 書き手の読み。Core は疎結合・切り替えの語を使っていない。
+※ 書き手の読み（第 2 章の判定を時間の上に当てた）。Core が定めるのは、公開と採用を分けること、全部が採用して移ること、提案すること。
 
 ## 公開と採用は、別の行為
 
@@ -326,22 +327,6 @@ GitHub では、正本を改訂する PR と採用版を更新する PR を分�
 
 出典: EAA Delivery Guide「20. Profile 改訂・採用 Pattern」（適用例）。
 
-## 時間の上の疎結合は、この本の読み
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="60" y="60" width="370" height="220" rx="10" class="box"/>
-  <text x="245" y="96" class="t" text-anchor="middle" font-weight="700">Core が定めること</text>
-  <g class="ts"><text x="90" y="146">公開と採用は別で、自動追随しない</text><text x="90" y="186">全部が同じ版を採用して移る</text><text x="90" y="226">変えたい側は提案する</text></g>
-  <rect x="450" y="60" width="370" height="220" rx="10" class="hl" style="fill:#fff"/>
-  <text x="635" y="96" class="t hc" text-anchor="middle" font-weight="700">この本の読み</text>
-  <g class="ts"><text x="480" y="146">版の移り方で、時間の上でも</text><text x="480" y="176">文脈の疎結合が保たれる</text><text x="480" y="222" class="tx">所有者の考えを当てた読み</text></g>
-  <text x="440" y="336" class="ts sub" text-anchor="middle">第 3〜5 章「〜で切るのも Core の外」と同じ扱い</text>
-</svg>
-```
-
-公開と採用を分けること、全部が採用して移ること、変えたい側が提案することは Core の規定です。それを時間の上の疎結合と読むのは、この本の読みです。
-
 ## Core はここまでしか決めていない
 
 ```svg
@@ -374,4 +359,4 @@ GitHub では、正本を改訂する PR と採用版を更新する PR を分�
 </svg>
 ```
 
-この章では、版を出すのは所有者の承認でした。第 10 章では、その承認を誰が担うかで、権限で切った切れ目を保つ形を見ます。
+この章では、版を出すのは所有者の承認でした。第 10 章では、その承認を誰が担うかと、実行者が自分の権限を広げないことを見ます。

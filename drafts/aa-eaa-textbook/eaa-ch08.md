@@ -14,6 +14,7 @@ p.「作った側に聞くと、その文脈に入る」は書き手の読み（
 p.「例：出荷結果を突き合わせる」の「出荷しました」の申告だけの記録は、@reviewer ch06-09 3-1 が挙げた形（作った側の申告だけで答えた Evidence は core.md:22 を満たさない）を例にした。
 「出荷日」のずれは第 4 章の例（在庫では引当を確定した日、物流では便に積んだ日）のまま。2d0ca30 の第 6 章の値（倉庫を出た日・配送業者に渡した日）からは替えた。第 4 章と揃えるため。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
+77a7fc9 の検算と通読を受けて直した（@ope-ultp1635 msg 614590ff。判定の正本 @reviewer 2026-11-08-eaa-textbook-77a7fc9-ch00-04 / ch05-08 / ch09-12-furoku、@reader 2026-11-08-eaa-textbook-v5-215p-6readers-r3）: p.「対応はずれから Ontology に足す」の絵に「対応」の行を足し（core.md:23）、文を「対応を使って、相手の Evidence を自分の意味で読める」にした。第 4 章の「自分の仕事の中では在庫の意味」と揃う。
 -->
 
 > Evidence は成果や判断の成立を確かめる記録で、受け取った Cell が作った Cell を介さずに確かめられる形にする。意味のずれは受け入れられなかったときに見え、照会か変更提案で解く。
@@ -220,13 +221,13 @@ PR、テスト、CI の実行結果、本番の実行記録、突き合わせや
     <rect x="620" y="180" width="180" height="60" rx="3" class="hl" style="fill:#fff"/><text x="710" y="216" class="hc">対応を足す</text>
   </g>
   <path d="M260,210 H346" class="ln" marker-end="url(#arr)"/><path d="M530,210 H616" class="ln" marker-end="url(#arr)"/>
-  <rect x="540" y="24" width="320" height="130" rx="3" class="hl" style="fill:#fff"/><text x="700" y="54" class="ts hc" text-anchor="middle" font-weight="700">共有する Ontology に足す</text><text x="700" y="94" class="ts" text-anchor="middle">物流の「出荷日」＝ 便に積んだ日</text><text x="700" y="122" class="ts" text-anchor="middle">在庫の「出荷日」＝ 引当を確定した日</text>
+  <rect x="520" y="14" width="350" height="156" rx="3" class="hl" style="fill:#fff"/><text x="695" y="40" class="ts hc" text-anchor="middle" font-weight="700">共有する Ontology に足す</text><text x="695" y="74" class="ts" text-anchor="middle">物流の「出荷日」＝ 便に積んだ日</text><text x="695" y="102" class="ts" text-anchor="middle">在庫の「出荷日」＝ 引当を確定した日</text><text x="695" y="140" class="ts hc" text-anchor="middle" font-weight="700">対応：物流の出荷日は、在庫の出荷日以後</text>
   <path d="M710,176 V158" class="ln" marker-end="url(#arr)"/>
   <text x="250" y="110" class="ts sub" text-anchor="middle">初めから全部の語をそろえない</text>
 </svg>
 ```
 
-意味の違いと対応は、ずれが見えたところから、共有する Ontology に足していきます。足した後は、同じずれで聞きに戻らずに読めます。
+意味の違いと対応は、ずれが見えたところから、共有する Ontology に足していきます。足した後は、対応を使って、相手の Evidence を自分の意味で読めます。
 
 出典: EAA Core 版 6「0. 目的と範囲」と概念表「Ontology」。Ontology は第 4 章で見た。
 
