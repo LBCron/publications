@@ -1,41 +1,106 @@
-# 第 12 章　導入は、作り方を残したまま、つながり方だけを Core に合わせる
+# 第 12 章　EAA の導入は、いまの分業で文脈がどこを越えて行き来しているかを記録で見るところから始める
 
-群: 規範の承認・採用と導入
+群: 切り直しと加わり方
 
 <!--
-構造: agent-hub-roles-kaz/philosopher/2026-11-07-eaa-textbook-structure.md（55553ae4）。章題と群の札の字は writer-ja/drafts/eaa-toc/titles.md（d21b0d80、@ope-ultp1635 msg 65a67e15）で書き直した。構造は変えない。
-出どころ（構造の表のまま）: adoption-guide.md 6・7 節、delivery-guide.md 3・4 節、role-model.md 2 節。Core は publications origin/main 0d07f75 の core.md 版 6。
-本文: @ope-ultp1635 msg dfcb091f（群四）。
-「Operator の判断は規範に書き直していく」は骨格で題から落とし書き手メモに残したもの（@ope-ultp1635 msg d407be50）。群四の便で必ず入れると指示があった。章の概要の文と、8 ページ目「判断を規範に書き直していく」の文に字のまま入れた。
-足した出どころ: delivery-guide.md 2 節（判断の削減と成果・安全性を一緒に観測する）、profiles.md 6 節（Supplier の責務。第 8 章の注と同じ）、各適用例の冒頭の「位置づけ：適用例（非規範）」（最後のページ）。
-例は第 6〜11 章の在庫と物流を続けた。在庫は自社の Scrum、物流は委託先の標準工程（第 6 章の例のまま）。あいだを定例会議で合わせていた、は第 1 章「複数社で組んでも同じ二つ」の発注側の定例会議につないだ説明のための仮定。
-包含と同じ形の字: adoption-guide.md:296「Domain が自律できる境界を作る」は、④（@ope-ultp1635 msg 02ab9595、@reviewer 2026-11-08 ch10-12 1-4）で「Cell が自律する範囲を、規範と Contract の案にする」に直した。前の版の「Cell が自律できる境界を作る」は、Operator が Cell の自律の範囲を作ることになり、core.md:62（範囲は合意して採用した規範と Contract）・第 4 章 109 行と閉じなかった。ページの題も「任せる境界を作る」から変えた。delivery-guide.md:20・35 の Domain は、第 12 章ではなく第 2 章で書き換えている（第 2 章の書き手メモ）。原文の delivery-guide の Domain は Integration・Contract・Billing など業務の名前で、Enterprise と組になった位置の呼び名ではない（delivery-guide.md:1-60 に Enterprise の字は無い）。role-model.md 5 節「Enterpriseの責務」（全体の目的・制約・資源配分）は出どころの 2 節の外で、使っていない。
-adoption-guide.md:270-277 の英語の段は日本語に開いた（Recorded Decision → 記録した判断、Machine-readable Control → 機械で読める制御、Future Autonomy → 次からは任せられる）。Operator Dependency(t) は「Operator への依存」と書いた。
-第 2・3 章と重なる所（つながり方の最低限、Profile の数で Cell を決めない）は、ページを立てずに前の章を指した。
+構造: agent-hub-roles-kaz/writer-ja/drafts/eaa-toc/structure-v5.md（77de7781）の第 12 章。着手: @ope-ultp1635 msg cfe0fe59（群五）。
+所有者の字: 「それをagenticシステムでどう実現するのか？」（structure-v5.md のイデア第 1 文の逐語）。
+2d0ca30 までの第 11 章（Core の採用）と第 12 章（導入）の中身を、この章に持ってきた。旧本文は 2d0ca30 の eaa-ch11.md・eaa-ch12.md にある。
+- 旧第 12 章から: 中の作り方を残す・導入の順序・例・流れている記録を見る・Profile を並べる・要らない制約だけ外す（adoption-guide.md 7 節、delivery-guide.md 4 節）、Operator の判断を規範に書き直す・ほかの Cell にかかる規範は提案で・機械化は権限の緩和ではない・自律の範囲を案にする・成熟（adoption-guide.md 6 節、role-model.md 2 節）、判断を減らしても成果と安全を保つ（delivery-guide.md 2 節）、最後のページ。
+- 旧第 11 章から: 採用は Cell ごと・承認は規範の所有者・Core の所有者は承認しない・置けなければ採用しない・記録で成り立つ・記録の項目・物流の採用の記録の例・採用しない部分を示す・記録はその Cell が持つ・新しい版も採用して移る（core.md:112-123、79、93）。
+落としたページ: 旧第 12 章 p.「Operator は、逐一承認しない」は p.「判断を規範に書き直していく」に、p.「ほかの Cell にかかる規範は、提案で」は p.「機械化は、権限を緩めることではない」に、p.「依存が減っていくことを成熟と見る」は p.「Operator は、自律の範囲を案にする」の注にまとめた。旧第 11 章 p.「理解ではなく、記録で成り立つ」は p.「記録に書くこと」に、p.「Core の新しい版も、採用して移る」は p.「記録は、その Cell が持つ」の注にまとめた。中身は落としていない。
+直しを落とさずに持ってきた: ④（@ope-ultp1635 msg 02ab9595）— adoption-guide.md:296「Domain が自律できる境界を作る」を「Cell が自律する範囲を、規範と Contract の案にする」にした形のまま（core.md:62）。⑤（msg 281e5366）— 最後の絵の「各 Cell の中の作り方は、各 Cell が決める」を Core の側に置いた形のまま。⑥（msg 6fc17eeb）— リードの「独立した判断が要る所だけ Cell を分ける」は規範の形なので、適用例の導入順に置いた。旧第 11 章 ⑥ — 最後のページの「不採用を示した後、同じ Contract で両側が別の規定に従う状態の扱い」は Core に書かれていない（core.md:121 は示すことまで）。⑤ — それらは既知の不足に無いので「Core に書かれていない」。2 周目 — 小見出し「既知の不足にも挙がっていない」。
+新しく足したこと: 章の入口を「記録で見る」にした（v5 の主張）。p.「境目を越える行き来を数える」「行き来には二つの直し方がある」「一つのあいだから試す」「最初に決めること」「足した手続きの分だけ、外すものを問う」。
+- @reader 目次の通読（349c4d63）で宮下（CTO）が「社外では使わず社内の 2 チームで試す」と決めた章。読み手が最初の一歩を踏めるかを見た: 何を見るか（いま残っている記録）・何を数えるか（境目を越える行き来）・どこから始めるか（一つのあいだ）・何を決めるか（Contract の所有者と採用の承認者）を、ページの順にした。
+- 「記録で見るところから始める」と Adoption Guide「7.」の順（Core でつなぐ → 中を残す → Evidence を観測する）の関係: Adoption Guide は 1 段目が Core でつなぐことで、観測は 3 段目。この章の最初の一歩は、1 段目で「どこを」つなぐかを決めるための観測で、この本の読み。p.「導入の順序」の注に書いた。
+- 「境目を越える行き来」の観測は Adoption Guide「10.」の Boundary Wait（Domain / Supplier 間待ち）に近いが、同じ指標ではない。注に「近い」とだけ書いた。
+- p.「足した手続きの分だけ、外すものを問う」は adoption-guide.md「12.」の RED FLAG（既存会議・承認を一切減らせず、EAA Gate が上乗せされる）と結び（新しい統制を追加したなら、何を廃止できるかを必ず問う）。
+- p.「最初に決めること」の Contract の所有者は core.md:98、採用の承認者は core.md:114。
+Operator: 新しい構成では第 0〜11 章に Operator の字が無い（grep で確認）。旧第 12 章の注「判断の責任者を Operator と呼ぶのは第 3 章の注で見ました」は旧第 3 章を指していたので、p.「判断を規範に書き直していく」の注で Role Model「1.」の字（Core と Profiles が求める判断責任者を人間の Operator が担う）から説明した。
+章の参照を新しい構成に直した: 導入の順序の右の列（旧 第 6・3・3・5 章 → 第 8・4・2・5 章）、Profile の数で Cell を決めない（旧 第 3 章 → 第 4 章 p.「数から決めない」）、自律の範囲（旧 第 4 章 → 第 5 章）、Contract の所有者の例（旧 第 8 章 → 第 6 章）、定例会議（旧 第 1 章 → 付録）、例の続き（旧 第 6〜11 章 → 第 6〜10 章）。
+包含と同じ形の字: 採用の記録を全体の側が一つ持つ形は書いていない（core.md:123）。delivery-guide.md・role-model.md 5 節の Enterprise は使っていない（旧第 12 章の注と同じ）。
 絵: Cell はどれもほかの Cell の枠の外に並べる（core.md:43）。
 新しく引く外部の文献は無い。
-⑤（@ope-ultp1635 msg 281e5366、@reviewer 3 回目・4 回目）: 最後の絵の「各 Cell の中の作り方」を「自分の案件で決めること」から外し、Core の側に「各 Cell が決める」（core.md:62）として置いた。第 2・4 章と本文に揃う。
-⑥ の通し見（@ope-ultp1635 msg 6fc17eeb）: リードの「独立した判断が要る所だけ Cell を分ける」は第 3 章で「だけ」を落としたのと同じ字で、規範の形だった。出どころは Adoption Guide「7.」（適用例）なので、リードに適用例の導入だと書いた。本文の「導入の順序」のページは出典欄に適用例とあるので変えていない。
 -->
 
-> 適用例の導入は、既存の Scrum・SAFe・委託先の工程を残し、Evidence を観測して責務を Profile に書き、独立した判断が要る所だけ Cell を分ける。
+> 最初に、いまの分業でチームの境目を越えて行き来している記録を見る。中の作り方は残し、行き来の多い一つのあいだから Contract に書き、Core の採用は各 Cell の規範の所有者が承認して記録する。
 
 ```svg
 <svg viewBox="0 0 880 300" width="880" height="300">
-  <text x="200" y="28" class="ts sub" text-anchor="middle">前</text><text x="660" y="28" class="ts sub" text-anchor="middle">導入の後</text>
-  <rect x="30" y="44" width="130" height="110" rx="10" class="box"/><text x="95" y="90" class="ts" text-anchor="middle" font-weight="700">在庫</text><text x="95" y="116" class="tx" text-anchor="middle">Scrum</text>
-  <rect x="240" y="44" width="130" height="110" rx="10" class="box"/><text x="305" y="90" class="ts" text-anchor="middle" font-weight="700">物流</text><text x="305" y="116" class="tx" text-anchor="middle">委託先の工程</text>
-  <path d="M160,99 H240" class="ln dash"/><text x="200" y="186" class="ts" text-anchor="middle">定例会議で合わせる</text>
-  <path d="M420,100 H460" class="ln" marker-end="url(#arr)"/>
-  <rect x="490" y="44" width="130" height="110" rx="10" class="box"/><text x="555" y="90" class="ts" text-anchor="middle" font-weight="700">在庫</text><text x="555" y="116" class="tx" text-anchor="middle">Scrum</text>
-  <rect x="720" y="44" width="130" height="110" rx="10" class="box"/><text x="785" y="90" class="ts" text-anchor="middle" font-weight="700">物流</text><text x="785" y="116" class="tx" text-anchor="middle">委託先の工程</text>
-  <rect x="630" y="74" width="80" height="50" rx="3" class="hl" style="fill:#fff"/><text x="670" y="104" class="tx hc" text-anchor="middle">Contract</text>
-  <path d="M620,99 H630 M710,99 H720" class="ln"/><text x="670" y="186" class="ts" text-anchor="middle">版付きの文書と Evidence</text>
-  <text x="440" y="262" class="t" text-anchor="middle" font-weight="700">中は今のまま。替わるのは、あいだの線だけ</text>
+  <rect x="30" y="50" width="150" height="120" rx="10" class="box"/><text x="105" y="104" class="ts" text-anchor="middle" font-weight="700">在庫</text><text x="105" y="130" class="tx" text-anchor="middle">Scrum</text>
+  <rect x="300" y="50" width="150" height="120" rx="10" class="box"/><text x="375" y="104" class="ts" text-anchor="middle" font-weight="700">物流</text><text x="375" y="130" class="tx" text-anchor="middle">委託先の工程</text>
+  <g class="ln"><path d="M184,80 H296"/><path d="M296,105 H184"/><path d="M184,130 H296"/></g>
+  <text x="240" y="200" class="ts hc" text-anchor="middle" font-weight="700">1　行き来を記録で見る</text>
+  <path d="M470,110 H520" class="ln" marker-end="url(#arr)"/>
+  <rect x="540" y="50" width="120" height="120" rx="10" class="box"/><text x="600" y="104" class="ts" text-anchor="middle" font-weight="700">在庫</text>
+  <rect x="740" y="50" width="120" height="120" rx="10" class="box"/><text x="800" y="104" class="ts" text-anchor="middle" font-weight="700">物流</text>
+  <rect x="664" y="86" width="72" height="48" rx="3" class="hl" style="fill:#fff"/><text x="700" y="115" class="tx hc" text-anchor="middle">Contract</text>
+  <text x="700" y="200" class="ts" text-anchor="middle">2　一つのあいだを書く</text>
+  <text x="440" y="262" class="t" text-anchor="middle" font-weight="700">中は今のまま。替わるのは、あいだの線から</text>
 </svg>
 ```
 
-導入では、各チームの中の作り方を変えません。変えるのはチームのあいだのつながり方で、Operator の判断は規範に書き直していきます。
+導入は、いまの分業のどこで文脈が境目を越えて行き来しているかを、残っている記録で見るところから始めます。中の作り方は変えず、つながり方から変えます。
+
+## 境目を越える行き来を数える
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <g class="ts">
+    <text x="60" y="56" font-weight="700">いま残っている記録</text><text x="400" y="56" font-weight="700">境目を越えた行き来</text>
+    <text x="60" y="110">チケットの差し戻し</text><text x="400" y="110">追跡番号が無いと物流へ差し戻した</text>
+    <text x="60" y="170">ほかのチームへの問い合わせ</text><text x="400" y="170">欠品の理由を電話で聞いた</text>
+    <text x="60" y="230">定例会議の議事録</text><text x="400" y="230">出荷指示の変更を、週 1 回承認した</text>
+    <text x="60" y="290">PR のコメント</text><text x="400" y="290">相手の事情を聞くまで止めた</text>
+  </g>
+  <path d="M40,76 H840 M40,136 H840 M40,196 H840 M40,256 H840 M40,316 H840 M380,30 V316" class="lt"/>
+  <text x="440" y="356" class="ts sub" text-anchor="middle">新しく測る仕組みは要らない。いま残っているものを見る</text>
+</svg>
+```
+
+チケットの差し戻し、ほかのチームへの問い合わせ、定例会議の議事録、PR のコメントから、チームの境目を越えた行き来を拾います。どのあいだで多いかを数えます。
+
+※ 書き手の読み。表の中身は説明のための仮定。Adoption Guide「10.」の Boundary Wait（境界の間の待ち）が近い観測です。
+
+## 行き来には二つの直し方がある
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="50" width="380" height="250" rx="10" class="box"/>
+  <text x="230" y="88" class="t" text-anchor="middle" font-weight="700">渡すものが書かれていない</text>
+  <text x="230" y="140" class="ts" text-anchor="middle">欠品の理由を、毎回電話で聞く</text>
+  <text x="230" y="200" class="ts hc" text-anchor="middle" font-weight="700">→ Contract に書く</text><text x="230" y="232" class="tx" text-anchor="middle">第 6 章</text>
+  <rect x="460" y="50" width="380" height="250" rx="10" class="box"/>
+  <text x="650" y="88" class="t" text-anchor="middle" font-weight="700">相手の文脈を毎回読む</text>
+  <text x="650" y="140" class="ts" text-anchor="middle">書いても、Mission のたびに照会する</text>
+  <text x="650" y="200" class="ts hc" text-anchor="middle" font-weight="700">→ 切れ目を引き直す</text><text x="650" y="232" class="tx" text-anchor="middle">第 2・11 章</text>
+  <text x="440" y="346" class="ts sub" text-anchor="middle">まずは左。書けば止まる行き来から始める</text>
+</svg>
+```
+
+行き来が多いあいだは、渡すものが書かれていないか、切れ目が文脈に合っていないかです。前者は Contract に書き、後者は切れ目を引き直します。
+
+※ 書き手の読み。左は第 6 章の「書いていない結合」、右は第 11 章の「行き来が多すぎれば、まとめる」。
+
+## 一つのあいだから試す
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <g class="ts" text-anchor="middle">
+    <rect x="40" y="60" width="160" height="90" rx="10" class="box"/><text x="120" y="112">在庫</text>
+    <rect x="360" y="60" width="160" height="90" rx="10" class="box"/><text x="440" y="112">物流</text>
+    <rect x="680" y="60" width="160" height="90" rx="10" class="box"/><text x="760" y="112">請求</text>
+    <rect x="360" y="220" width="160" height="90" rx="10" class="box"/><text x="440" y="272">店舗</text>
+  </g>
+  <path d="M204,105 H356" class="hl"/><text x="280" y="92" class="ts hc" text-anchor="middle" font-weight="700">ここから</text>
+  <path d="M524,105 H676 M440,154 V216" class="lt dash"/><text x="600" y="92" class="tx" text-anchor="middle">いまのまま</text>
+  <text x="440" y="350" class="ts sub" text-anchor="middle">行き来の一番多いあいだ一本を、Contract と Evidence に替える</text>
+</svg>
+```
+
+最初は、行き来の一番多いあいだ一本だけを替えます。ほかのあいだは今のままにし、一本で確かめてから次へ広げます。
+
+出典: EAA Adoption Guide「7.」（適用例。gradual substitution を「少しずつ置き換える」と書いた）。※ 図の組は説明のための仮定です。
 
 ## 中の作り方は、そのまま残す
 
@@ -56,7 +121,7 @@ adoption-guide.md:270-277 の英語の段は日本語に開いた（Recorded Dec
 
 Scrum、SAFe の ART、計画型の工程、委託先の工程、パッケージの導入は、どれもその Cell の中の作り方として残せます。
 
-出典: EAA Adoption Guide「7.」（適用例）。Predictive を計画型と書いた。ART は第 2 章で見ました。
+出典: EAA Adoption Guide「7.」（適用例）。Predictive を計画型と書いた。ART は SAFe の、チームを束ねた単位（第 1 章）。
 
 ## 導入の順序
 
@@ -71,13 +136,13 @@ Scrum、SAFe の ART、計画型の工程、委託先の工程、パッケージ
     <rect x="60" y="270" width="560" height="40" rx="6" class="soft"/><text x="80" y="296">6　要らないと確かめた制約だけ外す</text>
   </g>
   <path d="M650,40 V290" class="ln" marker-end="url(#arr)"/>
-  <g class="tx"><text x="670" y="146">第 6 章</text><text x="670" y="196">第 3 章</text><text x="670" y="246">第 3・5 章</text></g>
+  <g class="tx"><text x="670" y="46">第 6 章</text><text x="670" y="146">第 8 章</text><text x="670" y="196">第 4 章</text><text x="670" y="246">第 2・5 章</text></g>
 </svg>
 ```
 
 Core でつなぎ、中の作り方を残し、Evidence を観測し、責務を Profile に書き、独立した判断が要る所だけを分け、要らない制約だけを外します。
 
-出典: EAA Adoption Guide「7.」（適用例。英語の段を日本語に開いた）。右の章で、それぞれの段の決まりを見ました。
+出典: EAA Adoption Guide「7.」（適用例）。※ この章の最初の一歩（記録を見る）は、1 段目でどこをつなぐかを決めるための、この本の読み。
 
 ## 例：在庫と物流を Core でつなぐ
 
@@ -94,26 +159,7 @@ Core でつなぎ、中の作り方を残し、Evidence を観測し、責務を
 
 在庫は自社の Scrum、物流は委託先の標準工程のままです。変えるのは、あいだの取り決めを Contract に書き、Evidence で確かめることだけです。
 
-※ 第 6〜11 章の在庫と物流の例の続きで、説明のための仮定です。定例会議は第 1 章の「複数社で組んでも同じ二つ」の左側です。
-
-## まず、流れている記録を見る
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <g class="ts">
-    <text x="60" y="60" font-weight="700">あいだを今流れている記録</text><text x="560" y="60" font-weight="700">受け取った側だけで確かめられるか</text>
-    <text x="60" y="120">出荷指示</text><use href="#i-ok" x="640" y="102" width="24" height="24"/>
-    <text x="60" y="180">出荷結果</text><use href="#i-ok" x="640" y="162" width="24" height="24"/>
-    <text x="60" y="240">欠品の理由</text><use href="#i-no" x="640" y="222" width="24" height="24"/><text x="680" y="240" class="tx">電話で聞いている</text>
-  </g>
-  <path d="M40,80 H840 M40,140 H840 M40,200 H840 M40,260 H840" class="lt"/>
-  <text x="440" y="320" class="ts sub" text-anchor="middle">確かめられないものが、Contract に書く Evidence の候補になる</text>
-</svg>
-```
-
-最初に、あいだを今どんな記録が流れているかを観測します。見るのは、受け取った側が作った側に聞かずに確かめられるかです。
-
-出典: EAA Adoption Guide「7.」。※ 見る観点は第 6 章の Evidence の条件です。表の中身は説明のための仮定です。
+※ 第 6〜10 章の在庫と物流の例の続きで、説明のための仮定です。定例会議で合わせる形は付録 p.「複数社のあいだも、集めるか任せるか」の左側です。
 
 ## 案件に要る Profile を並べる
 
@@ -126,13 +172,138 @@ Core でつなぎ、中の作り方を残し、Evidence を観測し、責務を
     <text x="260" y="250">Platform など</text><text x="480" y="250">要るものだけ</text>
   </g>
   <path d="M40,80 H840 M40,150 H840 M40,280 H840" class="lt"/>
-  <text x="440" y="330" class="ts sub" text-anchor="middle">並べた Profile ごとに Cell を作るのではない（第 3 章）</text>
+  <text x="440" y="330" class="ts sub" text-anchor="middle">並べた Profile ごとに Cell を作るのではない（第 4 章）</text>
 </svg>
 ```
 
 案件に要る Domain Profile と Standard Profile を並べ、責任の範囲・権限・保証を書きます。委託先が担うなら、Supplier も要ります。
 
 出典: EAA Delivery Guide「4. Profile Selection」（適用例）、EAA Profiles「6.」。※ 在庫・物流の行は説明のための仮定です。
+
+## 最初に決めること
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <g class="ts">
+    <text x="60" y="56" font-weight="700">決めること</text><text x="440" y="56" font-weight="700">誰が決めるか</text>
+    <text x="60" y="110">どのあいだから始めるか</text><text x="440" y="110">両側の判断の責任者</text>
+    <text x="60" y="170">そのあいだの Contract の所有者</text><text x="440" y="170">結ぶ Cell が合意して 1 人</text>
+    <text x="60" y="230">各 Cell で Core を採用するか</text><text x="440" y="230">各 Cell の規範の所有者</text>
+    <text x="60" y="290">何で受け入れを確かめるか</text><text x="440" y="290">Contract に書く Evidence</text>
+  </g>
+  <path d="M40,76 H840 M40,136 H840 M40,196 H840 M40,256 H840 M40,316 H840 M420,30 V316" class="lt"/>
+  <text x="440" y="356" class="ts sub" text-anchor="middle">所有者と承認者が決まらないあいだは、まだ始められない</text>
+</svg>
+```
+
+始めるあいだを選んだら、その Contract の所有者、各 Cell で Core を採用するかの承認者、受け入れを確かめる Evidence を決めます。
+
+出典: EAA Core 版 6「4.」「6.」。※ 1 行目は書き手の読み。所有者は第 6 章、採用は次のページから。
+
+## Core の採用は、Cell ごとに決める
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="300" y="30" width="280" height="60" rx="3" class="hl" style="fill:#fff"/><text x="440" y="66" class="ts hc" text-anchor="middle" font-weight="700">EAA Core　版 6（公開済み）</text>
+  <path d="M380,94 L240,130 M500,94 L640,130" class="lt"/>
+  <rect x="40" y="130" width="340" height="190" rx="10" class="box"/><text x="210" y="166" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <text x="210" y="216" class="ts" text-anchor="middle">在庫の規範の所有者が</text><text x="210" y="242" class="ts" text-anchor="middle">採用を承認する</text>
+  <rect x="500" y="130" width="340" height="190" rx="10" class="box"/><text x="670" y="166" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <text x="670" y="216" class="ts" text-anchor="middle">物流の規範の所有者が</text><text x="670" y="242" class="ts" text-anchor="middle">採用を承認する</text>
+  <text x="440" y="356" class="ts sub" text-anchor="middle">Core を公開しても、どの Cell も自動では従わない</text>
+</svg>
+```
+
+Core を採用するかは Cell ごとに決め、その Cell の規範の正当な所有者が承認します。ふつうの変更を受け入れる権限だけでは決められません。
+
+出典: EAA Core 版 6「6. 本書の採用」「3.」「4.」。公開と採用が別なのは、第 9 章の Contract の版と同じです。
+
+## 承認者は、Core の所有者ではない人間
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="60" width="380" height="230" rx="10" class="box"/><text x="230" y="96" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <text x="230" y="140" class="ts" text-anchor="middle">規範の所有者のうち、</text><text x="230" y="166" class="ts" text-anchor="middle">Core の所有者ではない人間</text>
+  <use href="#i-ok" x="216" y="190" width="28" height="28"/><text x="230" y="250" class="ts okc" text-anchor="middle">この人が承認する</text>
+  <rect x="460" y="60" width="380" height="230" rx="10" fill="url(#hatch)"/><text x="650" y="96" class="t" text-anchor="middle" font-weight="700">ある Cell</text>
+  <text x="650" y="140" class="ts" text-anchor="middle">規範の所有者が、</text><text x="650" y="166" class="ts" text-anchor="middle">Core の所有者 1 人だけ</text>
+  <use href="#i-no" x="636" y="190" width="28" height="28"/><text x="650" y="250" class="ts xc" text-anchor="middle">Core を採用しない</text>
+</svg>
+```
+
+承認者は、その Cell の規範の所有者のうち、Core の所有者ではない人間です。この承認者を置けない Cell では、Core を採用しません。
+
+出典: EAA Core 版 6「6. 本書の採用」。※ 右は同じ節の 2 行から導いた場合の一つ。書いた者が採用を兼ねない点で、第 10 章の職務分離と同じ向き。
+
+## 記録に書くこと
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <g class="ts">
+    <text x="60" y="60" font-weight="700">項目</text><text x="330" y="60" font-weight="700">書くこと</text>
+    <text x="60" y="120">承認者と版</text><text x="330" y="120">承認者の名前と、採用する Core の版</text>
+    <text x="60" y="190">引き受ける拘束</text><text x="330" y="190">少なくとも、その Cell が所有する共有文書と、</text><text x="330" y="214">その所有者</text>
+    <text x="60" y="284">採用しない部分</text><text x="330" y="284">その部分と理由。無ければ、無いこと</text>
+  </g>
+  <path d="M40,80 H840 M40,150 H840 M40,244 H840 M40,314 H840 M310,30 V314" class="lt"/>
+  <text x="440" y="352" class="ts sub" text-anchor="middle">理解しているかは検査しない。承認は、これを記録したときに成り立つ</text>
+</svg>
+```
+
+承認は、承認者が承認者と版、引き受ける拘束、採用しない部分とその理由を自分の Cell に当てて記録したときに成り立ちます。無ければ無いと書きます。
+
+出典: EAA Core 版 6「6. 本書の採用」（理解の有無そのものは検査しない）。
+
+## 例：物流の採用の記録
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="30" width="800" height="300" rx="10" class="box"/>
+  <text x="60" y="66" class="t" font-weight="700">物流の Cell　Core の採用の記録</text>
+  <g class="ts">
+    <text x="60" y="120" font-weight="700">承認者と版</text><text x="270" y="120">物流の規範の所有者（名前）・Core 版 6</text>
+    <text x="60" y="184" font-weight="700">引き受ける拘束</text><text x="270" y="184">所有する共有文書：在庫と物流のあいだの Contract</text><text x="270" y="208">その所有者：物流の窓口の責任者</text>
+    <text x="60" y="278" font-weight="700">採用しない部分</text><text x="270" y="278">無い</text>
+  </g>
+  <path d="M50,90 H830 M50,150 H830 M50,240 H830" class="lt"/>
+</svg>
+```
+
+物流は、在庫との Contract を所有しているので、それを拘束に書きます。採用しない部分は無いので、無いと書きます。
+
+※ 記録の中身は説明のための仮定です。Contract の所有者が物流の窓口の責任者なのは、第 6 章の例のままです。
+
+## 採用しない部分は、相手に示す
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="40" width="340" height="250" rx="10" class="box"/><text x="210" y="76" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <g class="ts"><text x="70" y="124" font-weight="700">採用しない部分</text><text x="70" y="156">Contract の所有者が離れたときの規定</text><text x="70" y="200" font-weight="700">理由</text><text x="70" y="232">所有者の交代を、取引先との</text><text x="70" y="256">契約書で決めているため</text></g>
+  <path d="M380,165 H536" class="ln" marker-end="url(#arr)"/><text x="458" y="152" class="ts" text-anchor="middle">示す</text>
+  <rect x="540" y="40" width="300" height="250" rx="10" class="box"/><text x="690" y="76" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
+  <text x="690" y="160" class="ts" text-anchor="middle">Contract を共有する相手</text>
+</svg>
+```
+
+採用しない部分のうち、共有する文書にかかるものは、その文書を共有する Cell に示します。在庫が Contract にかかる部分を外すなら、物流に示します。
+
+出典: EAA Core 版 6「6. 本書の採用」。※ 外す部分と理由は説明のための仮定。所有者が離れたときの規定は第 10 章、Contract と契約書の関係は第 6 章の最後のページ。
+
+## 記録は、その Cell が持つ
+
+```svg
+<svg viewBox="0 0 880 380" width="880" height="380">
+  <rect x="40" y="60" width="380" height="240" rx="10" class="box"/><text x="230" y="96" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
+  <rect x="100" y="130" width="260" height="70" rx="3" class="hl" style="fill:#fff"/><text x="230" y="172" class="ts hc" text-anchor="middle" font-weight="700">在庫の採用の記録</text>
+  <text x="230" y="250" class="ts" text-anchor="middle">在庫が管理する</text>
+  <rect x="540" y="60" width="300" height="240" rx="10" class="soft"/><text x="690" y="100" class="t" text-anchor="middle" font-weight="700">Core の所有者</text>
+  <path d="M536,165 H364" class="xl dash"/><use href="#i-no" x="436" y="137" width="28" height="28"/><text x="450" y="200" class="ts xc" text-anchor="middle">書き換えない</text>
+</svg>
+```
+
+採用の記録は、採用した Cell が管理します。Core の所有者は、その記録を書き換えません。
+
+出典: EAA Core 版 6「6.」。※ Core の新しい版が出ても自動では移らない（「3.」）。移るときも同じ記録をするのは、記録に版を書くことからの読み。
 
 ## 外すのは、要らないと確かめた制約だけ
 
@@ -151,24 +322,26 @@ Core でつなぎ、中の作り方を残し、Evidence を観測し、責務を
 
 今の手順にある制約は、要らないと確かめられたものだけを外します。置き換えは一度にせず、少しずつ進めます。
 
-出典: EAA Adoption Guide「7.」（gradual substitution を「少しずつ置き換える」と書いた）。※ 表の中身は説明のための仮定です。
+出典: EAA Adoption Guide「7.」（適用例）。※ 表の中身は説明のための仮定です。
 
-## Operator は、逐一承認しない
+## 足した手続きの分だけ、外すものを問う
 
 ```svg
 <svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="360" height="230" rx="10" fill="url(#hatch)"/>
-  <text x="220" y="100" class="t" text-anchor="middle" font-weight="700">しない</text>
-  <text x="220" y="160" class="ts" text-anchor="middle">ふつうの成果物を</text><text x="220" y="184" class="ts" text-anchor="middle">一つずつ承認する</text>
-  <rect x="480" y="60" width="360" height="230" rx="10" class="box"/>
-  <text x="660" y="100" class="t" text-anchor="middle" font-weight="700">する</text>
-  <g class="ts"><text x="510" y="150">業務の意味と守る条件を、</text><text x="510" y="174">規範・環境・判定の条件に落とす</text><text x="510" y="220">実行と検証を任せる</text></g>
+  <rect x="40" y="50" width="380" height="250" rx="10" fill="url(#hatch)"/>
+  <text x="230" y="90" class="t" text-anchor="middle" font-weight="700">避ける形</text>
+  <g class="ts" text-anchor="middle"><text x="230" y="150">定例会議と承認はそのまま</text><text x="230" y="184">＋ Contract と採用の記録</text></g>
+  <use href="#i-no" x="216" y="218" width="28" height="28"/>
+  <rect x="460" y="50" width="380" height="250" rx="10" class="box"/>
+  <text x="650" y="90" class="t" text-anchor="middle" font-weight="700">問うこと</text>
+  <g class="ts" text-anchor="middle"><text x="650" y="150">Contract に書いた分、</text><text x="650" y="184">どの会議・承認を外せるか</text></g>
+  <use href="#i-ok" x="636" y="218" width="28" height="28"/>
 </svg>
 ```
 
-判断の責任者である Operator は、ふつうの成果物を一つずつ承認する役ではありません。繰り返す判断を規範に変え、実行と検証を任せます。
+前の手続きを一つも減らせないまま、新しい手続きを上乗せする形は避けます。新しく足したなら、どの会議・承認を外せるかを毎回問います。
 
-出典: EAA Role Model「2. Operator」（適用例）。判断の責任者を Operator と呼ぶのは第 3 章の注で見ました。
+出典: EAA Adoption Guide「12. PoC の Adoption Exit Criteria」（適用例）。
 
 ## 判断を規範に書き直していく
 
@@ -188,26 +361,9 @@ Core でつなぎ、中の作り方を残し、Evidence を観測し、責務を
 </svg>
 ```
 
-Operator の判断は規範に書き直していきます。判断を記録し、提案して承認と受入を得て規則や Contract にし、機械で読める形にします。
+Operator は、ふつうの成果物を一つずつ承認する役ではありません。繰り返す判断を記録し、承認と受入を得て規則や Contract にし、機械で読める形にします。
 
-出典: EAA Adoption Guide「6.」（適用例。英語の段を日本語に開いた）。
-
-## ほかの Cell にかかる規範は、提案で
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="60" width="300" height="220" rx="10" class="box"/><text x="190" y="96" class="t" text-anchor="middle" font-weight="700">在庫の Cell</text>
-  <rect x="110" y="126" width="160" height="40" rx="6" class="h"/><text x="190" y="152" class="ts on" text-anchor="middle">Operator</text>
-  <text x="190" y="206" class="ts" text-anchor="middle">繰り返す判断を</text><text x="190" y="230" class="ts" text-anchor="middle">Contract に書きたい</text>
-  <path d="M340,170 H536" class="ln" marker-end="url(#arr)"/><use href="#i-pr" x="425" y="128" width="30" height="38"/><text x="440" y="196" class="ts" text-anchor="middle">提案</text>
-  <rect x="540" y="60" width="300" height="220" rx="10" class="box"/><text x="690" y="96" class="t" text-anchor="middle" font-weight="700">物流の Cell</text>
-  <text x="690" y="160" class="ts" text-anchor="middle">所有者が承認し、</text><text x="690" y="184" class="ts" text-anchor="middle">両方が採用して移る</text>
-</svg>
-```
-
-ほかの Cell にかかる規範にするときは、提案として出し、正当な所有者の承認と、対象の Cell の採用を得ます。
-
-出典: EAA Adoption Guide「6.」（適用例）。承認は第 10 章、採用は第 9 章で見ました。
+出典: EAA Adoption Guide「6.」、Role Model「1.」「2.」（適用例）。Operator は、Core が求める判断責任者を担う人間の呼び名。
 
 ## 機械化は、権限を緩めることではない
 
@@ -221,29 +377,13 @@ Operator の判断は規範に書き直していきます。判断を記録し�
   <text x="660" y="100" class="t" text-anchor="middle" font-weight="700">Agent による自己権限の緩和</text>
   <text x="660" y="160" class="ts" text-anchor="middle">自分を縛る規範を、</text><text x="660" y="184" class="ts" text-anchor="middle">自分で承認して緩める</text>
   <use href="#i-no" x="646" y="214" width="28" height="28"/>
+  <text x="440" y="330" class="ts sub" text-anchor="middle">ほかの Cell にかかる規範は、提案して所有者の承認と相手の採用を得る</text>
 </svg>
 ```
 
-繰り返す判断を機械化することは、Agent が自分の権限を緩めることとは別です。規範にする段で、承認と採用を経ています。
+繰り返す判断の機械化は、Agent が自分の権限を緩めることとは別です。ほかの Cell にかかる規範なら、提案して所有者の承認と相手の採用を得ています。
 
-出典: EAA Adoption Guide「6.」（適用例）。自分を縛る規範を緩めないことは第 10 章で見ました。
-
-## 依存が減っていくことを成熟と見る
-
-```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <path d="M100,40 V290 H820" class="ln"/>
-  <text x="90" y="56" class="tx" text-anchor="end">多い</text><text x="90" y="286" class="tx" text-anchor="end">少ない</text><text x="820" y="316" class="tx" text-anchor="end">時間</text>
-  <path d="M110,70 C300,90 420,200 800,250" class="hl"/>
-  <text x="600" y="186" class="ts hc">Operator への依存</text>
-  <text x="140" y="56" class="ts">初めは強い Operator が要る</text>
-  <text x="460" y="346" class="ts sub" text-anchor="middle">Operator がずっと全部を判断し続ける状態は、成功ではない</text>
-</svg>
-```
-
-初めのうちは強い Operator が要りますが、その人がずっと全部を判断し続ける状態は成功ではありません。依存が減っていくことを成熟の目安にします。
-
-出典: EAA Adoption Guide「6.」（適用例。Operator Dependency(t) ↓ を「Operator への依存が減る」と書いた）。
+出典: EAA Adoption Guide「6.」（適用例）。承認と自分で緩めないことは第 10 章、採用は第 9 章で見ました。
 
 ## Operator は、自律の範囲を案にする
 
@@ -262,9 +402,9 @@ Operator の判断は規範に書き直していきます。判断を記録し�
 </svg>
 ```
 
-Operator の価値は、判断の件数ではありません。曖昧な所を権限・制約・例外に訳し、Cell が自律する範囲を規範と Contract の案にすることです。
+Operator の価値は判断の件数ではなく、曖昧な所を権限・制約・例外に訳し、自律する範囲を案にすることです。依存が減っていくことを成熟と見ます。
 
-出典: EAA Adoption Guide「6.」（適用例。原文は「Domain が自律できる境界を作る」）。範囲を決めるのが承認と採用だとするのは、第 4 章からのこの本の読みです。
+出典: EAA Adoption Guide「6.」（適用例。原文は「Domain が自律できる境界を作る」）。範囲を決めるのが承認と採用だとするのは、第 5 章からの読み。
 
 ## 判断を減らしても、成果と安全は保つ
 
@@ -285,21 +425,21 @@ Operator の価値は、判断の件数ではありません。曖昧な所を�
 ## Core はここまでしか決めていない
 
 ```svg
-<svg viewBox="0 0 880 380" width="880" height="380">
-  <rect x="40" y="30" width="380" height="290" rx="10" class="soft"/>
+<svg viewBox="0 0 880 420" width="880" height="420">
+  <rect x="40" y="30" width="380" height="330" rx="10" class="soft"/>
   <text x="60" y="64" class="t" font-weight="700">Core が決めていること</text>
-  <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">責務と分割、自治と権限</text>
-  <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">流す Evidence と、流さない Ontology</text>
-  <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">版と採用、提案と変更</text>
-  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">成果と記録、Core の採用</text>
-  <use href="#i-ok" x="60" y="248" width="22" height="22"/><text x="92" y="265">各 Cell の中の作り方は、各 Cell が決める</text></g>
-  <rect x="460" y="30" width="380" height="290" rx="10" fill="url(#hatch)"/>
-  <text x="480" y="64" class="t" font-weight="700">自分の案件で決めること</text>
-  <g class="ts"><text x="480" y="105">導入の順序と進める速さ</text><text x="480" y="145">Operator の置き方</text><text x="480" y="185">成熟の測り方</text></g>
-  <text x="440" y="356" class="ts sub" text-anchor="middle">この章の手順は、どれも適用例で、Core の規範ではない</text>
+  <g class="ts"><use href="#i-ok" x="60" y="88" width="22" height="22"/><text x="92" y="105">Core の採用の承認者と、置けない場合</text>
+  <use href="#i-ok" x="60" y="128" width="22" height="22"/><text x="92" y="145">記録に書く項目と、記録を持つ Cell</text>
+  <use href="#i-ok" x="60" y="168" width="22" height="22"/><text x="92" y="185">Contract の所有者の決め方</text>
+  <use href="#i-ok" x="60" y="208" width="22" height="22"/><text x="92" y="225">各 Cell の中の作り方は、各 Cell が決める</text></g>
+  <rect x="460" y="30" width="380" height="330" rx="10" fill="url(#hatch)"/>
+  <text x="480" y="64" class="t" font-weight="700">決めていないこと</text>
+  <g class="ts"><text x="480" y="102" class="ts" font-weight="700">Core に書かれていない</text><text x="480" y="126" class="tx">既知の不足にも挙がっていない</text><text x="480" y="160">採用の記録の書式と置き場所</text><text x="480" y="188">採用をやめるときの手続き</text><text x="480" y="216">Core の版が違う Cell どうしの扱い</text><text x="480" y="244">不採用を示した後、同じ Contract で</text><text x="480" y="268">両側が別の規定に従う状態の扱い</text>
+  <text x="480" y="308" class="ts" font-weight="700">自分の案件で決めること（適用例）</text><text x="480" y="336">導入の順序と速さ・Operator の置き方</text></g>
+  <text x="440" y="398" class="ts sub" text-anchor="middle">この章の導入の手順は、どれも適用例か書き手の読みで、Core の規範ではない</text>
 </svg>
 ```
 
-この章の導入の順序、Operator の置き方、成熟の測り方は、どれも適用例で、Core の規範ではありません。自分の案件の条件で決めます。
+採用の承認と記録は Core が決めています。記録の書式、採用をやめる手続き、版が違う Cell どうしの扱いは書かれていません。導入の手順は自分の案件で決めます。
 
-出典: EAA Adoption Guide・Role Model・Delivery Guide の冒頭「位置づけ：適用例（非規範）」。
+出典: EAA Core 版 6「6.」「4.」と冒頭の観測欄。Adoption Guide・Role Model・Delivery Guide は冒頭で「適用例（非規範）」とする。

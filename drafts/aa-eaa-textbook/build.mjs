@@ -21,6 +21,7 @@
 //   ## 題、「| 第 N 章 | 読み終えると、できること |」の表、文、注。表の絵は build が組む（章名は章の概要へのリンク。群の名前の行も build が挟む）
 //   「読み方は」で始まる段落 … 読み方のコース。文と同じ大きさで出すが、文の BODY_MAX には数えず COURSE_MAX 字まで（前提の段落が上限ちょうどのため）
 //   3 列目（執筆者のおすすめ ★）は 2026-11-07 に外した。目次は話の順 1 本にし、効き目は「読み方は」の段落の「急ぐなら」で言う
+// 付録（<本>-furoku.md）… 章の後ろ・巻末の前に置く。題は「# 付録　…」。組み方は巻末と同じ
 // 巻末（<本>-kanmatsu.md）… 章の後ろに置く。題は「# 巻末　…」。章の概要・群・リードは持たず、## のページだけ。ページ番号は章から続ける。読み方の表には出さない
 import fs from 'node:fs';
 import path from 'node:path';
@@ -71,7 +72,7 @@ export function readChapter(file) {
   const name = path.basename(file);
   const h1 = md.match(/^# (.+)$/m) || fail(`${name}: 章の題（# …）が無い`);
   const parts = md.split(/^## /m);
-  const appendix = /^巻末/.test(h1[1].trim());
+  const appendix = /^(巻末|付録)/.test(h1[1].trim());   // 付録（<本>-furoku.md）も巻末と同じ組み方。章の後ろ・巻末の前に置く
   // 章題が章の主張を言い切る。「群:」1 行で群に入れる（巻末以外は必須）。「> 」1 行のリードは任意で、題に無い事を足すときだけ書く
   let cover = parts.shift().replace(/^# .+$/m, '');
   const group = appendix ? '' : (cover.match(/^群[:：]\s*(.+)$/m) || fail(`${name}: 章題の下に「群: …」が無い`))[1].trim();
@@ -357,7 +358,7 @@ export function render(files, extraHead = '', full = false, book = 'aa') {
 // 止める名前を並べるのではなく、置いてよい名前を並べる（迷ったら止まる側）。本文のファイルを足すときは、名前をこの形に合わせる
 // ドットで始まる名前が git から外れていなければ止まる（.md 以外も）。
 const PUBLIC_NAMES = [
-  /^[a-z]+-ch\d+\.md$/, /^[a-z]+-(yomikata|kanmatsu)\.md$/,
+  /^[a-z]+-ch\d+\.md$/, /^[a-z]+-(yomikata|furoku|kanmatsu)\.md$/,
   /^(build|dev)\.(mjs|sh)$/, /^package(-lock)?\.json$/, /^(node_modules|build)$/,
 ];
 export function checkPrivate() {
@@ -395,6 +396,7 @@ export function sources(args, book = 'aa') {
   const re = new RegExp(`^${book}-ch\\d+\\.md$`);
   const fs_ = fs.readdirSync(ROOT).filter(f => re.test(f)).sort();
   if (!fs_.length) fail(`${book}-ch*.md が 1 本も無い`);
+  if (fs.existsSync(path.join(ROOT, `${book}-furoku.md`))) fs_.push(`${book}-furoku.md`);
   if (fs.existsSync(path.join(ROOT, `${book}-kanmatsu.md`))) fs_.push(`${book}-kanmatsu.md`);
   return fs_.map(f => path.join(ROOT, f));
 }
