@@ -155,8 +155,8 @@ section.page figure svg { max-width: 100%; max-height: 100%; height: auto; }
 section.cover { padding: 46px 80px 30px; }
 section.cover .run { position: absolute; top: 18px; left: 40px; right: 40px; }
 section.cover h1 { font-size: 36px; margin: 0 0 6px; line-height: 1.35; }   /* 章の題が主張の 1 文になり長いので 44 → 36px */
-section.cover .sub { font-size: 26px; font-weight: 700; color: var(--h); margin: 0 0 8px; line-height: 1.4; }
-section.cover .lead { font-size: 24px; font-weight: 700; color: var(--ink); margin: 0 0 6px; line-height: 1.45; }
+section.cover p.sub { font-size: 26px; font-weight: 700; color: var(--h); margin: 0 0 8px; line-height: 1.4; }
+section.cover p.lead { font-size: 24px; font-weight: 700; color: var(--ink); margin: 0 0 6px; line-height: 1.45; }
 section.cover figure { margin: 6px 0 10px; }
 section.cover .txt { font-size: 19px; color: #444; line-height: 1.55; }
 svg text { font-family: inherit; fill: var(--ink); }
